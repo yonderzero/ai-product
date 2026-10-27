@@ -21,7 +21,7 @@ Read `product.md` and anything in `documents/` you haven't read yet. Read `refer
 
 1. **What this is.** Say which product you're working on, then explain in two or three sentences, your own words:
 
-   > Software is moving from recording the work to doing it. We'll map your market on six levels, from System of Record to System of Understanding, see where your product really is and who could overtake you, and then write where you want to take it: your product's AI vision.
+   > Software is moving from recording the work to doing it. We'll map your market on six levels, from System of Record to System of Understanding, see where your product is today and where the opportunities are, and then create a vision for where you could take it.
 
    Then ask: "Shall we start?" Wait for a yes.
 

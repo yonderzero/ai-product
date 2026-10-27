@@ -4,7 +4,7 @@
 /ai-product-vision
 ```
 
-The second skill, after [`ai-product-start`](ai-product-start.md). Software is moving from recording the work to doing it. Claude maps your market on six levels of AI, shows where your product really is and who could overtake it, then interviews you to write your product's AI vision.
+The second skill, after [`ai-product-start`](ai-product-start.md). Software is moving from recording the work to doing it. Claude maps your market on six levels of AI, shows where your product is today and where the opportunities are, then works with you on a vision for where you could take your product.
 
 **Who runs it:** the product manager, ideally with the team.
 **How long:** about 30–45 minutes. The research runs in the background while you talk.
