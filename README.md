@@ -34,6 +34,29 @@ Restart Claude Code in the folder you want to work in, then run `/ai-product-sta
 
 </details>
 
+## How it works
+
+You run the skills in order, in one folder:
+
+1. **`/ai-product-start`** (about 20–30 minutes): set up your product's folder, build its profile, describe your customers.
+2. **`/ai-product-vision`** (about 45–60 minutes): place your product and your market on six levels of AI, rank the opportunities, imagine the future, and agree a vision.
+
+Each skill is a conversation. Claude asks one question at a time, researches the web in the background, and writes what you build together into files in your product's folder. Each skill reads what the earlier ones wrote, so run them in the same place.
+
+```
+acme-scheduler/       named after your product
+  product.md          from /ai-product-start
+  documents/          your files: Claude reads everything here
+  ai-levels.md        from /ai-product-vision
+  market-map.md       from /ai-product-vision
+  market-map.html     from /ai-product-vision
+  market-moves.md     from /ai-product-vision
+  opportunities.md    from /ai-product-vision
+  vision.md           from /ai-product-vision
+```
+
+Every fact in the files says where it came from: a link for anything found on the web, `[documents/<file>]` for anything from your files, and `[PM]` for anything you said. Claude leaves a gap rather than guess, and lists what's still unknown.
+
 ## Skills
 
 **[`/ai-product-start`](docs/ai-product-start.md)**\
@@ -54,8 +77,6 @@ You get:
 - **`vision.md`**: your product's AI vision: your product imagined at each higher level, a day with your System of Understanding, the vision you agreed, and the first step. *([example](examples/salesforce/vision.md))*
 
 All files go in your product's folder, as plain text you can open, edit and share.
-
-How the skills fit together, and what goes in your product's folder: [how ai-product works](docs/README.md).
 
 ## Example
 
