@@ -81,7 +81,7 @@ Claude asks one question at a time, like a conversation.
 ```
 acme-scheduler/
   product.md       now with your move
-  3-discovery/
+  discovery/
     protection.md    what protects your product: 24 levers, scored, with sources
     strength.md      business quality, customer strength and the AI opportunity, scored, with sources
     exposure.md      11 risks, scored, with sources

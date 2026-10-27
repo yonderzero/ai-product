@@ -36,7 +36,7 @@ At the end of every ai-product skill, and whenever a skill stops early because t
 }
 ```
 
-After `/ai-product-vision`, set `vision` (from `2-vision/`). Fill what exists; leave out the rest:
+After `/ai-product-vision`, set `vision` (from `vision/`). Fill what exists; leave out the rest:
 
 ```json
 {
@@ -55,7 +55,7 @@ After `/ai-product-vision`, set `vision` (from `2-vision/`). Fill what exists; l
 - `market`: every placed company, with the product as `"us": true`.
 - `opportunities`: the top six, in rank order.
 
-After `/ai-product-discovery`, set `discovery` (from `3-discovery/`):
+After `/ai-product-discovery`, set `discovery` (from `discovery/`):
 
 ```json
 {

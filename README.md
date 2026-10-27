@@ -53,14 +53,14 @@ acme-scheduler/          named after your product
   overview.html          a slide deck of everything so far, updated by every skill
   product.md             your product's profile, from /ai-product-start
   documents/             your files: Claude reads everything here
-  2-vision/              from /ai-product-vision
+  vision/              from /ai-product-vision
     ai-levels.md
     market-map.md
     market-map.html
     market-moves.md
     opportunities.md
     vision.md
-  3-discovery/           from /ai-product-discovery
+  discovery/           from /ai-product-discovery
     protection.md
     strength.md
     exposure.md
@@ -97,7 +97,7 @@ You get:
 - **`exposure.md`**: 11 risks, from AI disruption to ageing tech, scored with sources.
 - **`discovery.md`**: the one page: the four pillars, whether you're ready for the vision (data, tech, team, customers, pricing), your move, and three next steps.
 
-Each skill's files go in its own numbered folder inside your product's folder (`2-vision/`, `3-discovery/`), as plain text you can open, edit and share.
+Each skill's files go in a folder named after it inside your product's folder (`vision/`, `discovery/`), as plain text you can open, edit and share.
 
 ## Example
 

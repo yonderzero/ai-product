@@ -100,7 +100,7 @@ See finished ones in [the Salesforce example](../examples/salesforce/): [`ai-lev
 ```
 acme-scheduler/
   product.md          now with today's level and your target level
-  2-vision/
+  vision/
     ai-levels.md        the value your product gives at each level: features, for whom, how they pay
     market-map.md       every company on the six levels, with sources, and the openings
     market-map.html     the market as a picture: open it in a browser

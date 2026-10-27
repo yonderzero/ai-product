@@ -17,7 +17,7 @@ Write each file as soon as its step has content, and update it as you go. Mark a
 
 ## Before you start
 
-Work in the product folder: the current folder, or the folder below it that has `product.md`. This skill's files go in `2-vision/` inside it: `ai-levels.md`, `market-map.md`, `market-map.html`, `market-moves.md`, `opportunities.md` and `vision.md` mean `2-vision/<name>`. `product.md` and `documents/` stay at the top. Create `2-vision/` if it doesn't exist. If there is none, or it's empty, say in one line that the product profile comes first, ask them to run `/ai-product-start`, and stop. A partly filled `product.md` is enough to go on.
+Work in the product folder: the current folder, or the folder below it that has `product.md`. This skill's files go in `vision/` inside it: `ai-levels.md`, `market-map.md`, `market-map.html`, `market-moves.md`, `opportunities.md` and `vision.md` mean `vision/<name>`. `product.md` and `documents/` stay at the top. Create `vision/` if it doesn't exist. If there is none, or it's empty, say in one line that the product profile comes first, ask them to run `/ai-product-start`, and stop. A partly filled `product.md` is enough to go on.
 
 Read `product.md` and anything in `documents/` you haven't read yet. If files from an earlier run exist (`ai-levels.md`, `market-map.md`, `market-moves.md`, `opportunities.md`, `vision.md`), say which steps are done and which aren't (look for `Not done yet`), and ask whether to continue, redo a step, or start again. When continuing, skip the steps that are done, unless they ask to redo one. Read the files as they are now: the product manager may have edited them. Read `references/levels.md`: the six levels, the evidence each needs, and the placement rules. Apply them strictly.
 

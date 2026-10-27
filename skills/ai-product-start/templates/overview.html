@@ -182,7 +182,7 @@ html,body{height:100%}
   } else add(sc, todo("/ai-product-start"));
 
   // 4 Levels and market
-  var sl = slide("levels","Vision","Our product and our market on six levels",["2-vision/ai-levels.md","2-vision/market-map.md","2-vision/market-map.html"]);
+  var sl = slide("levels","Vision","Our product and our market on six levels",["vision/ai-levels.md","vision/market-map.md","vision/market-map.html"]);
   if(v && (v.level_today || (v.market||[]).length)){
     var st=el("div","stairs");
     LEVELS.forEach(function(nm,i){
@@ -197,14 +197,14 @@ html,body{height:100%}
   } else add(sl, todo("/ai-product-vision"));
 
   // 5 Opportunities
-  var so = slide("opportunities","Vision","Opportunities in and around the product",["2-vision/opportunities.md","2-vision/market-moves.md"]);
+  var so = slide("opportunities","Vision","Opportunities in and around the product",["vision/opportunities.md","vision/market-moves.md"]);
   if(v && (v.opportunities||[]).length){
     add(so, table(["Opportunity","Kind","Level","Priority",""], v.opportunities.map(function(o){
       var b=el("span","band "+(o.band==="Do first"?"do":o.band==="Strong option"?"strong":"watch"), o.band||""); return [o.title, o.kind||"", o.level?("L"+o.level):"", typeof o.priority==="number"?o.priority:"", b]; })));
   } else add(so, todo("/ai-product-vision"));
 
   // 6 Imagine
-  var si = slide("imagine","Vision","Imagine",["2-vision/vision.md"]);
+  var si = slide("imagine","Vision","Imagine",["vision/vision.md"]);
   if(v && ((v.imagine||[]).length || v.day)){
     var gi=el("div","grid");
     (v.imagine||[]).forEach(function(m){ var c=el("div","card"); add(c, el("div","eyebrow","Level "+m.level+" · "+(LEVELS[m.level-1]||"")), el("p",null,m.sketch), m.already_there ? el("p","muted","Already there: "+m.already_there) : null); add(gi,c); });
@@ -213,14 +213,14 @@ html,body{height:100%}
   } else add(si, todo("/ai-product-vision"));
 
   // 7 Vision
-  var sv = slide("vision","Vision","Our vision",["2-vision/vision.md"]);
+  var sv = slide("vision","Vision","Our vision",["vision/vision.md"]);
   if(v && v.statement){
     add(sv, el("p","statement",v.statement));
     if(v.first_step){ var fs=el("div","card"); add(fs, el("div","eyebrow","First step"), el("p",null,v.first_step)); add(sv,fs); }
   } else add(sv, todo("/ai-product-vision"));
 
   // 8 Pillars
-  var sx = slide("pillars","Discovery","Is it ready? The four pillars",["3-discovery/protection.md","3-discovery/strength.md","3-discovery/exposure.md"]);
+  var sx = slide("pillars","Discovery","Is it ready? The four pillars",["discovery/protection.md","discovery/strength.md","discovery/exposure.md"]);
   if(x && x.pillars){
     if(x.in_short) add(sx, el("p","lead",x.in_short));
     var pl=el("div","pillars");
@@ -233,7 +233,7 @@ html,body{height:100%}
   } else add(sx, todo("/ai-product-discovery"));
 
   // 9 Move
-  var sm = slide("move","Discovery","Our move",["3-discovery/discovery.md"]);
+  var sm = slide("move","Discovery","Our move",["discovery/discovery.md"]);
   if(x && x.move){
     var q=el("div","quad"), on=function(n){ return x.move===n ? "on" : ""; };
     add(q, el("div","ax",""), el("div","ax","Lower risk"), el("div","ax","Higher risk"),
@@ -243,7 +243,7 @@ html,body{height:100%}
   } else add(sm, todo("/ai-product-discovery"));
 
   // 10 Ready + next steps
-  var sr = slide("ready","Discovery","Ready for the vision?",["3-discovery/discovery.md"]);
+  var sr = slide("ready","Discovery","Ready for the vision?",["discovery/discovery.md"]);
   if(x && ((x.readiness||[]).length || (x.next_steps||[]).length)){
     if((x.readiness||[]).length) add(sr, table(["Area","The gap","Must be true"], x.readiness.map(function(r){ return [r.area, r.gap, r.must_be_true]; })));
     if((x.next_steps||[]).length){ var ns=el("div","card"); add(ns, el("div","eyebrow","Next steps"), list(x.next_steps,"ol")); add(sr,ns); }
