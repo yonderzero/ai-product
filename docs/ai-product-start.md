@@ -58,7 +58,7 @@ Claude asks one question at a time, like a conversation.
 
 8. **Documents check.** Claude lists what's in `documents/` and checks it for personal data (people's names, email addresses, phone numbers). If it finds any, it tells you which files to clean up. It never edits your files.
 
-9. **The deck.** Claude creates `index.html`, a slide deck of your product that every skill adds to, and opens it in the preview.
+9. **The deck.** Claude creates `index.html`, a slide deck of your product that every skill adds to after every step, and opens it in the preview. Every file you build is readable inside the deck, from its slide or from the "All files" page.
 
 10. **Done.** Claude shows the folder and sums up the product, its personas, and what's still unknown. Next: [`/ai-product-vision`](ai-product-vision.md).
 

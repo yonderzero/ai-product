@@ -48,7 +48,7 @@ You run the skills in order, in one folder:
 
 Each skill is a conversation. Claude asks one question at a time, researches the web in the background, and writes what you build together into files in your product's folder. Each skill reads what the earlier ones wrote, so run them in the same place.
 
-After each skill, Claude updates **`index.html`**: a slide deck of everything so far, from the product and its customers to the vision and your move. In Claude Desktop it opens in the preview next to the chat. A sidebar lets you jump to any section, every section links to the files it comes from, and slides you haven't reached yet say which skill fills them.
+After each skill, Claude updates **`index.html`**: a slide deck of everything so far, from the product and its customers to the vision and your move. In Claude Desktop it opens in the preview next to the chat. A sidebar lets you jump to any section, an "All files" page lists every file, every section's files open in a reader right inside the deck, and slides you haven't reached yet say which skill fills them.
 
 You don't have to finish a skill before moving on. Claude saves as you go and marks what's not done yet. As long as something is saved, you can go on to the next skill, and come back to any skill later to finish it, redo a step or update it. You can also edit the files yourself; the next skill reads your edits.
 

@@ -1,6 +1,6 @@
 # index.html: the product's deck
 
-`index.html` sits at the top of the product folder, next to `product.md`. It's the main file to open: a slide deck that grows with each skill: the product, the customers, the six levels, the opportunities, Imagine, the vision, where to take the product, the four pillars, the move, where value flows, readiness, the BHAG, the right problem, three framings, and what to learn first. A sidebar lists every section, grouped into Start, Vision, Discovery, Problem, Research, Flows and Roadmap, with a dot for done or not done, so the product manager can jump anywhere. Every section links to the files it comes from. Slides a skill hasn't reached yet say "Not done yet" and name the skill to run.
+`index.html` sits at the top of the product folder, next to `product.md`. It's the main file to open: a slide deck that grows with each skill, with every markdown file readable inside it (an "All files" page, and a reader on every slide): the product, the customers, the six levels, the opportunities, Imagine, the vision, where to take the product, the four pillars, the move, where value flows, readiness, the BHAG, the right problem, three framings, and what to learn first. A sidebar lists every section, grouped into Start, Vision, Discovery, Problem, Research, Flows and Roadmap, with a dot for done or not done, so the product manager can jump anywhere. Every section links to the files it comes from. Slides a skill hasn't reached yet say "Not done yet" and name the skill to run.
 
 The files are the source of truth. The deck only shows them.
 
@@ -13,13 +13,14 @@ If `index.html` was made from an older template (it lacks a slide this JSON has 
 ## How
 
 1. If `index.html` doesn't exist in the product folder, copy `templates/index.html` from the ai-product-start skill's folder into the product folder.
-2. Replace only the JSON inside `<script type="application/json" id="data">`. Don't change anything else in the file.
+2. Replace only the JSON inside `<script type="application/json" id="data">`. Don't change anything else by hand.
 3. Fill the JSON only from the product folder's files. Keep every text short: one or two sentences, in plain language. Leave out what isn't in the files yet.
-4. Show it:
+4. Embed the files: run `python3 <ai-product-start skill folder>/scripts/build_deck.py <product folder> --template <ai-product-start skill folder>/templates/index.html`. It copies every markdown file in the product folder (never `documents/`) into the deck, so each slide's files open in a reader inside the deck and the "All files" page lists them, and it rebuilds an older deck on the current template while keeping the data. If Python isn't available, skip this step: the deck still works, and its links open the files directly.
+5. Show it:
    - in Claude Desktop, open `index.html` in the preview so the product manager sees it next to the chat;
    - otherwise, tell them to open `index.html` in a browser.
    Say in one line what's new on it.
-5. If they want a link to share and you can publish Artifacts, publish `index.html` as an Artifact, private until they share it, and save the link in `product.md` as `- overview: <link>`. Next time, update that same Artifact instead of making a new one. The links to local files won't open from a shared link; say so.
+6. If they want a link to share and you can publish Artifacts, publish `index.html` as an Artifact, private until they share it, and save the link in `product.md` as `- overview: <link>`. Next time, update that same Artifact instead of making a new one. The links to local files won't open from a shared link; say so.
 
 ## The data
 

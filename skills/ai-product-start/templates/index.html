@@ -8,6 +8,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
 <style>
 /* Layout: a document viewer. A quiet left sidebar groups every section (Start, Vision, Discovery) with a status dot;
    one content column shows the current section; a Previous / Next up bar sits at the bottom.
@@ -180,6 +182,32 @@ td.num{font:500 13px var(--mono);font-variant-numeric:tabular-nums}
 .track i{position:absolute;top:-2.5px;width:8px;height:8px;border-radius:50%;background:var(--accent)}
 .slide.on .track i{animation:travel 3.2s linear infinite}
 @media (prefers-reduced-motion:reduce){.slide.on *{animation:none!important}}
+/* reader: the full markdown files, inside the deck */
+.reader{position:fixed;inset:0 0 0 auto;width:min(760px,94vw);z-index:40;background:var(--surface-1);border-left:1px solid var(--hairline);display:grid;grid-template-rows:auto minmax(0,1fr);transform:translateX(102%);transition:transform .22s cubic-bezier(.2,.7,.2,1);padding-right:env(safe-area-inset-right,0px)}
+.reader.open{transform:none}
+.reader-scrim{position:fixed;inset:0;z-index:35;background:rgba(0,0,0,.35)}
+.reader-top{display:flex;align-items:center;gap:10px;padding:12px 18px;border-bottom:1px solid var(--hairline);min-width:0}
+.reader-top .path{font:500 12px var(--mono);color:var(--ink-subtle);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.reader-top .sp{margin-left:auto}
+.reader-top a,.reader-top button{font:500 13px var(--sans);border:1px solid var(--hairline);background:var(--surface-2);color:var(--ink);border-radius:8px;padding:5px 10px;cursor:pointer;text-decoration:none;white-space:nowrap}
+.md{overflow:auto;padding:24px 28px 48px;font-size:14.5px;line-height:1.6;min-width:0}
+.md h1{font-size:26px;letter-spacing:-.5px;margin:0 0 14px}.md h2{font-size:19px;margin:28px 0 10px}.md h3{font-size:15.5px;margin:22px 0 8px}
+.md p,.md ul,.md ol{margin:0 0 12px}.md li{margin:3px 0}
+.md table{display:block;overflow-x:auto;border-collapse:collapse;margin:0 0 16px;font-size:13px;max-width:100%}
+.md th,.md td{border:1px solid var(--hairline);padding:6px 9px;text-align:left;vertical-align:top}
+.md th{background:var(--surface-2);font-weight:600}
+.md code{font:12.5px var(--mono);background:var(--surface-2);padding:1px 5px;border-radius:4px}
+.md pre{background:var(--surface-2);padding:12px;border-radius:8px;overflow-x:auto}.md pre code{background:none;padding:0}
+.md blockquote{margin:0 0 12px;padding:2px 14px;border-left:2px solid var(--accent);color:var(--ink-muted)}
+.md hr{border:0;border-top:1px solid var(--hairline);margin:20px 0}
+.src a.embedded{cursor:pointer}
+/* library */
+.lib{display:grid;gap:18px}
+.lib-group h3{margin-bottom:8px}
+.lib-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:baseline;padding:9px 12px;border:1px solid var(--hairline);border-radius:8px;background:var(--surface-1);margin-bottom:6px}
+.lib-row .t{font-weight:500}.lib-row .p{font:400 12px var(--mono);color:var(--ink-subtle);overflow-wrap:anywhere}
+.lib-row .acts{display:flex;gap:8px;font-size:13px;white-space:nowrap}
+.lib-row button{border:0;background:none;color:var(--accent);cursor:pointer;padding:0;font:inherit}
 .quad .on{border-color:var(--accent);background:var(--accent-soft);color:var(--accent);font-weight:600}
 footer{color:var(--ink-subtle);font-size:12px;border-top:1px solid var(--hairline);padding-top:14px}
 
@@ -215,6 +243,8 @@ footer{color:var(--ink-subtle);font-size:12px;border-top:1px solid var(--hairlin
   </div>
 </div>
 
+<div class="reader" id="reader" aria-hidden="true"><div class="reader-top"><span class="path" id="rpath"></span><span class="sp"></span><a id="ropen" href="#" target="_blank" rel="noopener">Open file</a><button type="button" id="rclose">Close</button></div><div class="md" id="rbody"></div></div>
+
 <!-- Replace only the JSON below. Any section left null shows "Not done yet". See the ai-product-start skill's references/deck.md for the fields. -->
 <script type="application/json" id="data">
 {
@@ -235,16 +265,39 @@ footer{color:var(--ink-subtle);font-size:12px;border-top:1px solid var(--hairlin
   "roadmap": null
 }
 </script>
+<!-- The files: filled by build_deck.py with the product folder's markdown files, so the deck can show them. Don't edit by hand. -->
+<script type="application/json" id="files">{"files":{},"assets":[]}</script>
 <script>
 (function(){
   var d = JSON.parse(document.getElementById("data").textContent);
+  var FL = {files:{},assets:[]}; try{ FL = JSON.parse(document.getElementById("files").textContent); }catch(e){}
+  var FILES = FL.files||{};
   var LEVELS = ["System of Record","AI Assisted","AI Directed","AI Delegated","AI Domain Intelligence","System of Understanding"];
   var app = document.getElementById("app");
   function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
   function add(p){ for(var i=1;i<arguments.length;i++){ var c=arguments[i]; if(c) p.appendChild(c); } return p; }
   function list(items, tag){ var u=el(tag||"ul"); (items||[]).forEach(function(t){ add(u, el("li",null,t)); }); return u; }
   function todo(cmd){ var t=el("div","todo"); add(t, el("strong",null,"Not done yet")); var l=el("span"); l.append("Run "); add(l, el("code",null,cmd)); l.append(" to fill this in."); add(t,l); return t; }
-  function src(files){ var s=el("div","src"); add(s, el("span",null,"Source")); files.forEach(function(f){ var a=el("a",null,f); a.href=f; add(s,a); }); return s; }
+  function titleOf(path){ var c=FILES[path]||""; var m=c.match(/^#\s+(.+)$/m); if(!m) return path; var t=m[1].trim(), nm=((d.product||{}).name||"").trim(); if(nm && t.indexOf(nm+" · ")===0) t=t.slice(nm.length+3); return t.charAt(0).toUpperCase()+t.slice(1); }
+  function inFolder(dir){ return Object.keys(FILES).filter(function(k){ return k.indexOf(dir)===0; }).sort(); }
+  function src(files){ var s=el("div","src"); add(s, el("span",null,"Read")); files.forEach(function(f){
+      var list2 = /\/$/.test(f) ? inFolder(f) : [f];
+      if(/\/$/.test(f) && !list2.length){ var a0=el("a",null,f); a0.href=f; add(s,a0); return; }
+      list2.forEach(function(g){ var a=el("a",null,g); a.href=g; if(FILES[g]!=null){ a.className="embedded"; a.onclick=function(e){ e.preventDefault(); openReader(g); }; } add(s,a); });
+    }); return s; }
+  function resolve(base, rel){ if(/^[a-z]+:/i.test(rel)||rel.charAt(0)==="#") return null; var parts=base.split("/"); parts.pop(); rel.split("/").forEach(function(x){ if(x===".."){ parts.pop(); } else if(x && x!=="."){ parts.push(x); } }); return parts.join("/"); }
+  var reader=document.getElementById("reader"), rbody=document.getElementById("rbody"), scrim=null;
+  function openReader(path){
+    var c=FILES[path]; if(c==null){ window.open(path,"_blank"); return; }
+    document.getElementById("rpath").textContent=path; document.getElementById("ropen").href=path;
+    var html=null; try{ if(window.marked){ html=marked.parse(c); if(window.DOMPurify) html=DOMPurify.sanitize(html); } }catch(e){ html=null; }
+    if(html!==null && window.DOMPurify){ rbody.innerHTML=html; } else { rbody.textContent=""; var pre=el("pre",null,c); add(rbody,pre); }
+    rbody.querySelectorAll("a[href]").forEach(function(a){ var r=resolve(path,a.getAttribute("href")); if(r!==null && FILES[r]!=null){ a.onclick=function(e){ e.preventDefault(); openReader(r); }; } else if(r!==null){ a.href=r; a.target="_blank"; } else { a.target="_blank"; a.rel="noopener"; } });
+    rbody.scrollTop=0; reader.classList.add("open"); reader.setAttribute("aria-hidden","false");
+    if(!scrim){ scrim=el("div","reader-scrim"); scrim.onclick=closeReader; document.body.appendChild(scrim); }
+  }
+  function closeReader(){ reader.classList.remove("open"); reader.setAttribute("aria-hidden","true"); if(scrim){ scrim.remove(); scrim=null; } }
+  document.getElementById("rclose").onclick=closeReader;
   function table(cols, rows){ var w=el("div","tbl"), t=el("table"), hr=el("tr"); cols.forEach(function(c){ add(hr, el("th",null,c)); }); add(t, add(el("thead"),hr)); var b=el("tbody"); rows.forEach(function(r){ var tr=el("tr"); r.forEach(function(c){ var td=el("td"); if(c && c.nodeType) add(td,c); else td.textContent=c==null?"":c; if(typeof c==="number") td.className="num"; add(tr,td); }); add(b,tr); }); add(t,b); return add(w,t); }
 
   var slides=[];
@@ -276,6 +329,24 @@ footer{color:var(--ink-subtle);font-size:12px;border-top:1px solid var(--hairlin
     var c=el("span","pill"); add(c, el("span","dot"+(s[1]===true?" done":""))); c.append(s[0] + (s[1]===true ? "" : s[1]==="part" ? " · in progress" : " · not started")); add(prog,c);
   });
   add(c0, prog);
+
+  // All files
+  var keys=Object.keys(FILES).sort(), assets=(FL.assets||[]).slice().sort();
+  var slib = slide("files","Overview","All files","All files",null, keys.length>0);
+  if(keys.length || assets.length){
+    add(slib, el("p","lead","Everything in the product's folder. Read any file here, or open it."));
+    var order=[["","Start"],["vision/","Vision"],["discovery/","Discovery"],["problem/","Problem"],["research/","Research"],["flows/","Flows"],["roadmap/","Roadmap"]], wrapL=el("div","lib");
+    order.forEach(function(o){
+      var ks=keys.filter(function(k){ return o[0]? k.indexOf(o[0])===0 : k.indexOf("/")<0; });
+      var as=assets.filter(function(k){ return o[0]? k.indexOf(o[0])===0 : k.indexOf("/")<0; });
+      if(!ks.length && !as.length) return;
+      var g=el("div","lib-group"); add(g, el("h3",null,o[1]));
+      ks.forEach(function(k){ var r=el("div","lib-row"), l=el("div"); add(l, el("div","t",titleOf(k)), el("div","p",k)); var acts=el("div","acts"), b=el("button",null,"Read"); b.type="button"; b.onclick=function(){ openReader(k); }; var a2=el("a",null,"Open"); a2.href=k; a2.target="_blank"; add(acts,b,a2); add(r,l,acts); add(g,r); });
+      as.forEach(function(k){ var r=el("div","lib-row"), l=el("div"); add(l, el("div","t",k.split("/").pop().replace(/\.html$/,"").replace(/-/g," ")), el("div","p",k)); var acts=el("div","acts"), a2=el("a",null,"Open"); a2.href=k; a2.target="_blank"; add(acts,a2); add(r,l,acts); add(g,r); });
+      add(wrapL,g);
+    });
+    add(slib, wrapL);
+  } else add(slib, todo("/ai-product-start"));
 
   // Start
   var sp = slide("product","Start","The product","The product",["product.md","documents/"], !!p.what);
@@ -594,9 +665,10 @@ footer{color:var(--ink-subtle);font-size:12px;border-top:1px solid var(--hairlin
   prev.onclick=function(){ go(cur-1); }; next.onclick=function(){ go(cur+1); };
   document.addEventListener("keydown",function(e){
     if(e.target && /INPUT|TEXTAREA/.test(e.target.tagName)) return;
+    if(reader.classList.contains("open")){ if(e.key==="Escape") closeReader(); return; }
     if(e.key==="ArrowRight"||e.key==="PageDown"){ e.preventDefault(); go(cur+1); }
     if(e.key==="ArrowLeft"||e.key==="PageUp"){ e.preventDefault(); go(cur-1); }
-    if(e.key==="Escape") closeMenu();
+    if(e.key==="Escape"){ closeMenu(); closeReader(); }
   });
   var start=slides.findIndex(function(s){ return "#"+s.id===location.hash; }); go(start<0?0:start);
 })();
