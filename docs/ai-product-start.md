@@ -52,7 +52,7 @@ Claude asks one question at a time, like a conversation.
 
 8. **Documents check.** Claude lists what's in `documents/` and checks it for personal data (people's names, email addresses, phone numbers). If it finds any, it tells you which files to clean up. It never edits your files.
 
-9. **Done.** Claude shows the folder and sums up the product, its personas, and what's still unknown.
+9. **Done.** Claude shows the folder and sums up the product, its personas, and what's still unknown. Next: [`/ai-product:ai-product-vision`](ai-product-vision.md).
 
 ## What you get
 

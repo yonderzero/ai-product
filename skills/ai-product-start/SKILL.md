@@ -99,7 +99,7 @@ Conversational, short messages, one question at a time. Never send a list of que
 
 8. **Documents check.** If `documents/` is still empty, remind them once more what to add. If it has files, list them. Then scan them for personal data (people's names, email addresses, phone numbers). If you find any, list the files and ask them to remove or redact it before personas are built. Don't change their files yourself.
 
-9. **Done.** Show the folder tree and sum up in three lines: the product, its customer personas, and what's still unknown. Say the folder is ready for the next steps, and that they can keep adding files to `documents/`.
+9. **Done.** Show the folder tree and sum up in three lines: the product, its customer personas, and what's still unknown. Say they can keep adding files to `documents/`, and that the next step is `/ai-product:ai-product-vision`.
 
 ## Done when
 
