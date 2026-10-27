@@ -1,0 +1,12 @@
+category,tickets,share,typical ticket (paraphrased; fictional)
+PM schedule wrong or overdue (meter readings out of sync),349,18%,"Telematics odometer stopped syncing; three trucks show PM overdue that were done last week"
+Parts inventory counts and receiving,291,15%,"Counts don't match the shelf after receiving; part numbers duplicated across two shops"
+Closing work orders and technician time entry,252,13%,"Techs can't close a work order from the tablet without a cause code; they pick 'Other'"
+Telematics integration and fault codes,233,12%,"Hundreds of fault codes a day; how do we filter the ones that matter?"
+Driver DVIR app,194,10%,"Driver can't submit a pre-trip with no signal; defect photo missing"
+Reports and cost-per-mile exports,175,9%,"Need cost per mile by vehicle class including outside vendor spend"
+Outside vendor invoices,136,7%,"How do we enter a 40-line dealer invoice faster?"
+User access and permissions,116,6%,"New technician can see costs; shouldn't"
+Warranty tracking,78,4%,"How do we see which parts are still under warranty when the tech replaces them?"
+Other,116,6%,"Billing, training requests, API questions"
+Total,1940,100%,"Q3 2026, all customers"

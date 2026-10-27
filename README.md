@@ -114,9 +114,12 @@ You get:
 - **`framings.md`**: the job, the pressure test, the BHAG, the job map, the biggest pains, adjacent segments, and three framings, each sized.
 - **`problem.md`**: the right problem, the opportunity it captures, what success looks like, and what you need to learn from customers before building.
 
-## Example
+## Examples
 
-See what you get, using Salesforce as the product: [the Salesforce example](examples/salesforce/). It's illustrative, built from public sources, and not affiliated with Salesforce.
+Two worked examples show every file, filled in. Open `index.html` in each first.
+
+- **[Milewright](examples/milewright/)**: a fictional fleet maintenance software company, a vertical product at level 1, like many of yours. It includes a `documents/` folder with invented interviews, tickets and sales notes, to show how your own files become evidence. Everything about Milewright is invented; the competitors and market facts are real and sourced.
+- **[Salesforce](examples/salesforce/)**: Sales Cloud and Service Cloud, a well-known product already at level 4. Illustrative, built from public sources, and not affiliated with Salesforce.
 
 ## The six levels of AI
 
