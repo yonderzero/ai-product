@@ -111,4 +111,4 @@ If files from an earlier run exist (`protection.md`, `strength.md`, `exposure.md
 - the product manager's inside view is in the scores, tagged `[PM]`;
 - at least one score was challenged, and changed or kept with the reason;
 - `value.md` shows where value flows today, where it leaks, where it would flow at the vision's target level, who else could capture it, and how we'd charge;
-- `discovery.md` has the four pillars, the readiness check for the vision, the move, where value flows today and tomorrow, and a direction the product manager confirmed: protect, grow, build first, don't, and how we'll know.
+- `discovery.md` has the four pillars, the readiness check for the vision, the move, where value flows today and tomorrow, and a direction the product manager confirmed: protect, grow, start with, don't, and how we'll know.
