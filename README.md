@@ -38,8 +38,8 @@ Restart Claude Code in the folder you want to work in, then run `/ai-product-sta
 
 You run the skills in order, in one folder:
 
-1. **`/ai-product-start`** (about 20–30 minutes): set up your product's folder, build its profile, describe your customers.
-2. **`/ai-product-vision`** (about 45–60 minutes): place your product and your market on six levels of AI, rank the opportunities, imagine the future, and agree a vision.
+1. **`/ai-product-start`**: set up your product's folder, build its profile, describe your customers.
+2. **`/ai-product-vision`**: place your product and your market on six levels of AI, rank the opportunities, imagine the future, and agree a vision.
 
 Each skill is a conversation. Claude asks one question at a time, researches the web in the background, and writes what you build together into files in your product's folder. Each skill reads what the earlier ones wrote, so run them in the same place.
 

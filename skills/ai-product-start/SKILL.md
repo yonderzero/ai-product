@@ -95,7 +95,7 @@ Conversational, short messages, one question at a time. Never send a list of que
    - the idea or direction the team already has in mind, if any;
    - who is on the team, and their roles.
 
-   Aim for 10–15 minutes. If they say "enough", stop. Update `product.md` as you go, in their words where you can, and show the final version for a last check.
+   Keep it focused. If they say "enough", stop. Update `product.md` as you go, in their words where you can, and show the final version for a last check.
 
 8. **Documents check.** If `documents/` is still empty, remind them once more what to add. If it has files, list them. Then scan them for personal data (people's names, email addresses, phone numbers). If you find any, list the files and ask them to remove or redact it before personas are built. Don't change their files yourself.
 

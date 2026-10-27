@@ -7,7 +7,6 @@
 The first skill to run. Claude checks where it's working, explains what ai-product is for, sets up a folder for your product, builds a first profile of the product from the web and your documents, and interviews you about your product and your customers.
 
 **Who runs it:** the product manager, or whoever knows the product best.
-**How long:** about 20–30 minutes, most of it conversation.
 **Run it:** once per product, in the folder where you want the product's folder to be created.
 **You leave with:** a folder for your product, with `product.md` (the profile) and `documents/` (your files).
 

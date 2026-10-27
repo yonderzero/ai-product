@@ -7,7 +7,6 @@
 The second skill, after [`ai-product-start`](ai-product-start.md). Software is moving from recording the work to doing it. Claude goes through six levels of AI with you and maps the value your product gives customers at each one today. Then it maps your market on the same levels, maps your customers' work around the product, ranks the opportunities in and around it, and works with you on a vision for where you could take your product.
 
 **Who runs it:** the product manager, ideally with the team.
-**How long:** about 45–60 minutes. The research runs in the background while you talk.
 **Run it:** in the folder where `ai-product-start` created your product's folder.
 **You leave with:** your product on six levels of AI, your market on the same levels, ranked opportunities, and a vision you've agreed to.
 
