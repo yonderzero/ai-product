@@ -39,8 +39,21 @@ Restart Claude Code in the folder you want to work in, then run `/ai-product-sta
 **[`/ai-product-start`](docs/ai-product-start.md)**\
 Sets up a folder for your product, builds a first profile from its website and your documents, and interviews you about the product and each type of customer.
 
+You get:
+- **`product.md`**: your product's profile: what it does, your customers as personas and the problems you solve for each, workflows, pricing, competitors, data and tech, and AI today. *([example](examples/salesforce/product.md))*
+- **`documents/`**: a folder for your files, such as customer interviews, tickets, sales notes and specs. Every skill reads it.
+
 **[`/ai-product-vision`](docs/ai-product-vision.md)**\
 Maps your market on six levels of AI, from System of Record to System of Understanding, finds the opportunities, and creates a vision for where you could take your product.
+
+You get:
+- **`ai-levels.md`**: the value your product gives customers at each level: features, for whom, and how they pay. *([example](examples/salesforce/ai-levels.md))*
+- **`market-map.md`** and **`market-map.html`**: your market on the six levels, with sources, and the openings. Open the `.html` in a browser to see it as a picture. *([example](examples/salesforce/market-map.md))*
+- **`market-moves.md`**: who's moving in your market, and what it opens up for you. *([example](examples/salesforce/market-moves.md))*
+- **`opportunities.md`**: your customers' work step by step, and the opportunities in and around your product, rated and ranked. *([example](examples/salesforce/opportunities.md))*
+- **`vision.md`**: your product's AI vision: your product imagined at each higher level, a day with your System of Understanding, the vision you agreed, and the first step. *([example](examples/salesforce/vision.md))*
+
+All files go in your product's folder, as plain text you can open, edit and share.
 
 How the skills fit together, and what goes in your product's folder: [how ai-product works](docs/README.md).
 
