@@ -1,0 +1,898 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Product deck</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a document viewer. A quiet left sidebar groups every section (Start, Vision, Discovery) with a status dot;
+   one content column shows the current section; a Previous / Next up bar sits at the bottom.
+   Depth comes from a ladder of surfaces and hairline borders, never shadows. One accent. */
+:root{
+  --canvas:#f7f7f8; --surface-1:#ffffff; --surface-2:#f0f1f3; --surface-3:#e8e9ec;
+  --hairline:#e3e4e8; --hairline-strong:#d2d4da;
+  --ink:#16171a; --ink-muted:#3d4048; --ink-subtle:#6b6f78; --ink-tertiary:#9a9ea6;
+  --accent:#5e6ad2; --accent-soft:#eceefb; --on-accent:#ffffff;
+  --good:#1f9d45; --risk:#d1453b; --risk-soft:#fbeceb;
+  --sans:"Geist",ui-sans-serif,-apple-system,"Segoe UI",system-ui,sans-serif;
+  --mono:"Geist Mono",ui-monospace,"SF Mono",Menlo,monospace;
+  --side:264px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --canvas:#08090a; --surface-1:#0f1011; --surface-2:#141516; --surface-3:#1b1c1e;
+  --hairline:#23252a; --hairline-strong:#34343a;
+  --ink:#f7f8f8; --ink-muted:#d0d6e0; --ink-subtle:#8a8f98; --ink-tertiary:#62666d;
+  --accent:#828fff; --accent-soft:#1c1e33; --on-accent:#0b0c1a;
+  --good:#27a644; --risk:#f07a6e; --risk-soft:#2a1715; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --canvas:#08090a; --surface-1:#0f1011; --surface-2:#141516; --surface-3:#1b1c1e;
+  --hairline:#23252a; --hairline-strong:#34343a;
+  --ink:#f7f8f8; --ink-muted:#d0d6e0; --ink-subtle:#8a8f98; --ink-tertiary:#62666d;
+  --accent:#828fff; --accent-soft:#1c1e33; --on-accent:#0b0c1a;
+  --good:#27a644; --risk:#f07a6e; --risk-soft:#2a1715; color-scheme:dark}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--canvas);color:var(--ink);font:15px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-underline-offset:2px}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:6px}
+
+/* shell */
+.shell{display:grid;grid-template-columns:var(--side) minmax(0,1fr);height:100%}
+.side{background:var(--surface-1);border-right:1px solid var(--hairline);display:flex;flex-direction:column;min-height:0;padding-block:16px;padding-left:max(12px,env(safe-area-inset-left,0px));padding-right:12px}
+.brand{display:grid;gap:2px;padding:6px 10px 14px;border-bottom:1px solid var(--hairline);margin-bottom:10px}
+.brand .kicker{font:500 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-subtle)}
+.brand .name{font-weight:600;font-size:16px;letter-spacing:-.2px;line-height:1.25;overflow-wrap:anywhere}
+.brand .sub{font-size:12px;color:var(--ink-subtle)}
+nav{overflow:auto;display:grid;gap:14px;align-content:start;padding-bottom:8px}
+.group{display:grid;gap:1px}
+.group h4{margin:0 0 4px;padding:0 10px;font:500 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-subtle);display:flex;justify-content:space-between}
+.group h4 span{color:var(--ink-tertiary)}
+.item{display:flex;align-items:center;gap:10px;width:100%;text-align:left;border:0;background:none;padding:6px 10px;border-radius:6px;font-size:14px;color:var(--ink-muted);cursor:pointer}
+.item:hover{background:var(--surface-2);color:var(--ink)}
+.item[aria-current="page"]{background:var(--surface-3);color:var(--ink);font-weight:500}
+.dot{width:7px;height:7px;border-radius:50%;flex:none;border:1.5px solid var(--ink-tertiary)}
+.dot.done{background:var(--good);border-color:var(--good)}
+.side .foot{margin-top:auto;padding:12px 10px 0;border-top:1px solid var(--hairline);font-size:12px;color:var(--ink-subtle);display:grid;gap:4px}
+.side .foot kbd{font:500 11px var(--mono);border:1px solid var(--hairline-strong);border-radius:4px;padding:0 4px}
+
+/* main */
+.main{display:grid;grid-template-rows:auto minmax(0,1fr) auto;min-height:0;min-width:0}
+.top{display:flex;align-items:center;gap:10px;height:52px;border-bottom:1px solid var(--hairline);padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));font-size:13px;color:var(--ink-subtle);min-width:0}
+.top .crumb{display:flex;gap:6px;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.top .crumb b{color:var(--ink);font-weight:500}
+.top .count{margin-left:auto;font:500 12px var(--mono);font-variant-numeric:tabular-nums}
+.menu{display:none;border:1px solid var(--hairline);background:var(--surface-1);border-radius:8px;padding:5px 10px;cursor:pointer;font-size:13px}
+.scroll{overflow:auto;min-width:0}
+.slide{max-width:960px;margin:0 auto;padding-block:40px 56px;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));display:grid;gap:24px;align-content:start;min-width:0}
+.slide>*{min-width:0}
+.slide:not(.on){display:none}
+.bottom{display:grid;grid-template-columns:1fr 1fr;gap:12px;border-top:1px solid var(--hairline);padding-block:10px;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));background:var(--surface-1)}
+.step{display:flex;align-items:center;gap:10px;border:1px solid transparent;background:none;border-radius:8px;padding:6px 10px;cursor:pointer;text-align:left;min-width:0}
+.step:hover:not(:disabled){background:var(--surface-2)}
+.step:disabled{visibility:hidden}
+.step.next{justify-content:flex-end;text-align:right}
+.step small{display:block;font:500 11px var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--ink-subtle)}
+.step span{display:block;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.step .arrow{font-size:16px;color:var(--ink-subtle)}
+
+/* content */
+h1,h2,h3{margin:0;text-wrap:balance}
+h1{font-size:clamp(34px,6vw,56px);font-weight:600;letter-spacing:-1.6px;line-height:1.08}
+h2{font-size:28px;font-weight:600;letter-spacing:-.6px;line-height:1.2}
+h3{font-size:15px;font-weight:600;letter-spacing:-.1px}
+p{margin:0;max-width:68ch}
+.eyebrow{font:500 12px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-subtle)}
+.head{display:grid;gap:8px;padding-bottom:16px;border-bottom:1px solid var(--hairline)}
+.src{font:400 12px var(--mono);color:var(--ink-subtle);display:flex;flex-wrap:wrap;gap:4px 10px}
+.src a{color:var(--ink-muted)}
+.lead{font-size:18px;line-height:1.55;color:var(--ink-muted);max-width:66ch}
+.muted{color:var(--ink-subtle)}
+.meta{display:flex;flex-wrap:wrap;gap:6px 18px;color:var(--ink-subtle)}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{display:inline-flex;align-items:center;gap:7px;border-radius:999px;padding:3px 10px;background:var(--surface-2);border:1px solid var(--hairline);font-size:12px;color:var(--ink-muted)}
+.todo{border:1px dashed var(--hairline-strong);border-radius:12px;padding:22px;color:var(--ink-subtle);display:grid;gap:6px}
+.todo code{font-family:var(--mono);color:var(--ink);background:var(--surface-2);padding:1px 6px;border-radius:4px}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.dir{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.card{background:var(--surface-1);border:1px solid var(--hairline);border-radius:12px;padding:18px;display:grid;gap:8px;align-content:start;min-width:0}
+ul,ol{margin:0;padding-left:18px} li{margin:3px 0}
+.statement{font-size:clamp(22px,3vw,28px);line-height:1.3;font-weight:500;letter-spacing:-.4px;max-width:44ch;border-left:2px solid var(--accent);padding-left:18px}
+
+/* levels */
+.stairs{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;align-items:end}
+.stair{background:var(--surface-1);border:1px solid var(--hairline);border-radius:10px;padding:10px;display:grid;gap:6px;align-content:start;min-width:0}
+.stair .n{font:500 11px var(--mono);color:var(--ink-subtle)}
+.stair .nm{font-weight:600;font-size:13px;line-height:1.25}
+.tag{display:inline-block;justify-self:start;font:500 11px/1.5 var(--mono);padding:0 8px;border-radius:10px;max-width:100%;overflow-wrap:anywhere}
+.tag.today{background:var(--surface-3);color:var(--ink)}
+.tag.target{background:var(--accent);color:var(--on-accent)}
+.chip{font-size:12px;border-radius:4px;padding:2px 6px;background:var(--surface-2);overflow-wrap:anywhere;color:var(--ink-muted)}
+.chip.us{background:var(--accent-soft);color:var(--accent);font-weight:600;box-shadow:inset 0 0 0 1px var(--accent)}
+@media (max-width:820px){.stairs{grid-template-columns:1fr}.stair{min-height:0!important}}
+
+/* tables */
+.tbl{overflow-x:auto;border:1px solid var(--hairline);border-radius:12px;background:var(--surface-1)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--hairline);vertical-align:top}
+th{font:500 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-subtle);background:var(--surface-2)}
+tr:last-child td{border-bottom:0}
+td.num{font:500 13px var(--mono);font-variant-numeric:tabular-nums}
+.band{font:500 11px var(--mono);padding:2px 8px;border-radius:999px;white-space:nowrap}
+.band.do{background:var(--accent);color:var(--on-accent)} .band.strong{background:var(--accent-soft);color:var(--accent)} .band.watch{background:var(--surface-2);color:var(--ink-subtle)}
+
+/* pillars and move */
+.pillars{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+.score{font:500 30px var(--mono);letter-spacing:-.5px;font-variant-numeric:tabular-nums}
+.score small{font-size:14px;color:var(--ink-subtle)}
+.meter{height:6px;border-radius:99px;background:var(--surface-3);overflow:hidden}
+.meter b{display:block;height:100%;background:var(--accent)}
+.meter.risk b{background:var(--risk)}
+.quad{display:grid;grid-template-columns:auto 1fr 1fr;gap:6px;max-width:560px;font-size:14px}
+.quad div{padding:16px;border-radius:10px;background:var(--surface-1);border:1px solid var(--hairline);min-width:0;color:var(--ink-subtle)}
+.quad .ax{background:none;border:0;padding:6px;font:500 11px var(--mono);color:var(--ink-subtle);text-transform:uppercase;letter-spacing:.05em;display:flex;align-items:center}
+.card.chosen{border-color:var(--accent);background:var(--accent-soft)}
+.quad .on{border-color:var(--accent);background:var(--accent-soft);color:var(--accent);font-weight:600}
+footer{color:var(--ink-subtle);font-size:12px;border-top:1px solid var(--hairline);padding-top:14px}
+
+/* phone: sidebar becomes a drawer */
+@media (max-width:860px){
+  .shell{grid-template-columns:minmax(0,1fr)}
+  .side{position:fixed;inset:0 auto 0 0;width:min(300px,86vw);z-index:20;transform:translateX(-102%);transition:transform .2s;padding-top:max(16px,env(safe-area-inset-top,0px))}
+  .shell.open .side{transform:none}
+  .shell.open::after{content:"";position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:10}
+  .menu{display:inline-flex}
+}
+@media (prefers-reduced-motion:reduce){.side{transition:none}}
+</style>
+</head>
+<body>
+<div class="shell" id="shell">
+  <aside class="side" id="side" aria-label="Sections">
+    <div class="brand"><span class="kicker">ai-product</span><span class="name" id="bname">[Product]</span><span class="sub" id="bsub"></span></div>
+    <nav id="nav"></nav>
+    <div class="foot"><span><kbd>←</kbd> <kbd>→</kbd> to move between sections</span><span id="updated"></span></div>
+  </aside>
+  <div class="main">
+    <div class="top">
+      <button type="button" class="menu" id="menu" aria-controls="side" aria-expanded="false">Sections</button>
+      <div class="crumb"><span id="cgroup"></span><span>/</span><b id="ctitle"></b></div>
+      <span class="count" id="count"></span>
+    </div>
+    <div class="scroll" id="scroll"><div id="app"></div></div>
+    <div class="bottom">
+      <button type="button" class="step" id="prev"><span class="arrow">←</span><span><small>Previous</small><span id="prevname"></span></span></button>
+      <button type="button" class="step next" id="next"><span><small>Next up</small><span id="nextname"></span></span><span class="arrow">→</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- Replace only the JSON below. Any section left null shows "Not done yet". See the ai-product-start skill's references/deck.md for the fields. -->
+<script type="application/json" id="data">
+{
+  "updated": "27 Oct 2026",
+  "product": {
+    "name": "FleetDesk",
+    "company": "FleetDesk Software (fictional), part of Halvard Software Group",
+    "industry": "Fleet maintenance software for US trucking and delivery fleets",
+    "website": "",
+    "what": "FleetDesk runs the maintenance side of trucking and delivery fleets that have their own shops: preventive maintenance, work orders, driver inspections, parts and DOT records. About 800 fleets of 50 to 500 vehicles use it.",
+    "personas": [
+      {
+        "name": "Fleet maintenance manager",
+        "who": "Runs one or more shops at a 100–500 vehicle fleet; main user, influences the buy",
+        "problems": [
+          "PM schedules that follow real miles and hours",
+          "Every work order and inspection in one place",
+          "DOT audit records in minutes"
+        ]
+      },
+      {
+        "name": "Shop technician",
+        "who": "Diesel technician in the fleet's shop; user",
+        "problems": [
+          "The job, history and parts in one work order"
+        ]
+      },
+      {
+        "name": "Parts manager",
+        "who": "Runs the parts room across shops; user",
+        "problems": [
+          "Inventory and purchasing across shops",
+          "Vendor price history"
+        ]
+      },
+      {
+        "name": "Director of fleet operations",
+        "who": "Owns the fleet and maintenance budget; the buyer",
+        "problems": [
+          "One record of every repair, including outside vendors",
+          "Driver defects that reach the shop"
+        ]
+      }
+    ]
+  },
+  "vision": {
+    "complete": true,
+    "level_today": 1,
+    "level_target": 4,
+    "target_when": "end of 2028",
+    "market": [
+      {
+        "name": "FleetDesk",
+        "level": 1,
+        "us": true
+      },
+      {
+        "name": "Fleetio",
+        "level": 4
+      },
+      {
+        "name": "ServiceUp",
+        "level": 4
+      },
+      {
+        "name": "Uptake",
+        "level": 5
+      },
+      {
+        "name": "Samsara",
+        "level": 3
+      },
+      {
+        "name": "Motive",
+        "level": 3
+      },
+      {
+        "name": "Geotab",
+        "level": 3
+      },
+      {
+        "name": "MaintainX",
+        "level": 3
+      },
+      {
+        "name": "RTA Fleet",
+        "level": 3
+      },
+      {
+        "name": "Collective Data",
+        "level": 3
+      },
+      {
+        "name": "Trimble TMT",
+        "level": 3
+      },
+      {
+        "name": "Fullbay",
+        "level": 2
+      },
+      {
+        "name": "Whip Around",
+        "level": 2
+      },
+      {
+        "name": "Cetaris",
+        "level": 1
+      },
+      {
+        "name": "Chevin FleetWave",
+        "level": 1
+      },
+      {
+        "name": "Decisiv",
+        "level": 1
+      }
+    ],
+    "opportunities": [
+      {
+        "title": "From fault code to a ready work order",
+        "kind": "Grow the base",
+        "level": 4,
+        "priority": 4.6,
+        "band": "Do first"
+      },
+      {
+        "title": "Outside invoices read and checked for you",
+        "kind": "Grow the base",
+        "level": 4,
+        "priority": 4.2,
+        "band": "Do first"
+      },
+      {
+        "title": "Technician notes from the technician's voice",
+        "kind": "Grow the base",
+        "level": 3,
+        "priority": 3.85,
+        "band": "Do first"
+      },
+      {
+        "title": "Parts ready before the truck arrives",
+        "kind": "Grow the base",
+        "level": 4,
+        "priority": 3.55,
+        "band": "Strong option"
+      },
+      {
+        "title": "Warranty money found and claimed",
+        "kind": "New revenue",
+        "level": 4,
+        "priority": 3.55,
+        "band": "Strong option"
+      },
+      {
+        "title": "\"Fleets like us\": cost-per-mile benchmarks",
+        "kind": "New revenue",
+        "level": 5,
+        "priority": 3.3,
+        "band": "Strong option"
+      }
+    ],
+    "imagine": [
+      {
+        "level": 2,
+        "sketch": "Fault Code Assist, shipped: every code explained, rated and given a repair code; work orders suggest codes and parts as the technician types. Included in Pro.",
+        "already_there": "Grammarly, Gmail Smart Compose"
+      },
+      {
+        "level": 3,
+        "sketch": "The technician speaks and FleetDesk writes complaint, cause and correction. The manager asks for next week's PM and inspection plan and gets it, ready for dispatch. A per-vehicle add-on.",
+        "already_there": "Microsoft 365 Copilot, Shopify Sidekick"
+      },
+      {
+        "level": 4,
+        "sketch": "FleetDesk triages every code overnight, drafts work orders with parts reserved and a bay booked, checks every outside invoice and files warranty claims. The manager approves a short list. Per-vehicle shop agent plus a share of warranty recovered.",
+        "already_there": "Intercom Fin, Abridge"
+      },
+      {
+        "level": 5,
+        "sketch": "FleetDesk knows how trucks fail across 800 fleets and 15 years of repairs, and warns before a part fails. The director sees cost per mile against fleets like theirs. A yearly benchmark subscription.",
+        "already_there": "Harvey, OpenEvidence"
+      },
+      {
+        "level": 6,
+        "sketch": "FleetDesk plans the shop around dispatch's week, orders parts ahead, pulls trucks in before they break and says when to replace rather than repair. Fleets pay for uptime.",
+        "already_there": "Waymo, Tempus"
+      }
+    ],
+    "day": "Rosa runs maintenance for a 240-tractor carrier in 2031. Overnight FleetDesk read 1,900 fault codes, dropped the noise and found one truck whose pattern matches water-pump failures across other fleets; it moved the PM forward, reserved the pump and swapped the load with dispatch. She never reads a fault-code list or types an invoice again. Her one decision of the morning is a dealer quote: pay more to have the truck back today. She spends the afternoon coaching her two newest technicians.",
+    "statement": "By the end of 2028, FleetDesk does the paperwork of the shop. Every fault code, driver defect and outside invoice becomes ready work: a drafted work order with the cause, the parts reserved and a slot booked. The maintenance manager approves instead of types.",
+    "first_step": "Pilot fault code to ready work order with 10 of the 46 beta customers: record approvals, edits and what technicians actually found, and test two prices."
+  },
+  "discovery": {
+    "complete": true,
+    "in_short": "Strong inside the fleet's own shop: deeply vertical and embedded, with loyal larger customers. Exposed because telematics vendors and Fleetio shipped maintenance AI this year and supply the data our AI depends on. Move first: protect the shop's work for 150–500 vehicle fleets and go fast on turning codes, invoices and notes into ready work.",
+    "pillars": {
+      "protection": 2.7,
+      "strength": 3.58,
+      "ai_opportunity": 3.67,
+      "exposure": 3.0
+    },
+    "urgency": "immediate: Motive, Fleetio and Samsara shipped AI in this exact workflow in 2026, and Motive is already winning our customers.",
+    "move": "Move first",
+    "move_why": "AI opportunity 3.67 is clearly above the line; risk 3.0 sits on it. The product manager reads it as exposed: Motive's agents just shipped and 37 renewals face a bundled offer.",
+    "direction": {
+      "protect": "The shop's own work for fleets of 150–500 vehicles: multi-shop parts, DOT records and edge cases, where churn is 4%.",
+      "grow": [
+        "From fault code to a ready work order: keeps customers bundles target, then a per-vehicle shop agent",
+        "Outside invoices read and checked: the buyer's savings on outside repairs",
+        "Warranty money found and claimed: a share of money recovered"
+      ],
+      "start_with": "The problem that every morning managers read hundreds of fault codes by hand to find the few trucks that need work. First learn how many codes become work, what they check, what technicians found, and what they'd need to trust a draft.",
+      "dont": "Benchmarks before data rights and good notes; chasing fleets under 75 vehicles on price; rebuilding the monolith first.",
+      "signals": [
+        "Share of drafted work orders approved without edits",
+        "Renewals among the 37 customers with a bundled offer",
+        "Beta customers willing to pay for the shop agent"
+      ]
+    },
+    "value_flows": [
+      {
+        "flow": "Who gets value",
+        "today": "The fleet gets a well-kept record; people still do the work around it",
+        "tomorrow": "Managers get ready work orders; buyers get overcharges caught and warranty back"
+      },
+      {
+        "flow": "Who pays, and for what",
+        "today": "The buyer, $8–$13 per vehicle per month, trailers $3",
+        "tomorrow": "Per vehicle for the record and shop agent, plus a share of warranty recovered"
+      },
+      {
+        "flow": "Where value leaks",
+        "today": "Manual triage, notes, invoices, missed warranty, Excel reports; telematics bundles",
+        "tomorrow": "Telematics vendors and general assistants doing the work on our records"
+      },
+      {
+        "flow": "Who else could capture it",
+        "today": "Motive, Samsara, Fleetio",
+        "tomorrow": "Motive and Samsara agents; Fleetio; ChatGPT, Claude and Copilot via connectors"
+      },
+      {
+        "flow": "What keeps it with us",
+        "today": "Parts depth, DOT records, people who know shops",
+        "tomorrow": "The shop's workflow, data from all telematics providers, trust in the DOT record"
+      }
+    ],
+    "value_shift": "Paying per vehicle for a record people type into → paying for trucks back on the road sooner and money recovered.",
+    "readiness": [
+      {
+        "area": "Data",
+        "gap": "Technicians' notes rarely say what they found; 30% on older contracts; telematics feeds belong to rivals",
+        "must_be_true": "We capture what each code led to, and data terms allow AI use"
+      },
+      {
+        "area": "Tech",
+        "gap": "The monolith and meter sync, the top support issue",
+        "must_be_true": "Drafting runs as a service beside the monolith, with reliable meter data"
+      },
+      {
+        "area": "Team",
+        "gap": "No one experienced in shipping AI agents or measuring accuracy",
+        "must_be_true": "One person owns AI quality and evaluation"
+      },
+      {
+        "area": "Customers",
+        "gap": "Unknown how often managers would approve a draft unchanged",
+        "must_be_true": "Managers approve drafts without rework most of the time"
+      },
+      {
+        "area": "Pricing",
+        "gap": "No AI price tested; Fleetio sells at $4–$10 per vehicle",
+        "must_be_true": "Buyers pay for the shop agent, or renew because of it"
+      }
+    ]
+  },
+  "problem": {
+    "complete": true,
+    "bhag": "By 2031, every truck in a FleetDesk fleet is ready when dispatch needs it: road calls halved against 2026, and no one reads a fault code by hand.",
+    "bhag_why": "Customers want trucks ready, not codes read; road calls are what managers are measured on.",
+    "statement": "When a truck signals it needs work, the maintenance manager wants to know which trucks need work today and have each job ready, with parts and a slot that fits dispatch, so they can keep every truck on the road when dispatch needs it.",
+    "framing": "The bigger job",
+    "levels": "1 → 4",
+    "evidence": "Good",
+    "switching": "Push and pull beat anxiety and habit for fleets with a telematics feed; the anxiety to lower is missing the one code that matters.",
+    "framings": [
+      {
+        "name": "As stated",
+        "level": 4,
+        "problem": "Managers read hundreds of fault codes by hand each morning, then type the work orders.",
+        "size": "$143,000–$286,000 a year kept",
+        "chosen": false
+      },
+      {
+        "name": "The bigger job",
+        "level": 4,
+        "problem": "Getting every truck that needs work from the first signal back on the road: chosen, parted, slotted, repaired, recorded.",
+        "size": "$524,000–$1,047,000 a year new",
+        "chosen": true
+      },
+      {
+        "name": "The moonshot",
+        "level": 6,
+        "problem": "Every truck ready when dispatch needs it; road calls halved; nobody reads a fault code by hand.",
+        "size": "Not sized",
+        "chosen": false
+      }
+    ],
+    "opportunity": "Existing customers with their own shops get fewer road calls and no hand triage, and stay rather than move to a bundle. Independent repair shops serving our fleets could follow. $524,000–$1,047,000 a year new, plus $143,000–$286,000 kept.",
+    "learn": [
+      {
+        "assumption": "Managers will let something else decide which trucks need work",
+        "ask": "Tell me about the last time a code you didn't act on turned into a breakdown."
+      },
+      {
+        "assumption": "What technicians find can be captured on every job",
+        "ask": "Walk me through the last work order you closed. What did you write, and why?"
+      },
+      {
+        "assumption": "The real cost is downtime, and the buyer can see it",
+        "ask": "How did you work out what the last truck that didn't roll cost you?"
+      },
+      {
+        "assumption": "Parts and bays, not just codes, are where trucks wait",
+        "ask": "Think of the last truck that sat waiting. What was it waiting for?"
+      },
+      {
+        "assumption": "The problem is as sharp at other 150–500 vehicle fleets",
+        "ask": "How many codes did you see yesterday, and how many became work?"
+      }
+    ]
+  },
+  "research": {
+    "complete": true,
+    "icp": "A regional carrier or distributor with 150–500 vehicles, its own shop, a telematics feed into FleetDesk, and a bundled offer at the next renewal.",
+    "personas": [
+      {
+        "name": "Glen",
+        "role": "Buyer · director of fleet operations",
+        "sees": "We know the PM is due. Why am I waiting on filters?",
+        "today": "Calls the shop, swaps trucks, rebuilds cost per mile in Excel.",
+        "wont": "Another login or dashboard."
+      },
+      {
+        "name": "Rosa",
+        "role": "User · maintenance manager",
+        "sees": "Two of them will break down tonight, and I can't tell which two.",
+        "today": "Her lead tech reads every code; she plans on a whiteboard.",
+        "wont": "Another dashboard."
+      },
+      {
+        "name": "Dwayne",
+        "role": "Sceptic · lead technician",
+        "sees": "Reading codes isn't the job. Fixing trucks is.",
+        "today": "Reads codes from experience, then closes jobs with \"replaced\".",
+        "wont": "A machine's call with his name on it."
+      },
+      {
+        "name": "Tess",
+        "role": "Adjacent · independent repair shop owner",
+        "sees": "A truck shows up with a code and a phone number, then waits for approval.",
+        "today": "Re-enters fleet jobs and phones for approvals.",
+        "wont": "A fleet's system setting her prices."
+      }
+    ],
+    "options": [
+      {
+        "option": "Do nothing",
+        "who": "Fleets without a lead tech free",
+        "good": "No change",
+        "bad": "The codes that matter get lost"
+      },
+      {
+        "option": "Whiteboards, spreadsheets, paper",
+        "who": "Most shops, next to their system",
+        "good": "Flexible, understood",
+        "bad": "Out of date by noon, retyped"
+      },
+      {
+        "option": "FleetDesk today",
+        "who": "812 fleets",
+        "good": "PM by real miles, parts, audit file",
+        "bad": "A person reads every code and chases parts"
+      },
+      {
+        "option": "Fleetio",
+        "who": "Smaller and mid-size fleets",
+        "good": "Easy; approves low-risk repairs by rule",
+        "bad": "Lighter in-house shop and parts depth"
+      },
+      {
+        "option": "Samsara, Motive bundles",
+        "who": "Fleets on their telematics",
+        "good": "Own the codes; one bill; codes to work orders",
+        "bad": "See only their own trucks; shop depth new"
+      },
+      {
+        "option": "Whip Around",
+        "who": "Smaller fleets",
+        "good": "Driver inspections",
+        "bad": "No triage, little shop depth"
+      },
+      {
+        "option": "Dealers, outside shops, ServiceUp",
+        "who": "Fleets short of bays or technicians",
+        "good": "No shop to run",
+        "bad": "Waiting for bays; invoices to check"
+      }
+    ],
+    "gap": "Taking a signal all the way to a ready job in the fleet's own shop: the right trucks, the parts in, a slot that survives dispatch, and what the technician found.",
+    "economics": {
+      "currency": "$",
+      "today": {
+        "licence": 31200,
+        "labour": 132800
+      },
+      "agents": {
+        "licence": 31200,
+        "agents": 19200,
+        "labour": 30900
+      },
+      "labour_x": 4.3,
+      "revenue_x": 1.6,
+      "note": "For a typical customer of 200 vehicles on Pro; agents at $8 per vehicle a month. Working in experiences.md."
+    },
+    "experiences": [
+      {
+        "name": "The morning shortlist",
+        "persona": "Rosa",
+        "levels": "2 → 4",
+        "today": "The lead tech reads every code; Rosa decides on a whiteboard.",
+        "agent": "The agent ranks every truck and drafts the work orders; Rosa approves, the lead tech can veto.",
+        "first": true
+      },
+      {
+        "name": "Parts on the bench before the truck",
+        "persona": "Parts manager, Glen",
+        "levels": "1 → 4",
+        "today": "Parts checked and ordered by hand; trucks wait for filters.",
+        "agent": "The agent reserves stock and drafts orders; the parts manager approves above a limit.",
+        "first": false
+      },
+      {
+        "name": "A slot that survives dispatch",
+        "persona": "Rosa",
+        "levels": "1 → 3",
+        "today": "Missed PMs are found when overdue.",
+        "agent": "The agent rebooks and replans, and asks dispatch; Rosa reviews changes.",
+        "first": false
+      },
+      {
+        "name": "Say it, sign it",
+        "persona": "Dwayne, technicians",
+        "levels": "1 → 3",
+        "today": "Techs type notes or write \"replaced\".",
+        "agent": "The tech speaks; the agent writes cause and correction; the tech signs.",
+        "first": false
+      },
+      {
+        "name": "Overflow to a trusted shop",
+        "persona": "Tess, Rosa",
+        "levels": "1 → 4",
+        "today": "Rosa phones shops; Tess re-enters the job.",
+        "agent": "The agent sends a complete, pre-approved job; people approve above the limit.",
+        "first": false
+      }
+    ],
+    "panel": "The bigger job hurts most (pain 3.75 of 5) and is the only one the buyer would pay for. Users feel the code list; the buyer feels the parts wait. Nobody says yes to $8 a vehicle before a pilot on their own trucks.",
+    "objection": "When the agent picks my jobs and it's wrong, I'm the one who gets blamed."
+  }
+}
+</script>
+<script>
+(function(){
+  var d = JSON.parse(document.getElementById("data").textContent);
+  var LEVELS = ["System of Record","AI Assisted","AI Directed","AI Delegated","AI Domain Intelligence","System of Understanding"];
+  var app = document.getElementById("app");
+  function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
+  function add(p){ for(var i=1;i<arguments.length;i++){ var c=arguments[i]; if(c) p.appendChild(c); } return p; }
+  function list(items, tag){ var u=el(tag||"ul"); (items||[]).forEach(function(t){ add(u, el("li",null,t)); }); return u; }
+  function todo(cmd){ var t=el("div","todo"); add(t, el("strong",null,"Not done yet")); var l=el("span"); l.append("Run "); add(l, el("code",null,cmd)); l.append(" to fill this in."); add(t,l); return t; }
+  function src(files){ var s=el("div","src"); add(s, el("span",null,"Source")); files.forEach(function(f){ var a=el("a",null,f); a.href=f; add(s,a); }); return s; }
+  function table(cols, rows){ var w=el("div","tbl"), t=el("table"), hr=el("tr"); cols.forEach(function(c){ add(hr, el("th",null,c)); }); add(t, add(el("thead"),hr)); var b=el("tbody"); rows.forEach(function(r){ var tr=el("tr"); r.forEach(function(c){ var td=el("td"); if(c && c.nodeType) add(td,c); else td.textContent=c==null?"":c; if(typeof c==="number") td.className="num"; add(tr,td); }); add(b,tr); }); add(t,b); return add(w,t); }
+
+  var slides=[];
+  function slide(id, group, label, title, files, done){
+    var s=el("section","slide"); s.id=id; s.dataset.group=group; s.dataset.label=label; s.dataset.done=done?"1":"";
+    var h=el("div","head"); add(h, el("div","eyebrow",group), el("h2",null,title)); if(files) add(h, src(files)); add(s,h);
+    slides.push(s); add(app,s); return s;
+  }
+
+  var p = d.product || {}, v = d.vision, x = d.discovery;
+  var name = p.name || "[Product]";
+  document.title = name;
+  document.getElementById("bname").textContent = name;
+  document.getElementById("bsub").textContent = [p.company, p.industry].filter(Boolean).join(" · ");
+  if(d.updated) document.getElementById("updated").textContent = "Updated " + d.updated;
+
+  // Cover
+  var c0 = slide("cover","Overview","Cover",name,null,true);
+  c0.removeChild(c0.firstChild);
+  var hd=el("div","head"); add(hd, el("div","eyebrow","ai-product"), el("h1",null,name));
+  var meta = el("div","meta");
+  [p.company, p.industry].forEach(function(t){ if(t) add(meta, el("span",null,t)); });
+  if(p.website){ var a=el("a",null,p.website.replace(/^https?:\/\//,"")); a.href=p.website; a.target="_blank"; a.rel="noopener"; add(meta,a); }
+  add(hd, meta); add(c0, hd);
+  if(v && v.statement) add(c0, el("p","statement",v.statement));
+  else if(p.what) add(c0, el("p","lead",p.what));
+  var prog = el("div","pills");
+  [["Start", !!p.what], ["Vision", v ? (v.complete ? true : "part") : false], ["Discovery", x ? (x.complete ? true : "part") : false], ["Problem", d.problem ? (d.problem.complete ? true : "part") : false], ["Research", d.research ? (d.research.complete ? true : "part") : false]].forEach(function(s){
+    var c=el("span","pill"); add(c, el("span","dot"+(s[1]===true?" done":""))); c.append(s[0] + (s[1]===true ? "" : s[1]==="part" ? " · in progress" : " · not started")); add(prog,c);
+  });
+  add(c0, prog);
+
+  // Start
+  var sp = slide("product","Start","The product","The product",["product.md","documents/"], !!p.what);
+  if(p.what){ add(sp, el("p","lead",p.what)); } else { add(sp, todo("/ai-product-start")); }
+
+  var hasP=(p.personas||[]).length>0;
+  var sc = slide("customers","Start","Customers","Our customers",["product.md"], hasP);
+  if(hasP){
+    var g=el("div","grid");
+    p.personas.forEach(function(r){ var c=el("div","card"); add(c, el("h3",null,r.name), r.who ? el("p","muted",r.who) : null, r.problems && r.problems.length ? add(el("div"), el("div","eyebrow","Problems we solve"), list(r.problems)) : null); add(g,c); });
+    add(sc,g);
+  } else add(sc, todo("/ai-product-start"));
+
+  // Vision
+  var hasL = !!(v && (v.level_today || (v.market||[]).length));
+  var sl = slide("levels","Vision","Six levels","Our product and our market on six levels",["vision/ai-levels.md","vision/market-map.md","vision/market-map.html"], hasL);
+  if(hasL){
+    var st=el("div","stairs");
+    LEVELS.forEach(function(nm,i){
+      var n=i+1, c=el("div","stair"); c.style.minHeight=(96+i*28)+"px";
+      add(c, el("span","n","Level "+n), el("span","nm",nm));
+      if(v.level_today===n) add(c, el("span","tag today","Today"));
+      if(v.level_target===n) add(c, el("span","tag target","Target"+(v.target_when?" · "+v.target_when:"")));
+      (v.market||[]).filter(function(m){ return m.level===n; }).forEach(function(m){ add(c, el("span","chip"+(m.us?" us":""), m.name)); });
+      add(st,c);
+    });
+    add(sl, el("p","muted","Each company sits at the highest level it has shipped and customers use."), st);
+  } else add(sl, todo("/ai-product-vision"));
+
+  var hasO = !!(v && (v.opportunities||[]).length);
+  var so = slide("opportunities","Vision","Opportunities","Opportunities in and around the product",["vision/opportunities.md","vision/market-moves.md"], hasO);
+  if(hasO){
+    add(so, table(["Opportunity","Kind","Level","Priority",""], v.opportunities.map(function(o){
+      var b=el("span","band "+(o.band==="Do first"?"do":o.band==="Strong option"?"strong":"watch"), o.band||""); return [o.title, o.kind||"", o.level?("L"+o.level):"", typeof o.priority==="number"?o.priority:"", b]; })));
+  } else add(so, todo("/ai-product-vision"));
+
+  var hasI = !!(v && ((v.imagine||[]).length || v.day));
+  var si = slide("imagine","Vision","Imagine","Imagine",["vision/vision.md"], hasI);
+  if(hasI){
+    var gi=el("div","grid");
+    (v.imagine||[]).forEach(function(m){ var c=el("div","card"); add(c, el("div","eyebrow","Level "+m.level+" · "+(LEVELS[m.level-1]||"")), el("p",null,m.sketch), m.already_there ? el("p","muted","Already there: "+m.already_there) : null); add(gi,c); });
+    add(si, gi);
+    if(v.day){ var dc=el("div","card"); add(dc, el("div","eyebrow","A day with our System of Understanding"), el("p",null,v.day)); add(si,dc); }
+  } else add(si, todo("/ai-product-vision"));
+
+  var hasV = !!(v && v.statement);
+  var sv = slide("vision","Vision","Our vision","Our vision",["vision/vision.md"], hasV);
+  if(hasV){
+    add(sv, el("p","statement",v.statement));
+    if(v.first_step){ var fs=el("div","card"); add(fs, el("div","eyebrow","First step"), el("p",null,v.first_step)); add(sv,fs); }
+  } else add(sv, todo("/ai-product-vision"));
+
+  // Discovery
+  var hasD = !!(x && x.direction);
+  var sdir = slide("direction","Discovery","Where to take it","Where to take the product",["discovery/discovery.md"], hasD);
+  if(hasD){
+    if(x.in_short) add(sdir, el("p","lead",x.in_short));
+    var dr=x.direction, gd=el("div","grid dir");
+    [["Protect",dr.protect],["Grow",dr.grow],["Start with",dr.start_with],["Don't",dr.dont],["How we'll know",dr.signals]].forEach(function(k){
+      if(!k[1] || (Array.isArray(k[1]) && !k[1].length)) return;
+      var c=el("div","card"); add(c, el("div","eyebrow",k[0]), Array.isArray(k[1]) ? list(k[1]) : el("p",null,k[1])); add(gd,c);
+    });
+    add(sdir, gd);
+  } else add(sdir, todo("/ai-product-discovery"));
+
+  var hasX = !!(x && x.pillars);
+  var sx = slide("pillars","Discovery","Four pillars","Is it ready? The four pillars",["discovery/protection.md","discovery/strength.md","discovery/exposure.md"], hasX);
+  if(hasX){
+    var pl=el("div","pillars");
+    [["Protection","protection",false],["Strength","strength",false],["AI opportunity","ai_opportunity",false],["Exposure","exposure",true]].forEach(function(k){
+      var s=x.pillars[k[1]]; if(s==null) return;
+      var c=el("div","card"), m=el("div","meter"+(k[2]?" risk":"")), b=el("b"); b.style.width=(Math.max(0,Math.min(5,s))/5*100)+"%"; add(m,b);
+      var sc2=el("span","score",Number(s).toFixed(2)); add(sc2, el("small",null," / 5"));
+      add(c, el("div","eyebrow",k[0]), sc2, m, el("span","muted", k[2] ? "1 safest, 5 most exposed" : "higher is stronger")); add(pl,c);
+    });
+    add(sx, pl);
+    if(x.urgency) add(sx, el("p","muted","AI urgency: "+x.urgency));
+  } else add(sx, todo("/ai-product-discovery"));
+
+  var hasM = !!(x && x.move);
+  var sm = slide("move","Discovery","Our move","Our move",["discovery/discovery.md"], hasM);
+  if(hasM){
+    var q=el("div","quad"), on=function(n){ return x.move===n ? "on" : ""; };
+    add(q, el("div","ax",""), el("div","ax","Lower risk"), el("div","ax","Higher risk"),
+      el("div","ax","Higher AI opportunity"), el("div",on("Build on it"),"Build on it"), el("div",on("Move first"),"Move first"),
+      el("div","ax","Lower AI opportunity"), el("div",on("Optimise"),"Optimise"), el("div",on("Defend"),"Defend"));
+    add(sm, el("h3",null,x.move), x.move_why ? el("p","lead",x.move_why) : null, q);
+  } else add(sm, todo("/ai-product-discovery"));
+
+  var hasF = !!(x && (x.value_flows||[]).length);
+  var sf = slide("value","Discovery","Value flows","Where value flows",["discovery/value.md"], hasF);
+  if(hasF){
+    if(x.value_shift) add(sf, el("p","statement",x.value_shift));
+    add(sf, table(["","Today","Tomorrow"], x.value_flows.map(function(r){ return [r.flow, r.today, r.tomorrow]; })));
+  } else add(sf, todo("/ai-product-discovery"));
+
+  var hasR = !!(x && (x.readiness||[]).length);
+  var sr = slide("ready","Discovery","Ready?","Ready for the vision?",["discovery/discovery.md"], hasR);
+  if(hasR){
+    add(sr, table(["Area","The gap","Must be true"], x.readiness.map(function(r){ return [r.area, r.gap, r.must_be_true]; })));
+  } else add(sr, todo("/ai-product-discovery"));
+
+  // Problem
+  var pr = d.problem;
+  var hasB = !!(pr && pr.bhag);
+  var sb = slide("bhag","Problem","BHAG","Our BHAG",["problem/problem.md"], hasB);
+  if(hasB){ add(sb, el("p","statement",pr.bhag)); if(pr.bhag_why) add(sb, el("p","lead",pr.bhag_why)); }
+  else add(sb, todo("/ai-product-problem"));
+
+  var hasPr = !!(pr && pr.statement);
+  var spr = slide("problem","Problem","The right problem","The right problem",["problem/problem.md","problem/evidence.md"], hasPr);
+  if(hasPr){
+    add(spr, el("p","statement",pr.statement));
+    var pm=el("div","pills");
+    [pr.framing ? "Framing: "+pr.framing : null, pr.levels ? "Level "+pr.levels : null, pr.evidence ? "Evidence: "+pr.evidence : null].forEach(function(t){ if(t) add(pm, el("span","pill",t)); });
+    add(spr, pm);
+    if(pr.switching) add(spr, el("p","muted","Will they switch? "+pr.switching));
+  } else add(spr, todo("/ai-product-problem"));
+
+  var hasFr = !!(pr && (pr.framings||[]).length);
+  var sfr = slide("framings","Problem","Three framings","Three framings",["problem/framings.md"], hasFr);
+  if(hasFr){
+    var gf=el("div","grid");
+    pr.framings.forEach(function(f){ var c=el("div","card"+(f.chosen?" chosen":"")); add(c, el("div","eyebrow",(f.name||"")+(f.level?" · L"+f.level:"")+(f.chosen?" · chosen":"")), el("p",null,f.problem), f.size ? el("p","muted","Size: "+f.size) : null); add(gf,c); });
+    add(sfr, gf);
+  } else add(sfr, todo("/ai-product-problem"));
+
+  var hasOp = !!(pr && (pr.opportunity || (pr.learn||[]).length));
+  var sop = slide("learn","Problem","Opportunity","The opportunity, and what to learn first",["problem/problem.md"], hasOp);
+  if(hasOp){
+    if(pr.opportunity) add(sop, el("p","lead",pr.opportunity));
+    if((pr.learn||[]).length){ add(sop, el("h3",null,"What we need to learn before building")); add(sop, table(["Assumption","Ask customers"], pr.learn.map(function(r){ return [r.assumption, r.ask]; }))); }
+  } else add(sop, todo("/ai-product-problem"));
+
+
+  // Research
+  var rs = d.research;
+  var hasPe = !!(rs && (rs.personas||[]).length);
+  var spe = slide("personas","Research","Personas","Who has the problem",["research/personas/","research/icp.md"], hasPe);
+  if(hasPe){
+    if(rs.icp) add(spe, el("p","lead","Ideal customer: "+rs.icp));
+    var gp=el("div","grid");
+    rs.personas.forEach(function(r){ var c=el("div","card"); add(c, el("div","eyebrow",r.role||""), el("h3",null,r.name), r.sees ? el("p",null,"\u201c"+r.sees+"\u201d") : null, r.today ? el("p","muted","Today: "+r.today) : null, r.wont ? el("p","muted","Won't tolerate: "+r.wont) : null); add(gp,c); });
+    add(spe, gp);
+  } else add(spe, todo("/ai-product-research"));
+
+  var hasOt = !!(rs && (rs.options||[]).length);
+  var sot = slide("options","Research","Options today","What customers do today",["research/market.md"], hasOt);
+  if(hasOt){
+    add(sot, table(["Option","Who uses it","Good at","Bad at"], rs.options.map(function(o){ return [o.option, o.who, o.good, o.bad]; })));
+    if(rs.gap) add(sot, el("p","statement","What no option does well: "+rs.gap));
+  } else add(sot, todo("/ai-product-research"));
+
+  var hasEx = !!(rs && (rs.experiences||[]).length);
+  var sex = slide("experiences","Research","Agentic experiences","Agentic customer experiences",["research/experiences.md"], hasEx);
+  if(hasEx){
+    var ge=el("div","grid");
+    rs.experiences.forEach(function(x2){ var c=el("div","card"+(x2.first?" chosen":"")); add(c, el("div","eyebrow",(x2.persona||"")+(x2.levels?" · L"+x2.levels:"")+(x2.first?" · explore first":"")), el("h3",null,x2.name), x2.today ? el("p","muted","Today: "+x2.today) : null, x2.agent ? el("p",null,"With agents: "+x2.agent) : null); add(ge,c); });
+    add(sex, ge);
+  } else add(sex, todo("/ai-product-research"));
+
+  var hasPn = !!(rs && (rs.panel||rs.objection));
+  var spn = slide("panel","Research","Panel verdict","What the panel said",["research/panel.md"], hasPn);
+  if(hasPn){
+    if(rs.panel) add(spn, el("p","lead",rs.panel));
+    if(rs.objection){ var ob=el("div","card"); add(ob, el("div","eyebrow","Best objection"), el("p",null,rs.objection)); add(spn,ob); }
+    add(spn, el("p","muted","Synthetic panel: hypotheses, not evidence. Confirm with a real customer."));
+  } else add(spn, todo("/ai-product-research"));
+
+  add(slides[slides.length-1], el("footer",null,"Built from the files in the product's folder"+(d.updated?" on "+d.updated:"")+". The files are the source; this deck shows them."));
+
+  // sidebar
+  var nav=document.getElementById("nav"), groups={}, items=[];
+  slides.forEach(function(s,i){
+    var g=s.dataset.group;
+    if(!groups[g]){ var gr=el("div","group"), h=el("h4"); h.append(g); add(gr,h); groups[g]={el:gr,h:h,n:0,done:0}; add(nav,gr); }
+    var it=el("button","item"); it.type="button"; add(it, el("span","dot"+(s.dataset.done?" done":"")), el("span",null,s.dataset.label));
+    it.onclick=function(){ go(i); closeMenu(); }; add(groups[g].el,it); items.push(it);
+    groups[g].n++; if(s.dataset.done) groups[g].done++;
+  });
+  Object.keys(groups).forEach(function(k){ if(k!=="Overview") add(groups[k].h, el("span",null,groups[k].done+"/"+groups[k].n)); });
+
+  // navigation
+  var shell=document.getElementById("shell"), menu=document.getElementById("menu"), scroll=document.getElementById("scroll"), cur=0;
+  var prev=document.getElementById("prev"), next=document.getElementById("next");
+  function go(i){
+    cur=Math.max(0,Math.min(slides.length-1,i));
+    slides.forEach(function(s,k){ s.classList.toggle("on",k===cur); if(k===cur) items[k].setAttribute("aria-current","page"); else items[k].removeAttribute("aria-current"); });
+    var s=slides[cur];
+    document.getElementById("cgroup").textContent=s.dataset.group;
+    document.getElementById("ctitle").textContent=s.dataset.label;
+    document.getElementById("count").textContent=(cur+1)+" / "+slides.length;
+    prev.disabled=cur===0; next.disabled=cur===slides.length-1;
+    document.getElementById("prevname").textContent=cur>0?slides[cur-1].dataset.label:"";
+    document.getElementById("nextname").textContent=cur<slides.length-1?slides[cur+1].dataset.label:"";
+    try{ history.replaceState(null,"","#"+s.id); }catch(e){}
+    scroll.scrollTop=0;
+  }
+  function closeMenu(){ shell.classList.remove("open"); menu.setAttribute("aria-expanded","false"); }
+  menu.onclick=function(){ var o=shell.classList.toggle("open"); menu.setAttribute("aria-expanded",o?"true":"false"); };
+  shell.addEventListener("click",function(e){ if(shell.classList.contains("open") && e.target===shell) closeMenu(); });
+  prev.onclick=function(){ go(cur-1); }; next.onclick=function(){ go(cur+1); };
+  document.addEventListener("keydown",function(e){
+    if(e.target && /INPUT|TEXTAREA/.test(e.target.tagName)) return;
+    if(e.key==="ArrowRight"||e.key==="PageDown"){ e.preventDefault(); go(cur+1); }
+    if(e.key==="ArrowLeft"||e.key==="PageUp"){ e.preventDefault(); go(cur-1); }
+    if(e.key==="Escape") closeMenu();
+  });
+  var start=slides.findIndex(function(s){ return "#"+s.id===location.hash; }); go(start<0?0:start);
+})();
+</script>
+</body>
+</html>

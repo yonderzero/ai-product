@@ -23,6 +23,7 @@ Both now ship with AI agents under the Agentforce name. They qualify leads, answ
 
 ## Customers
 
+- ideal customer and personas: a mid-market B2B software company with about 25 account executives on Sales Cloud; personas Priya (VP of sales, buyer), Marcus (account executive, user), Elena (revenue operations, sceptic) and Sam (financial advisor, adjacent). See `research/`. `[PM, illustrative]`
 - customer types: B2B and B2C companies that sell through a sales team and support customers through a service team. They range from small businesses on the Starter and Pro plans to large enterprises on Core, Advanced and Max. [https://www.salesforce.com/sales/pricing/]
 - named customers in recent stories include Engine (travel booking), 1-800Accountant, OpenTable, Datasite, Formula 1 and Texas DPS. [https://www.salesforce.com/customer-stories/engine/agentic-service/] [https://www.salesforce.com/news/stories/agentforce-customer-success-stories/] [https://www.salesforce.com/service/]
 

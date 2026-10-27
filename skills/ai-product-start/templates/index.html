@@ -99,6 +99,7 @@ p{margin:0;max-width:68ch}
 .todo code{font-family:var(--mono);color:var(--ink);background:var(--surface-2);padding:1px 6px;border-radius:4px}
 .grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
 .dir{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.hz{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
 .card{background:var(--surface-1);border:1px solid var(--hairline);border-radius:12px;padding:18px;display:grid;gap:8px;align-content:start;min-width:0}
 ul,ol{margin:0;padding-left:18px} li{margin:3px 0}
 .statement{font-size:clamp(22px,3vw,28px);line-height:1.3;font-weight:500;letter-spacing:-.4px;max-width:44ch;border-left:2px solid var(--accent);padding-left:18px}
@@ -230,7 +231,8 @@ footer{color:var(--ink-subtle);font-size:12px;border-top:1px solid var(--hairlin
   "discovery": null,
   "problem": null,
   "research": null,
-  "flows": null
+  "flows": null,
+  "roadmap": null
 }
 </script>
 <script>
@@ -270,7 +272,7 @@ footer{color:var(--ink-subtle);font-size:12px;border-top:1px solid var(--hairlin
   if(v && v.statement) add(c0, el("p","statement",v.statement));
   else if(p.what) add(c0, el("p","lead",p.what));
   var prog = el("div","pills");
-  [["Start", !!p.what], ["Vision", v ? (v.complete ? true : "part") : false], ["Discovery", x ? (x.complete ? true : "part") : false], ["Problem", d.problem ? (d.problem.complete ? true : "part") : false], ["Research", d.research ? (d.research.complete ? true : "part") : false], ["Flows", d.flows ? (d.flows.complete ? true : "part") : false]].forEach(function(s){
+  [["Start", !!p.what], ["Vision", v ? (v.complete ? true : "part") : false], ["Discovery", x ? (x.complete ? true : "part") : false], ["Problem", d.problem ? (d.problem.complete ? true : "part") : false], ["Research", d.research ? (d.research.complete ? true : "part") : false], ["Flows", d.flows ? (d.flows.complete ? true : "part") : false], ["Roadmap", d.roadmap ? (d.roadmap.complete ? true : "part") : false]].forEach(function(s){
     var c=el("span","pill"); add(c, el("span","dot"+(s[1]===true?" done":""))); c.append(s[0] + (s[1]===true ? "" : s[1]==="part" ? " · in progress" : " · not started")); add(prog,c);
   });
   add(c0, prog);
@@ -525,6 +527,35 @@ footer{color:var(--ink-subtle);font-size:12px;border-top:1px solid var(--hairlin
     add(sfb, gfb);
     if(fl.never) add(sfb, el("p","lead","The agent never: "+fl.never));
   } else add(sfb, todo("/ai-product-flows"));
+
+
+  // Roadmap
+  var rm = d.roadmap;
+  var hasUp = !!(rm && (rm.update||[]).length);
+  var sup = slide("update","Roadmap","This update","This product update",["roadmap/features.md"], hasUp);
+  if(hasUp){
+    if(rm.summary) add(sup, el("p","statement",rm.summary));
+    add(sup, table(["Feature","Flow","Priority"], rm.update.map(function(f){ return [f.name, f.flow||"", typeof f.priority==="number"?f.priority:""]; })));
+    if(rm.slice){ var sl2=el("div","card chosen"); add(sl2, el("div","eyebrow","The build-day slice"), el("p",null,rm.slice)); add(sup,sl2); }
+  } else add(sup, todo("/ai-product-roadmap"));
+
+  var hasRo = !!(rm && (rm.customer_saves || rm.price));
+  var sro = slide("roi","Roadmap","ROI and pricing","What it's worth, and how we charge",["roadmap/roi.md"], hasRo);
+  if(hasRo){
+    var gr=el("div","pillars");
+    [["Customer saves a year",rm.customer_saves],["Their return",rm.customer_return],["New revenue per customer",rm.revenue_per_customer],["Across customers",rm.revenue_total]].forEach(function(k){ if(!k[1]) return; var c=el("div","card"); add(c, el("div","eyebrow",k[0]), el("span","score",k[1])); add(gr,c); });
+    add(sro, gr);
+    if(rm.price){ var pc=el("div","card"); add(pc, el("div","eyebrow","How we charge"), el("p",null,rm.price), rm.price_why ? el("p","muted",rm.price_why) : null); add(sro,pc); }
+  } else add(sro, todo("/ai-product-roadmap"));
+
+  var hasHz = !!(rm && rm.horizons);
+  var shz = slide("roadmap","Roadmap","Roadmap","Roadmap",["roadmap/roadmap.md"], hasHz);
+  if(hasHz){
+    if(d.problem && d.problem.bhag) add(shz, el("p","lead","Toward: "+d.problem.bhag));
+    var gh=el("div","grid hz");
+    [["Now","now"],["Next","next"],["Later","later"]].forEach(function(k){ var h=rm.horizons[k[1]]; if(!h) return; var c=el("div","card"+(k[1]==="now"?" chosen":"")); add(c, el("div","eyebrow",k[0]+(h.level?" · L"+h.level:"")), h.outcome ? el("h3",null,h.outcome) : null, (h.items||[]).length ? list(h.items) : null, h.revenue ? el("p","muted","New revenue: "+h.revenue) : null); add(gh,c); });
+    add(shz, gh);
+  } else add(shz, todo("/ai-product-roadmap"));
 
   add(slides[slides.length-1], el("footer",null,"Built from the files in the product's folder"+(d.updated?" on "+d.updated:"")+". The files are the source; this deck shows them."));
 

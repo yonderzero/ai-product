@@ -152,7 +152,7 @@ You get:
 
 Two worked examples show every file, filled in. Open `index.html` in each first.
 
-- **[Wrenchly](examples/wrenchly/)**: a fictional fleet maintenance software company, a vertical product at level 1, like many of yours. It includes a `documents/` folder with invented interviews, tickets and sales notes, to show how your own files become evidence. Everything about Wrenchly is invented; the competitors and market facts are real and sourced.
+- **[FleetDesk](examples/fleetdesk/)**: a fictional fleet maintenance software company, a vertical product at level 1, like many of yours. It includes a `documents/` folder with invented interviews, tickets and sales notes, to show how your own files become evidence. Everything about FleetDesk is invented; the competitors and market facts are real and sourced.
 - **[Salesforce](examples/salesforce/)**: Sales Cloud and Service Cloud, a well-known product already at level 4. Illustrative, built from public sources, and not affiliated with Salesforce.
 
 ## The six levels of AI
@@ -196,10 +196,6 @@ claude plugin update ai-product@ai-product
 Then restart Claude Code.
 
 </details>
-
-## Credits
-
-The methods and ideas we build on are credited in [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
 
 ## License
 

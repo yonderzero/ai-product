@@ -1,12 +1,14 @@
 # index.html: the product's deck
 
-`index.html` sits at the top of the product folder, next to `product.md`. It's the main file to open: a slide deck that grows with each skill: the product, the customers, the six levels, the opportunities, Imagine, the vision, where to take the product, the four pillars, the move, where value flows, readiness, the BHAG, the right problem, three framings, and what to learn first. A sidebar lists every section, grouped into Start, Vision, Discovery, Problem, Research and Flows, with a dot for done or not done, so the product manager can jump anywhere. Every section links to the files it comes from. Slides a skill hasn't reached yet say "Not done yet" and name the skill to run.
+`index.html` sits at the top of the product folder, next to `product.md`. It's the main file to open: a slide deck that grows with each skill: the product, the customers, the six levels, the opportunities, Imagine, the vision, where to take the product, the four pillars, the move, where value flows, readiness, the BHAG, the right problem, three framings, and what to learn first. A sidebar lists every section, grouped into Start, Vision, Discovery, Problem, Research, Flows and Roadmap, with a dot for done or not done, so the product manager can jump anywhere. Every section links to the files it comes from. Slides a skill hasn't reached yet say "Not done yet" and name the skill to run.
 
 The files are the source of truth. The deck only shows them.
 
 ## When to update it
 
-At the end of every ai-product skill, and whenever a skill stops early because the product manager is out of time.
+Continuously. After **every step** of every ai-product skill that saves or changes a file the deck shows, update the matching part of the JSON, so the deck always shows the latest. Do it quietly, without stopping the conversation; mention it in one line only when a new slide fills in for the first time. Always update it before a skill stops, including when the product manager is out of time, and at the end of every skill.
+
+If `index.html` was made from an older template (it lacks a slide this JSON has data for), copy the current `templates/index.html` and move the JSON block across, so every slide shows.
 
 ## How
 
@@ -141,3 +143,28 @@ After `/ai-product-flows`, set `flows` (from `flows/`):
 
 - `flows`: ranked, real customers outweighing the panel; `forward` is yes, later or no. Flows with `steps` get their own flow-map slide: one column per moment, an agent lane and a person lane, a few words per cell; set `exception` true on a step that shows what happens when it goes wrong.
 - `complete`: true when the flows to take forward are agreed.
+
+After `/ai-product-roadmap`, set `roadmap` (from `roadmap/`):
+
+```json
+{
+  "complete": false,
+  "summary": "this product update in one or two lines",
+  "update": [ { "name": "", "flow": "", "priority": 6.4 } ],
+  "slice": "the build-day slice in two lines: the flow, what's in, when it's done",
+  "customer_saves": "$82K (50%)",
+  "customer_return": "every $1 on agents saves $4",
+  "revenue_per_customer": "+$19K a year",
+  "revenue_total": "$2.7M a year",
+  "price": "per vehicle per month for agents, $X",
+  "price_why": "one line",
+  "horizons": {
+    "now": { "outcome": "", "items": ["features in this update"], "level": 2, "revenue": "" },
+    "next": { "outcome": "", "items": [], "level": 3, "revenue": "" },
+    "later": { "outcome": "", "items": [], "level": 4, "revenue": "" }
+  }
+}
+```
+
+- `update`: the features in Now, in priority order.
+- `complete`: true when the roadmap and this product update are agreed.

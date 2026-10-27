@@ -474,6 +474,138 @@ footer{color:var(--ink-subtle);font-size:12px;border-top:1px solid var(--hairlin
         "ask": "What do you pay today for call recording or forecasting? Who signed it?"
       }
     ]
+  },
+  "research": {
+    "complete": true,
+    "icp": "A mid-market B2B software company with about 25 account executives on Sales Cloud, Gong or Clari on top, and managers forecasting in their own spreadsheets.",
+    "personas": [
+      {
+        "name": "Priya",
+        "role": "Buyer · VP of sales",
+        "sees": "I can't believe the pipeline unless I've chased every rep myself.",
+        "today": "Managers message reps, she rebuilds the roll-up in her sheet, then runs the forecast call.",
+        "wont": "A forecast that changes without a reason she can repeat to the CEO."
+      },
+      {
+        "name": "Marcus",
+        "role": "User · account executive",
+        "sees": "Updating Salesforce is something I do for my manager, not for me.",
+        "today": "Notes in his own app, batch updates before the forecast call, answers his manager's messages.",
+        "wont": "His manager hearing about a problem in his deal before he does."
+      },
+      {
+        "name": "Elena",
+        "role": "Sceptic · revenue operations lead",
+        "sees": "The data is junk, so the forecast is junk, and I'm the one who gets asked why.",
+        "today": "Validation rules, nudging flows and a scheduled reset of past-due close dates.",
+        "wont": "Anything writing to opportunity fields without a log of who confirmed it and why."
+      },
+      {
+        "name": "Sam",
+        "role": "Adjacent · financial advisor",
+        "sees": "Every meeting creates follow-up, and I'm liable if it's wrong.",
+        "today": "An AI notetaker, then checks and edits before anything goes into the CRM.",
+        "wont": "A compliance record he hasn't reviewed."
+      }
+    ],
+    "options": [
+      {
+        "option": "Spreadsheets and manual updates",
+        "who": "Almost every team",
+        "good": "Flexible; keeps the manager's judgement",
+        "bad": "Stale between calls; costs managers and reps their time"
+      },
+      {
+        "option": "Rules and nudges in Salesforce",
+        "who": "Revenue operations",
+        "good": "Forces the minimum",
+        "bad": "Reps fill fields to get past the rule"
+      },
+      {
+        "option": "Forecasts, Activity Capture, Agentforce",
+        "who": "Sales Cloud customers",
+        "good": "In the record everyone uses",
+        "bad": "Shows gaps but doesn't fill them; captured email was hard to report on"
+      },
+      {
+        "option": "Gong and Clari",
+        "who": "Mid-market and enterprise sales leaders",
+        "good": "Forecasts grounded in calls",
+        "bad": "Not published; median deals about $55,000 and $76,000 a year; depend on the record"
+      },
+      {
+        "option": "HubSpot and AI-native CRMs",
+        "who": "Smaller and newer teams",
+        "good": "Fill records from email and meetings",
+        "bad": "Means leaving Salesforce"
+      },
+      {
+        "option": "Note-takers and assistants",
+        "who": "Reps who record meetings",
+        "good": "Cheap, quick notes",
+        "bad": "Notes, not a forecast"
+      }
+    ],
+    "gap": "Keeping every deal current from what actually happened, with the rep confirming rather than typing, and a forecast that replaces the manager's spreadsheet, inside the record everyone already uses.",
+    "economics": {
+      "currency": "$",
+      "today": {
+        "licence": 74880,
+        "labour": 395968
+      },
+      "agents": {
+        "licence": 74880,
+        "agents": 48000,
+        "labour": 98992
+      },
+      "labour_x": 4,
+      "revenue_x": 1.6,
+      "note": "for a typical customer with 32 Sales Cloud seats; working in experiences.md"
+    },
+    "experiences": [
+      {
+        "name": "The deal record that keeps itself",
+        "persona": "Account executive",
+        "levels": "2 → 4",
+        "today": "Reps update stage, date and next step from memory, often in a batch.",
+        "agent": "The agent proposes each change with its evidence; the rep confirms in one tap.",
+        "first": false
+      },
+      {
+        "name": "The forecast call without the chase",
+        "persona": "Sales manager or VP of sales",
+        "levels": "2 → 4",
+        "today": "Managers message reps one by one and rebuild the forecast in a spreadsheet.",
+        "agent": "The agent checks every deal, asks reps only about gaps, and drafts a brief and commit; the manager overrides with a reason.",
+        "first": true
+      },
+      {
+        "name": "Step in before a deal slips",
+        "persona": "Sales manager, with the rep",
+        "levels": "1 → 4",
+        "today": "Managers notice slipping deals from memory, often too late.",
+        "agent": "The agent flags the deal to the rep first, with two possible plays; people decide and send.",
+        "first": false
+      },
+      {
+        "name": "Pipeline hygiene without the bulk reset",
+        "persona": "Revenue operations",
+        "levels": "1 → 4",
+        "today": "Scheduled jobs reset past-due close dates; admins chase owners.",
+        "agent": "The agent asks each owner for the real date under rules revenue operations sets, and logs every change.",
+        "first": false
+      },
+      {
+        "name": "Service signals reach the deal",
+        "persona": "Service manager and account executive",
+        "levels": "2 → 4",
+        "today": "Escalations reach the account team in a weekly report, if at all.",
+        "agent": "The agent attaches a case summary to the open deal and suggests a risk change; the rep decides.",
+        "first": false
+      }
+    ],
+    "panel": "The buyer and the sceptic feel the bigger job most (pain 5 and 4) and would pay from the renewal, but only by cutting a tool on top. The rep scored it 2 and admitted he kept a frozen deal in commit for weeks: the riskiest assumption, answered against us. The buyer said 'not now' to $48,000 of agents until a one-team pilot shows managers stop chasing.",
+    "objection": "My deals aren't stale because I can't type. Read my calls and show my manager first, and reps will stop putting the truth where your agent can see it."
   }
 }
 </script>
