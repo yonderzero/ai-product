@@ -33,7 +33,7 @@ Conversational, short messages, one question at a time. Never send a list of que
    7. In a few sentences, what does it do and who is it for?
    8. Who are your customers: what types of company or person buy it and use it?
 
-   As soon as you have the product's name, create a folder named after it (lowercase, hyphens, e.g. `acme-scheduler/`) with `documents/`, `panel/` and `handoff/` inside. Don't stop to talk about it.
+   As soon as you have the product's name, create a folder named after it (lowercase, hyphens, e.g. `acme-scheduler/`) with `documents/` inside. Don't stop to talk about it.
 
 4. **Documents.** Ask:
 

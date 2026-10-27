@@ -42,6 +42,8 @@ Sets up a folder for your product, builds a first profile from its website and y
 **[`/ai-product-vision`](docs/ai-product-vision.md)**\
 Maps your market on six levels of AI, from System of Record to System of Understanding, finds the opportunities, and creates a vision for where you could take your product.
 
+How the skills fit together, and what goes in your product's folder: [how ai-product works](docs/README.md).
+
 ## Example
 
 See what you get, using Salesforce as the product: [the Salesforce example](examples/salesforce/). It's illustrative, built from public sources, and not affiliated with Salesforce.

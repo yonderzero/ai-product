@@ -9,6 +9,13 @@ The first skill to run. Claude checks where it's working, explains what ai-produ
 **Who runs it:** the product manager, or whoever knows the product best.
 **How long:** about 20–30 minutes, most of it conversation.
 **Run it:** once per product, in the folder where you want the product's folder to be created.
+**You leave with:** a folder for your product, with `product.md` (the profile) and `documents/` (your files).
+
+## Before you begin
+
+- **Claude:** the ai-product plugin installed (see the [README](../README.md#install)). Plugins need a paid Claude plan.
+- **A folder:** in the Claude desktop app, start a new conversation and pick a folder on your computer with **Project or folder**, under the message box. Claude creates your product's folder inside it. In Claude Code, start Claude in that folder.
+- **Web search:** Claude needs to search and read the web to build the profile. It checks this for you in step 5.
 
 ## What you need
 
@@ -61,10 +68,10 @@ See a finished one: [`product.md` for Salesforce](../examples/salesforce/product
 ```
 acme-scheduler/          named after your product
   product.md             the product profile
-  documents/             your material: Claude reads everything here
-  panel/                 used later for synthetic customers
-  handoff/               used later for what your developers get
+  documents/             your files: Claude reads everything here
 ```
+
+Later skills add their files to this same folder.
 
 `product.md` holds:
 
@@ -97,9 +104,20 @@ Drag and drop files into the chat, or put them straight into `documents/`, in an
 
 You can add more at any time; every skill reads this folder. Remove people's names, email addresses and phone numbers first.
 
+## Troubleshooting
+
+- **Claude says it has no folder on your computer.** Start a new conversation, pick a folder with **Project or folder**, and run `/ai-product-start` again.
+- **Web search doesn't work.** Claude says so in step 5. Check that web search is turned on for your Claude account, then run the skill again. Without it, the profile is built only from what you tell it and your documents.
+- **The profile has something wrong.** Tell Claude while it's showing you, or edit `product.md` yourself at any time. It's a plain text file.
+- **You ran out of time.** Say "enough". Whatever isn't answered goes under "Still unknown", and you can run `/ai-product-start` again later and choose to continue.
+
 ## Tips
 
 - Give Claude as many links as you can: the profile is only as good as what it can read.
 - Answer the customer questions with real examples ("last week a scheduler at…"), not general statements.
 - If you don't know something, say so. It goes under "Still unknown" instead of being guessed.
-- To change the profile later, edit `product.md` yourself or run `/ai-product-start` again and choose to update.
+- To change the profile later, edit `product.md` yourself or run `/ai-product-start` again and choose to continue.
+
+## Next
+
+Run [`/ai-product-vision`](ai-product-vision.md) in the same folder.

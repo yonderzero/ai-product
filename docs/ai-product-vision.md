@@ -9,6 +9,13 @@ The second skill, after [`ai-product-start`](ai-product-start.md). Software is m
 **Who runs it:** the product manager, ideally with the team.
 **How long:** about 45–60 minutes. The research runs in the background while you talk.
 **Run it:** in the folder where `ai-product-start` created your product's folder.
+**You leave with:** your product on six levels of AI, your market on the same levels, ranked opportunities, and a vision you've agreed to.
+
+## Before you begin
+
+- **Your product profile.** Run [`/ai-product-start`](ai-product-start.md) first. If there's no `product.md`, Claude asks you to run it and stops.
+- **The same folder.** In the Claude desktop app, pick the folder that holds your product's folder with **Project or folder**. In Claude Code, start Claude there.
+- **Web search.** The market map and the opportunities are researched on the web.
 
 ## What you need
 
@@ -26,7 +33,17 @@ The second skill, after [`ai-product-start`](ai-product-start.md). Software is m
 | 5 | AI Domain Intelligence | AI brings expertise | Learns from data across many customers; benchmarks, recommends, gives answers experts trust | A premium for expertise | Harvey, OpenEvidence |
 | 6 | System of Understanding | The product runs the day-to-day; people set goals | Understands how the domain behaves; anticipates and acts before anyone asks | For results | Waymo, Tempus |
 
-A company sits at the highest level it has **shipped and customers use**, with a source. Announcements don't count, and your own product gets the same rules as everyone else.
+More on each level, with four real products per level: [the six levels](../skills/ai-product-vision/references/level-examples.md).
+
+### How a product is placed
+
+- A product is placed at the **highest level it has shipped and customers use**, with a source.
+- **Shipped beats announced.** Betas and waitlists count for half a level at most; announcements and roadmaps don't count.
+- **Used beats shipped.** A customer quote, case study or metric is the strongest evidence.
+- **Sourced or not placed.** No source, no placement; the company is listed as "not placed" with the reason.
+- **Your product gets the same rules as everyone else.** If the public evidence puts it lower than your own answers, Claude shows both.
+
+Full rules: [levels and placement](../skills/ai-product-vision/references/levels.md).
 
 ## What happens
 
@@ -106,6 +123,32 @@ acme-scheduler/
 | What customers would pay for | What they'd stop paying for, and what they'd pay for instead |
 | First step | The smallest thing to build or test next |
 | Open questions | What you still need to find out |
+
+## How opportunities are rated
+
+Each opportunity is rated against fixed definitions, so the ratings mean the same thing for every product.
+
+| Rating | 1 | 3 | 5 |
+|---|---|---|---|
+| **Impact** | marginal | a clear sales story, or noticeable money | changes the business |
+| **Effort** | days to weeks, on data you already hold | a quarter, several integrations or new data | needs data or rights you don't have |
+| **Urgency** | no clock | a competitor announced it, or customers notice the gap | someone is already taking this job from your customers |
+
+**Evidence** is graded Strong (three or more findings from two or more kinds of source, including someone other than you), Good, Thin, or Assumption (nothing beyond your own belief).
+
+**Priority** = 0.35 × impact + 0.25 × urgency + 0.20 × evidence + 0.20 × (6 − effort), where evidence counts 5, 4, 2 or 1. Bands: **Do first** from 3.8, **Strong option** from 3.3, **Worth watching** below.
+
+**Size** is given only when it can be built from at least one real number, with no more than two labelled assumptions, and the working is shown. Otherwise it says "not sized" and why.
+
+Full rules: [finding and rating opportunities](../skills/ai-product-vision/references/opportunities.md).
+
+## Troubleshooting
+
+- **Claude asks you to run `/ai-product-start` first.** It can't find `product.md`. Check you picked the folder that holds your product's folder, or run the start skill.
+- **The research is slow.** It runs in the background while Claude interviews you about your product, so keep going. It usually catches up by the time you've been through the levels.
+- **A competitor is placed wrongly.** Tell Claude, with a link if you have one. Claude applies the same rules and updates the map.
+- **Your product is placed lower than you expected.** That's usually because a feature is announced or in beta, not shipped and used. Claude writes both views; add a customer example if you have one.
+- **You ran out of time.** Everything written so far is saved in the folder. Run `/ai-product-vision` again later and Claude picks up from the files.
 
 ## Tips
 
