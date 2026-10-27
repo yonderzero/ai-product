@@ -1,6 +1,6 @@
 ---
 name: ai-product-vision
-description: Second step, after ai-product-start. Interviews the product manager about the value the product gives customers at each of six levels of AI, from System of Record to System of Understanding, maps the market on the same levels, finds the opportunities, then interviews the product manager one question at a time to write the product's AI vision. Writes ai-levels.md, market-map.md, market-map.html, threats.md and vision.md in the product folder.
+description: Second step, after ai-product-start. Interviews the product manager about the value the product gives customers at each of six levels of AI, from System of Record to System of Understanding, maps the market on the same levels, sees who's moving in the market, finds the opportunities, then interviews the product manager one question at a time to write the product's AI vision. Writes ai-levels.md, market-map.md, market-map.html, market-moves.md and vision.md in the product folder.
 ---
 
 # ai-product-vision
@@ -27,14 +27,14 @@ Read `product.md` and anything in `documents/` you haven't read yet. Read `refer
 
 2. **The market.** From `product.md` and a quick search, propose 10–15 companies in three groups:
    - **incumbents**: established vendors in the same vertical, including direct competitors;
-   - **AI-native challengers**: funded startups attacking the vertical's workflows with AI;
+   - **AI-native challengers**: funded startups building the vertical's workflows with AI;
    - **horizontal players**: general platforms (ERP, CRM, productivity suites, AI assistants) that reach into the vertical.
 
    Show the list, short, and ask one question: "Who's missing?" Add their names.
 
 3. **Research, in the background.** Start these as parallel subagents, and tell the product manager in one line that research is running:
    - **Level map:** split the companies into batches of 3–5, one subagent per batch. For each company: find its AI features from product pages, docs, release notes, pricing pages, case studies and credible press from the last 18 months; place each feature at a level with the source URL, shipped / beta / announced, and confidence; place the company at the highest level it has shipped with evidence of use; add one line on where it's heading (announcements count here, labelled as such). Skip a company rather than guess. Pass each subagent the full path of `references/levels.md`.
-   - **Threats:** one subagent that follows `references/threat-scan.md` and `references/threat-framework-spec.md` (pass both full paths) and writes `threats.md` in the product folder. Give it the product, company, website and industry from `product.md`, so it doesn't need to ask.
+   - **Market moves:** one subagent that researches the five ways others move into a market, following the research and evidence rules in `references/threat-scan.md` and `references/threat-framework-spec.md` (phases 1 and 2 only: research, then seen / early signs / not seen, never inventing a name). It fills `templates/market-moves.md` into `market-moves.md` in the product folder, in plain, constructive language: what others are doing and what it opens up for the product. No score and no hypothetical scenarios. Pass it the full paths of the three files, and the product, company, website and industry from `product.md`, so it doesn't need to ask.
 
    If subagents aren't available, do the same work yourself, one batch at a time, between questions.
 
@@ -53,12 +53,12 @@ Read `product.md` and anything in `documents/` you haven't read yet. Read `refer
 
 5. **The map.** When the research is back:
    - place the product with the same rules as everyone else, using `ai-levels.md` and the public evidence. Don't round up. If the public evidence puts it lower than `ai-levels.md` does, say so plainly and show why; write both;
-   - add any named attackers from `threats.md` to the map if they're missing, and mark which level they attack from;
+   - add any companies named in `market-moves.md` to the map if they're missing;
    - name the openings: the empty or thin levels, and the challengers moving up fastest;
    - fill `templates/market-map.md` into `market-map.md` in the product folder;
    - copy `templates/market-map.html` to `market-map.html` in the product folder and replace only the JSON inside `<script id="data">` with the companies, their levels and groups, and the product (`"us": true`). Don't change the rest of the file.
 
-   Show the result in a few lines: where the product is, who is a level above it, the most credible attacker, and the openings. Tell them to open `market-map.html` in a browser.
+   Show the result in a few lines: where the product is, who is a level above it, who's moving fastest, and the openings. Tell them to open `market-map.html` in a browser.
 
 6. **The vision interview.** One question at a time, following up on vague answers and asking for examples. Skip what's already answered.
    1. Looking at the map, which level do you want the product to reach, and by when?
@@ -66,10 +66,10 @@ Read `product.md` and anything in `documents/` you haven't read yet. Read `refer
    3. For which persona? What changes in their day? (Offer the personas from `product.md`.)
    4. What do you have that others on the map don't: data, domain knowledge, customers, distribution?
    5. If an agent sat on top of your data tomorrow, what would customers stop paying you for? What would they pay for instead?
-   6. Who on the map worries you most, and how does this vision answer them?
+   6. Who on the map is moving closest to this vision, and what makes yours different?
    7. What's the smallest thing you could build or test next to see if this is right?
 
-7. **The vision.** Fill `templates/vision.md` into `vision.md` in the product folder, in their words where you can. Every claim about the market cites `market-map.md` or `threats.md`; every claim about the product cites `ai-levels.md`, `product.md`, a file in `documents/`, or `[PM]`. Show the vision paragraph and ask: "Is this right?" Revise until they say yes.
+7. **The vision.** Fill `templates/vision.md` into `vision.md` in the product folder, in their words where you can. Every claim about the market cites `market-map.md` or `market-moves.md`; every claim about the product cites `ai-levels.md`, `product.md`, a file in `documents/`, or `[PM]`. Show the vision paragraph and ask: "Is this right?" Revise until they say yes.
 
 8. **Update the profile.** In `product.md`, under `## AI today`, add one line: today's level and the target level, pointing to `ai-levels.md` and `vision.md`.
 
@@ -80,6 +80,6 @@ Read `product.md` and anything in `documents/` you haven't read yet. Read `refer
 - at least ten companies placed, each with a source, or listed as not placed with the reason;
 - `ai-levels.md` has the product's value at each level (features, for whom, value, how they pay), checked by the product manager;
 - the product placed on the market map with the same rules as everyone else;
-- `threats.md` names the most credible attacker, or says plainly that none was found;
+- `market-moves.md` covers the five ways in, each seen, early signs or not seen, with sources;
 - at least one opening named;
 - `vision.md` has a vision the product manager said yes to, a target level, the persona, the workflow, and a first step.

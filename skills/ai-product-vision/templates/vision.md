@@ -27,9 +27,9 @@
 
 [The level or space on the market map where nobody credible is yet.]
 
-## Who could get there first
+## Others moving this way
 
-| Who | From which level | How the vision answers them |
+| Who | At which level | What makes our vision different |
 |---|---|---|
 | | | |
 

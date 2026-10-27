@@ -36,7 +36,7 @@ Claude asks one question at a time, like a conversation.
 
 2. **The market.** Claude proposes 10–15 companies in three groups: incumbents in your vertical, AI-native challengers, and horizontal players such as big platforms and AI assistants. It asks who's missing.
 
-3. **Research.** Claude researches every company's AI features in the background, and scans for anyone already attacking your product, for example by unbundling a module, rebuilding it for small customers, or sitting on top of it.
+3. **Research.** Claude researches every company's AI features in the background, and looks at how others are moving into your market: focused tools for one part of your product, simpler products for smaller customers, add-on layers, new channels, and AI products built on top.
 
 4. **Your product, level by level.** While the research runs, Claude goes up the levels with you, starting at 1. At each level it asks, one question at a time:
    - Does your product give customers value at this level? Which features?
@@ -55,7 +55,7 @@ Claude asks one question at a time, like a conversation.
    - For which customer persona, and what changes in their day?
    - What do you have that others on the map don't?
    - If an agent sat on top of your data tomorrow, what would customers stop paying you for, and what would they pay for instead?
-   - Who on the map worries you most, and how does your vision answer them?
+   - Who on the map is moving closest to your vision, and what makes yours different?
    - What's the smallest thing you could build or test next?
 
 7. **The vision.** Claude writes your vision and asks: "Is this right?" It revises until you say yes.
@@ -70,7 +70,7 @@ acme-scheduler/
   ai-levels.md        the value your product gives at each level: features, for whom, how they pay
   market-map.md       every company on the six levels, with sources, and the openings
   market-map.html     the market as a picture: open it in a browser
-  threats.md          who is attacking or could attack your product, and how
+  market-moves.md     who's moving in your market, and what it opens up for you
   vision.md           your product's AI vision
 ```
 
@@ -84,7 +84,7 @@ acme-scheduler/
 | What AI takes over | Each workflow, today and tomorrow |
 | Why us | The data, knowledge, customers or reach others don't have |
 | The opening | The gap on the map |
-| Who could get there first | The attackers, and how the vision answers them |
+| Others moving this way | Who, at which level, and what makes your vision different |
 | What customers would pay for | What they'd stop paying for, and what they'd pay for instead |
 | First step | The smallest thing to build or test next |
 | Open questions | What you still need to find out |
