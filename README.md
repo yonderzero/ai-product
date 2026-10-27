@@ -42,6 +42,30 @@ Sets up a folder for your product, builds a first profile from its website and y
 **[`/ai-product-vision`](docs/ai-product-vision.md)**\
 Maps your market on six levels of AI, from System of Record to System of Understanding, finds the opportunities, and creates a vision for where you could take your product.
 
+## The six levels of AI
+
+Software is moving from recording the work to doing it. ai-product looks at your product, your market and your future on six levels.
+
+**1 · System of Record**: people do the work; the software stores it.\
+The record is the value: data, forms, workflows and reports for one customer. Paid per seat, licence or module. *Examples: Epic, SAP, Procore.*
+
+**2 · AI Assisted**: people do the work; AI suggests.\
+Suggestions, summaries and autocomplete inside the existing screens; the workflow doesn't change. Usually included, or a small add-on. *Examples: Gmail Smart Compose, Grammarly.*
+
+**3 · AI Directed**: a person asks, AI does one task, the person checks the result.\
+A copilot or chat that drafts, builds or fills in on request, across the customer's data. Paid as a per-seat add-on, or by usage. *Examples: Microsoft 365 Copilot, Shopify Sidekick.*
+
+**4 · AI Delegated**: AI does the job end to end; people handle exceptions.\
+Owns a whole job and is measured on outcomes; needs guardrails, audit trails and approvals. Paid per outcome or per use, not per seat. *Examples: Intercom Fin, Abridge.*
+
+**5 · AI Domain Intelligence**: AI brings expertise.\
+Learns from data across many customers to benchmark, recommend and give answers experts trust. Paid as a premium for expertise. *Examples: Harvey, OpenEvidence.*
+
+**6 · System of Understanding**: the product runs the day-to-day; people set goals.\
+Understands how the domain behaves, and anticipates and acts before anyone asks. Paid for results. *Examples: Waymo, Tempus.*
+
+More on each level, with more examples: [the six levels](skills/ai-product-vision/references/level-examples.md).
+
 ## Update
 
 In the Claude desktop app, open **Customize**, go to **Plugins**, select the **ai-product** marketplace and click **Check for updates**. Then start a new conversation.
