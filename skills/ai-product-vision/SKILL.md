@@ -1,6 +1,6 @@
 ---
 name: ai-product-vision
-description: Second step, after ai-product-start. Interviews the product manager about the value the product gives customers at each of six levels of AI, from System of Record to System of Understanding, maps the market on the same levels, sees who's moving in the market, finds the opportunities, then interviews the product manager one question at a time to write the product's AI vision. Writes ai-levels.md, market-map.md, market-map.html, market-moves.md and vision.md in the product folder.
+description: Second step, after ai-product-start. Interviews the product manager about the value the product gives customers at each of six levels of AI, from System of Record to System of Understanding, maps the market on the same levels, sees who's moving in the market, maps the work around the product and ranks the opportunities in and around it, then interviews the product manager one question at a time to write the product's AI vision. Writes ai-levels.md, market-map.md, market-map.html, market-moves.md, opportunities.md and vision.md in the product folder.
 ---
 
 # ai-product-vision
@@ -21,7 +21,7 @@ Read `product.md` and anything in `documents/` you haven't read yet. Read `refer
 
 1. **What this is.** Say which product you're working on, then explain in two or three sentences, your own words:
 
-   > Software is moving from recording the work to doing it. We'll go through six levels, from System of Record to System of Understanding, and look at what value your product gives customers at each one today. Then we'll map your market on the same levels, find the opportunities, and create a vision for where you could take your product.
+   > Software is moving from recording the work to doing it. We'll go through six levels, from System of Record to System of Understanding, and look at what value your product gives customers at each one today. Then we'll map your market on the same levels, find the opportunities in and around your product, and create a vision for where you could take it.
 
    Then ask: "Shall we start?" Wait for a yes.
 
@@ -35,6 +35,8 @@ Read `product.md` and anything in `documents/` you haven't read yet. Read `refer
 3. **Research, in the background.** Start these as parallel subagents, and tell the product manager in one line that research is running:
    - **Level map:** split the companies into batches of 3–5, one subagent per batch. For each company: find its AI features from product pages, docs, release notes, pricing pages, case studies and credible press from the last 18 months; place each feature at a level with the source URL, shipped / beta / announced, and confidence; place the company at the highest level it has shipped with evidence of use; add one line on where it's heading (announcements count here, labelled as such). Skip a company rather than guess. Pass each subagent the full path of `references/levels.md`.
    - **Market moves:** one subagent that researches the five ways others move into a market, following the research and evidence rules in `references/threat-scan.md` and `references/threat-framework-spec.md` (phases 1 and 2 only: research, then seen / early signs / not seen, never inventing a name). It fills `templates/market-moves.md` into `market-moves.md` in the product folder, in plain, constructive language: what others are doing and what it opens up for the product. No score and no hypothetical scenarios. Pass it the full paths of the three files, and the product, company, website and industry from `product.md`, so it doesn't need to ask.
+
+   - **The work around the product:** one subagent that researches the customers' work step by step, following section 1 of `references/opportunities.md` (pass its full path): job postings for the personas' roles, reviews and complaints (G2, Capterra, app stores, forums), the customers' own words, and rules or deadlines that create new work. It returns findings with sources, especially manual work, for step 6.
 
    If subagents aren't available, do the same work yourself, one batch at a time, between questions.
 
@@ -60,20 +62,47 @@ Read `product.md` and anything in `documents/` you haven't read yet. Read `refer
 
    Show the result in a few lines: where the product is, who is a level above it, who's moving fastest, and the openings. Tell them to open `market-map.html` in a browser.
 
-6. **The vision interview.** One question at a time, following up on vague answers and asking for examples. Skip what's already answered.
-   1. Looking at the map, which level do you want the product to reach, and by when?
-   2. Which workflow should AI take over first, end to end? (Offer the main workflows from `product.md`.)
+6. **The work around your product.** Read `references/opportunities.md`. Draft the customer's work as 6–10 steps, from what the research, `product.md` and `documents/` show, and walk the product manager through it one step at a time, asking only what you can't fill:
+   - Is this step right? What's missing?
+   - Who does it, and what's still done by hand, in email or in spreadsheets?
+   - Which software runs it today: yours, someone else's, nothing?
+
+7. **The opportunities.** Find up to 8 opportunities in and around the product, following `references/opportunities.md`: grow the base and new revenue, each specific, on evidence, at a level, rated, ranked and sized where the numbers allow. Fill `templates/opportunities.md` into `opportunities.md` in the product folder. Show the ranked table, short, and ask one question at a time:
+   - Which of these excite you most?
+   - Is anything missing that you've heard from customers?
+   - Is any rating wrong?
+
+   Update the file with their answers, tagged `[PM]`.
+
+8. **Imagine.** Now help the product manager picture the future, beyond what the evidence shows today. This is the creative part: be concrete and vivid, and specific to their product, personas and data. Read `references/level-examples.md`.
+
+   For each level above the product's level today, up to 6, one message per level:
+   - name the level and show two real products already there, one line each;
+   - sketch **their product at this level** in three or four lines: what it does, for which persona, what changes in their day, and how customers would pay;
+   - ask one question: "What would you add or change?"
+
+   Then the System of Understanding. Write a short day in the life of their main persona, five years from now, with the product at level 6: what it knows that nobody knows today, what it does before anyone asks, what the persona never does again, and what they spend their time on instead. Then ask, one at a time:
+   - What excites you in this? What feels wrong?
+   - What would it need to know that it doesn't know today?
+   - What data would that take, and who has it?
+   - If this were real, what would customers pay for?
+
+   Note what they say, tagged `[PM]`. Ideas that come up here can become new opportunities: add them to `opportunities.md` with evidence "Assumption".
+
+9. **The vision interview.** One question at a time, following up on vague answers and asking for examples. Skip what's already answered.
+   1. Which of the top opportunities should the vision start with, on the way to the future you just pictured?
+   2. Looking at the map, which level do you want the product to reach, and by when?
    3. For which persona? What changes in their day? (Offer the personas from `product.md`.)
    4. What do you have that others on the map don't: data, domain knowledge, customers, distribution?
    5. If an agent sat on top of your data tomorrow, what would customers stop paying you for? What would they pay for instead?
    6. Who on the map is moving closest to this vision, and what makes yours different?
    7. What's the smallest thing you could build or test next to see if this is right?
 
-7. **The vision.** Fill `templates/vision.md` into `vision.md` in the product folder, in their words where you can. Every claim about the market cites `market-map.md` or `market-moves.md`; every claim about the product cites `ai-levels.md`, `product.md`, a file in `documents/`, or `[PM]`. Show the vision paragraph and ask: "Is this right?" Revise until they say yes.
+10. **The vision.** Fill `templates/vision.md` into `vision.md` in the product folder, in their words where you can. Every claim about the market cites `market-map.md`, `market-moves.md` or `opportunities.md`; every claim about the product cites `ai-levels.md`, `product.md`, a file in `documents/`, or `[PM]`. Show the vision paragraph and ask: "Is this right?" Revise until they say yes.
 
-8. **Update the profile.** In `product.md`, under `## AI today`, add one line: today's level and the target level, pointing to `ai-levels.md` and `vision.md`.
+11. **Update the profile.** In `product.md`, under `## AI today`, add one line: today's level and the target level, pointing to `ai-levels.md` and `vision.md`.
 
-9. **Done.** Show the files you wrote and sum up in three lines: where the product is today, where it's going, and the first step. End with: "Placements are a snapshot from public sources on [date]. Check the ones you act on."
+12. **Done.** Show the files you wrote and sum up in four lines: where the product is today, the top opportunity, where it's going, and the first step. End with: "Placements are a snapshot from public sources on [date]. Check the ones you act on."
 
 ## Done when
 
@@ -82,4 +111,5 @@ Read `product.md` and anything in `documents/` you haven't read yet. Read `refer
 - the product placed on the market map with the same rules as everyone else;
 - `market-moves.md` covers the five ways in, each seen, early signs or not seen, with sources;
 - at least one opening named;
-- `vision.md` has a vision the product manager said yes to, a target level, the persona, the workflow, and a first step.
+- `opportunities.md` maps the work around the product and ranks the opportunities, each on evidence, with a first question;
+- `vision.md` has the pictures of the product at higher levels and a System of Understanding day in the life, and a vision the product manager said yes to, built on named opportunities, with a target level, the persona, and a first step.

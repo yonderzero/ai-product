@@ -7,6 +7,25 @@
 
 [Two or three sentences, in the product manager's words: by [when], [product] [does what job] for [persona], so they [outcome].]
 
+## Imagine
+
+### Our product at each level
+
+| Level | Already there | Our product at this level |
+|---|---|---|
+| [n] [name] | [two real products] | [what it does, for whom, what changes, how they'd pay] |
+
+### A day with our System of Understanding
+
+[A short day in the life of the main persona, five years from now: what the product knows, what it does before anyone asks, what they never do again, what they spend their time on instead.]
+
+**What excites us:** … `[PM]`
+**What it would need to know, and the data that takes:** … `[PM]`
+
+## Built on
+
+[The opportunities from `opportunities.md` this vision is built around, with their band.]
+
 ## For whom
 
 | Persona | The problem it removes | What changes in their day |
