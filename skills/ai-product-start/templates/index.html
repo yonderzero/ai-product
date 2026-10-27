@@ -146,6 +146,39 @@ td.num{font:500 13px var(--mono);font-variant-numeric:tabular-nums}
 .seg-a,.sw.seg-a{background:var(--accent)}
 .seg-p,.sw.seg-p{background:var(--risk)}
 .sw{display:inline-block;width:10px;height:10px;border-radius:2px}
+/* motion: everything rests visible; slides animate in when opened */
+@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes travel{from{left:0}to{left:calc(100% - 8px)}}
+.slide.on .card,.slide.on .stair,.slide.on .step-box,.slide.on .lane-cell .node{animation:rise .45s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i,0) * 70ms)}
+.slide.on .seg{transform-origin:left;animation:grow .8s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i,0) * 160ms)}
+/* experiences: today vs with agents */
+.xp{display:grid;gap:14px}
+.xp-row{display:grid;grid-template-columns:110px minmax(0,1fr);gap:12px;align-items:center}
+.xp-lab{font:500 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-subtle)}
+.strip{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.step-box{font-size:12.5px;line-height:1.3;padding:7px 10px;border-radius:8px;border:1px solid var(--hairline);background:var(--surface-1);max-width:220px}
+.step-box.person{border-color:color-mix(in srgb,var(--risk) 45%,var(--hairline));background:var(--risk-soft)}
+.step-box.agent{border-color:color-mix(in srgb,var(--accent) 55%,var(--hairline));background:var(--accent-soft)}
+.step-box.check{border-style:dashed}
+.arrow-sm{color:var(--ink-tertiary);font-size:12px}
+.xp-card{display:grid;gap:12px}
+/* flow map: swimlanes */
+.lanes{overflow-x:auto;border:1px solid var(--hairline);border-radius:12px;background:var(--surface-1)}
+.lane-grid{display:grid;grid-template-columns:96px repeat(var(--n),minmax(150px,1fr));min-width:calc(96px + var(--n) * 150px)}
+.lane-head{font:500 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-subtle);padding:10px 12px;border-bottom:1px solid var(--hairline);background:var(--surface-2)}
+.lane-name{font:500 12px var(--mono);color:var(--ink-muted);padding:14px 12px;border-right:1px solid var(--hairline);display:flex;align-items:center}
+.lane-cell{position:relative;padding:12px 10px;border-bottom:1px solid var(--hairline);min-height:84px;display:flex;align-items:center}
+.lane-row-last .lane-cell,.lane-row-last.lane-name{border-bottom:0}
+.node{width:100%;font-size:12.5px;line-height:1.35;padding:8px 10px;border-radius:8px;border:1px solid var(--hairline)}
+.node.agent{background:var(--accent-soft);border-color:color-mix(in srgb,var(--accent) 55%,var(--hairline))}
+.node.person{background:var(--risk-soft);border-color:color-mix(in srgb,var(--risk) 45%,var(--hairline))}
+.node.exc{border-style:dashed;background:var(--surface-2)}
+.lane-cell.has:not(.last)::after{content:"→";position:absolute;right:-7px;top:50%;transform:translateY(-50%);color:var(--ink-tertiary);font-size:13px;z-index:1}
+.track{position:relative;height:3px;margin:0 12px 12px 108px;background:var(--surface-3);border-radius:3px}
+.track i{position:absolute;top:-2.5px;width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.slide.on .track i{animation:travel 3.2s linear infinite}
+@media (prefers-reduced-motion:reduce){.slide.on *{animation:none!important}}
 .quad .on{border-color:var(--accent);background:var(--accent-soft);color:var(--accent);font-weight:600}
 footer{color:var(--ink-subtle);font-size:12px;border-top:1px solid var(--hairline);padding-top:14px}
 
@@ -397,8 +430,23 @@ footer{color:var(--ink-subtle);font-size:12px;border-top:1px solid var(--hairlin
   var hasEx = !!(rs && (rs.experiences||[]).length);
   var sex = slide("experiences","Research","Agentic experiences","Agentic customer experiences",["research/experiences.md"], hasEx);
   if(hasEx){
+    var gx=el("div","xp");
+    rs.experiences.forEach(function(x2){
+      if(!(x2.today_steps||[]).length && !(x2.agent_steps||[]).length) return;
+      var c=el("div","card xp-card"+(x2.first?" chosen":""));
+      add(c, el("div","eyebrow",(x2.persona||"")+(x2.levels?" · L"+x2.levels:"")+(x2.first?" · explore first":"")), el("h3",null,x2.name));
+      [["Today",(x2.today_steps||[]).map(function(t){ return {text:t,by:"person"}; })],["With agents",x2.agent_steps||[]]].forEach(function(r){
+        if(!r[1].length) return;
+        var row=el("div","xp-row"), st=el("div","strip"); add(row, el("span","xp-lab",r[0]));
+        r[1].forEach(function(sp,k){ if(k) add(st, el("span","arrow-sm","→")); var b=el("span","step-box "+(sp.by==="agent"?"agent":sp.by==="check"?"person check":"person"), sp.text); b.style.setProperty("--i",k); add(st,b); });
+        add(row,st); add(c,row);
+      });
+      if(x2.hours) add(c, el("p","muted","Gives back "+x2.hours));
+      add(gx,c);
+    });
+    if(gx.children.length){ var lg2=el("div","pills"); [["person","A person"],["agent","An agent"],["person check","A person approves"]].forEach(function(k){ var p3=el("span","pill"); add(p3, el("span","step-box "+k[0],"")); p3.lastChild.style.padding="0 6px"; p3.append(k[1]); add(lg2,p3); }); add(sex, gx, lg2); }
     var ge=el("div","grid");
-    rs.experiences.forEach(function(x2){ var c=el("div","card"+(x2.first?" chosen":"")); add(c, el("div","eyebrow",(x2.persona||"")+(x2.levels?" · L"+x2.levels:"")+(x2.first?" · explore first":"")), el("h3",null,x2.name), x2.today ? el("p","muted","Today: "+x2.today) : null, x2.agent ? el("p",null,"With agents: "+x2.agent) : null); add(ge,c); });
+    rs.experiences.forEach(function(x2){ if((x2.today_steps||[]).length || (x2.agent_steps||[]).length) return; var c=el("div","card"+(x2.first?" chosen":"")); add(c, el("div","eyebrow",(x2.persona||"")+(x2.levels?" · L"+x2.levels:"")+(x2.first?" · explore first":"")), el("h3",null,x2.name), x2.today ? el("p","muted","Today: "+x2.today) : null, x2.agent ? el("p",null,"With agents: "+x2.agent) : null); add(ge,c); });
     add(sex, ge);
   } else add(sex, todo("/ai-product-research"));
 
@@ -439,6 +487,27 @@ footer{color:var(--ink-subtle);font-size:12px;border-top:1px solid var(--hairlin
     if(fl.thinnest) add(sfl, el("p","lead","Thinnest version: "+fl.thinnest));
   } else add(sfl, todo("/ai-product-flows"));
 
+  (fl && fl.flows || []).filter(function(f){ return (f.steps||[]).length; }).forEach(function(f,fi){
+    var sm2 = slide("flow-"+(fi+1),"Flows","Flow: "+f.name,f.name,["flows/flows.md"], true);
+    if(f.trigger || f.outcome) add(sm2, el("p","lead",(f.trigger?"Starts when "+f.trigger+". ":"")+(f.outcome?"Done when "+f.outcome+".":"")));
+    var n=f.steps.length, wrap=el("div","lanes"), g=el("div","lane-grid"); g.style.setProperty("--n",n);
+    add(g, el("div","lane-head",""));
+    f.steps.forEach(function(s2,k){ add(g, el("div","lane-head",(k+1)+". "+(s2.moment||""))); });
+    [["agent","Agent"],["person","Person"]].forEach(function(lane,li){
+      var nm=el("div","lane-name"+(li===1?" lane-row-last":""),lane[1]); add(g,nm);
+      f.steps.forEach(function(s2,k){
+        var cell=el("div","lane-cell"+(li===1?" lane-row-last":"")+(k===n-1?" last":"")); 
+        var txt=s2[lane[0]]; if(txt){ cell.className+=" has"; var nd=el("div","node "+lane[0]+(s2.exception?" exc":""),txt); nd.style.setProperty("--i",k*2+li); add(cell,nd); }
+        add(g,cell);
+      });
+    });
+    add(wrap,g); var tr=el("div","track"); add(tr, el("i")); add(wrap,tr); add(sm2,wrap);
+    var gw=el("div","grid");
+    if(f.wrong){ var cw=el("div","card"); add(cw, el("div","eyebrow","When it goes wrong"), el("p",null,f.wrong)); add(gw,cw); }
+    if(f.never){ var cn=el("div","card"); add(cn, el("div","eyebrow","The agent never"), el("p",null,f.never)); add(gw,cn); }
+    if(gw.children.length) add(sm2,gw);
+  });
+
   var hasMk = !!(fl && (fl.mockups||[]).length);
   var smk = slide("mockups","Flows","Mockups","Flow mockups",["flows/mockups/"], hasMk);
   if(hasMk){
@@ -458,6 +527,8 @@ footer{color:var(--ink-subtle);font-size:12px;border-top:1px solid var(--hairlin
   } else add(sfb, todo("/ai-product-flows"));
 
   add(slides[slides.length-1], el("footer",null,"Built from the files in the product's folder"+(d.updated?" on "+d.updated:"")+". The files are the source; this deck shows them."));
+
+  slides.forEach(function(s){ s.querySelectorAll(".card,.stair").forEach(function(c,k){ if(!c.style.getPropertyValue("--i")) c.style.setProperty("--i",k); }); s.querySelectorAll(".ebar").forEach(function(b){ b.querySelectorAll(".seg").forEach(function(sg,k){ sg.style.setProperty("--i",k); }); }); });
 
   // sidebar
   var nav=document.getElementById("nav"), groups={}, items=[];

@@ -110,14 +110,16 @@ After `/ai-product-research`, set `research` (from `research/`); talking to the 
   "options": [ { "option": "Spreadsheets", "who": "", "good": "", "bad": "" } ],
   "gap": "what no option does well today",
   "economics": { "currency": "$", "today": { "licence": 10000, "labour": 100000 }, "agents": { "licence": 10000, "agents": 10000, "labour": 20000 }, "labour_x": 5, "revenue_x": 2, "note": "for a typical customer; working in experiences.md" },
-  "experiences": [ { "name": "", "persona": "", "levels": "1 → 4", "today": "one line", "agent": "one line: what the agent does, what the person does", "first": false } ],
+  "experiences": [ { "name": "", "persona": "", "levels": "1 → 4", "today": "one line", "agent": "one line", "hours": "120 h a year per person", "first": false,
+      "today_steps": ["three to six short steps a person does today"],
+      "agent_steps": [ { "text": "short step", "by": "agent" }, { "text": "approves", "by": "check" } ] } ],
   "panel": "two or three lines: what the panel said about the problem",
   "objection": "the single best objection"
 }
 ```
 
 - `economics`: the new economics for a typical customer from `experiences.md`, as numbers per year.
-- `experiences`: the agentic customer experiences, with `first` true on the one to explore first.
+- `experiences`: the agentic customer experiences, with `first` true on the one to explore first. `today_steps` and `agent_steps` draw the today-against-with-agents strips; `by` is agent, person, or check (a person approves). Keep each step to a few words.
 - `complete`: true when the personas are checked and the panel has run once.
 
 After `/ai-product-flows`, set `flows` (from `flows/`):
@@ -125,7 +127,10 @@ After `/ai-product-flows`, set `flows` (from `flows/`):
 ```json
 {
   "complete": false,
-  "flows": [ { "name": "", "persona": "", "value": 4.2, "trust": 3.5, "pay": 3.8, "hours": "120 h/yr", "forward": "yes" } ],
+  "flows": [ { "name": "", "persona": "", "value": 4.2, "trust": 3.5, "pay": 3.8, "hours": "120 h/yr", "forward": "yes",
+      "trigger": "a new fault code arrives", "outcome": "the truck is booked in with parts ready",
+      "steps": [ { "moment": "Detect", "agent": "reads the fault code", "person": "" }, { "moment": "Approve", "agent": "", "person": "approves the work order" } ],
+      "wrong": "one line", "never": "one line" } ],
   "thinnest": "one line: the thinnest version of the flow to take forward",
   "mockups": [ { "name": "Morning review", "file": "flows/mockups/morning-review.html", "what": "one line" } ],
   "customers": "two or three lines from real interviews, or empty",
@@ -134,5 +139,5 @@ After `/ai-product-flows`, set `flows` (from `flows/`):
 }
 ```
 
-- `flows`: ranked, real customers outweighing the panel; `forward` is yes, later or no.
+- `flows`: ranked, real customers outweighing the panel; `forward` is yes, later or no. Flows with `steps` get their own flow-map slide: one column per moment, an agent lane and a person lane, a few words per cell; set `exception` true on a step that shows what happens when it goes wrong.
 - `complete`: true when the flows to take forward are agreed.
