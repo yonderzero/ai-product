@@ -1,6 +1,11 @@
 {
   "name": "ai-product",
-  "version": "0.1.0",
   "description": "Product Track workshops: one skill per session, from knowing your product to a handoff your developers can build from, plus research skills and synthetic customers built from your own data.",
-  "keywords": ["product-management", "discovery", "personas", "synthetic-customers", "workshop"]
+  "keywords": [
+    "product-management",
+    "discovery",
+    "personas",
+    "synthetic-customers",
+    "workshop"
+  ]
 }

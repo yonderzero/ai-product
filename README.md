@@ -19,8 +19,13 @@ Then restart Claude Code, open the folder you want to work in, and run:
 
 ## Update
 
+To get updates automatically, run `/plugin`, open **Marketplaces**, select `ai-product` and choose **Enable auto-update**.
+
+To update by hand, run this in your terminal and restart Claude Code:
+
 ```
-/plugin marketplace update ai-product
+claude plugin marketplace update ai-product
+claude plugin update ai-product@ai-product
 ```
 
 ## Credits
