@@ -62,6 +62,7 @@ After `/ai-product-discovery`, set `discovery` (from `discovery/`):
   "complete": false,
   "in_short": "the In short from discovery.md",
   "pillars": { "protection": 3.1, "strength": 3.4, "ai_opportunity": 3.6, "exposure": 2.7 },
+  "urgency": "high: competitors ship AI in the same workflows this year",
   "move": "Build on it",
   "move_why": "one or two lines",
   "direction": { "protect": "", "grow": ["one to three bets"], "build_first": "", "dont": "", "signals": ["two or three"] },
@@ -71,7 +72,8 @@ After `/ai-product-discovery`, set `discovery` (from `discovery/`):
 }
 ```
 
-- `pillars`: the composites from the scripts, as numbers.
+- `pillars`: the four numbers from `compute_pillars.py`, as numbers.
+- `urgency`: the AI urgency from `compute_pillars.py` in plain words, with one line on why.
 - `move`: exactly one of Build on it, Move first, Optimise, Defend.
 - `value_flows`: the rows of the value-flow table in `discovery.md`.
 - `complete`: true only when `discovery.md` is agreed.

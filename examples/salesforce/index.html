@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Product deck</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a product's one-page board. Header with progress, then Product, Vision, Discovery bands; the six AI levels as a rising staircase is the signature element. */
+:root{
+  --bg:#f4f6f8; --surface:#ffffff; --fg:#151a22; --muted:#5a6473; --line:#d9dee5;
+  --accent:#b85c00; --accent-soft:#fbe9d6; --lvl:#2f5d9e; --lvl-soft:#e3ebf6;
+  --good:#1f7a4d; --warn:#a56a00; --bad:#b3362c;
+  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --body:"IBM Plex Sans",ui-sans-serif,system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f1218; --surface:#171b23; --fg:#e6eaf0; --muted:#97a1b0; --line:#2a313d;
+  --accent:#ffad4d; --accent-soft:#3a2a17; --lvl:#8fb3e8; --lvl-soft:#1d2a3d;
+  --good:#5cc995; --warn:#f0b24a; --bad:#f07a6e; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1218; --surface:#171b23; --fg:#e6eaf0; --muted:#97a1b0; --line:#2a313d;
+  --accent:#ffad4d; --accent-soft:#3a2a17; --lvl:#8fb3e8; --lvl-soft:#1d2a3d;
+  --good:#5cc995; --warn:#f0b24a; --bad:#f07a6e; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.55 var(--body)}
+.wrap{max-width:1080px;margin:0 auto;padding-block:28px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:40px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.15}
+h1{font-size:clamp(30px,5vw,46px);font-weight:700}
+h2{font-size:24px;font-weight:700}
+h3{font-size:16px;font-weight:600;font-family:var(--body)}
+p{margin:0;max-width:68ch}
+a{color:var(--lvl)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.muted{color:var(--muted)}
+.head{display:grid;gap:14px}
+.meta{display:flex;flex-wrap:wrap;gap:6px 18px;color:var(--muted)}
+.progress{display:flex;flex-wrap:wrap;gap:8px}
+.step{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:13px;background:var(--surface)}
+.step i{width:9px;height:9px;border-radius:50%;background:var(--line)}
+.step.done i{background:var(--good)} .step.part i{background:var(--warn)}
+section{display:grid;gap:20px}
+.sec-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px;border-bottom:1px solid var(--line);padding-bottom:10px}
+.todo{border:1px dashed var(--line);border-radius:12px;padding:18px;color:var(--muted)}
+.todo code{font-family:var(--mono);color:var(--fg)}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;gap:8px;align-content:start;min-width:0}
+ul{margin:0;padding-left:18px} li{margin:2px 0}
+.lead{font-size:17px;max-width:70ch}
+/* staircase */
+.stairs{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;align-items:end}
+.stair{background:var(--lvl-soft);border-radius:10px 10px 4px 4px;padding:10px;display:grid;gap:6px;align-content:start;min-width:0}
+.stair .n{font:500 12px var(--mono);color:var(--muted)}
+.stair .name{font-weight:600;font-size:13px;line-height:1.25}
+.tag{display:inline-block;font:500 11px/1.4 var(--mono);padding:2px 7px;border-radius:999px;border:1px solid currentColor;width:max-content;max-width:100%}
+.tag.today{color:var(--lvl)} .tag.target{color:var(--accent)}
+.chip{font-size:12px;border-radius:6px;padding:2px 6px;background:var(--surface);border:1px solid var(--line);overflow-wrap:anywhere}
+.chip.us{border-color:var(--accent);background:var(--accent-soft);font-weight:600}
+@media (max-width:760px){.stairs{grid-template-columns:1fr}.stair{min-height:0!important}}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:500 12px var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+td.num{font-variant-numeric:tabular-nums;font-family:var(--mono)}
+.band{font:500 12px var(--mono);padding:2px 8px;border-radius:999px;white-space:nowrap}
+.band.do{background:var(--accent);color:var(--surface)} .band.strong{background:var(--accent-soft);color:var(--accent)} .band.watch{border:1px solid var(--line);color:var(--muted)}
+.statement{font-family:var(--display);font-size:clamp(20px,3vw,26px);line-height:1.3;font-weight:500;max-width:46ch;border-left:3px solid var(--accent);padding-left:16px}
+/* pillars */
+.pillars{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+.meter{height:8px;border-radius:99px;background:var(--lvl-soft);overflow:hidden}
+.meter b{display:block;height:100%;background:var(--lvl)}
+.meter.risk b{background:var(--bad)}
+.score{font:600 26px var(--mono);font-variant-numeric:tabular-nums}
+.quad{display:grid;grid-template-columns:auto 1fr 1fr;gap:6px;max-width:520px;font-size:14px}
+.quad div{padding:12px;border-radius:8px;background:var(--surface);border:1px solid var(--line);min-width:0}
+.quad .ax{background:none;border:0;font:500 11px var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.05em;display:flex;align-items:center}
+.quad .on{border:2px solid var(--accent);background:var(--accent-soft);font-weight:600}
+footer{color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:14px}
+@media (prefers-reduced-motion:no-preference){.stair{transition:transform .2s}.stair:hover{transform:translateY(-2px)}}
+/* deck */
+html,body{height:100%}
+.deck{min-height:100%;display:grid;grid-template-rows:auto 1fr auto;grid-template-columns:minmax(0,1fr)}
+.slides,.slide,.slide>*{min-width:0}
+.dir{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+.bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;padding-block:12px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));border-bottom:1px solid var(--line);background:var(--surface)}
+.bar .title{font-family:var(--display);font-weight:700}
+.dots{display:flex;flex-wrap:wrap;gap:6px}
+.dots button{width:10px;height:10px;border-radius:50%;border:0;padding:0;background:var(--line);cursor:pointer}
+.dots button[aria-current="true"]{background:var(--accent)}
+.nav{display:flex;align-items:center;gap:8px}
+.nav button,.toggle{font:500 13px var(--body);color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 12px;cursor:pointer}
+.nav button:disabled{opacity:.4;cursor:default}
+.count{font:500 12px var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
+.slides{overflow:auto}
+.slide{max-width:1080px;margin:0 auto;padding-block:32px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:22px;align-content:start}
+.deck:not(.all) .slide:not(.on){display:none}
+.deck.all .slide{border-bottom:1px solid var(--line)}
+.src{font:500 12px var(--mono);color:var(--muted)}
+.src a{color:var(--lvl)}
+.cover{min-height:60vh;align-content:center}
+</style>
+</head>
+<body>
+<div class="deck" id="deck">
+  <div class="bar">
+    <span class="title" id="decktitle">Product deck</span>
+    <div class="dots" id="dots" aria-label="Slides"></div>
+    <div class="nav">
+      <button type="button" id="prev" aria-label="Previous slide">←</button>
+      <span class="count" id="count"></span>
+      <button type="button" id="next" aria-label="Next slide">→</button>
+      <button type="button" class="toggle" id="all">All slides</button>
+    </div>
+  </div>
+  <div class="slides" id="app"></div>
+  <div></div>
+</div>
+
+<!-- Replace only the JSON below. Any section left null shows "Not done yet". See the ai-product-start skill's references/deck.md for the fields. -->
+<script type="application/json" id="data">
+{
+  "updated": "27 Oct 2026",
+  "product": {
+    "name": "Sales Cloud and Service Cloud",
+    "company": "Salesforce, Inc.",
+    "industry": "CRM software for sales and customer service",
+    "website": "https://www.salesforce.com/sales/",
+    "what": "Sales Cloud keeps accounts, contacts and deals in one place for sellers and managers. Service Cloud runs customer service: cases, knowledge and channels, now with AI agents.",
+    "personas": [
+      {
+        "name": "Account executive",
+        "who": "Quota-carrying seller at a mid-market B2B company; user",
+        "problems": [
+          "One view of each account and its history",
+          "Deal tracking that flags risk"
+        ]
+      },
+      {
+        "name": "Sales manager or VP of sales",
+        "who": "Leads 8–40 sellers; often the buyer",
+        "problems": [
+          "Forecasting from live deal data",
+          "Quota and commission tracking",
+          "Performance data for coaching"
+        ]
+      },
+      {
+        "name": "Salesforce admin or revenue operations",
+        "who": "Configures the system; influences the renewal",
+        "problems": [
+          "One configurable platform for data, workflows and reports"
+        ]
+      },
+      {
+        "name": "Service rep and service manager",
+        "who": "Reps use it; the head of service buys",
+        "problems": [
+          "Cases, knowledge and channels in one console",
+          "AI agents that take routine questions"
+        ]
+      }
+    ]
+  },
+  "vision": {
+    "complete": true,
+    "level_today": 4,
+    "level_target": 5,
+    "target_when": "end of 2028",
+    "market": [
+      {
+        "name": "Sales Cloud and Service Cloud",
+        "level": 4,
+        "us": true
+      },
+      {
+        "name": "HubSpot",
+        "level": 4
+      },
+      {
+        "name": "Microsoft Dynamics 365",
+        "level": 4
+      },
+      {
+        "name": "ServiceNow CSM",
+        "level": 4
+      },
+      {
+        "name": "Oracle Fusion CX",
+        "level": 3
+      },
+      {
+        "name": "Zoho CRM",
+        "level": 3
+      },
+      {
+        "name": "SAP Sales and Service Cloud",
+        "level": 2
+      },
+      {
+        "name": "Sierra",
+        "level": 4
+      },
+      {
+        "name": "Decagon",
+        "level": 4
+      },
+      {
+        "name": "Clay",
+        "level": 4
+      },
+      {
+        "name": "Attio",
+        "level": 3
+      },
+      {
+        "name": "Day.ai",
+        "level": 3
+      },
+      {
+        "name": "Microsoft 365 Copilot",
+        "level": 3
+      },
+      {
+        "name": "ChatGPT",
+        "level": 3
+      }
+    ],
+    "opportunities": [
+      {
+        "title": "The deal record that keeps itself",
+        "kind": "Grow the base",
+        "level": 4,
+        "priority": 4.35,
+        "band": "Do first"
+      },
+      {
+        "title": "Outcome-priced service for the fast-setup customer",
+        "kind": "New revenue",
+        "level": 4,
+        "priority": 4.25,
+        "band": "Do first"
+      },
+      {
+        "title": "An admin agent for data hygiene and the request queue",
+        "kind": "Grow the base",
+        "level": 4,
+        "priority": 3.6,
+        "band": "Strong option"
+      },
+      {
+        "title": "The forecast without the spreadsheet",
+        "kind": "Grow the base",
+        "level": 4,
+        "priority": 3.55,
+        "band": "Strong option"
+      },
+      {
+        "title": "Case wrap-up done for the rep",
+        "kind": "Grow the base",
+        "level": 4,
+        "priority": 3.4,
+        "band": "Strong option"
+      },
+      {
+        "title": "\"Deals like yours\": opt-in benchmarks across customers",
+        "kind": "New revenue",
+        "level": 5,
+        "priority": 2.85,
+        "band": "Worth watching"
+      }
+    ],
+    "imagine": [
+      {
+        "level": 5,
+        "sketch": "Sales Cloud knows how deals move across thousands of companies that opt in. A manager opens a deal and sees how similar deals close, and what's missing. Forecasts come with a range and reasons. Customers pay a yearly subscription for benchmarks.",
+        "already_there": "Harvey, OpenEvidence"
+      },
+      {
+        "level": 6,
+        "sketch": "Sales Cloud understands how a company's revenue is made. It plans the quarter, routes work to agents and people, and adjusts as deals move. Customers pay for revenue outcomes, not seats.",
+        "already_there": "Waymo, Tempus"
+      }
+    ],
+    "day": "Priya runs a 25-person sales team. Overnight, Sales Cloud read every email, call and contract change and moved three deals forward. It pulled one back because the buyer's champion changed jobs, and drafted an introduction to the new contact. Her forecast is done, with a range and the two deals that decide the quarter; she overrides one and says why. The Monday pipeline call is gone; she coaches the two reps whose deals look likely to slip.",
+    "statement": "By the end of 2028, Sales Cloud keeps every deal up to date on its own and tells each sales team what is working in deals like theirs. Managers stop chasing updates and building forecasts in spreadsheets, and coach on the deals that matter.",
+    "first_step": "Pilot the deal record that keeps itself with 10 Sales Cloud customers, and ask 20 sales leaders whether they'd share anonymised deal data to get benchmarks back."
+  },
+  "discovery": {
+    "complete": true,
+    "in_short": "Strong where it's hardest to copy: brand, partners, integrations and years of history. Exposed in service, where AI-native agents are winning, and in how easily data moves once AI does the migration. Build on it: keep the record current, win service on outcomes, and earn permission for benchmarks.",
+    "pillars": {
+      "protection": 3.67,
+      "strength": 3.83,
+      "ai_opportunity": 5.0,
+      "exposure": 2.64
+    },
+    "move": "Build on it",
+    "move_why": "AI opportunity 5.0 is high and risk 2.64 is below the line. Invest from strength, quickly, starting where AI-native rivals already win.",
+    "direction": {
+      "protect": "The record and the ecosystem: integrations, AppExchange and partners, kept open.",
+      "grow": [
+        "The deal record that keeps itself: defends the seat, takes back work tools on top do",
+        "Outcome-priced service with Fin: per-resolution revenue",
+        "Opt-in benchmarks: a new subscription per sales team"
+      ],
+      "build_first": "The deal-record pilot with 10 customers: proves reps trust agent updates, and tests opt-in.",
+      "dont": "Benchmarks before consent and clean records; quoting or handoff agents on thin evidence; repricing seats before outcome pricing is proven.",
+      "signals": [
+        "Updates accepted without edits",
+        "Sales leaders who opt in",
+        "Service win rate against AI-native agents"
+      ]
+    },
+    "value_flows": [
+      {
+        "flow": "Who gets value",
+        "today": "Reps, managers and service teams; partners and tools on top get the work around it",
+        "tomorrow": "Managers get a trusted forecast and benchmarks; service gets resolved conversations"
+      },
+      {
+        "flow": "Who pays, and for what",
+        "today": "The company, per seat ($25–$550), plus AI add-ons, credits or $2 per conversation",
+        "tomorrow": "Per resolution in service; a benchmark subscription per sales team"
+      },
+      {
+        "flow": "Where value leaks",
+        "today": "Manual entry, spreadsheet forecasts, Gong and Clari, partners, AI-native service agents",
+        "tomorrow": "Outside assistants doing the work through Headless 360"
+      },
+      {
+        "flow": "Who else could capture it",
+        "today": "Sierra, Decagon, HubSpot; Gong, Clari, Day.ai",
+        "tomorrow": "Microsoft 365 Copilot, ChatGPT, customers' own builds"
+      },
+      {
+        "flow": "What keeps it with us",
+        "today": "Integrations, partners, brand",
+        "tomorrow": "Data across customers, workflow, trust, distribution"
+      }
+    ],
+    "value_shift": "Seats for people who type into the CRM today → paying for outcomes: resolved conversations and a forecast with benchmarks.",
+    "readiness": [
+      {
+        "area": "Data",
+        "gap": "Explicit consent for benchmarks shown to other customers",
+        "must_be_true": "Enough customers opt in per industry and size"
+      },
+      {
+        "area": "Tech",
+        "gap": "Reliable field updates from email, calendar and calls; an anonymised pipeline across orgs",
+        "must_be_true": "Reps stop checking each change"
+      },
+      {
+        "area": "Team",
+        "gap": "No data scientists or privacy engineers on the team",
+        "must_be_true": "Both are staffed before benchmarks are built"
+      },
+      {
+        "area": "Customers",
+        "gap": "Reps' trust in automatic updates is unknown; trust in data use was dented",
+        "must_be_true": "Reps accept updates and leaders opt in"
+      },
+      {
+        "area": "Pricing",
+        "gap": "Agents moved back towards seat deals; benchmarks have no price",
+        "must_be_true": "Sales teams pay for benchmarks on top of seats"
+      }
+    ],
+    "urgency": "immediate: rivals ship agents in the same sales and service workflows now"
+  }
+}
+</script>
+<script>
+(function(){
+  var d = JSON.parse(document.getElementById("data").textContent);
+  var LEVELS = ["System of Record","AI Assisted","AI Directed","AI Delegated","AI Domain Intelligence","System of Understanding"];
+  var app = document.getElementById("app");
+  function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
+  function add(p){ for(var i=1;i<arguments.length;i++){ var c=arguments[i]; if(c) p.appendChild(c); } return p; }
+  function list(items, tag){ var u=el(tag||"ul"); (items||[]).forEach(function(t){ add(u, el("li",null,t)); }); return u; }
+  function todo(cmd){ var t=el("div","todo"); t.append("Not done yet. Run "); add(t, el("code",null,cmd)); t.append(" to fill this in."); return t; }
+  function src(files){ var s=el("div","src"); s.append("Source: "); files.forEach(function(f,i){ if(i) s.append(" · "); var a=el("a",null,f); a.href=f; add(s,a); }); return s; }
+  function table(cols, rows){ var w=el("div","tbl"), t=el("table"), hr=el("tr"); cols.forEach(function(c){ add(hr, el("th",null,c)); }); add(t, add(el("thead"),hr)); var b=el("tbody"); rows.forEach(function(r){ var tr=el("tr"); r.forEach(function(c){ var td=el("td"); if(c && c.nodeType) add(td,c); else td.textContent=c==null?"":c; if(typeof c==="number") td.className="num"; add(tr,td); }); add(b,tr); }); add(t,b); return add(w,t); }
+  var slides=[];
+  function slide(id, eyebrow, title, files, extra){ var s=el("section","slide"+(extra?" "+extra:"")); s.id=id; var h=el("div","sec-head"); var l=el("div"); add(l, el("div","eyebrow",eyebrow), el("h2",null,title)); add(h,l); if(files) add(h, src(files)); add(s,h); slides.push(s); add(app,s); return s; }
+
+  var p = d.product || {}, v = d.vision, x = d.discovery;
+  var name = p.name || "[Product]";
+  document.title = name;
+  document.getElementById("decktitle").textContent = name;
+
+  // 1 Cover
+  var c0 = el("section","slide cover"); c0.id="cover"; slides.push(c0); add(app,c0);
+  add(c0, el("div","eyebrow","ai-product"), el("h1",null,name));
+  var meta = el("div","meta");
+  [p.company, p.industry].forEach(function(t){ if(t) add(meta, el("span",null,t)); });
+  if(p.website){ var a=el("a",null,p.website.replace(/^https?:\/\//,"")); a.href=p.website; a.target="_blank"; a.rel="noopener"; add(meta,a); }
+  add(c0, meta);
+  if(v && v.statement) add(c0, el("p","statement",v.statement));
+  var prog = el("div","progress");
+  [["Start", p.what ? "done" : "part"], ["Vision", v ? (v.complete ? "done" : "part") : ""], ["Discovery", x ? (x.complete ? "done" : "part") : ""]].forEach(function(s){
+    var c=el("span","step "+s[1]); add(c, el("i")); c.append(s[0] + (s[1]==="done" ? "" : s[1]==="part" ? " · in progress" : " · not started")); add(prog,c);
+  });
+  add(c0, prog);
+
+  // 2 Product
+  var sp = slide("product","Start","The product",["product.md","documents/"]);
+  if(p.what){ add(sp, el("p","lead",p.what)); } else { add(sp, todo("/ai-product-start")); }
+
+  // 3 Customers
+  var sc = slide("customers","Start","Our customers",["product.md"]);
+  if((p.personas||[]).length){
+    var g=el("div","grid");
+    p.personas.forEach(function(r){ var c=el("div","card"); add(c, el("h3",null,r.name), r.who ? el("p","muted",r.who) : null, r.problems && r.problems.length ? add(el("div"), el("div","eyebrow","Problems we solve"), list(r.problems)) : null); add(g,c); });
+    add(sc,g);
+  } else add(sc, todo("/ai-product-start"));
+
+  // 4 Levels and market
+  var sl = slide("levels","Vision","Our product and our market on six levels",["vision/ai-levels.md","vision/market-map.md","vision/market-map.html"]);
+  if(v && (v.level_today || (v.market||[]).length)){
+    var st=el("div","stairs");
+    LEVELS.forEach(function(nm,i){
+      var n=i+1, c=el("div","stair"); c.style.minHeight=(90+i*26)+"px";
+      add(c, el("span","n","Level "+n), el("span","name",nm));
+      if(v.level_today===n) add(c, el("span","tag today","Today"));
+      if(v.level_target===n) add(c, el("span","tag target","Target"+(v.target_when?" · "+v.target_when:"")));
+      (v.market||[]).filter(function(m){ return m.level===n; }).forEach(function(m){ add(c, el("span","chip"+(m.us?" us":""), m.name)); });
+      add(st,c);
+    });
+    add(sl, el("p","muted","Each company sits at the highest level it has shipped and customers use."), st);
+  } else add(sl, todo("/ai-product-vision"));
+
+  // 5 Opportunities
+  var so = slide("opportunities","Vision","Opportunities in and around the product",["vision/opportunities.md","vision/market-moves.md"]);
+  if(v && (v.opportunities||[]).length){
+    add(so, table(["Opportunity","Kind","Level","Priority",""], v.opportunities.map(function(o){
+      var b=el("span","band "+(o.band==="Do first"?"do":o.band==="Strong option"?"strong":"watch"), o.band||""); return [o.title, o.kind||"", o.level?("L"+o.level):"", typeof o.priority==="number"?o.priority:"", b]; })));
+  } else add(so, todo("/ai-product-vision"));
+
+  // 6 Imagine
+  var si = slide("imagine","Vision","Imagine",["vision/vision.md"]);
+  if(v && ((v.imagine||[]).length || v.day)){
+    var gi=el("div","grid");
+    (v.imagine||[]).forEach(function(m){ var c=el("div","card"); add(c, el("div","eyebrow","Level "+m.level+" · "+(LEVELS[m.level-1]||"")), el("p",null,m.sketch), m.already_there ? el("p","muted","Already there: "+m.already_there) : null); add(gi,c); });
+    add(si, gi);
+    if(v.day){ var dc=el("div","card"); add(dc, el("div","eyebrow","A day with our System of Understanding"), el("p",null,v.day)); add(si,dc); }
+  } else add(si, todo("/ai-product-vision"));
+
+  // 7 Vision
+  var sv = slide("vision","Vision","Our vision",["vision/vision.md"]);
+  if(v && v.statement){
+    add(sv, el("p","statement",v.statement));
+    if(v.first_step){ var fs=el("div","card"); add(fs, el("div","eyebrow","First step"), el("p",null,v.first_step)); add(sv,fs); }
+  } else add(sv, todo("/ai-product-vision"));
+
+  // 8 Direction
+  var sdir = slide("direction","Discovery","Where to take the product",["discovery/discovery.md"]);
+  if(x && x.direction){
+    var dr=x.direction, gd=el("div","grid dir");
+    [["Protect",dr.protect],["Grow",dr.grow],["Build first",dr.build_first],["Don't",dr.dont],["How we'll know",dr.signals]].forEach(function(k){
+      if(!k[1] || (Array.isArray(k[1]) && !k[1].length)) return;
+      var c=el("div","card"); add(c, el("div","eyebrow",k[0]), Array.isArray(k[1]) ? list(k[1]) : el("p",null,k[1])); add(gd,c);
+    });
+    add(sdir, gd);
+  } else add(sdir, todo("/ai-product-discovery"));
+
+  // 9 Pillars
+  var sx = slide("pillars","Discovery","Is it ready? The four pillars",["discovery/protection.md","discovery/strength.md","discovery/exposure.md"]);
+  if(x && x.pillars){
+    if(x.in_short) add(sx, el("p","lead",x.in_short));
+    var pl=el("div","pillars");
+    [["Protection","protection",false],["Strength","strength",false],["AI opportunity","ai_opportunity",false],["Exposure","exposure",true]].forEach(function(k){
+      var s=x.pillars[k[1]]; if(s==null) return;
+      var c=el("div","card"), m=el("div","meter"+(k[2]?" risk":"")), b=el("b"); b.style.width=(Math.max(0,Math.min(5,s))/5*100)+"%"; add(m,b);
+      add(c, el("div","eyebrow",k[0]), el("span","score",Number(s).toFixed(2)+" / 5"), m, el("span","muted", k[2] ? "1 safest, 5 most exposed" : "higher is stronger")); add(pl,c);
+    });
+    add(sx, pl);
+    if(x.urgency) add(sx, el("p","muted","AI urgency: "+x.urgency));
+  } else add(sx, todo("/ai-product-discovery"));
+
+  // 10 Move
+  var sm = slide("move","Discovery","Our move",["discovery/discovery.md"]);
+  if(x && x.move){
+    var q=el("div","quad"), on=function(n){ return x.move===n ? "on" : ""; };
+    add(q, el("div","ax",""), el("div","ax","Lower risk"), el("div","ax","Higher risk"),
+      el("div","ax","Higher AI opportunity"), el("div",on("Build on it"),"Build on it"), el("div",on("Move first"),"Move first"),
+      el("div","ax","Lower AI opportunity"), el("div",on("Optimise"),"Optimise"), el("div",on("Defend"),"Defend"));
+    add(sm, el("h3",null,x.move), x.move_why ? el("p","muted",x.move_why) : null, q);
+  } else add(sm, todo("/ai-product-discovery"));
+
+  // 11 Value flows
+  var sf = slide("value","Discovery","Where value flows",["discovery/discovery.md"]);
+  if(x && (x.value_flows||[]).length){
+    if(x.value_shift) add(sf, el("p","statement",x.value_shift));
+    add(sf, table(["","Today","Tomorrow"], x.value_flows.map(function(r){ return [r.flow, r.today, r.tomorrow]; })));
+  } else add(sf, todo("/ai-product-discovery"));
+
+  // 12 Ready
+  var sr = slide("ready","Discovery","Ready for the vision?",["discovery/discovery.md"]);
+  if(x && ((x.readiness||[]).length || (x.next_steps||[]).length)){
+    if((x.readiness||[]).length) add(sr, table(["Area","The gap","Must be true"], x.readiness.map(function(r){ return [r.area, r.gap, r.must_be_true]; })));
+    if((x.next_steps||[]).length){ var ns=el("div","card"); add(ns, el("div","eyebrow","Next steps"), list(x.next_steps,"ol")); add(sr,ns); }
+  } else add(sr, todo("/ai-product-discovery"));
+
+  var foot=el("footer",null,"Built from the files in the product's folder"+(d.updated?" on "+d.updated:"")+". The files are the source; this deck shows them."); add(sr, foot);
+
+  // navigation
+  var deck=document.getElementById("deck"), dots=document.getElementById("dots"), prev=document.getElementById("prev"), next=document.getElementById("next"), count=document.getElementById("count"), all=document.getElementById("all"), cur=0;
+  slides.forEach(function(s,i){ var b=el("button"); b.type="button"; b.setAttribute("aria-label","Slide "+(i+1)); b.onclick=function(){ go(i); }; add(dots,b); });
+  function go(i){ cur=Math.max(0,Math.min(slides.length-1,i)); slides.forEach(function(s,k){ s.classList.toggle("on",k===cur); dots.children[k].setAttribute("aria-current",k===cur?"true":"false"); }); prev.disabled=cur===0; next.disabled=cur===slides.length-1; count.textContent=(cur+1)+" / "+slides.length; if(history.replaceState) try{ history.replaceState(null,"","#"+slides[cur].id); }catch(e){} document.getElementById("app").scrollTop=0; }
+  prev.onclick=function(){ go(cur-1); }; next.onclick=function(){ go(cur+1); };
+  all.onclick=function(){ var on=deck.classList.toggle("all"); all.textContent=on?"One slide":"All slides"; };
+  document.addEventListener("keydown",function(e){ if(deck.classList.contains("all")) return; if(e.key==="ArrowRight"||e.key==="PageDown"||e.key===" "){ e.preventDefault(); go(cur+1); } if(e.key==="ArrowLeft"||e.key==="PageUp"){ e.preventDefault(); go(cur-1); } });
+  var start=slides.findIndex(function(s){ return "#"+s.id===location.hash; }); go(start<0?0:start);
+})();
+</script>
+</body>
+</html>

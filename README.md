@@ -83,21 +83,21 @@ You get:
 Maps your market on six levels of AI, from System of Record to System of Understanding, finds the opportunities, and creates a vision for where you could take your product.
 
 You get:
-- **`ai-levels.md`**: the value your product gives customers at each level: features, for whom, and how they pay. *([example](examples/salesforce/ai-levels.md))*
-- **`market-map.md`** and **`market-map.html`**: your market on the six levels, with sources, and the openings. Open the `.html` in a browser to see it as a picture. *([example](examples/salesforce/market-map.md))*
-- **`market-moves.md`**: who's moving in your market, and what it opens up for you. *([example](examples/salesforce/market-moves.md))*
-- **`opportunities.md`**: your customers' work step by step, and the opportunities in and around your product, rated and ranked. *([example](examples/salesforce/opportunities.md))*
-- **`vision.md`**: your product's AI vision: your product imagined at each higher level, a day with your System of Understanding, the vision you agreed, and the first step. *([example](examples/salesforce/vision.md))*
+- **`ai-levels.md`**: the value your product gives customers at each level: features, for whom, and how they pay. *([example](examples/salesforce/vision/ai-levels.md))*
+- **`market-map.md`** and **`market-map.html`**: your market on the six levels, with sources, and the openings. Open the `.html` in a browser to see it as a picture. *([example](examples/salesforce/vision/market-map.md))*
+- **`market-moves.md`**: who's moving in your market, and what it opens up for you. *([example](examples/salesforce/vision/market-moves.md))*
+- **`opportunities.md`**: your customers' work step by step, and the opportunities in and around your product, rated and ranked. *([example](examples/salesforce/vision/opportunities.md))*
+- **`vision.md`**: your product's AI vision: your product imagined at each higher level, a day with your System of Understanding, the vision you agreed, and the first step. *([example](examples/salesforce/vision/vision.md))*
 
 **[`/ai-product-discovery`](docs/ai-product-discovery.md)**\
 Checks whether your product is ready for its vision and sets a clear direction. Scores four pillars with evidence and your inside knowledge, tests what has to be true for the vision, maps where value flows, and ends with where to take the product: what to protect, where to grow, what to build first.
 
 You get:
-- **`protection.md`**: what protects your product: switching costs, domain knowledge, speed and cost of building, and distribution, scored with sources.
-- **`strength.md`**: how strong the product and its customers are, and how big the AI opportunity is, scored with sources.
-- **`exposure.md`**: 11 risks, from AI disruption to ageing tech, scored with sources.
-- **`value.md`**: where value flows today, where it leaks, where it would flow at your vision's target level, who else could capture it, and how you'd charge.
-- **`discovery.md`**: the one page: where to take the product, the four pillars, whether you're ready for the vision (data, tech, team, customers, pricing), your move, and where value flows.
+- **`protection.md`**: what protects your product: switching costs, domain knowledge, speed and cost of building, and distribution, scored with sources. *([example](examples/salesforce/discovery/protection.md))*
+- **`strength.md`**: how strong the product and its customers are, and how big the AI opportunity is, scored with sources. *([example](examples/salesforce/discovery/strength.md))*
+- **`exposure.md`**: 11 risks, from AI disruption to ageing tech, scored with sources. *([example](examples/salesforce/discovery/exposure.md))*
+- **`value.md`**: where value flows today, where it leaks, where it would flow at your vision's target level, who else could capture it, and how you'd charge. *([example](examples/salesforce/discovery/value.md))*
+- **`discovery.md`**: the one page: where to take the product, the four pillars, whether you're ready for the vision (data, tech, team, customers, pricing), your move, and where value flows. *([example](examples/salesforce/discovery/discovery.md))*
 
 Each skill's files go in a folder named after it inside your product's folder (`vision/`, `discovery/`), as plain text you can open, edit and share.
 

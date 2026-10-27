@@ -1,6 +1,6 @@
 # Salesforce Sales Cloud and Service Cloud · Opportunities
 
-Built from `product.md`, `ai-levels.md`, `market-map.md` and `market-moves.md` on 27 Oct 2026. No `documents/` in this example, so the evidence is public: Salesforce's own surveys, job postings, reviews and trade press. Some surveys are from 2024; their dates are given.
+Built from `../product.md`, `ai-levels.md`, `market-map.md` and `market-moves.md` on 27 Oct 2026. No `documents/` in this example, so the evidence is public: Salesforce's own surveys, job postings, reviews and trade press. Some surveys are from 2024; their dates are given.
 
 ## The work around the product
 

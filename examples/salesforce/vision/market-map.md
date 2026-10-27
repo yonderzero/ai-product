@@ -47,6 +47,6 @@ Salesforce Sales Cloud and Service Cloud own the sales pipeline and the service 
 
 - **Empty or thin levels:** nobody credible is at level 5 or 6. No one gives sales or service teams benchmarks or recommendations drawn from many companies' deals and cases. Level 4 is crowded in service but thin in sales: only Salesforce's own lead agent, Microsoft's lead qualification agent (no named customers) and Clay for research.
 - **Moving up fastest:** Sierra and Decagon, AI-native, with published resolution rates and outcome pricing; Sierra raised $950M in May 2026. [https://www.vktr.com/customer-experience/sierra-raises-950m-at-15b-valuation-eyes-transformation-beyond-customer-support/] HubSpot reports its customer agent went from 20% to 70% resolution in a year. [https://www.cxtoday.com/contact-center/hubspot-customer-agent-resolution-rate/]
-- **Where we could lead:** level 5 in sales. Salesforce holds years of pipeline and case history across its customers (`product.md`), and the sales side of level 4 is still open.
+- **Where we could lead:** level 5 in sales. Salesforce holds years of pipeline and case history across its customers (`../product.md`), and the sales side of level 4 is still open.
 
 *Placements are a snapshot from public sources. Check the ones you act on.*

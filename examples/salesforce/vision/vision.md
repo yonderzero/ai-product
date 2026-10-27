@@ -56,9 +56,9 @@ At 4 pm it flags that a large customer's support cases tripled this month and th
 
 ## Why us
 
-- Years of pipeline, activity and case history across Salesforce's customers (`product.md`).
+- Years of pipeline, activity and case history across Salesforce's customers (`../product.md`).
 - Agents already working at level 4 in both sales and service, with customer results (`ai-levels.md`).
-- Data 360 to join outside signals to the deal, and Headless 360, Slack and the ChatGPT app to show up where sellers work (`product.md`, `market-moves.md`).
+- Data 360 to join outside signals to the deal, and Headless 360, Slack and the ChatGPT app to show up where sellers work (`../product.md`, `market-moves.md`).
 - Distribution: sellers and managers already live in Sales Cloud. `[PM, illustrative]`
 
 ## The opening

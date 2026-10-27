@@ -95,7 +95,7 @@ Claude asks one question at a time, like a conversation.
 
 ## What you get
 
-See finished ones in [the Salesforce example](../examples/salesforce/): [`ai-levels.md`](../examples/salesforce/ai-levels.md), [`market-map.md`](../examples/salesforce/market-map.md), [`market-moves.md`](../examples/salesforce/market-moves.md), [`opportunities.md`](../examples/salesforce/opportunities.md) and [`vision.md`](../examples/salesforce/vision.md). It's illustrative, built from public sources.
+See finished ones in [the Salesforce example](../examples/salesforce/): [`ai-levels.md`](../examples/salesforce/vision/ai-levels.md), [`market-map.md`](../examples/salesforce/vision/market-map.md), [`market-moves.md`](../examples/salesforce/vision/market-moves.md), [`opportunities.md`](../examples/salesforce/vision/opportunities.md) and [`vision.md`](../examples/salesforce/vision/vision.md). It's illustrative, built from public sources.
 
 ```
 acme-scheduler/

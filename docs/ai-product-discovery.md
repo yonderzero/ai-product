@@ -21,13 +21,13 @@ It goes deeper than the vision in two ways: it adds your inside knowledge, which
 
 ## The four pillars
 
-Each pillar is scored 1–5 against a fixed rubric, with a source for every score. A script does the arithmetic.
+Each pillar is scored 1–5 against a fixed rubric, with a source for every score. Scripts do the arithmetic, including the four pillars and your move.
 
 | Pillar | The question | What's scored |
 |---|---|---|
 | **Protection** | What protects your product? | 24 levers in four groups: switching costs, domain knowledge, speed and cost of building, and distribution. It also shows which are eroding fastest because of AI. |
 | **Strength** | How strong is the product and its customer base? | Business quality: where it sits in your customers' operations, how vertical and how critical it is, its competitive standing, leadership, and tech stack. Customer strength: how embedded it is, and how loyal customers are. |
-| **AI opportunity** | How big is the AI prize? | AI in the product today, how urgent it is, revenue AI could earn, and work AI could take off customers. |
+| **AI opportunity** | How big is the AI prize? | AI in the product today, revenue AI could earn, and work AI could take off customers. **How urgent it is** is shown separately, as how fast you need to move. |
 | **Exposure** | What could go wrong? | 11 risks in three groups: the market (AI disruption, growth, regulation), defensibility (dependence on partners, lock-in, substitution, timing), and business health (price pressure, trust, ageing tech). 1 is safest, 5 most exposed. |
 
 ## Your move
@@ -92,6 +92,8 @@ Claude asks one question at a time, like a conversation.
 12. **Done.** Claude adds your move and direction to `product.md` and sums up: the move, where to take the product, and what to build first.
 
 ## What you get
+
+See finished ones in [the Salesforce example](../examples/salesforce/discovery/): [`discovery.md`](../examples/salesforce/discovery/discovery.md), [`value.md`](../examples/salesforce/discovery/value.md), [`protection.md`](../examples/salesforce/discovery/protection.md), [`strength.md`](../examples/salesforce/discovery/strength.md) and [`exposure.md`](../examples/salesforce/discovery/exposure.md), and the whole deck in [`index.html`](../examples/salesforce/index.html). It's illustrative, built from public sources.
 
 ```
 acme-scheduler/

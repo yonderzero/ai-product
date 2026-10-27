@@ -19,9 +19,11 @@ Is the product ready to go where the vision says? Built from `protection.md`, `s
 | Pillar | Score | What it means |
 |---|---|---|
 | Protection | [composite] / 5 | [one line] |
-| Strength | [business quality and customer strength sections] / 5 | [one line] |
-| AI opportunity | [AI opportunity section] / 5 | [one line] |
+| Strength | [business quality and customer strength] / 5 | [one line] |
+| AI opportunity | [AI today, AI revenue, work AI could take off customers] / 5 | [one line] |
 | Exposure | [risk composite] / 5 (1 safest, 5 most exposed) | [one line] |
+
+**AI urgency:** [immediate / high / moderate / low / minimal]: [one line on how fast the product needs to move].
 
 ## Where we're strong
 

@@ -85,7 +85,9 @@ footer{color:var(--muted);font-size:13px;border-top:1px solid var(--line);paddin
 @media (prefers-reduced-motion:no-preference){.stair{transition:transform .2s}.stair:hover{transform:translateY(-2px)}}
 /* deck */
 html,body{height:100%}
-.deck{min-height:100%;display:grid;grid-template-rows:auto 1fr auto}
+.deck{min-height:100%;display:grid;grid-template-rows:auto 1fr auto;grid-template-columns:minmax(0,1fr)}
+.slides,.slide,.slide>*{min-width:0}
+.dir{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
 .bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;padding-block:12px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));border-bottom:1px solid var(--line);background:var(--surface)}
 .bar .title{font-family:var(--display);font-weight:700}
 .dots{display:flex;flex-wrap:wrap;gap:6px}
@@ -222,7 +224,7 @@ html,body{height:100%}
   // 8 Direction
   var sdir = slide("direction","Discovery","Where to take the product",["discovery/discovery.md"]);
   if(x && x.direction){
-    var dr=x.direction, gd=el("div","grid");
+    var dr=x.direction, gd=el("div","grid dir");
     [["Protect",dr.protect],["Grow",dr.grow],["Build first",dr.build_first],["Don't",dr.dont],["How we'll know",dr.signals]].forEach(function(k){
       if(!k[1] || (Array.isArray(k[1]) && !k[1].length)) return;
       var c=el("div","card"); add(c, el("div","eyebrow",k[0]), Array.isArray(k[1]) ? list(k[1]) : el("p",null,k[1])); add(gd,c);
@@ -241,6 +243,7 @@ html,body{height:100%}
       add(c, el("div","eyebrow",k[0]), el("span","score",Number(s).toFixed(2)+" / 5"), m, el("span","muted", k[2] ? "1 safest, 5 most exposed" : "higher is stronger")); add(pl,c);
     });
     add(sx, pl);
+    if(x.urgency) add(sx, el("p","muted","AI urgency: "+x.urgency));
   } else add(sx, todo("/ai-product-discovery"));
 
   // 10 Move

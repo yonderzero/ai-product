@@ -54,9 +54,16 @@ If files from an earlier run exist (`protection.md`, `strength.md`, `exposure.md
 
    Tag their answers `[PM]`. As each subagent finishes, send it the answers that bear on its scores (or rescore yourself with its rubric) so the inside view counts as evidence, and rerun its script.
 
-4. **The scores.** When all three are back, show the four pillars in one short table: score, and one line on what it means. Protection is the moat composite; strength is the business quality and customer strength sections; AI opportunity is the AI opportunity section; exposure is the risk composite. Then, one at a time, show the two or three most important findings from each report.
+4. **The scores.** When all three are back, compute the four pillars and the move with `references/compute_pillars.py` (`python3 compute_pillars.py --protection <protection composites.json> --strength <strength composites.json> --exposure <exposure composite.json> --output <scratch>/pillars.json`). Use its numbers; don't compute them by hand. It gives:
+   - **Protection:** the moat composite.
+   - **Strength:** the average of business quality and customer strength.
+   - **AI opportunity:** the average of AI in the product today, revenue AI could earn, and work AI could take off customers. Urgency is left out because its scale is inverted (1 means immediate urgency) and would make a product under heavy AI pressure look like a smaller opportunity.
+   - **AI urgency:** reported on its own, as how fast the product needs to move.
+   - **Exposure:** the risk composite, which already counts AI disruption and its timing.
 
-5. **Overturn a score.** Ask: "Which score do you disagree with most?" Show its anchor from the rubric and the evidence it was based on. Ask for their evidence. If the evidence meets a different anchor, change the score, rerun the script, and record the change and why, tagged `[PM]`. If it doesn't, say so plainly and keep the score. Then ask: "Any other?" Continue until they say no.
+   Show the four pillars in one short table, with one line each on what it means, and say the urgency in plain words. Then, one at a time, show the two or three most important findings from each report.
+
+5. **Overturn a score.** Ask: "Which score do you disagree with most?" Show its anchor from the rubric and the evidence it was based on. Ask for their evidence. If the evidence meets a different anchor, change the score, rerun its script and `compute_pillars.py`, and record the change and why, tagged `[PM]`. If it doesn't, say so plainly and keep the score. Then ask: "Any other?" Continue until they say no.
 
 6. **Ready for the vision?** Take the furthest the vision got: the target level and starting opportunities in `vision.md`; if that isn't written yet, the top opportunities in `opportunities.md`; if not those, the next level up from `ai-levels.md`. Say which one you're using. Go through five areas, one at a time. For each, say what the reports and the inside view show, then ask what's missing:
    - **Data:** do we have the data the vision needs, and the rights to use it?
@@ -67,7 +74,7 @@ If files from an earlier run exist (`protection.md`, `strength.md`, `exposure.md
 
    For each, write what we have, the gap, what must be true, and how we'll check it. Then name the strengths the vision builds on, and the risks that could stop it.
 
-7. **Our move.** Place the product on AI opportunity (the AI opportunity section score) against AI risk (the exposure composite). 3.0 is the line on both; if a score is within 0.2 of it, say it's borderline and ask the product manager which side it's on.
+7. **Our move.** Take the move from `compute_pillars.py`: AI opportunity against exposure, with 3.0 as the line on both. If it marks a score as borderline (within 0.2 of the line), say so and ask the product manager which side it's on. Use the urgency to set the pace: with high or immediate urgency, say the move has to start now.
    - **Build on it:** higher opportunity, lower risk. Invest from strength.
    - **Move first:** higher opportunity, higher risk. Move before someone else does.
    - **Optimise:** lower opportunity, lower risk. Make the most of what's there.

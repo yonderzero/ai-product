@@ -80,9 +80,9 @@ Both now ship with AI agents under the Agentforce name. They qualify leads, answ
 
 ## Competitors and alternatives
 
-- Incumbents: Microsoft Dynamics 365, HubSpot, Oracle Fusion CX, SAP Sales and Service Cloud, Zoho CRM, ServiceNow Customer Service Management. See `market-map.md`.
-- AI-native: Sierra and Decagon in service; Attio, Day.ai and Lightfield as AI-first CRMs; Clay for sales research. See `market-map.md` and `market-moves.md`.
-- Tools on top: Gong (call recording), Clari (forecasting), Zapier (moving data between systems). See `market-moves.md`.
+- Incumbents: Microsoft Dynamics 365, HubSpot, Oracle Fusion CX, SAP Sales and Service Cloud, Zoho CRM, ServiceNow Customer Service Management. See `vision/market-map.md`.
+- AI-native: Sierra and Decagon in service; Attio, Day.ai and Lightfield as AI-first CRMs; Clay for sales research. See `vision/market-map.md` and `vision/market-moves.md`.
+- Tools on top: Gong (call recording), Clari (forecasting), Zapier (moving data between systems). See `vision/market-moves.md`.
 - Doing nothing: spreadsheets and shared inboxes, mostly in smaller teams. `[PM, illustrative]`
 
 ## Data and tech
@@ -97,7 +97,8 @@ Both now ship with AI agents under the Agentforce name. They qualify leads, answ
 - Einstein features suggest and score: lead and opportunity scoring, forecasting, call summaries, record summaries. [https://help.salesforce.com/s/articleView?id=sales.sales_core_artificial_intelligence.htm&language=en_US&type=5]
 - Agentforce agents act on their own: they nurture and qualify leads and resolve service conversations. On Salesforce's own help site they have handled more than five million conversations and resolved over 63% of them instantly. [https://www.salesforce.com/agentforce/case-study/customer-zero]
 - 7.0 billion "agentic work units" (discrete tasks agents completed) delivered to date across Agentforce and Slack, 3.2 billion of them in Q2 fiscal 2027. [https://investor.salesforce.com/news/news-details/2026/Salesforce-Delivers-Record-Second-Quarter-Fiscal-2027-Results/default.aspx]
-- **Level today: 4, AI Delegated. Target: 5, AI Domain Intelligence, by the end of 2028.** See `ai-levels.md` and `vision.md`.
+- **Level today: 4, AI Delegated. Target: 5, AI Domain Intelligence, by the end of 2028.** See `vision/ai-levels.md` and `vision/vision.md`.
+- **Our move: Build on it** (AI opportunity 5.0, risk 2.64, AI urgency immediate). Direction: protect the record and the ecosystem, make the deal record keep itself, then sell outcomes and opt-in benchmarks. See `discovery/discovery.md`.
 
 ## The idea we have in mind
 
