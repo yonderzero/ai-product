@@ -1,5 +1,7 @@
 # ai-product
 
+**Version 1.0.0** · 27 Oct 2026
+
 The AI era gives you, as a product manager, a chance to re-imagine your product and grow the business.
 
 ai-product is a plugin for Claude that helps you do just that. It helps you re-imagine your product for the AI era and innovate in and around it: bringing new value to your existing customers, winning new ones, and growing organically.
@@ -209,6 +211,14 @@ claude plugin update ai-product@ai-product
 Then restart Claude Code.
 
 </details>
+
+## Versions
+
+| Version | Date | What's in it |
+|---|---|---|
+| 1.0.0 | 27 Oct 2026 | Seven skills, from `/ai-product-start` to `/ai-product-roadmap`; the deck (`index.html`) that updates after every step; the Salesforce and FleetDesk examples. |
+
+Fixes reach you whenever you update the plugin (see [Update](#update)), even between version numbers.
 
 ## License
 
