@@ -36,10 +36,10 @@ Restart Claude Code in the folder you want to work in, then run `/ai-product-sta
 
 ## Skills
 
-**[`/ai-product-start`](docs/ai-product-start.md)**
+**[`/ai-product-start`](docs/ai-product-start.md)**\
 Sets up a folder for your product, builds a first profile from its website and your documents, and interviews you about the product and each type of customer.
 
-**[`/ai-product-vision`](docs/ai-product-vision.md)**
+**[`/ai-product-vision`](docs/ai-product-vision.md)**\
 Maps your market on six levels of AI, from System of Record to System of Understanding, finds the opportunities, and creates a vision for where you could take your product.
 
 More skills are coming.
