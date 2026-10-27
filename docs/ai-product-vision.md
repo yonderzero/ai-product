@@ -17,14 +17,14 @@ The second skill, after [`ai-product-start`](ai-product-start.md). Software is m
 
 ## The six levels
 
-| # | Level | Who does the work |
-|---|---|---|
-| 1 | System of Record | People do the work; the software stores it |
-| 2 | AI Assisted | People do the work; AI suggests |
-| 3 | AI Directed | A person asks; AI does one task; the person checks each result |
-| 4 | AI Delegated | AI does the job end to end; people handle exceptions |
-| 5 | AI Domain Intelligence | AI brings expertise learned from data across many customers |
-| 6 | System of Understanding | The product understands how the domain works, anticipates and acts |
+| # | Level | Who does the work | Main characteristics | How customers pay | Examples |
+|---|---|---|---|---|---|
+| 1 | System of Record | People do the work; the software stores it | The record is the value: data, forms, workflows, reports for one customer | Per seat, licence or module | Epic, SAP, Procore |
+| 2 | AI Assisted | People do the work; AI suggests | Suggestions, summaries and autocomplete inside the existing screens; the workflow doesn't change | Included, or a small add-on | Gmail Smart Compose, Grammarly |
+| 3 | AI Directed | A person asks; AI does one task; the person checks each result | A copilot or chat that drafts, builds or fills in on request, across the customer's data | Per-seat add-on, or usage | Microsoft 365 Copilot, Shopify Sidekick |
+| 4 | AI Delegated | AI does the job end to end; people handle exceptions | Owns a whole job; measured on outcomes; needs guardrails, audit trails and approvals | Per outcome or per use | Intercom Fin, Abridge |
+| 5 | AI Domain Intelligence | AI brings expertise | Learns from data across many customers; benchmarks, recommends, gives answers experts trust | A premium for expertise | Harvey, OpenEvidence |
+| 6 | System of Understanding | The product runs the day-to-day; people set goals | Understands how the domain behaves; anticipates and acts before anyone asks | For results | Waymo, Tempus |
 
 A company sits at the highest level it has **shipped and customers use**, with a source. Announcements don't count, and your own product gets the same rules as everyone else.
 
@@ -60,7 +60,7 @@ Claude asks one question at a time, like a conversation.
 
    Claude shows the ranked list and asks which excite you, what's missing, and whether any rating is wrong.
 
-8. **Imagine.** The creative part. For each level above where your product is today, Claude shows two real products already there and sketches what *your* product could look like at that level: what it does, for whom, what changes in their day, and how customers would pay. You add to it. Then Claude writes a day in the life of your main persona five years from now, with your product as a System of Understanding, and asks what excites you, what feels wrong, and what it would need to know. See [real products at each level](../skills/ai-product-vision/references/level-examples.md).
+8. **Imagine.** The creative part. For each level above where your product is today, Claude shows two real products already there and sketches what *your* product could look like at that level: what it does, for whom, what changes in their day, and how customers would pay. You add to it. Then Claude writes a day in the life of your main persona five years from now, with your product as a System of Understanding, and asks what excites you, what feels wrong, and what it would need to know. See [the six levels: characteristics and real products](../skills/ai-product-vision/references/level-examples.md).
 
 9. **The vision interview.** One question at a time:
    - Which of the top opportunities should the vision start with, on the way to that future?

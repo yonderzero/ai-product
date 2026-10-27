@@ -40,7 +40,7 @@ Read `product.md` and anything in `documents/` you haven't read yet. Read `refer
 
    If subagents aren't available, do the same work yourself, one batch at a time, between questions.
 
-4. **Your product, level by level.** While research runs, go up the levels with the product manager, from 1. For each level, say in one line what it means (from `references/levels.md`), then ask one question at a time:
+4. **Your product, level by level.** While research runs, go up the levels with the product manager, from 1. For each level, say in two lines what it means and its main characteristics (from `references/level-examples.md`), then ask one question at a time:
    - Does the product give customers value at this level? Which features or functionality?
    - For whom: which persona from `product.md`, buyer or user?
    - What value does it give them: what do they get done, save or avoid?
@@ -77,7 +77,7 @@ Read `product.md` and anything in `documents/` you haven't read yet. Read `refer
 8. **Imagine.** Now help the product manager picture the future, beyond what the evidence shows today. This is the creative part: be concrete and vivid, and specific to their product, personas and data. Read `references/level-examples.md`.
 
    For each level above the product's level today, up to 6, one message per level:
-   - name the level and show two real products already there, one line each;
+   - name the level, give its main characteristics in two lines, and show two real products already there, one line each;
    - sketch **their product at this level** in three or four lines: what it does, for which persona, what changes in their day, and how customers would pay;
    - ask one question: "What would you add or change?"
 
