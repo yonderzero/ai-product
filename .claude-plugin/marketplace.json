@@ -1,14 +1,15 @@
 {
   "name": "ai-product",
-  "description": "Product Track workshops for product teams: one skill per session, from your product to a developer handoff.",
+  "description": "Takes your product in an AI-native direction: from knowing your product and your customers to requirements your developers can build from.",
   "owner": {
-    "name": "Product Track"
+    "name": "Yonder SRL",
+    "url": "https://tss-yonder.com/"
   },
   "plugins": [
     {
       "name": "ai-product",
       "source": "./",
-      "description": "Product Track workshops: one skill per session, research skills, and synthetic customers built from your own data."
+      "description": "Takes your product in an AI-native direction: from knowing your product and your customers to requirements your developers can build from."
     }
   ]
 }

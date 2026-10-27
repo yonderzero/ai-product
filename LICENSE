@@ -1,13 +1,6 @@
-# Third-party notices
-
-## phuryn/pm-skills
-
-`skills/interview-script/` and `skills/summarize-interview/` are copied from https://github.com/phuryn/pm-skills under this licence:
-
-```
 MIT License
 
-Copyright (c) 2026 Pawel Huryn
+Copyright (c) 2026 Yonder SRL (https://tss-yonder.com/)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -26,10 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-```
-
-## Ideas, not code
-
-- `synthetic-customers` follows ideas from persona-plugin (https://github.com/IrrealityLabs/persona-plugin, MIT): isolated per-persona agents, calibration against real answers, a per-persona evidence log, Van Westendorp pricing. No code or text is copied.
-- Its persona record groups fields the way MatrAIx's persona schema does (background, psychology, capability, behaviour). No MatrAIx data is used.
-- Buyer fields follow Adele Revella's Five Rings of Buying Insight.

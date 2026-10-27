@@ -1,11 +1,17 @@
 {
   "name": "ai-product",
-  "description": "Product Track workshops: one skill per session, from knowing your product to a handoff your developers can build from, plus research skills and synthetic customers built from your own data.",
+  "description": "Takes your product in an AI-native direction: from knowing your product and your customers to requirements your developers can build from.",
+  "author": {
+    "name": "Yonder SRL",
+    "url": "https://tss-yonder.com/"
+  },
+  "homepage": "https://github.com/yonderzero/ai-product",
+  "repository": "https://github.com/yonderzero/ai-product",
+  "license": "MIT",
   "keywords": [
     "product-management",
     "discovery",
     "personas",
-    "synthetic-customers",
-    "workshop"
+    "ai-native"
   ]
 }

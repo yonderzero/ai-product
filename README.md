@@ -36,6 +36,6 @@ claude plugin marketplace update ai-product
 claude plugin update ai-product@ai-product
 ```
 
-## Credits
+## License
 
-See `THIRD-PARTY-NOTICES.md`.
+[MIT](LICENSE) © Yonder SRL ([tss-yonder.com](https://tss-yonder.com/)). Free for anyone to use, change and share.
