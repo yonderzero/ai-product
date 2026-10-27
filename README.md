@@ -44,6 +44,8 @@ You run the skills in order, in one folder:
 
 Each skill is a conversation. Claude asks one question at a time, researches the web in the background, and writes what you build together into files in your product's folder. Each skill reads what the earlier ones wrote, so run them in the same place.
 
+You don't have to finish a skill before moving on. Claude saves as you go and marks what's not done yet. As long as something is saved, you can go on to the next skill, and come back to any skill later to finish it, redo a step or update it. You can also edit the files yourself; the next skill reads your edits.
+
 ```
 acme-scheduler/       named after your product
   product.md          from /ai-product-start

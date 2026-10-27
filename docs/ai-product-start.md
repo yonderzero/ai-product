@@ -108,7 +108,7 @@ You can add more at any time; every skill reads this folder. Remove people's nam
 - **Claude says it has no folder on your computer.** Start a new conversation, pick a folder with **Project or folder**, and run `/ai-product-start` again.
 - **Web search doesn't work.** Claude says so in step 5. Check that web search is turned on for your Claude account, then run the skill again. Without it, the profile is built only from what you tell it and your documents.
 - **The profile has something wrong.** Tell Claude while it's showing you, or edit `product.md` yourself at any time. It's a plain text file.
-- **You ran out of time.** Say "enough". Whatever isn't answered goes under "Still unknown", and you can run `/ai-product-start` again later and choose to continue.
+- **You ran out of time.** Say so. Claude saves what's done and marks the rest. You can go on to `/ai-product-vision` straight away, and run `/ai-product-start` again later to fill the gaps or update a section.
 
 ## Tips
 

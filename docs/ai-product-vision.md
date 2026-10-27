@@ -12,7 +12,7 @@ The second skill, after [`ai-product-start`](ai-product-start.md). Software is m
 
 ## Before you begin
 
-- **Your product profile.** Run [`/ai-product-start`](ai-product-start.md) first. If there's no `product.md`, Claude asks you to run it and stops.
+- **Your product profile.** Run [`/ai-product-start`](ai-product-start.md) first. It doesn't have to be finished: a partly filled `product.md` is enough.
 - **The same folder.** In the Claude desktop app, pick the folder that holds your product's folder with **Project or folder**. In Claude Code, start Claude there.
 - **Web search.** The market map and the opportunities are researched on the web.
 
@@ -147,7 +147,7 @@ Full rules: [finding and rating opportunities](../skills/ai-product-vision/refer
 - **The research is slow.** It runs in the background while Claude interviews you about your product, so keep going. It usually catches up by the time you've been through the levels.
 - **A competitor is placed wrongly.** Tell Claude, with a link if you have one. Claude applies the same rules and updates the map.
 - **Your product is placed lower than you expected.** That's usually because a feature is announced or in beta, not shipped and used. Claude writes both views; add a customer example if you have one.
-- **You ran out of time.** Everything written so far is saved in the folder. Run `/ai-product-vision` again later and Claude picks up from the files.
+- **You ran out of time.** Say so. Claude saves what's done and marks the rest "Not done yet". You can go on to `/ai-product-discovery`, and run `/ai-product-vision` again later to finish or redo a step.
 
 ## Tips
 

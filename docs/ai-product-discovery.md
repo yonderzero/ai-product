@@ -14,7 +14,7 @@ It goes deeper than the vision in two ways: it adds your inside knowledge, which
 
 ## Before you begin
 
-- **Your product profile and vision.** Run [`/ai-product-start`](ai-product-start.md) and [`/ai-product-vision`](ai-product-vision.md) first. If `product.md` or `vision.md` is missing, Claude asks you to run the earlier skill and stops.
+- **Your product profile and some of your vision.** Run [`/ai-product-start`](ai-product-start.md) and [`/ai-product-vision`](ai-product-vision.md) first. Neither has to be finished: discovery needs a `product.md` and at least one file from the vision skill. The readiness check uses the furthest your vision got: `vision.md`, else your top opportunities, else your AI levels.
 - **The same folder.** In the Claude desktop app, pick the folder that holds your product's folder with **Project or folder**. In Claude Code, start Claude there.
 - **Web search.** The scores are researched on the web.
 - **Some numbers, if you have them:** retention, implementation time, team size. Rough figures are fine.
@@ -66,7 +66,7 @@ Claude asks one question at a time, like a conversation.
 
 5. **Overturn a score.** Claude asks which score you disagree with most, shows what it was based on, and asks for your evidence. If your evidence meets a different level of the rubric, the score changes and the reason is written down. If not, Claude says so and keeps it. You can challenge as many as you like.
 
-6. **Ready for the vision?** For your vision's target level and the opportunities it starts with, Claude goes through five areas one at a time: **data** (do you have it, and the rights?), **tech**, **team**, **customers** (will they trust AI with the job?) and **pricing** (can you charge for outcomes?). For each: what you have, the gap, what must be true, and how you'll check it.
+6. **Ready for the vision?** For your vision's target level and the opportunities it starts with (or, if your vision isn't finished, your top opportunities), Claude goes through five areas one at a time: **data** (do you have it, and the rights?), **tech**, **team**, **customers** (will they trust AI with the job?) and **pricing** (can you charge for outcomes?). For each: what you have, the gap, what must be true, and how you'll check it.
 
 7. **Your move.** Claude places your product on the grid, explains why, and asks if that's where you'd put it.
 
@@ -100,10 +100,10 @@ acme-scheduler/
 
 ## Troubleshooting
 
-- **Claude asks you to run another skill first.** Discovery needs `product.md` and `vision.md`. Check you picked the right folder.
+- **Claude asks you to run another skill first.** Discovery needs `product.md` and at least one file from the vision skill. Check you picked the right folder.
 - **You don't know a number.** Say so, or give a rough range. Claude marks it, and the score relies on public evidence instead.
 - **A score feels wrong.** Challenge it in step 5, with evidence: a customer example, a number, a link.
-- **You ran out of time.** Everything written so far is saved. Run `/ai-product-discovery` again later and Claude picks up from the files.
+- **You ran out of time.** Say so. Claude saves what's done and marks the rest "Not done yet". Move on, and run `/ai-product-discovery` again later to finish.
 
 ## Tips
 

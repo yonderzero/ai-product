@@ -11,11 +11,15 @@ What value does your product give customers at each level, from System of Record
 
 Conversational, short messages, one question at a time. Never send a list of questions. Don't explain what you're about to check; just do it. While research runs, keep talking with the product manager instead of going quiet.
 
+## Save as you go
+
+Write each file as soon as its step has content, and update it as you go. Mark any section you haven't reached `Not done yet`. If the product manager says they're out of time or wants to move on, stop cleanly: save what's there, say which steps are left, and that they can run this skill again to continue, or edit the files themselves. Moving on is fine as long as something is saved.
+
 ## Before you start
 
-Work in the product folder: the current folder, or the folder below it that has `product.md`. If there is none, the product profile isn't done yet: say so in one line, ask them to run `/ai-product-start` first, and stop.
+Work in the product folder: the current folder, or the folder below it that has `product.md`. If there is none, or it's empty, say in one line that the product profile comes first, ask them to run `/ai-product-start`, and stop. A partly filled `product.md` is enough to go on.
 
-Read `product.md` and anything in `documents/` you haven't read yet. If files from an earlier run exist (`ai-levels.md`, `market-map.md`, `market-moves.md`, `opportunities.md`, `vision.md`), say which steps are done and ask whether to continue from where they stopped or start again. When continuing, skip the steps whose files exist, unless they ask to redo one. Read `references/levels.md`: the six levels, the evidence each needs, and the placement rules. Apply them strictly.
+Read `product.md` and anything in `documents/` you haven't read yet. If files from an earlier run exist (`ai-levels.md`, `market-map.md`, `market-moves.md`, `opportunities.md`, `vision.md`), say which steps are done and which aren't (look for `Not done yet`), and ask whether to continue, redo a step, or start again. When continuing, skip the steps that are done, unless they ask to redo one. Read the files as they are now: the product manager may have edited them. Read `references/levels.md`: the six levels, the evidence each needs, and the placement rules. Apply them strictly.
 
 ## Steps
 

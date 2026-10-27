@@ -11,16 +11,20 @@ Is your product ready to go where the vision says? What protects it, how strong 
 
 Conversational, short messages, one question at a time. Never send a list of questions. Don't explain what you're about to check; just do it. While research runs, keep talking with the product manager instead of going quiet. Name scores in plain English; never use codes like SC1 or A4 in what you say.
 
+## Save as you go
+
+Write each file as soon as its step has content, and update it as you go. Mark any section you haven't reached `Not done yet`. If the product manager says they're out of time or wants to move on, stop cleanly: save what's there, say which steps are left, and that they can run this skill again to continue, or edit the files themselves. Moving on is fine as long as something is saved.
+
 ## Before you start
 
 Work in the product folder: the current folder, or the folder below it that has `product.md`.
 
-- No `product.md`: say in one line that the product profile isn't done yet, ask them to run `/ai-product-start` first, and stop.
-- No `vision.md`: say in one line that discovery checks the product against its vision, ask them to run `/ai-product-vision` first, and stop.
+- No `product.md`, or it's empty: say in one line that the product profile comes first, ask them to run `/ai-product-start`, and stop.
+- None of the vision files (`ai-levels.md`, `market-map.md`, `market-moves.md`, `opportunities.md`, `vision.md`): say in one line that discovery builds on the vision, ask them to run `/ai-product-vision` first, and stop. Any one of them is enough to go on.
 
 Read `product.md`, `ai-levels.md`, `market-map.md`, `market-moves.md`, `opportunities.md`, `vision.md` and anything in `documents/` you haven't read yet.
 
-If files from an earlier run exist (`protection.md`, `strength.md`, `exposure.md`, `discovery.md`), say which steps are done and ask whether to continue from where they stopped or start again.
+If files from an earlier run exist (`protection.md`, `strength.md`, `exposure.md`, `discovery.md`), say which steps are done and which aren't (look for `Not done yet`), and ask whether to continue, redo a step, or start again. Read the files as they are now: the product manager may have edited them.
 
 ## Steps
 
@@ -54,7 +58,7 @@ If files from an earlier run exist (`protection.md`, `strength.md`, `exposure.md
 
 5. **Overturn a score.** Ask: "Which score do you disagree with most?" Show its anchor from the rubric and the evidence it was based on. Ask for their evidence. If the evidence meets a different anchor, change the score, rerun the script, and record the change and why, tagged `[PM]`. If it doesn't, say so plainly and keep the score. Then ask: "Any other?" Continue until they say no.
 
-6. **Ready for the vision?** Take the vision's target level and the opportunities it starts with (`vision.md`, `opportunities.md`). Go through five areas, one at a time. For each, say what the reports and the inside view show, then ask what's missing:
+6. **Ready for the vision?** Take the furthest the vision got: the target level and starting opportunities in `vision.md`; if that isn't written yet, the top opportunities in `opportunities.md`; if not those, the next level up from `ai-levels.md`. Say which one you're using. Go through five areas, one at a time. For each, say what the reports and the inside view show, then ask what's missing:
    - **Data:** do we have the data the vision needs, and the rights to use it?
    - **Tech:** can the product's stack support it?
    - **Team:** do we have the skills and the capacity?

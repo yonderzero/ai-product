@@ -11,11 +11,15 @@ Run once. Every other ai-product skill reads and writes in the folder this creat
 
 Conversational, short messages, one question at a time. Never send a list of questions. Don't explain what you didn't find or what you're about to check; just do it.
 
+## Save as you go
+
+Write each file as soon as its step has content, and update it as you go. Mark any section you haven't reached `Not done yet`. If the product manager says they're out of time or wants to move on, stop cleanly: save what's there, say which steps are left, and that they can run this skill again to continue, or edit the files themselves. Moving on is fine as long as something is saved.
+
 ## Steps
 
 1. **Where we are.** Say which folder you're working in, by its full path, and ask if that's the right place for the product's folder. If you have no folder on the user's computer, say so in one line and tell them how to pick one (in Claude Desktop: the folder picker next to the message box), then wait.
 
-   If this folder, or one folder below it, already has a `product.md`, say which product it is and ask whether to continue with it or start a new one. Don't overwrite without a yes.
+   If this folder, or one folder below it, already has a `product.md`, say which product it is and which sections are filled and which aren't, and ask whether to continue (fill the gaps or update a section) or start a new product. Don't overwrite without a yes. When continuing, go straight to the sections they choose.
 
 2. **What this is.** In two or three sentences, your own words:
 
