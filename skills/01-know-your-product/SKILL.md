@@ -30,4 +30,4 @@ Work in the team's product folder. Read `product.md`; if it's missing, run `00-s
 - [ ] the ambition line, marked save or earn
 - [ ] `inputs/idea.md` filled in
 
-Finish with the checklist, ticked, and: "Next session: `/product-track:02-whos-eating-our-lunch`."
+Finish with the checklist, ticked, and: "Next session: `/ai-product:02-whos-eating-our-lunch`."

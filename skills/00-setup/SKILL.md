@@ -31,7 +31,7 @@ Run once, in the folder the team will work in all week. Every other Product Trac
 
 4. **Smoke test.** Run one web search for the product name and report one sourced fact about it. If web search doesn't work, say so plainly: missions 01–04 need it.
 
-5. **Done.** Show the folder tree and say: "Ready. In session 01, run `/product-track:01-know-your-product`."
+5. **Done.** Show the folder tree and say: "Ready. In session 01, run `/ai-product:01-know-your-product`."
 
 ## Done when
 

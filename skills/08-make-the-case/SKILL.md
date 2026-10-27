@@ -48,4 +48,4 @@ Build `handoff/prototype/index.html`: one self-contained HTML file, realistic fa
 - [ ] `handoff/problem.md` and `handoff/proposal.md`, with the outcome number and the price written by the team
 - [ ] `handoff/prototype/index.html` clicks through the main flow
 
-Finish with the checklist and: "At Align, with your developers: `/product-track:align-product-spec`."
+Finish with the checklist and: "At Align, with your developers: `/ai-product:align-product-spec`."

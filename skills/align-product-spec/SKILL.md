@@ -31,4 +31,4 @@ If the developers use their own spec template, match their headings instead and 
 - [ ] data, agent permissions and the success metric are written down
 - [ ] a developer has said "I could start from this"
 
-Finish with the checklist and: "Next session: `/product-track:09-try-to-kill-it`."
+Finish with the checklist and: "Next session: `/ai-product:09-try-to-kill-it`."

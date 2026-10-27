@@ -31,4 +31,4 @@ Work in the team's product folder. Read `product.md`, `inputs/` (including `idea
 - [ ] the incoming idea on the list
 - [ ] five in shape
 
-Finish with the checklist and: "Next session: `/product-track:05-build-your-customers`."
+Finish with the checklist and: "Next session: `/ai-product:05-build-your-customers`."

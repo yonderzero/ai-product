@@ -28,4 +28,4 @@ Work in the team's product folder. Read `handoff/` and `panel/`.
 - [ ] one change made in the spec and prototype and told to the developers
 - [ ] the roadmap call
 
-Finish with the checklist and: "Next session: `/product-track:10-demo-story`."
+Finish with the checklist and: "Next session: `/ai-product:10-demo-story`."

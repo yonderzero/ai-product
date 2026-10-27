@@ -36,4 +36,4 @@ Tell the team to open `02-ai-market-map.html` in a browser.
 - [ ] the most credible attacker named, with a source
 - [ ] one opening named, and the agent question answered
 
-Finish with the checklist and: "Next session: `/product-track:03-read-the-domain`."
+Finish with the checklist and: "Next session: `/ai-product:03-read-the-domain`."

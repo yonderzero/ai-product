@@ -30,4 +30,4 @@ Work in the team's product folder. Read `product.md`, `01-brief.md`, `02-ai-mark
 - [ ] `handoff/domain-read.md` fits on one screen
 - [ ] the product's place on the grid, confirmed by the team
 
-Finish with the checklist and: "Next session: `/product-track:04-harvest`."
+Finish with the checklist and: "Next session: `/ai-product:04-harvest`."

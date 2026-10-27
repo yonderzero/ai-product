@@ -19,4 +19,4 @@ Work in the team's product folder.
 
 Two people on the team can read it out without anyone objecting.
 
-Finish with: "Tomorrow starts with `/product-track:08-make-the-case`."
+Finish with: "Tomorrow starts with `/ai-product:08-make-the-case`."

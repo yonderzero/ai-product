@@ -27,4 +27,4 @@ Work in the team's product folder. Read `04-long-list.md` (the top five in shape
 - [ ] rehearsal notes for the user and the sceptic
 - [ ] for each of the top five: real evidence for or against, or a note that there is none
 
-Finish with the checklist and: "Next: `/product-track:07-day-one`."
+Finish with the checklist and: "Next: `/ai-product:07-day-one`."

@@ -29,4 +29,4 @@ Work in the team's product folder. Read `product.md`, `01-brief.md` and `04-long
 - [ ] a buyer, a user and a sceptic, each read and corrected by someone on the team
 - [ ] fewer than a third `[assumed]` per persona, or the gap that causes it named
 
-Finish with the checklist, the reminder that personas are hypotheses, not evidence, and: "Next session: `/product-track:06-interview`."
+Finish with the checklist, the reminder that personas are hypotheses, not evidence, and: "Next session: `/ai-product:06-interview`."
