@@ -1,6 +1,6 @@
 ---
 name: start
-description: Start here. Explains what ai-product does, asks the product manager for the product, company, industry and relevant URLs, creates a folder for the product with a documents/ folder for customer interviews and other material, builds an initial product profile from the URLs and the web, then interviews the product manager to fill the gaps in product.md. Run once before any other ai-product skill.
+description: Start here. Explains what ai-product does, asks the product manager for the product, company, industry, customers and relevant URLs, creates a folder for the product with a documents/ folder for customer interviews and other material, builds an initial product profile from the URLs and the web, then interviews the product manager about each customer persona and the problems the product solves for them, and fills the gaps in product.md. Run once before any other ai-product skill.
 ---
 
 # Start
@@ -20,7 +20,8 @@ Run once. Every other ai-product skill reads and writes in the folder this creat
    - the company's name;
    - the URLs that are relevant: the product's website, and any others worth reading (pricing page, docs or help centre, app store listing, review pages such as G2 or Capterra, recent announcements);
    - the industry (and the niche within it, if there is one);
-   - a few sentences about the product: what it does and who it's for.
+   - a few sentences about the product: what it does and who it's for;
+   - who the customers are: the types of company or person that buy and use it.
 
 4. **The folder.** Create a folder named after the product (lowercase, hyphens, e.g. `acme-scheduler/`) in the current folder, with `documents/`, `panel/` and `handoff/` inside. Then ask for documents straight away, so they can copy files while you work:
 
@@ -44,8 +45,16 @@ Run once. Every other ai-product skill reads and writes in the folder this creat
    - team: name (role), …
 
    ## What it does
-   ## Who buys it, who uses it
+   ## Customers
    - customer types: …
+
+   ### [persona name, e.g. "Head of Scheduling at a mid-size university"]
+   - who they are: role, type and size of organisation, buyer or user
+   - what they're trying to get done
+   - the problems this product solves for them
+   - how they handled it before, or would without the product
+   - what still frustrates them
+
    ## Main workflows
    ## What customers love / complain about
    ## Pricing and market
@@ -56,11 +65,19 @@ Run once. Every other ai-product skill reads and writes in the folder this creat
    ## Still unknown
    ```
 
-   Show the profile, short, and say what's missing. If web search or fetching doesn't work, say so plainly: the research skills need it.
+   Fill a persona section for each customer type you can see from the URLs and documents, and leave the rest for the next step. Show the profile, short, and say what's missing. If web search or fetching doesn't work, say so plainly: the research skills need it.
 
-6. **The interview.** Interview the product manager to correct the profile and fill its gaps. Ask one or two questions at a time, follow up on vague or interesting answers, and ask for examples ("when did that last happen?"). Only ask what the profile doesn't already answer, from:
+6. **The customers.** Ask the product manager to describe each customer type as a person, one at a time, starting with the most important. For each:
+   - who they are: role, type and size of organisation, and whether they buy, use, or both;
+   - a typical day or week, and what they're measured on;
+   - the problem or problems this product solves for them, with a real example;
+   - how they handled it before the product, or would without it;
+   - what still frustrates them, with or without the product.
+
+   Follow up until each persona feels like someone you could picture, then write it into the `## Customers` section of `product.md` and confirm it with them. Say these are the product manager's view; later skills test them against real data.
+
+7. **The interview.** Interview the product manager to correct the profile and fill its gaps. Ask one or two questions at a time, follow up on vague or interesting answers, and ask for examples ("when did that last happen?"). Only ask what the profile doesn't already answer, from:
    - the job customers hire the product for;
-   - who buys it and who uses it day to day (often different people), and the 3–5 customer types;
    - the main workflows users go through, and where they spend the most time;
    - what customers love, and what they complain about most;
    - how it's priced and sold, and roughly how many customers;
@@ -72,10 +89,10 @@ Run once. Every other ai-product skill reads and writes in the folder this creat
 
    Aim for 10–15 minutes. If they say "enough", stop. Update `product.md` as you go, in their words where you can, and show the final version for a last check.
 
-7. **Documents check.** If `documents/` is still empty, remind them once more what to add. If it has files, list them. Then scan them for personal data (people's names, email addresses, phone numbers). If you find any, list the files and ask them to remove or redact it before personas are built. Don't change their files yourself.
+8. **Documents check.** If `documents/` is still empty, remind them once more what to add. If it has files, list them. Then scan them for personal data (people's names, email addresses, phone numbers). If you find any, list the files and ask them to remove or redact it before personas are built. Don't change their files yourself.
 
-8. **Done.** Show the folder tree and say: "Ready. Next: `/ai-product:01-know-your-product`."
+9. **Done.** Show the folder tree and say: "Ready. Next: `/ai-product:01-know-your-product`."
 
 ## Done when
 
-`product.md` holds a sourced profile the product manager has checked, they know where `documents/` is, and web research works.
+`product.md` holds a sourced profile with a persona and its problems for each customer type, checked by the product manager; they know where `documents/` is, and web research works.
