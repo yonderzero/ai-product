@@ -1,6 +1,6 @@
 ---
 name: start
-description: Start here. Explains what ai-product does, creates a folder for the product with a documents/ folder for customer interviews and other material, interviews the product manager about the product into product.md, and checks that web research works. Run once before any other ai-product skill.
+description: Start here. Explains what ai-product does, asks the product manager for the product, company, industry and relevant URLs, creates a folder for the product with a documents/ folder for customer interviews and other material, builds an initial product profile from the URLs and the web, then interviews the product manager to fill the gaps in product.md. Run once before any other ai-product skill.
 ---
 
 # Start
@@ -15,11 +15,16 @@ Run once. Every other ai-product skill reads and writes in the folder this creat
 
 2. **Already set up?** If the current folder, or one folder below it, has a `product.md`, show it and ask whether to update it or start a new product. Don't overwrite without a yes.
 
-3. **The basics.** Ask for the product's name, the company that makes it, and the product's website (URL).
+3. **The basics.** Ask, in one message:
+   - the product's name;
+   - the company's name;
+   - the URLs that are relevant: the product's website, and any others worth reading (pricing page, docs or help centre, app store listing, review pages such as G2 or Capterra, recent announcements);
+   - the industry (and the niche within it, if there is one);
+   - a few sentences about the product: what it does and who it's for.
 
-4. **The folder.** Create a folder named after the product (lowercase, hyphens, e.g. `acme-scheduler/`) in the current folder, with `documents/`, `panel/` and `handoff/` inside. Then ask for documents straight away, so they can copy files while you talk:
+4. **The folder.** Create a folder named after the product (lowercase, hyphens, e.g. `acme-scheduler/`) in the current folder, with `documents/`, `panel/` and `handoff/` inside. Then ask for documents straight away, so they can copy files while you work:
 
-   > While we talk, put anything you have about the product in `[full path]/documents/`. The most useful:
+   > While I build the first profile, put anything you have about the product in `[full path]/documents/`. The most useful:
    > - customer interviews, call notes or transcripts
    > - support tickets and the most common complaints
    > - sales notes, lost deals and churn reasons
@@ -29,26 +34,13 @@ Run once. Every other ai-product skill reads and writes in the folder this creat
    >
    > Any format works. You can add more at any time; every skill reads this folder.
 
-5. **The interview.** Interview the product manager about the product. Ask one or two questions at a time, follow up on vague or interesting answers, and ask for examples ("when did that last happen?"). Cover, in a natural order:
-   - what the product does, in one sentence, and the job customers hire it for;
-   - who buys it and who uses it day to day (often different people), and the 3–5 customer types;
-   - the main workflows users go through, and where they spend the most time;
-   - what customers love, and what they complain about most;
-   - how it's priced and sold, roughly how many customers, and the market it competes in;
-   - the main competitors and alternatives, including spreadsheets and doing nothing;
-   - the data the product holds, and how it's built (stack, integrations);
-   - any AI in the product today, and what competitors are doing with AI;
-   - the idea or direction the team already has in mind, if any;
-   - who is on the team, and their roles.
-
-   Skip what's already answered by the website or the documents. Aim for 10–15 minutes. If they say "enough", stop. Anything they don't know stays blank.
-
-   Write what you learned to `product.md` in the folder, in their words where you can:
+5. **The initial profile.** Read every URL they gave, run a few web searches on the product and the company, and read anything already in `documents/`. Write a first `product.md` in the folder from that and what they told you. Mark where each fact came from: `[url]`, `[documents/<file>]` or `[PM]`. Leave a section empty rather than guess.
 
    ```markdown
    # [product name]
    - company: …
-   - website: …
+   - industry: …
+   - links: …
    - team: name (role), …
 
    ## What it does
@@ -64,14 +56,26 @@ Run once. Every other ai-product skill reads and writes in the folder this creat
    ## Still unknown
    ```
 
-   Show it and ask them to correct anything wrong.
+   Show the profile, short, and say what's missing. If web search or fetching doesn't work, say so plainly: the research skills need it.
 
-   If the documents folder is still empty, remind them once more what to add. If it has files, list them. Then scan them for personal data (people's names, email addresses, phone numbers). If you find any, list the files and ask them to remove or redact it before personas are built. Don't change their files yourself.
+6. **The interview.** Interview the product manager to correct the profile and fill its gaps. Ask one or two questions at a time, follow up on vague or interesting answers, and ask for examples ("when did that last happen?"). Only ask what the profile doesn't already answer, from:
+   - the job customers hire the product for;
+   - who buys it and who uses it day to day (often different people), and the 3–5 customer types;
+   - the main workflows users go through, and where they spend the most time;
+   - what customers love, and what they complain about most;
+   - how it's priced and sold, and roughly how many customers;
+   - the main competitors and alternatives, including spreadsheets and doing nothing;
+   - the data the product holds, and how it's built (stack, integrations);
+   - any AI in the product today, and what competitors are doing with AI;
+   - the idea or direction the team already has in mind, if any;
+   - who is on the team, and their roles.
 
-6. **Smoke test.** Run one web search for the product and report one sourced fact about it. If web search doesn't work, say so plainly: the research skills need it.
+   Aim for 10–15 minutes. If they say "enough", stop. Update `product.md` as you go, in their words where you can, and show the final version for a last check.
 
-7. **Done.** Show the folder tree and say: "Ready. Next: `/ai-product:01-know-your-product`."
+7. **Documents check.** If `documents/` is still empty, remind them once more what to add. If it has files, list them. Then scan them for personal data (people's names, email addresses, phone numbers). If you find any, list the files and ask them to remove or redact it before personas are built. Don't change their files yourself.
+
+8. **Done.** Show the folder tree and say: "Ready. Next: `/ai-product:01-know-your-product`."
 
 ## Done when
 
-`product.md` holds the interview and the product manager has checked it, they know where `documents/` is, and the smoke test returned a sourced fact.
+`product.md` holds a sourced profile the product manager has checked, they know where `documents/` is, and web research works.
