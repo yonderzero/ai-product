@@ -1,6 +1,8 @@
 # ai-product
 
-A Claude Code plugin that takes your product in an AI-native direction: from knowing your product and your customers to requirements your developers can build from.
+In the AI era, product managers have an opportunity to re-imagine their products and grow the business: to rethink what the product does, who it serves and how, now that AI can do work that used to need people.
+
+ai-product is a Claude Code plugin that helps product managers do just that: re-imagine their product for the AI era. Claude works alongside you, step by step. It gets to know your product, your customers and the problems you solve for them; researches your market; finds the opportunities worth pursuing; and turns them into requirements your developers can build from, so your product moves in an AI-native direction.
 
 ## Install
 
