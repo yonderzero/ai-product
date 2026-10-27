@@ -135,6 +135,7 @@ td.num{font:500 13px var(--mono);font-variant-numeric:tabular-nums}
 .quad{display:grid;grid-template-columns:auto 1fr 1fr;gap:6px;max-width:560px;font-size:14px}
 .quad div{padding:16px;border-radius:10px;background:var(--surface-1);border:1px solid var(--hairline);min-width:0;color:var(--ink-subtle)}
 .quad .ax{background:none;border:0;padding:6px;font:500 11px var(--mono);color:var(--ink-subtle);text-transform:uppercase;letter-spacing:.05em;display:flex;align-items:center}
+.card.chosen{border-color:var(--accent);background:var(--accent-soft)}
 .quad .on{border-color:var(--accent);background:var(--accent-soft);color:var(--accent);font-weight:600}
 footer{color:var(--ink-subtle);font-size:12px;border-top:1px solid var(--hairline);padding-top:14px}
 
@@ -183,7 +184,8 @@ footer{color:var(--ink-subtle);font-size:12px;border-top:1px solid var(--hairlin
   },
   "updated": "",
   "vision": null,
-  "discovery": null
+  "discovery": null,
+  "problem": null
 }
 </script>
 <script>
@@ -223,7 +225,7 @@ footer{color:var(--ink-subtle);font-size:12px;border-top:1px solid var(--hairlin
   if(v && v.statement) add(c0, el("p","statement",v.statement));
   else if(p.what) add(c0, el("p","lead",p.what));
   var prog = el("div","pills");
-  [["Start", !!p.what], ["Vision", v ? (v.complete ? true : "part") : false], ["Discovery", x ? (x.complete ? true : "part") : false]].forEach(function(s){
+  [["Start", !!p.what], ["Vision", v ? (v.complete ? true : "part") : false], ["Discovery", x ? (x.complete ? true : "part") : false], ["Problem", d.problem ? (d.problem.complete ? true : "part") : false]].forEach(function(s){
     var c=el("span","pill"); add(c, el("span","dot"+(s[1]===true?" done":""))); c.append(s[0] + (s[1]===true ? "" : s[1]==="part" ? " · in progress" : " · not started")); add(prog,c);
   });
   add(c0, prog);
@@ -328,7 +330,41 @@ footer{color:var(--ink-subtle);font-size:12px;border-top:1px solid var(--hairlin
   if(hasR){
     add(sr, table(["Area","The gap","Must be true"], x.readiness.map(function(r){ return [r.area, r.gap, r.must_be_true]; })));
   } else add(sr, todo("/ai-product-discovery"));
-  add(sr, el("footer",null,"Built from the files in the product's folder"+(d.updated?" on "+d.updated:"")+". The files are the source; this deck shows them."));
+
+  // Problem
+  var pr = d.problem;
+  var hasB = !!(pr && pr.bhag);
+  var sb = slide("bhag","Problem","BHAG","Our BHAG",["problem/problem.md"], hasB);
+  if(hasB){ add(sb, el("p","statement",pr.bhag)); if(pr.bhag_why) add(sb, el("p","lead",pr.bhag_why)); }
+  else add(sb, todo("/ai-product-problem"));
+
+  var hasPr = !!(pr && pr.statement);
+  var spr = slide("problem","Problem","The right problem","The right problem",["problem/problem.md","problem/evidence.md"], hasPr);
+  if(hasPr){
+    add(spr, el("p","statement",pr.statement));
+    var pm=el("div","pills");
+    [pr.framing ? "Framing: "+pr.framing : null, pr.levels ? "Level "+pr.levels : null, pr.evidence ? "Evidence: "+pr.evidence : null].forEach(function(t){ if(t) add(pm, el("span","pill",t)); });
+    add(spr, pm);
+    if(pr.switching) add(spr, el("p","muted","Will they switch? "+pr.switching));
+  } else add(spr, todo("/ai-product-problem"));
+
+  var hasFr = !!(pr && (pr.framings||[]).length);
+  var sfr = slide("framings","Problem","Three framings","Three framings",["problem/framings.md"], hasFr);
+  if(hasFr){
+    var gf=el("div","grid");
+    pr.framings.forEach(function(f){ var c=el("div","card"+(f.chosen?" chosen":"")); add(c, el("div","eyebrow",(f.name||"")+(f.level?" · L"+f.level:"")+(f.chosen?" · chosen":"")), el("p",null,f.problem), f.size ? el("p","muted","Size: "+f.size) : null); add(gf,c); });
+    add(sfr, gf);
+  } else add(sfr, todo("/ai-product-problem"));
+
+  var hasOp = !!(pr && (pr.opportunity || (pr.learn||[]).length));
+  var sop = slide("learn","Problem","Opportunity","The opportunity, and what to learn first",["problem/problem.md"], hasOp);
+  if(hasOp){
+    if(pr.opportunity) add(sop, el("p","lead",pr.opportunity));
+    if((pr.learn||[]).length){ add(sop, el("h3",null,"What we need to learn before building")); add(sop, table(["Assumption","Ask customers"], pr.learn.map(function(r){ return [r.assumption, r.ask]; }))); }
+  } else add(sop, todo("/ai-product-problem"));
+
+
+  add(slides[slides.length-1], el("footer",null,"Built from the files in the product's folder"+(d.updated?" on "+d.updated:"")+". The files are the source; this deck shows them."));
 
   // sidebar
   var nav=document.getElementById("nav"), groups={}, items=[];

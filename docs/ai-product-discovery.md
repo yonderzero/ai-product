@@ -89,7 +89,7 @@ Claude asks one question at a time, like a conversation.
 
 11. **The deck.** Claude adds the direction, the four pillars, your move, where value flows and the readiness check to `index.html`, and opens it in the preview.
 
-12. **Done.** Claude adds your move and direction to `product.md` and sums up: the move, where to take the product, and which problem to start with.
+12. **Done.** Claude adds your move and direction to `product.md` and sums up: the move, where to take the product, and which problem to start with. Next: [`/ai-product-problem`](ai-product-problem.md).
 
 ## What you get
 

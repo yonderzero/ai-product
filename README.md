@@ -41,6 +41,7 @@ You run the skills in order, in one folder:
 1. **`/ai-product-start`**: set up your product's folder, build its profile, describe your customers.
 2. **`/ai-product-vision`**: place your product and your market on six levels of AI, rank the opportunities, imagine the future, and agree a vision.
 3. **`/ai-product-discovery`**: check whether your product is ready for that vision: what protects it, how strong it is, the AI opportunity, what could go wrong, what has to be true, where value flows, and where to take the product.
+4. **`/ai-product-problem`**: make sure you're solving the right problem: say it as a customer job, test the evidence, set a BHAG, think bigger, and choose the framing that captures the most value.
 
 Each skill is a conversation. Claude asks one question at a time, researches the web in the background, and writes what you build together into files in your product's folder. Each skill reads what the earlier ones wrote, so run them in the same place.
 
@@ -66,6 +67,10 @@ acme-scheduler/          named after your product
     exposure.md
     value.md
     discovery.md
+  problem/               from /ai-product-problem
+    evidence.md
+    framings.md
+    problem.md
 ```
 
 Every fact in the files says where it came from: a link for anything found on the web, `[documents/<file>]` for anything from your files, and `[PM]` for anything you said. Claude leaves a gap rather than guess, and lists what's still unknown.
@@ -99,7 +104,15 @@ You get:
 - **`value.md`**: where value flows today, where it leaks, where it would flow at your vision's target level, who else could capture it, and how you'd charge. *([example](examples/salesforce/discovery/value.md))*
 - **`discovery.md`**: the one page: where to take the product, the four pillars, whether you're ready for the vision (data, tech, team, customers, pricing), your move, and where value flows. *([example](examples/salesforce/discovery/discovery.md))*
 
-Each skill's files go in a folder named after it inside your product's folder (`vision/`, `discovery/`), as plain text you can open, edit and share.
+Each skill's files go in a folder named after it inside your product's folder (`vision/`, `discovery/`, `problem/`), as plain text you can open, edit and share.
+
+**[`/ai-product-problem`](docs/ai-product-problem.md)**\
+Makes sure you're solving the right problem, and that it's big enough. Says it as a customer job, grades the evidence with the Mom Test, pressure-tests it, sets a BHAG, looks at what customers most want fixed and at adjacent segments, and lays out three framings so you pick the one that captures the most value.
+
+You get:
+- **`evidence.md`**: everything that backs the problem, graded by what customers did, not what they said.
+- **`framings.md`**: the job, the pressure test, the BHAG, the job map, the biggest pains, adjacent segments, and three framings, each sized.
+- **`problem.md`**: the right problem, the opportunity it captures, what success looks like, and what you need to learn from customers before building.
 
 ## Example
 

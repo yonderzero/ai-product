@@ -1,6 +1,6 @@
 # index.html: the product's deck
 
-`index.html` sits at the top of the product folder, next to `product.md`. It's the main file to open: a slide deck that grows with each skill: the product, the customers, the six levels, the opportunities, Imagine, the vision, where to take the product, the four pillars, the move, where value flows, and readiness. A sidebar lists every section, grouped into Start, Vision and Discovery, with a dot for done or not done, so the product manager can jump anywhere. Every section links to the files it comes from. Slides a skill hasn't reached yet say "Not done yet" and name the skill to run.
+`index.html` sits at the top of the product folder, next to `product.md`. It's the main file to open: a slide deck that grows with each skill: the product, the customers, the six levels, the opportunities, Imagine, the vision, where to take the product, the four pillars, the move, where value flows, readiness, the BHAG, the right problem, three framings, and what to learn first. A sidebar lists every section, grouped into Start, Vision, Discovery and Problem, with a dot for done or not done, so the product manager can jump anywhere. Every section links to the files it comes from. Slides a skill hasn't reached yet say "Not done yet" and name the skill to run.
 
 The files are the source of truth. The deck only shows them.
 
@@ -77,3 +77,25 @@ After `/ai-product-discovery`, set `discovery` (from `discovery/`):
 - `move`: exactly one of Build on it, Move first, Optimise, Defend.
 - `value_flows`: the rows of the value-flow table in `discovery.md`.
 - `complete`: true only when `discovery.md` is agreed.
+
+After `/ai-product-problem`, set `problem` (from `problem/`):
+
+```json
+{
+  "complete": false,
+  "bhag": "one bold, measurable, dated goal",
+  "bhag_why": "one line",
+  "statement": "When …, [persona] wants to …, so they can …",
+  "framing": "The bigger job",
+  "levels": "1 → 4",
+  "evidence": "Good",
+  "switching": "one line from the four forces",
+  "framings": [ { "name": "As stated", "level": 2, "problem": "", "size": "", "chosen": false } ],
+  "opportunity": "two or three lines: existing customers, new customers, size",
+  "learn": [ { "assumption": "", "ask": "Tell me about the last time…" } ]
+}
+```
+
+- `framings`: as stated, the bigger job, the moonshot, with `chosen` true on the one picked.
+- `learn`: the riskiest assumptions, most dangerous first.
+- `complete`: true only when `problem.md` is agreed.
