@@ -42,8 +42,6 @@ Sets up a folder for your product, builds a first profile from its website and y
 **[`/ai-product-vision`](docs/ai-product-vision.md)**\
 Maps your market on six levels of AI, from System of Record to System of Understanding, finds the opportunities, and creates a vision for where you could take your product.
 
-More skills are coming.
-
 ## Update
 
 In the Claude desktop app, open **Customize**, go to **Plugins**, select the **ai-product** marketplace and click **Check for updates**. Then start a new conversation.
