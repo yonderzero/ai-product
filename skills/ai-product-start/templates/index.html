@@ -136,6 +136,16 @@ td.num{font:500 13px var(--mono);font-variant-numeric:tabular-nums}
 .quad div{padding:16px;border-radius:10px;background:var(--surface-1);border:1px solid var(--hairline);min-width:0;color:var(--ink-subtle)}
 .quad .ax{background:none;border:0;padding:6px;font:500 11px var(--mono);color:var(--ink-subtle);text-transform:uppercase;letter-spacing:.05em;display:flex;align-items:center}
 .card.chosen{border-color:var(--accent);background:var(--accent-soft)}
+.econ{display:grid;gap:10px}
+.erow{display:grid;grid-template-columns:110px minmax(0,1fr) 70px;gap:12px;align-items:center}
+.elab{font-size:13px;color:var(--ink-subtle)}
+.etot{font:500 14px var(--mono);text-align:right;font-variant-numeric:tabular-nums}
+.ebar{display:flex;height:28px;border-radius:6px;overflow:hidden;background:var(--surface-2)}
+.seg{display:block;height:100%}
+.seg-l,.sw.seg-l{background:var(--ink-tertiary)}
+.seg-a,.sw.seg-a{background:var(--accent)}
+.seg-p,.sw.seg-p{background:var(--risk)}
+.sw{display:inline-block;width:10px;height:10px;border-radius:2px}
 .quad .on{border-color:var(--accent);background:var(--accent-soft);color:var(--accent);font-weight:600}
 footer{color:var(--ink-subtle);font-size:12px;border-top:1px solid var(--hairline);padding-top:14px}
 
@@ -390,6 +400,26 @@ footer{color:var(--ink-subtle);font-size:12px;border-top:1px solid var(--hairlin
     rs.experiences.forEach(function(x2){ var c=el("div","card"+(x2.first?" chosen":"")); add(c, el("div","eyebrow",(x2.persona||"")+(x2.levels?" · L"+x2.levels:"")+(x2.first?" · explore first":"")), el("h3",null,x2.name), x2.today ? el("p","muted","Today: "+x2.today) : null, x2.agent ? el("p",null,"With agents: "+x2.agent) : null); add(ge,c); });
     add(sex, ge);
   } else add(sex, todo("/ai-product-research"));
+
+  var hasEc = !!(rs && rs.economics);
+  var sec2 = slide("economics","Research","New economics","Give people their time back",["research/experiences.md"], hasEc);
+  if(hasEc){
+    var ec=rs.economics, rows=[["Licence",ec.today.licence,ec.agents.licence],["Agents",null,ec.agents.agents],["People's time using the product",ec.today.labour,ec.agents.labour]];
+    var tot=function(o){ return (o.licence||0)+(o.agents||0)+(o.labour||0); }, T=tot(ec.today), A=tot(ec.agents), max=Math.max(T,A)||1, cur=ec.currency||"";
+    var fmt=function(n){ return n==null?"–":cur+(n>=1e6?(n/1e6).toFixed(1).replace(".0","")+"M":n>=1e3?Math.round(n/1e3)+"K":n); };
+    var bars=el("div","econ");
+    [["Today",ec.today],["With agents",ec.agents]].forEach(function(r){
+      var row=el("div","erow"); add(row, el("span","elab",r[0]));
+      var bar=el("div","ebar"); [["licence","seg-l"],["agents","seg-a"],["labour","seg-p"]].forEach(function(k){ var v=r[1][k[0]]; if(!v) return; var sg=el("span","seg "+k[1]); sg.style.width=(v/max*100)+"%"; sg.title=k[0]+" "+fmt(v); add(bar,sg); });
+      add(row, bar, el("span","etot",fmt(tot(r[1])))); add(bars,row);
+    });
+    var lg=el("div","pills"); [["seg-l","Licence"],["seg-a","Agents"],["seg-p","People's time"]].forEach(function(k){ var p2=el("span","pill"); add(p2, el("span","sw "+k[0])); p2.append(k[1]); add(lg,p2); });
+    add(sec2, bars, lg);
+    var gk=el("div","pillars");
+    [["Labour", ec.labour_x ? ec.labour_x+"× lower" : null],["Customer saves", fmt(T-A)+" ("+Math.round((T-A)/T*100)+"%)"],["Our revenue", ec.revenue_x ? ec.revenue_x+"×" : null]].forEach(function(k){ if(!k[1]) return; var c=el("div","card"); add(c, el("div","eyebrow",k[0]), el("span","score",k[1])); add(gk,c); });
+    add(sec2, gk);
+    if(ec.note) add(sec2, el("p","muted",ec.note));
+  } else add(sec2, todo("/ai-product-research"));
 
   var hasPn = !!(rs && (rs.panel||rs.objection));
   var spn = slide("panel","Research","Panel verdict","What the panel said",["research/panel.md"], hasPn);

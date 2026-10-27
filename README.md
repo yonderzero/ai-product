@@ -130,7 +130,7 @@ You get:
 - **`evidence.md`**: your own evidence, grouped by customer type.
 - **`icp.md`**: the account you most want to win.
 - **`personas/`**: the buyer, the user, the sceptic and an adjacent-segment persona, every field sourced.
-- **`experiences.md`**: three to five agentic customer experiences, today against with agents, and the one to explore first.
+- **`experiences.md`**: how people use your product today, the double cost your customers pay (your licence plus their people's time), agentic experiences that give that time back, and the new economics: customers pay less in total while your revenue grows.
 - **`panel.md`**: what the personas said when they pressure-tested your problem and the experiences.
 
 ## Examples

@@ -57,7 +57,22 @@ Claude asks one question at a time, like a conversation.
 
 8. **Reality check.** You read each persona and say what they'd never say or do; Claude fixes it. If you have a real interview, Claude **calibrates** one persona: it asks the persona a real question it hasn't seen and compares the answer with the real one.
 
-9. **Agentic customer experiences.** Claude drafts three to five experiences for solving the problem with agents, either inside today's workflows or in a companion product next to yours. For each: the persona, what starts it, the outcome, and each step today against each step with the agent, with the person's part (approves, reviews, handles the exception). It also covers the data it needs, what the agent decides alone, what could go wrong and how the person stays in control, the AI level, and how you'd know it works. You go through them one at a time and say what's missing, then pick the experience to explore first and its thinnest version that still shows the whole experience. These are experiences to test, not features to build yet.
+9. **Agentic customer experiences.** Your customers pay for your product twice: the licence, and the time their people spend *using* it (entering data, checking, chasing, fixing, reporting). That second cost is usually far bigger, and invisible because it sits in payroll. Agentic experiences give people that time back: agents do the work, and you sell them as a separate line. Claude works through it with you, one part at a time:
+   - **How people use your product today:** Claude interviews you, persona by persona: what they do in the product step by step, how often, how long, how many people, and what they do outside it to finish the job.
+   - **The double cost:** for a typical customer, the yearly licence and the yearly cost of people's time using the product, with the working shown.
+   - **Agentify the work:** three to five experiences where agents take over the biggest workflows, inside the product or in a companion product next to it. Each shows the steps today against the steps with the agent, what the person still does (approves, reviews, handles exceptions), the data it needs, how the person stays in control, the AI level, and the hours it gives back.
+   - **The new economics:** today against with agents, for a typical customer. Agents are priced as a share of the labour they save, so the customer clearly wins.
+
+   | | Today | With agents |
+   |---|---|---|
+   | Licence | 10K | 10K |
+   | Agents (new) | – | 10K |
+   | People's time using the product | 100K | 20K |
+   | **Total for the customer** | **110K** | **40K** |
+
+   In this example, labour falls 5x, the customer saves 70K a year (64%), and your revenue per customer doubles. Claude builds the same picture from your product's real numbers.
+
+   You pick the experience to explore first, and its thinnest version that still shows the whole experience end to end. These are experiences to test, not features to build yet.
 
 10. **Talk to them.** The personas pressure-test your problem and the experiences. Pick one or more:
    - **interview a persona** with the questions from the problem skill, as a rehearsal for real interviews;
@@ -65,7 +80,7 @@ Claude asks one question at a time, like a conversation.
    - **react to the experiences:** each persona walks through them as themselves: where it helps, where they'd get stuck, what they'd never let an agent do;
    - **argue** the problem or the experience to explore first, sceptic first, to find the single best objection.
 
-11. **The deck.** Claude adds your personas, the options customers have today, the agentic experiences and the panel's verdict to `index.html`.
+11. **The deck.** Claude adds your personas, the options customers have today, the agentic experiences, the new economics and the panel's verdict to `index.html`.
 
 12. **Done.** Claude adds the ideal customer and the personas to `product.md`, and sums up what surprised you, the option customers use most today, the experience to explore first, and what the panel said.
 
@@ -82,7 +97,7 @@ acme-scheduler/
     evidence.md      your own evidence, by customer type
     icp.md           the account you most want to win
     personas/        one file per persona, with its evidence log
-    experiences.md   agentic customer experiences: today against with agents, and the one to explore first
+    experiences.md   how people use the product today, the double cost, agentic experiences, the new economics, and the one to explore first
     panel.md         every conversation with the panel, and what it said
 ```
 

@@ -109,11 +109,13 @@ After `/ai-product-research`, set `research` (from `research/`); talking to the 
   "personas": [ { "name": "Dana", "role": "Buyer", "sees": "the problem in their words", "today": "what they do now", "wont": "won't tolerate" } ],
   "options": [ { "option": "Spreadsheets", "who": "", "good": "", "bad": "" } ],
   "gap": "what no option does well today",
+  "economics": { "currency": "$", "today": { "licence": 10000, "labour": 100000 }, "agents": { "licence": 10000, "agents": 10000, "labour": 20000 }, "labour_x": 5, "revenue_x": 2, "note": "for a typical customer; working in experiences.md" },
   "experiences": [ { "name": "", "persona": "", "levels": "1 → 4", "today": "one line", "agent": "one line: what the agent does, what the person does", "first": false } ],
   "panel": "two or three lines: what the panel said about the problem",
   "objection": "the single best objection"
 }
 ```
 
+- `economics`: the new economics for a typical customer from `experiences.md`, as numbers per year.
 - `experiences`: the agentic customer experiences, with `first` true on the one to explore first.
 - `complete`: true when the personas are checked and the panel has run once.
