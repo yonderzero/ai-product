@@ -45,7 +45,7 @@ More skills are coming.
 
 ## Update
 
-In the Claude desktop app, open **Customize**, go to **Plugins**, select the **ai-product** marketplace and click **Check for updates**, or turn on **Sync automatically**. Then start a new conversation.
+In the Claude desktop app, open **Customize**, go to **Plugins**, select the **ai-product** marketplace and click **Check for updates**. Then start a new conversation.
 
 <details>
 <summary>In Claude Code</summary>
