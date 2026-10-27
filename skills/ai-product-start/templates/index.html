@@ -285,7 +285,7 @@ footer{color:var(--ink-subtle);font-size:12px;border-top:1px solid var(--hairlin
   if(hasD){
     if(x.in_short) add(sdir, el("p","lead",x.in_short));
     var dr=x.direction, gd=el("div","grid dir");
-    [["Protect",dr.protect],["Grow",dr.grow],["Build first",dr.build_first],["Don't",dr.dont],["How we'll know",dr.signals]].forEach(function(k){
+    [["Protect",dr.protect],["Grow",dr.grow],["Start with",dr.start_with],["Don't",dr.dont],["How we'll know",dr.signals]].forEach(function(k){
       if(!k[1] || (Array.isArray(k[1]) && !k[1].length)) return;
       var c=el("div","card"); add(c, el("div","eyebrow",k[0]), Array.isArray(k[1]) ? list(k[1]) : el("p",null,k[1])); add(gd,c);
     });

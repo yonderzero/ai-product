@@ -4,7 +4,7 @@
 /ai-product-discovery
 ```
 
-The third skill, after [`ai-product-vision`](ai-product-vision.md). Your vision says where your product could go. Discovery checks whether it's ready: what protects it, how strong it is, how big the AI opportunity is, and what could go wrong. Then it looks at what has to be true to reach the vision, maps where value flows today and tomorrow, and ends with a clear direction: what to protect, where to grow, what to build first, and what not to do.
+The third skill, after [`ai-product-vision`](ai-product-vision.md). Your vision says where your product could go. Discovery checks whether it's ready: what protects it, how strong it is, how big the AI opportunity is, and what could go wrong. Then it looks at what has to be true to reach the vision, maps where value flows today and tomorrow, and ends with a clear direction: what to protect, where to grow, which problem to start with, and what not to do.
 
 It goes deeper than the vision in two ways: it adds your inside knowledge, which public research can't see, and it tests the vision against what it would take.
 
@@ -79,7 +79,7 @@ Claude asks one question at a time, like a conversation.
 9. **Where to take the product.** Claude turns everything into one direction, and you confirm or change each part:
    - **Protect:** the core to defend.
    - **Grow:** one to three bets in and around the product, each with where its value comes from.
-   - **Build first:** the first thing to build, small enough to test with real customers, and what it proves.
+   - **Start with:** the first customer problem to go after, and what you need to learn about it before building anything. Think first, then build.
    - **Don't:** what not to spend on now, and why.
    - **How we'll know:** two or three signals that it's working.
 
@@ -89,7 +89,7 @@ Claude asks one question at a time, like a conversation.
 
 11. **The deck.** Claude adds the direction, the four pillars, your move, where value flows and the readiness check to `index.html`, and opens it in the preview.
 
-12. **Done.** Claude adds your move and direction to `product.md` and sums up: the move, where to take the product, and what to build first.
+12. **Done.** Claude adds your move and direction to `product.md` and sums up: the move, where to take the product, and which problem to start with.
 
 ## What you get
 
@@ -111,7 +111,7 @@ acme-scheduler/
 | Section | What's in it |
 |---|---|
 | In short | Where you're strong, where you're exposed, the move, and where to take the product |
-| Where to take the product | Protect, grow, build first, don't, and how you'll know |
+| Where to take the product | Protect, grow, start with, don't, and how you'll know |
 | The four pillars | Each score and what it means |
 | Where we're strong / exposed | The findings that matter most, with sources |
 | The AI opportunity | Your level today, where AI could earn money and take work off customers |

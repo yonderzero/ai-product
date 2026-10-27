@@ -90,7 +90,7 @@ You get:
 - **`vision.md`**: your product's AI vision: your product imagined at each higher level, a day with your System of Understanding, the vision you agreed, and the first step. *([example](examples/salesforce/vision/vision.md))*
 
 **[`/ai-product-discovery`](docs/ai-product-discovery.md)**\
-Checks whether your product is ready for its vision and sets a clear direction. Scores four pillars with evidence and your inside knowledge, tests what has to be true for the vision, maps where value flows, and ends with where to take the product: what to protect, where to grow, what to build first.
+Checks whether your product is ready for its vision and sets a clear direction. Scores four pillars with evidence and your inside knowledge, tests what has to be true for the vision, maps where value flows, and ends with where to take the product: what to protect, where to grow, which problem to start with.
 
 You get:
 - **`protection.md`**: what protects your product: switching costs, domain knowledge, speed and cost of building, and distribution, scored with sources. *([example](examples/salesforce/discovery/protection.md))*

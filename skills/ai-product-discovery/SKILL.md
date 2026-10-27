@@ -1,6 +1,6 @@
 ---
 name: ai-product-discovery
-description: Third step, after ai-product-vision. A deeper check of whether the product is ready to go where the vision says. Scores four pillars with evidence (protection, strength, AI opportunity, exposure), adds the product manager's inside view, lets them overturn scores with evidence, checks what has to be true for the vision (data, tech, team, customers, pricing), places the product on AI opportunity against AI risk to choose its move, maps where value flows today and tomorrow, and sets a clear direction: what to protect, where to grow, what to build first. Writes protection.md, strength.md, exposure.md, value.md and discovery.md.
+description: Third step, after ai-product-vision. A deeper check of whether the product is ready to go where the vision says. Scores four pillars with evidence (protection, strength, AI opportunity, exposure), adds the product manager's inside view, lets them overturn scores with evidence, checks what has to be true for the vision (data, tech, team, customers, pricing), places the product on AI opportunity against AI risk to choose its move, maps where value flows today and tomorrow, and sets a clear direction: what to protect, where to grow, which problem to start with. Writes protection.md, strength.md, exposure.md, value.md and discovery.md.
 ---
 
 # ai-product-discovery
@@ -91,7 +91,7 @@ If files from an earlier run exist (`protection.md`, `strength.md`, `exposure.md
 9. **Where to take the product.** Turn everything into one direction. Propose it, then ask the product manager to confirm or change each part, one at a time:
    - **Protect:** the core to defend, from protection and exposure.
    - **Grow:** one to three bets in and around the product, from the top opportunities and the vision, each with where its value comes from.
-   - **Build first:** the first thing to build, small enough to test with real customers, and what it proves.
+   - **Start with:** the first customer problem to go after, and what we need to learn about it before building anything. A problem, not a solution: if the product manager names a feature, ask which customer problem it solves and write that.
    - **Don't:** what not to spend on now, and why.
    - **How we'll know:** two or three signals that it's working, such as adoption, usage, retention or willingness to pay.
 
@@ -103,7 +103,7 @@ If files from an earlier run exist (`protection.md`, `strength.md`, `exposure.md
 
 12. **The deck.** Update `index.html`, the product's deck: follow `references/deck.md` in the ai-product-start skill's folder (next to this skill's folder).
 
-13. **Done.** Show the files you wrote and sum up in three lines: the move, where to take the product, and what to build first.
+13. **Done.** Show the files you wrote and sum up in three lines: the move, where to take the product, and which problem to start with.
 
 ## Done when
 

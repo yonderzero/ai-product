@@ -15,7 +15,7 @@ Sales Cloud and Service Cloud are strong where it is hardest to copy: brand, par
   1. *The deal record that keeps itself.* Value comes from defending the seat and from taking back the work Gong, Clari and Day.ai do on top (`../vision/opportunities.md` #1, `value.md`).
   2. *Outcome-priced service with Fin for the fast-setup customer.* Value comes from per-resolution revenue in the segment AI-native agents are winning (`../vision/opportunities.md` #2).
   3. *Opt-in benchmarks, "deals like yours".* Value comes from a new subscription per sales team, built on history no newcomer has (`../vision/vision.md`, `../vision/opportunities.md` #6).
-- **Build first:** the deal-record pilot with 10 Sales Cloud customers. It proves whether agents keep records accurate enough that reps stop checking, and, in the same interviews, whether sales leaders would opt in to sharing anonymised deal data (`../vision/vision.md`). `[PM, illustrative]`
+- **Start with:** reps' deal records are never current, so managers don't trust the forecast and reps lose selling time to data entry. Before building anything, learn with 10 Sales Cloud customers whether reps would trust an agent to keep records current without checking, and whether sales leaders would opt in to sharing anonymised deal data (`../vision/vision.md`). `[PM, illustrative]`
 - **Don't:**
   - Don't build benchmarks before customers have opted in and the records are clean: both are prerequisites.
   - Don't spend on quoting or sales-to-success handoff agents yet: the evidence is thin (`../vision/opportunities.md`, open questions).

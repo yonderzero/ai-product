@@ -357,7 +357,7 @@ footer{color:var(--ink-subtle);font-size:12px;border-top:1px solid var(--hairlin
         "Outcome-priced service with Fin: per-resolution revenue",
         "Opt-in benchmarks: a new subscription per sales team"
       ],
-      "build_first": "The deal-record pilot with 10 customers: proves reps trust agent updates, and tests opt-in.",
+      "start_with": "Reps' records are never current, so forecasts aren't trusted. Learn whether reps would trust an agent to keep them current, and whether sales leaders would share anonymised deal data.",
       "dont": "Benchmarks before consent and clean records; quoting or handoff agents on thin evidence; repricing seats before outcome pricing is proven.",
       "signals": [
         "Updates accepted without edits",
@@ -523,7 +523,7 @@ footer{color:var(--ink-subtle);font-size:12px;border-top:1px solid var(--hairlin
   if(hasD){
     if(x.in_short) add(sdir, el("p","lead",x.in_short));
     var dr=x.direction, gd=el("div","grid dir");
-    [["Protect",dr.protect],["Grow",dr.grow],["Build first",dr.build_first],["Don't",dr.dont],["How we'll know",dr.signals]].forEach(function(k){
+    [["Protect",dr.protect],["Grow",dr.grow],["Start with",dr.start_with],["Don't",dr.dont],["How we'll know",dr.signals]].forEach(function(k){
       if(!k[1] || (Array.isArray(k[1]) && !k[1].length)) return;
       var c=el("div","card"); add(c, el("div","eyebrow",k[0]), Array.isArray(k[1]) ? list(k[1]) : el("p",null,k[1])); add(gd,c);
     });

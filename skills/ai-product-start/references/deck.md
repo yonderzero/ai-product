@@ -65,7 +65,7 @@ After `/ai-product-discovery`, set `discovery` (from `discovery/`):
   "urgency": "high: competitors ship AI in the same workflows this year",
   "move": "Build on it",
   "move_why": "one or two lines",
-  "direction": { "protect": "", "grow": ["one to three bets"], "build_first": "", "dont": "", "signals": ["two or three"] },
+  "direction": { "protect": "", "grow": ["one to three bets"], "start_with": "the first customer problem to go after", "dont": "", "signals": ["two or three"] },
   "value_flows": [ { "flow": "Who gets value", "today": "", "tomorrow": "" } ],
   "value_shift": "most of the value goes to … today → … tomorrow",
   "readiness": [ { "area": "Data", "gap": "", "must_be_true": "" } ]

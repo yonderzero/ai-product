@@ -10,7 +10,7 @@ Is the product ready to go where the vision says? Built from `protection.md`, `s
 
 - **Protect:** [the core to defend] [source]
 - **Grow:** [one to three bets, each with where its value comes from] [source]
-- **Build first:** [the first thing to build, and what it proves]
+- **Start with:** [the first customer problem to go after, and what we need to learn before building anything]
 - **Don't:** [what not to spend on now, and why]
 - **How we'll know:** [two or three signals]
 
