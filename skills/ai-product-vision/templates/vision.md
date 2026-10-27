@@ -17,7 +17,7 @@
 
 ### A day with our System of Understanding
 
-[A short day in the life of the main persona, five years from now: what the product knows, what it does before anyone asks, what they never do again, what they spend their time on instead.]
+[A short day in the life of the main persona, around 2029: what the product knows, what it does before anyone asks, what they never do again, what they spend their time on instead.]
 
 **What excites us:** … `[PM]`
 **What it would need to know, and the data that takes:** … `[PM]`

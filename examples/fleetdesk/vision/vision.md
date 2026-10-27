@@ -25,7 +25,7 @@ By the end of 2028, FleetDesk does the paperwork of the shop. Every fault code, 
 
 ### A day with our System of Understanding
 
-Rosa runs maintenance for a 240-tractor regional carrier with two shops, in 2031.
+Rosa runs maintenance for a 240-tractor regional carrier with two shops, in 2029.
 
 At 5:30 she opens FleetDesk on her phone. Overnight it read 1,900 fault codes from the trucks. It dropped the noise, and found two that matter. Truck 418's coolant temperature pattern matches 37 trucks across other fleets that lost a water pump within a week. Nobody told it to look; it knows what that pattern led to before. It has already moved 418's PM forward to this morning, reserved the pump in the north shop, and asked dispatch to swap the load to truck 422. Dispatch said yes at 4 am.
 

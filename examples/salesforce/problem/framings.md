@@ -46,9 +46,9 @@ This might be the wrong problem. Records may be stale because reps choose not to
 
 ### The BHAG
 
-**By 2031, sellers spend 70% of their week selling, up from 40%, and no sales manager has to ask a rep where a deal stands.**
+**By 2029, sellers spend 70% of their week selling, up from 40%, and no sales manager has to ask a rep where a deal stands.**
 
-It's measurable (Salesforce's State of Sales already tracks selling time, https://www.salesforce.com/news/stories/state-of-sales-report-announcement-2026/), dated, about the customer's job, and uncomfortable: it flips the 70% of time that went to non-selling work in 2024 (https://www.salesforce.com/news/?p=79781). It goes beyond `../vision/vision.md`, which targets level 5 by the end of 2028; the vision's day with the System of Understanding is set in 2031, so the BHAG matches it. The vision can be updated later. `[PM, illustrative]`
+It's measurable (Salesforce's State of Sales already tracks selling time, https://www.salesforce.com/news/stories/state-of-sales-report-announcement-2026/), dated, about the customer's job, and uncomfortable: it flips the 70% of time that went to non-selling work in 2024 (https://www.salesforce.com/news/?p=79781). It goes beyond `../vision/vision.md`, which targets level 5 by the end of 2028; the vision's day with the System of Understanding is set in 2029, so the BHAG matches it. The vision can be updated later. `[PM, illustrative]`
 
 Options we considered `[PM, illustrative]`:
 - "By 2030, nine in ten sales teams on Sales Cloud land within 5% of their forecast." Bold, but forecast accuracy also depends on the market, not only on the job.
@@ -101,7 +101,7 @@ Where else this problem is very painful now.
 
 | | As stated | The bigger job | The moonshot |
 |---|---|---|---|
-| **The problem** | Reps' deal records are never current, so managers don't trust the forecast and reps lose selling time to data entry | Sales managers can't see where every deal really stands, or which ones need them, without chasing reps and rebuilding the forecast by hand. Widened from Locate–Prepare to Monitor, Modify and Conclude | The BHAG: by 2031, sellers spend 70% of their week selling, up from 40%, and no manager has to ask where a deal stands |
+| **The problem** | Reps' deal records are never current, so managers don't trust the forecast and reps lose selling time to data entry | Sales managers can't see where every deal really stands, or which ones need them, without chasing reps and rebuilding the forecast by hand. Widened from Locate–Prepare to Monitor, Modify and Conclude | The BHAG: by 2029, sellers spend 70% of their week selling, up from 40%, and no manager has to ask where a deal stands |
 | **For whom** | Account executive (user), sales manager | Sales manager or VP of sales (buyer), account executive, revenue operations | Every seller and sales leader on Sales Cloud, plus adjacent segments such as financial advisors |
 | **Level** | 2 → 4 | 2 → 4, with a first step toward 5 | 2 → 6 |
 | **Value from existing customers** | Selling time back for reps; records current for managers | A forecast managers believe, and time moved from chasing to coaching; less need for tools on top | Most of the non-selling week removed, not just data entry |

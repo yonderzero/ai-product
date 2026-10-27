@@ -4,7 +4,7 @@
 
 From the thinnest version to the BHAG, in three horizons. Outcomes first, features second. Built from `features.md`, `roi.md`, `../flows/flows.md`, `../research/experiences.md`, `../vision/vision.md` and `../problem/problem.md` on 27 Oct 2026.
 
-**The BHAG:** by 2031, sellers spend 70% of their week selling, up from 40%, and no sales manager has to ask a rep where a deal stands (`../problem/problem.md`).
+**The BHAG:** by 2029, sellers spend 70% of their week selling, up from 40%, and no sales manager has to ask a rep where a deal stands (`../problem/problem.md`).
 **The vision:** level 5, AI Domain Intelligence, by the end of 2028: Sales Cloud keeps every deal up to date on its own and tells each sales team what is working in deals like theirs (`../vision/vision.md`).
 
 | | Now | Next | Later |

@@ -6,7 +6,7 @@ Built from `evidence.md`, `framings.md` and the product manager's choices on 27 
 
 ## The BHAG
 
-**By 2031, sellers spend 70% of their week selling, up from 40%, and no sales manager has to ask a rep where a deal stands.**
+**By 2029, sellers spend 70% of their week selling, up from 40%, and no sales manager has to ask a rep where a deal stands.**
 
 Sellers say they spend 40% of their time selling today (https://www.salesforce.com/news/stories/state-of-sales-report-announcement-2026/). `[PM, illustrative]` We chose this one because both people feel it: the rep gets the week back, and the manager stops chasing.
 

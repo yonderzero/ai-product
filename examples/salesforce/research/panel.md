@@ -73,7 +73,7 @@ In their words:
 - **Marcus, the bigger job (2 / 2):** "That's my manager's pain, not mine. If it's a manager dashboard built on my deals, I'll quietly undermine it."
 - **Sam, the bigger job (1 / 1):** "Nobody chases me for deal updates. My clients chase me when a follow-up never happened."
 - **Marcus, as stated (4 / 1):** "Two hours a week of typing for my manager. But I don't sign anything."
-- **Priya, the moonshot (2 / 1):** "Nobody on my board is asking about 2031. There's no budget line for selling time."
+- **Priya, the moonshot (2 / 1):** "Nobody on my board is asking about 2029. There's no budget line for selling time."
 
 **Where they disagree:** the bigger job has the widest spread. The buyer and the sceptic feel it most and would pay; the rep, whose typing it depends on, feels it least and says he'd undermine a manager's view of his deals. "As stated" hurts the rep most, but nobody would pay for it. The adjacent persona doesn't recognise the bigger job at all: for advisors the problem is liability for notes, not a forecast.
 

@@ -6,7 +6,7 @@ Built from `evidence.md`, `framings.md` and the product manager's choices on 27 
 
 ## The BHAG
 
-**By 2031, every truck in a FleetDesk fleet is ready when dispatch needs it: road calls halved against 2026, and no one at a FleetDesk fleet reads a fault code by hand.** `[PM, illustrative]`
+**By 2029, every truck in a FleetDesk fleet is ready when dispatch needs it: road calls halved against 2026, and no one at a FleetDesk fleet reads a fault code by hand.** `[PM, illustrative]`
 
 ## The problem we'll solve
 

@@ -72,11 +72,11 @@ A Big Hairy Audacious Goal (Jim Collins and Jerry Porras, *Built to Last*). For 
 
 A good BHAG is:
 - **clear and measurable**: you could tell if it happened;
-- **dated**: typically five to ten years out;
+- **dated**: a few years out, typically around 2029–2030;
 - **bold**: it feels slightly uncomfortable, maybe a 50–70% chance;
 - **about the customer's job**, not the company's revenue.
 
-"Transform care with AI" isn't one. "No carer writes a visit note by hand by 2031" is.
+"Transform care with AI" isn't one. "No carer writes a visit note by hand by 2029" is.
 
 ## Evidence grades
 

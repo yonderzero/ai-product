@@ -85,7 +85,7 @@ Read `product.md` and anything in `documents/` you haven't read yet. If files fr
    - sketch **their product at this level** in three or four lines: what it does, for which persona, what changes in their day, and how customers would pay;
    - ask one question: "What would you add or change?"
 
-   Then the System of Understanding. Write a short day in the life of their main persona, five years from now, with the product at level 6: what it knows that nobody knows today, what it does before anyone asks, what the persona never does again, and what they spend their time on instead. Then ask, one at a time:
+   Then the System of Understanding. Write a short day in the life of their main persona, around 2029, with the product at level 6: what it knows that nobody knows today, what it does before anyone asks, what the persona never does again, and what they spend their time on instead. Then ask, one at a time:
    - What excites you in this? What feels wrong?
    - What would it need to know that it doesn't know today?
    - What data would that take, and who has it?

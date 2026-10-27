@@ -4,7 +4,7 @@
 
 From the thinnest version to the BHAG, in three horizons. Outcomes first, features second. Built from `features.md`, `roi.md`, `../flows/flows.md`, `../research/experiences.md`, `../vision/vision.md` and `../problem/problem.md` on 27 Oct 2026.
 
-**The BHAG:** by 2031, every truck in a FleetDesk fleet is ready when dispatch needs it: road calls halved against 2026, and no one at a FleetDesk fleet reads a fault code by hand (`../problem/problem.md`).
+**The BHAG:** by 2029, every truck in a FleetDesk fleet is ready when dispatch needs it: road calls halved against 2026, and no one at a FleetDesk fleet reads a fault code by hand (`../problem/problem.md`).
 **The vision:** level 4, AI Delegated, by the end of 2028 (`../vision/vision.md`).
 
 | | Now | Next | Later |

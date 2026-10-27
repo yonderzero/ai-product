@@ -22,7 +22,7 @@ By the end of 2028, Sales Cloud keeps every deal up to date on its own and tells
 
 ### A day with our System of Understanding
 
-Priya runs a 25-person sales team at a mid-size software company, in 2031.
+Priya runs a 25-person sales team at a mid-size software company, in 2029.
 
 At 7:40 she opens Slack. Overnight, Sales Cloud has read every email, call and contract change. It moved three deals forward, and pulled one back because the buyer's champion changed jobs last week. Nobody told it; it noticed the email bounce and the new LinkedIn title. It has already found the new contact and drafted an introduction for the rep to send.
 

@@ -46,10 +46,10 @@ Fault-code triage is the part of the job the telematics vendors do best, because
 
 ### The BHAG
 
-**By 2031, every truck in a FleetDesk fleet is ready when dispatch needs it: road calls halved against 2026, and no one at a FleetDesk fleet reads a fault code by hand.** `[PM, illustrative]`
+**By 2029, every truck in a FleetDesk fleet is ready when dispatch needs it: road calls halved against 2026, and no one at a FleetDesk fleet reads a fault code by hand.** `[PM, illustrative]`
 
 Options we considered:
-- "By 2031, no FleetDesk fleet has a breakdown on the road from a failure its own data warned about."
+- "By 2029, no FleetDesk fleet has a breakdown on the road from a failure its own data warned about."
 - "By 2030, a maintenance manager's morning takes ten minutes of approvals." Dropped: about the manager's time, not the truck.
 
 The chosen one goes beyond `../vision/vision.md`, which targets level 4 by 2028. Road calls halved needs prediction across fleets, level 5 and above; the vision can be updated later.

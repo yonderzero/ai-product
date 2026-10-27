@@ -76,7 +76,7 @@ Claude asks one question at a time, like a conversation.
 
    Claude shows the ranked list and asks which excite you, what's missing, and whether any rating is wrong.
 
-8. **Imagine.** The creative part. For each level above where your product is today, Claude shows two real products already there and sketches what *your* product could look like at that level: what it does, for whom, what changes in their day, and how customers would pay. You add to it. Then Claude writes a day in the life of your main persona five years from now, with your product as a System of Understanding, and asks what excites you, what feels wrong, and what it would need to know. See [the six levels: characteristics and real products](../skills/ai-product-vision/references/level-examples.md).
+8. **Imagine.** The creative part. For each level above where your product is today, Claude shows two real products already there and sketches what *your* product could look like at that level: what it does, for whom, what changes in their day, and how customers would pay. You add to it. Then Claude writes a day in the life of your main persona around 2029, with your product as a System of Understanding, and asks what excites you, what feels wrong, and what it would need to know. See [the six levels: characteristics and real products](../skills/ai-product-vision/references/level-examples.md).
 
 9. **The vision interview.** One question at a time:
    - Which of the top opportunities should the vision start with, on the way to that future?

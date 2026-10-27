@@ -1,6 +1,6 @@
 # p2 · Rosa, maintenance manager
 
-> Fictional example. A synthetic persona built from invented FleetDesk documents and real public sources. Not a real person. The same Rosa appears in `../../vision/vision.md`, in 2031.
+> Fictional example. A synthetic persona built from invented FleetDesk documents and real public sources. Not a real person. The same Rosa appears in `../../vision/vision.md`, in 2029.
 
 modelled_on: the regional LTL carrier in the September 2026 interview, 240 tractors, two shops [PM, illustrative]
 panel_role: user
