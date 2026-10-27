@@ -1,8 +1,10 @@
 # ai-product
 
-In the AI era, product managers have an opportunity to re-imagine their products and grow the business: to rethink what the product does, who it serves and how, now that AI can do work that used to need people.
+The AI era gives you, as a product manager, a chance to re-imagine your product and grow the business.
 
-ai-product is a Claude Code plugin that helps product managers do just that: re-imagine their product for the AI era. Claude works alongside you, step by step. It gets to know your product, your customers and the problems you solve for them; researches your market; finds the opportunities worth pursuing; and turns them into requirements your developers can build from, so your product moves in an AI-native direction.
+ai-product is a Claude Code plugin that helps you do just that. It helps you re-imagine your product for the AI era and innovate in and around it: bringing new value to your existing customers, winning new ones, and growing organically.
+
+Claude works alongside you, step by step. It gets to know your product, your customers and the problems you solve for them; maps your market; helps you set your product's AI vision; and turns it into requirements your developers can build from.
 
 ## Install
 
