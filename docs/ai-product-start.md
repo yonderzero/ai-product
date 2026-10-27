@@ -56,6 +56,8 @@ Claude asks one question at a time, like a conversation.
 
 ## What you get
 
+See a finished one: [`product.md` for Salesforce](../examples/salesforce/product.md), an illustrative example built from public sources.
+
 ```
 acme-scheduler/          named after your product
   product.md             the product profile

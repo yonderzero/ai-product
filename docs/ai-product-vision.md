@@ -77,6 +77,8 @@ Claude asks one question at a time, like a conversation.
 
 ## What you get
 
+See finished ones in [the Salesforce example](../examples/salesforce/): [`ai-levels.md`](../examples/salesforce/ai-levels.md), [`market-map.md`](../examples/salesforce/market-map.md), [`market-moves.md`](../examples/salesforce/market-moves.md), [`opportunities.md`](../examples/salesforce/opportunities.md) and [`vision.md`](../examples/salesforce/vision.md). It's illustrative, built from public sources.
+
 ```
 acme-scheduler/
   product.md          now with today's level and your target level
