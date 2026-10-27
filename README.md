@@ -16,14 +16,14 @@ In Claude Code, run:
 Then restart Claude Code, open the folder you want to work in, and run:
 
 ```
-/ai-product:start
+/ai-product:ai-product-start
 ```
 
 ## Skills
 
 | Skill | What it does |
 |---|---|
-| [`/ai-product:start`](docs/start.md) | Sets up a folder for your product, builds a first profile from its website and your documents, and interviews you about the product and each type of customer. |
+| [`/ai-product:ai-product-start`](docs/ai-product-start.md) | Sets up a folder for your product, builds a first profile from its website and your documents, and interviews you about the product and each type of customer. |
 
 More skills are coming.
 

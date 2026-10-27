@@ -1,7 +1,7 @@
-# start
+# ai-product-start
 
 ```
-/ai-product:start
+/ai-product:ai-product-start
 ```
 
 The first skill to run. Claude explains what ai-product is for, sets up a folder for your product on your machine, builds a first profile of the product from the web and your documents, and interviews you about your product and your customers.
@@ -94,4 +94,4 @@ You can add more at any time; every skill reads this folder. Remove people's nam
 - Give Claude as many links as you can: the profile is only as good as what it can read.
 - Answer the customer questions with real examples ("last week a scheduler at…"), not general statements.
 - If you don't know something, say so. It goes under "Still unknown" instead of being guessed.
-- To change the profile later, edit `product.md` yourself or run `/ai-product:start` again and choose to update.
+- To change the profile later, edit `product.md` yourself or run `/ai-product:ai-product-start` again and choose to update.

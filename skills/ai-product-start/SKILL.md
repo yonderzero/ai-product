@@ -1,5 +1,5 @@
 ---
-name: start
+name: ai-product-start
 description: Start here. Explains what ai-product does, asks the product manager for the product, company, industry, customers and relevant URLs, creates a folder for the product with a documents/ folder for customer interviews and other material, builds an initial product profile from the URLs and the web, then interviews the product manager about each customer persona and the problems the product solves for them, and fills the gaps in product.md. Run once before any other ai-product skill.
 ---
 
