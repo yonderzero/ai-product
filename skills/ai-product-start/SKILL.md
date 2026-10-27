@@ -1,39 +1,47 @@
 ---
 name: ai-product-start
-description: Start here. Explains what ai-product does, asks the product manager for the product, company, industry, customers and relevant URLs, creates a folder for the product with a documents/ folder for customer interviews and other material, builds an initial product profile from the URLs and the web, then interviews the product manager about each customer persona and the problems the product solves for them, and fills the gaps in product.md. Run once before any other ai-product skill.
+description: Start here. Confirms the folder, explains what ai-product does, then asks the product manager one question at a time for the product, company, URLs, industry and customers, collects their documents, builds an initial product profile from the URLs and the web, then interviews the product manager about each customer persona and the problems the product solves for them, and fills the gaps in product.md. Run once before any other ai-product skill.
 ---
 
-# Start
+# ai-product-start
 
 Run once. Every other ai-product skill reads and writes in the folder this creates.
 
+## How to talk
+
+Conversational, short messages, one question at a time. Never send a list of questions. Don't explain what you didn't find or what you're about to check; just do it.
+
 ## Steps
 
-1. **What this is.** Open by telling the team, in your own words and briefly:
+1. **Where we are.** Say which folder you're working in, by its full path, and ask if that's the right place for the product's folder. If you have no folder on the user's computer, say so in one line and tell them how to pick one (in Claude Desktop: the folder picker next to the message box), then wait.
 
-   > ai-product takes your product in an AI-native direction. I'll set up a folder for it on your machine, and from there we work step by step: research your product and its market, find the problems worth solving, build synthetic customers from your own data, and shape something new, cool and AI-native. You end with requirements and a prototype your developers can build from.
+   If this folder, or one folder below it, already has a `product.md`, say which product it is and ask whether to continue with it or start a new one. Don't overwrite without a yes.
 
-2. **Already set up?** If the current folder, or one folder below it, has a `product.md`, show it and ask whether to update it or start a new product. Don't overwrite without a yes.
+2. **What this is.** In two or three sentences, your own words:
 
-3. **The basics.** Ask, in one message:
-   - the product's name;
-   - the company's name;
-   - the URLs that are relevant: the product's website, and any others worth reading (pricing page, docs or help centre, app store listing, review pages such as G2 or Capterra, recent announcements);
-   - the industry (and the niche within it, if there is one);
-   - a few sentences about the product: what it does and who it's for;
-   - who the customers are: the types of company or person that buy and use it.
+   > ai-product helps you re-imagine your product for the AI era. We'll set up a folder for your product, build a profile of it and its customers together, and from there work towards requirements and a prototype your developers can build from.
 
-4. **The folder.** Create a folder named after the product (lowercase, hyphens, e.g. `acme-scheduler/`) in the current folder, with `documents/`, `panel/` and `handoff/` inside. Then ask for documents straight away, so they can copy files while you work:
+   Then ask: "Shall we start?" Wait for a yes.
 
-   > While I build the first profile, put anything you have about the product in `[full path]/documents/`. The most useful:
-   > - customer interviews, call notes or transcripts
-   > - support tickets and the most common complaints
-   > - sales notes, lost deals and churn reasons
-   > - usage data or analytics exports
-   > - product specs, roadmap, pricing, sales decks
-   > - notes on competitors
+3. **The basics, one question at a time.** Ask each in its own message and wait for the answer. Skip any question an earlier answer already covers.
+   1. What's your product called?
+   2. What's its website?
+   3. What's the company called? Is it the same as the product?
+   4. If different: what's the company's website?
+   5. Any other links you'd like me to read? For example the pricing page, help docs, an app store listing, reviews on G2 or Capterra, recent news.
+   6. What industry is it in, and which niche?
+   7. In a few sentences, what does it do and who is it for?
+   8. Who are your customers: what types of company or person buy it and use it?
+
+   As soon as you have the product's name, create a folder named after it (lowercase, hyphens, e.g. `acme-scheduler/`) with `documents/`, `panel/` and `handoff/` inside. Don't stop to talk about it.
+
+4. **Documents.** Ask:
+
+   > Do you have files about the product or your customers? For example customer interviews or call notes, support tickets, sales or churn notes, usage data, specs, roadmap, pricing, sales decks, notes on competitors. Any format.
    >
-   > Any format works. You can add more at any time; every skill reads this folder.
+   > Drag and drop them here, or put them straight into `[full path]/documents/`. You can add more at any time.
+
+   Save any files they drop into the chat into `documents/`. If they have none yet, carry on.
 
 5. **The initial profile.** Read every URL they gave, run a few web searches on the product and the company, and read anything already in `documents/`. Write a first `product.md` in the folder from that and what they told you. Mark where each fact came from: `[url]`, `[documents/<file>]` or `[PM]`. Leave a section empty rather than guess.
 
@@ -67,7 +75,7 @@ Run once. Every other ai-product skill reads and writes in the folder this creat
 
    Fill a persona section for each customer type you can see from the URLs and documents, and leave the rest for the next step. Show the profile, short, and say what's missing. If web search or fetching doesn't work, say so plainly: the research skills need it.
 
-6. **The customers.** Ask the product manager to describe each customer type as a person, one at a time, starting with the most important. For each:
+6. **The customers.** Ask the product manager to describe each customer type as a person, one at a time, starting with the most important. For each, ask one question at a time about:
    - who they are: role, type and size of organisation, and whether they buy, use, or both;
    - a typical day or week, and what they're measured on;
    - the problem or problems this product solves for them, with a real example;
@@ -76,7 +84,7 @@ Run once. Every other ai-product skill reads and writes in the folder this creat
 
    Follow up until each persona feels like someone you could picture, then write it into the `## Customers` section of `product.md` and confirm it with them. Say these are the product manager's view; later skills test them against real data.
 
-7. **The interview.** Interview the product manager to correct the profile and fill its gaps. Ask one or two questions at a time, follow up on vague or interesting answers, and ask for examples ("when did that last happen?"). Only ask what the profile doesn't already answer, from:
+7. **The interview.** Interview the product manager to correct the profile and fill its gaps. Ask one question at a time, follow up on vague or interesting answers, and ask for examples ("when did that last happen?"). Only ask what the profile doesn't already answer, from:
    - the job customers hire the product for;
    - the main workflows users go through, and where they spend the most time;
    - what customers love, and what they complain about most;
