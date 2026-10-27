@@ -1,7 +1,7 @@
 # ai-product-vision
 
 ```
-/ai-product:ai-product-vision
+/ai-product-vision
 ```
 
 The second skill, after [`ai-product-start`](ai-product-start.md). Software is moving from recording the work to doing it. Claude maps your market on six levels of AI, shows where your product really is and who could overtake it, then interviews you to write your product's AI vision.

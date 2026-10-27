@@ -13,7 +13,7 @@ Conversational, short messages, one question at a time. Never send a list of que
 
 ## Before you start
 
-Work in the product folder: the current folder, or the folder below it that has `product.md`. If there is none, say so in one line and ask them to run `/ai-product:ai-product-start` first.
+Work in the product folder: the current folder, or the folder below it that has `product.md`. If there is none, say so in one line and ask them to run `/ai-product-start` first.
 
 Read `product.md` and anything in `documents/` you haven't read yet. Read `references/levels.md`: the six levels, the evidence each needs, and the placement rules. Apply them strictly.
 
