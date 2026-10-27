@@ -64,6 +64,7 @@ From `/ai-product-research`, in [`research/`](research/):
 From `/ai-product-flows`, in [`flows/`](flows/):
 
 - [`flows/flows.md`](flows/flows.md): the five experiences mapped as flows, moment by moment, ranked on value, trust, pay and hours back. The morning shortlist goes forward first, say it, sign it next; parts and the dispatch slot later; overflow not for now.
+- [`flows/DESIGN.md`](flows/DESIGN.md): the design direction the mockups follow: a style like IBM Carbon, from getdesign.md, chosen for contrast in a bright shop. The developers build the slice to match it.
 - [`flows/mockups/morning-shortlist.html`](flows/mockups/morning-shortlist.html) and [`flows/mockups/say-it-sign-it.html`](flows/mockups/say-it-sign-it.html): clickable mockups of the two flows taken forward. Open them in a browser.
 - [`flows/panel-tests.md`](flows/panel-tests.md): two panel rounds, the sceptic first, and the two real interviews, with where they agree and disagree.
 - [`flows/script.md`](flows/script.md): the interview kit for real customers.

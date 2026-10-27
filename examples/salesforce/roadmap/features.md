@@ -88,9 +88,10 @@ The features in Now, in priority order: the rep confirms the deal, and the manag
 
 ### The build-day slice
 
-The smallest end-to-end slice of this update that developers start with, small enough to build in about a day, to make the flow real and testable:
+The smallest end-to-end slice of this update that developers start with, to make the flow real and testable:
 
 - **The flow:** a call ends → the agent proposes changes with evidence → the rep accepts, edits or rejects each one → the manager's brief shows only what the rep confirmed, what changed, the three deals that need them and the commit → the manager overrides one deal with a reason.
 - **In:** sample data for one team (five reps, fifteen open deals, a few call summaries and email threads as text, in a developer org or plain files); proposed updates with evidence (4); the review list (1); a simple change log (3); the brief with what changed, three deals and a commit that adds up to the deals behind it (7, 8); override with a reason (2).
 - **Out (for now):** live email, calendar and call capture; other recorders; Slack; the private preview screen (the brief simply leaves out anything unconfirmed); the range and its test against past quarters; reconciliation to the real Forecasts tab; undo; per-rep counts; the capture notice; "look again"; the fallback brief; anything across customers.
 - **Done when:** someone playing a rep accepts two proposed changes and rejects one on a deal; the manager's brief shows only the two, with who confirmed them and the evidence; the commit equals the sum of the commit deals; and an override changes the commit and appears in the log with its reason.
+- **Design:** follow `../flows/DESIGN.md`; it should look like `../flows/mockups/`.

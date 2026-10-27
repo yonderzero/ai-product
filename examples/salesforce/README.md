@@ -57,6 +57,7 @@ From `/ai-product-research`, in [`research/`](research/):
 From `/ai-product-flows`, in [`flows/`](flows/):
 
 - [`flows/flows.md`](flows/flows.md): the five flows, moment by moment, ranked on value, trust, pay and hours given back; the two to take forward and their thinnest version.
+- [`flows/DESIGN.md`](flows/DESIGN.md): the design direction the mockups follow: a neutral style like Cal.com, from getdesign.md, deliberately not Salesforce's look. The developers build the slice to match it.
 - [`flows/mockups/rep-confirm.html`](flows/mockups/rep-confirm.html): clickable mockup of the rep confirming a deal.
 - [`flows/mockups/forecast-brief.html`](flows/mockups/forecast-brief.html): clickable mockup of the manager's forecast brief.
 - [`flows/panel-tests.md`](flows/panel-tests.md): two panel rounds, the price vote, and what public first-hand sources say about similar flows.
