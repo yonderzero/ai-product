@@ -4,7 +4,7 @@
 /ai-product-vision
 ```
 
-The second skill, after [`ai-product-start`](ai-product-start.md). Software is moving from recording the work to doing it. Claude maps your market on six levels of AI, shows where your product is today and where the opportunities are, then works with you on a vision for where you could take your product.
+The second skill, after [`ai-product-start`](ai-product-start.md). Software is moving from recording the work to doing it. Claude goes through six levels of AI with you and maps the value your product gives customers at each one today. Then it maps your market on the same levels, finds the opportunities, and works with you on a vision for where you could take your product.
 
 **Who runs it:** the product manager, ideally with the team.
 **How long:** about 30–45 minutes. The research runs in the background while you talk.
@@ -12,7 +12,7 @@ The second skill, after [`ai-product-start`](ai-product-start.md). Software is m
 
 ## What you need
 
-- Your product folder from `ai-product-start`, with `product.md`.
+- Your product profile from [`ai-product-start`](ai-product-start.md). If it isn't done yet, Claude asks you to run `/ai-product-start` first.
 - An idea of your competitors. Claude proposes the market; you add who's missing.
 
 ## The six levels
@@ -38,9 +38,16 @@ Claude asks one question at a time, like a conversation.
 
 3. **Research.** Claude researches every company's AI features in the background, and scans for anyone already attacking your product, for example by unbundling a module, rebuilding it for small customers, or sitting on top of it.
 
-4. **Where are you today?** While the research runs, Claude asks where you think your product sits on the six levels, and why.
+4. **Your product, level by level.** While the research runs, Claude goes up the levels with you, starting at 1. At each level it asks, one question at a time:
+   - Does your product give customers value at this level? Which features?
+   - For whom: which persona, buyer or user?
+   - What value do they get?
+   - How do they pay for it: included, an add-on, per seat, per use, per outcome?
+   - Is it shipped and used, and is there an example?
 
-5. **The map.** Claude places every company, and your product, with sources. If the evidence puts your product lower than you did, it says so and shows why. It names the openings: levels where nobody credible is yet. You get a table and a picture of the market to open in your browser.
+   It starts from what it already knows from your profile and website, and asks you to confirm. When a level has nothing yet, it asks whether anything is in beta or planned. Your product's level today is the highest level with value that is shipped and used.
+
+5. **The map.** Claude places every company, and your product, with sources. If the public evidence puts your product lower than your own answers did, it says so and shows why. It names the openings: levels where nobody credible is yet. You get a table and a picture of the market to open in your browser.
 
 6. **The vision interview.** One question at a time:
    - Which level do you want to reach, and by when?
@@ -60,6 +67,7 @@ Claude asks one question at a time, like a conversation.
 ```
 acme-scheduler/
   product.md          now with today's level and your target level
+  ai-levels.md        the value your product gives at each level: features, for whom, how they pay
   market-map.md       every company on the six levels, with sources, and the openings
   market-map.html     the market as a picture: open it in a browser
   threats.md          who is attacking or could attack your product, and how
