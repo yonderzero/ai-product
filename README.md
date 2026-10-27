@@ -53,14 +53,14 @@ acme-scheduler/          named after your product
   overview.html          a slide deck of everything so far, updated by every skill
   product.md             your product's profile, from /ai-product-start
   documents/             your files: Claude reads everything here
-  vision/              from /ai-product-vision
+  vision/                from /ai-product-vision
     ai-levels.md
     market-map.md
     market-map.html
     market-moves.md
     opportunities.md
     vision.md
-  discovery/           from /ai-product-discovery
+  discovery/             from /ai-product-discovery
     protection.md
     strength.md
     exposure.md
