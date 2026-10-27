@@ -44,6 +44,7 @@ You run the skills in order, in one folder:
 4. **`/ai-product-problem`**: make sure you're solving the right problem: say it as a customer job, test the evidence, set a BHAG, think bigger, and choose the framing that captures the most value.
 5. **`/ai-product-research`**: go deep on how each type of customer experiences the problem and what options they have, from your documents and the market, then build personas you can talk to and uncover the agentic customer experiences that could solve the problem. Run it again any time to talk to your personas.
 6. **`/ai-product-flows`**: map your agentic experiences as flows, make them clickable, and find the right flows with real customer interviews and your synthetic panel side by side.
+7. **`/ai-product-roadmap`**: ideation, prioritisation, ROI and pricing: the clear features in this product update, what it's worth to your customers and to you, how you'll charge for agents, the roadmap, and the build-day slice for your developers.
 
 Each skill is a conversation. Claude asks one question at a time, researches the web in the background, and writes what you build together into files in your product's folder. Each skill reads what the earlier ones wrote, so run them in the same place.
 
@@ -85,6 +86,10 @@ acme-scheduler/          named after your product
     mockups/
     panel-tests.md
     script.md
+  roadmap/               from /ai-product-roadmap
+    features.md
+    roi.md
+    roadmap.md
 ```
 
 Every fact in the files says where it came from: a link for anything found on the web, `[documents/<file>]` for anything from your files, and `[PM]` for anything you said. Claude leaves a gap rather than guess, and lists what's still unknown.
@@ -118,7 +123,7 @@ You get:
 - **`value.md`**: where value flows today, where it leaks, where it would flow at your vision's target level, who else could capture it, and how you'd charge. *([example](examples/salesforce/discovery/value.md))*
 - **`discovery.md`**: the one page: where to take the product, the four pillars, whether you're ready for the vision (data, tech, team, customers, pricing), your move, and where value flows. *([example](examples/salesforce/discovery/discovery.md))*
 
-Each skill's files go in a folder named after it inside your product's folder (`vision/`, `discovery/`, `problem/`, `research/`, `flows/`), as plain text you can open, edit and share.
+Each skill's files go in a folder named after it inside your product's folder (`vision/`, `discovery/`, `problem/`, `research/`, `flows/`, `roadmap/`), as plain text you can open, edit and share.
 
 **[`/ai-product-problem`](docs/ai-product-problem.md)**\
 Makes sure you're solving the right problem, and that it's big enough. Says it as a customer job, grades the evidence with the Mom Test, pressure-tests it, sets a BHAG, looks at what customers most want fixed and at adjacent segments, and lays out three framings so you pick the one that captures the most value.
@@ -147,6 +152,14 @@ You get:
 - **`mockups/`**: one clickable mockup per flow, revised after the panel.
 - **`panel-tests.md`**: every round with the panel and every real interview, side by side.
 - **`script.md`**: the interview kit for real customers.
+
+**[`/ai-product-roadmap`](docs/ai-product-roadmap.md)**\
+Ideation, prioritisation, ROI and pricing. Turns your right flows into feature ideas, prioritises them, works out the ROI for a typical customer and for you, helps you choose how to charge for agents, and lays out the roadmap from this update to your BHAG.
+
+You get:
+- **`features.md`**: the features prioritised, the clear list for this product update, and the build-day slice your developers can build first.
+- **`roi.md`**: what the update is worth to a typical customer and to you, and how you'll charge for agents.
+- **`roadmap.md`**: Now (this update), Next and Later, toward your vision and BHAG.
 
 ## Examples
 

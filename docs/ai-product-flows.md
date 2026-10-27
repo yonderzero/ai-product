@@ -80,4 +80,4 @@ acme-scheduler/
 
 ## Next
 
-The next session (ideation, prioritisation, ROI and pricing) turns the right flows into the features for this product update and the roadmap.
+[`/ai-product-roadmap`](ai-product-roadmap.md): ideation, prioritisation, ROI and pricing, turning the right flows into the features for this product update and the roadmap.

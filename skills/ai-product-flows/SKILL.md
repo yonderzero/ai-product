@@ -15,7 +15,7 @@ Conversational, short messages, one question at a time. Never send a list of que
 
 ## Save as you go
 
-Write each file as soon as its step has content, and update it as you go. Mark any section you haven't reached `Not done yet`. If the product manager says they're out of time or wants to move on, stop cleanly: save what's there, say which steps are left, and that they can run this skill again to continue, or edit the files themselves. Update `index.html` before you stop. Moving on is fine as long as something is saved.
+Write each file as soon as its step has content, and update it as you go. Mark any section you haven't reached `Not done yet`. After every step that saves something, update `index.html`, the product's deck (follow `references/deck.md` in the ai-product-start skill's folder), so the deck always shows the latest. If the product manager says they're out of time or wants to move on, stop cleanly: save what's there, say which steps are left, and that they can run this skill again to continue, or edit the files themselves. Update `index.html` before you stop. Moving on is fine as long as something is saved.
 
 ## Before you start
 

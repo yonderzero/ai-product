@@ -99,6 +99,7 @@ p{margin:0;max-width:68ch}
 .todo code{font-family:var(--mono);color:var(--ink);background:var(--surface-2);padding:1px 6px;border-radius:4px}
 .grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
 .dir{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.hz{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
 .card{background:var(--surface-1);border:1px solid var(--hairline);border-radius:12px;padding:18px;display:grid;gap:8px;align-content:start;min-width:0}
 ul,ol{margin:0;padding-left:18px} li{margin:3px 0}
 .statement{font-size:clamp(22px,3vw,28px);line-height:1.3;font-weight:500;letter-spacing:-.4px;max-width:44ch;border-left:2px solid var(--accent);padding-left:18px}
@@ -136,6 +137,49 @@ td.num{font:500 13px var(--mono);font-variant-numeric:tabular-nums}
 .quad div{padding:16px;border-radius:10px;background:var(--surface-1);border:1px solid var(--hairline);min-width:0;color:var(--ink-subtle)}
 .quad .ax{background:none;border:0;padding:6px;font:500 11px var(--mono);color:var(--ink-subtle);text-transform:uppercase;letter-spacing:.05em;display:flex;align-items:center}
 .card.chosen{border-color:var(--accent);background:var(--accent-soft)}
+.econ{display:grid;gap:10px}
+.erow{display:grid;grid-template-columns:110px minmax(0,1fr) 70px;gap:12px;align-items:center}
+.elab{font-size:13px;color:var(--ink-subtle)}
+.etot{font:500 14px var(--mono);text-align:right;font-variant-numeric:tabular-nums}
+.ebar{display:flex;height:28px;border-radius:6px;overflow:hidden;background:var(--surface-2)}
+.seg{display:block;height:100%}
+.seg-l,.sw.seg-l{background:var(--ink-tertiary)}
+.seg-a,.sw.seg-a{background:var(--accent)}
+.seg-p,.sw.seg-p{background:var(--risk)}
+.sw{display:inline-block;width:10px;height:10px;border-radius:2px}
+/* motion: everything rests visible; slides animate in when opened */
+@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes travel{from{left:0}to{left:calc(100% - 8px)}}
+.slide.on .card,.slide.on .stair,.slide.on .step-box,.slide.on .lane-cell .node{animation:rise .45s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i,0) * 70ms)}
+.slide.on .seg{transform-origin:left;animation:grow .8s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i,0) * 160ms)}
+/* experiences: today vs with agents */
+.xp{display:grid;gap:14px}
+.xp-row{display:grid;grid-template-columns:110px minmax(0,1fr);gap:12px;align-items:center}
+.xp-lab{font:500 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-subtle)}
+.strip{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.step-box{font-size:12.5px;line-height:1.3;padding:7px 10px;border-radius:8px;border:1px solid var(--hairline);background:var(--surface-1);max-width:220px}
+.step-box.person{border-color:color-mix(in srgb,var(--risk) 45%,var(--hairline));background:var(--risk-soft)}
+.step-box.agent{border-color:color-mix(in srgb,var(--accent) 55%,var(--hairline));background:var(--accent-soft)}
+.step-box.check{border-style:dashed}
+.arrow-sm{color:var(--ink-tertiary);font-size:12px}
+.xp-card{display:grid;gap:12px}
+/* flow map: swimlanes */
+.lanes{overflow-x:auto;border:1px solid var(--hairline);border-radius:12px;background:var(--surface-1)}
+.lane-grid{display:grid;grid-template-columns:96px repeat(var(--n),minmax(150px,1fr));min-width:calc(96px + var(--n) * 150px)}
+.lane-head{font:500 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-subtle);padding:10px 12px;border-bottom:1px solid var(--hairline);background:var(--surface-2)}
+.lane-name{font:500 12px var(--mono);color:var(--ink-muted);padding:14px 12px;border-right:1px solid var(--hairline);display:flex;align-items:center}
+.lane-cell{position:relative;padding:12px 10px;border-bottom:1px solid var(--hairline);min-height:84px;display:flex;align-items:center}
+.lane-row-last .lane-cell,.lane-row-last.lane-name{border-bottom:0}
+.node{width:100%;font-size:12.5px;line-height:1.35;padding:8px 10px;border-radius:8px;border:1px solid var(--hairline)}
+.node.agent{background:var(--accent-soft);border-color:color-mix(in srgb,var(--accent) 55%,var(--hairline))}
+.node.person{background:var(--risk-soft);border-color:color-mix(in srgb,var(--risk) 45%,var(--hairline))}
+.node.exc{border-style:dashed;background:var(--surface-2)}
+.lane-cell.has:not(.last)::after{content:"→";position:absolute;right:-7px;top:50%;transform:translateY(-50%);color:var(--ink-tertiary);font-size:13px;z-index:1}
+.track{position:relative;height:3px;margin:0 12px 12px 108px;background:var(--surface-3);border-radius:3px}
+.track i{position:absolute;top:-2.5px;width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.slide.on .track i{animation:travel 3.2s linear infinite}
+@media (prefers-reduced-motion:reduce){.slide.on *{animation:none!important}}
 .quad .on{border-color:var(--accent);background:var(--accent-soft);color:var(--accent);font-weight:600}
 footer{color:var(--ink-subtle);font-size:12px;border-top:1px solid var(--hairline);padding-top:14px}
 
@@ -646,7 +690,7 @@ footer{color:var(--ink-subtle);font-size:12px;border-top:1px solid var(--hairlin
   if(v && v.statement) add(c0, el("p","statement",v.statement));
   else if(p.what) add(c0, el("p","lead",p.what));
   var prog = el("div","pills");
-  [["Start", !!p.what], ["Vision", v ? (v.complete ? true : "part") : false], ["Discovery", x ? (x.complete ? true : "part") : false], ["Problem", d.problem ? (d.problem.complete ? true : "part") : false], ["Research", d.research ? (d.research.complete ? true : "part") : false]].forEach(function(s){
+  [["Start", !!p.what], ["Vision", v ? (v.complete ? true : "part") : false], ["Discovery", x ? (x.complete ? true : "part") : false], ["Problem", d.problem ? (d.problem.complete ? true : "part") : false], ["Research", d.research ? (d.research.complete ? true : "part") : false], ["Flows", d.flows ? (d.flows.complete ? true : "part") : false], ["Roadmap", d.roadmap ? (d.roadmap.complete ? true : "part") : false]].forEach(function(s){
     var c=el("span","pill"); add(c, el("span","dot"+(s[1]===true?" done":""))); c.append(s[0] + (s[1]===true ? "" : s[1]==="part" ? " · in progress" : " · not started")); add(prog,c);
   });
   add(c0, prog);
@@ -806,10 +850,45 @@ footer{color:var(--ink-subtle);font-size:12px;border-top:1px solid var(--hairlin
   var hasEx = !!(rs && (rs.experiences||[]).length);
   var sex = slide("experiences","Research","Agentic experiences","Agentic customer experiences",["research/experiences.md"], hasEx);
   if(hasEx){
+    var gx=el("div","xp");
+    rs.experiences.forEach(function(x2){
+      if(!(x2.today_steps||[]).length && !(x2.agent_steps||[]).length) return;
+      var c=el("div","card xp-card"+(x2.first?" chosen":""));
+      add(c, el("div","eyebrow",(x2.persona||"")+(x2.levels?" · L"+x2.levels:"")+(x2.first?" · explore first":"")), el("h3",null,x2.name));
+      [["Today",(x2.today_steps||[]).map(function(t){ return {text:t,by:"person"}; })],["With agents",x2.agent_steps||[]]].forEach(function(r){
+        if(!r[1].length) return;
+        var row=el("div","xp-row"), st=el("div","strip"); add(row, el("span","xp-lab",r[0]));
+        r[1].forEach(function(sp,k){ if(k) add(st, el("span","arrow-sm","→")); var b=el("span","step-box "+(sp.by==="agent"?"agent":sp.by==="check"?"person check":"person"), sp.text); b.style.setProperty("--i",k); add(st,b); });
+        add(row,st); add(c,row);
+      });
+      if(x2.hours) add(c, el("p","muted","Gives back "+x2.hours));
+      add(gx,c);
+    });
+    if(gx.children.length){ var lg2=el("div","pills"); [["person","A person"],["agent","An agent"],["person check","A person approves"]].forEach(function(k){ var p3=el("span","pill"); add(p3, el("span","step-box "+k[0],"")); p3.lastChild.style.padding="0 6px"; p3.append(k[1]); add(lg2,p3); }); add(sex, gx, lg2); }
     var ge=el("div","grid");
-    rs.experiences.forEach(function(x2){ var c=el("div","card"+(x2.first?" chosen":"")); add(c, el("div","eyebrow",(x2.persona||"")+(x2.levels?" · L"+x2.levels:"")+(x2.first?" · explore first":"")), el("h3",null,x2.name), x2.today ? el("p","muted","Today: "+x2.today) : null, x2.agent ? el("p",null,"With agents: "+x2.agent) : null); add(ge,c); });
+    rs.experiences.forEach(function(x2){ if((x2.today_steps||[]).length || (x2.agent_steps||[]).length) return; var c=el("div","card"+(x2.first?" chosen":"")); add(c, el("div","eyebrow",(x2.persona||"")+(x2.levels?" · L"+x2.levels:"")+(x2.first?" · explore first":"")), el("h3",null,x2.name), x2.today ? el("p","muted","Today: "+x2.today) : null, x2.agent ? el("p",null,"With agents: "+x2.agent) : null); add(ge,c); });
     add(sex, ge);
   } else add(sex, todo("/ai-product-research"));
+
+  var hasEc = !!(rs && rs.economics);
+  var sec2 = slide("economics","Research","New economics","Give people their time back",["research/experiences.md"], hasEc);
+  if(hasEc){
+    var ec=rs.economics, rows=[["Licence",ec.today.licence,ec.agents.licence],["Agents",null,ec.agents.agents],["People's time using the product",ec.today.labour,ec.agents.labour]];
+    var tot=function(o){ return (o.licence||0)+(o.agents||0)+(o.labour||0); }, T=tot(ec.today), A=tot(ec.agents), max=Math.max(T,A)||1, cur=ec.currency||"";
+    var fmt=function(n){ return n==null?"–":cur+(n>=1e6?(n/1e6).toFixed(1).replace(".0","")+"M":n>=1e3?Math.round(n/1e3)+"K":n); };
+    var bars=el("div","econ");
+    [["Today",ec.today],["With agents",ec.agents]].forEach(function(r){
+      var row=el("div","erow"); add(row, el("span","elab",r[0]));
+      var bar=el("div","ebar"); [["licence","seg-l"],["agents","seg-a"],["labour","seg-p"]].forEach(function(k){ var v=r[1][k[0]]; if(!v) return; var sg=el("span","seg "+k[1]); sg.style.width=(v/max*100)+"%"; sg.title=k[0]+" "+fmt(v); add(bar,sg); });
+      add(row, bar, el("span","etot",fmt(tot(r[1])))); add(bars,row);
+    });
+    var lg=el("div","pills"); [["seg-l","Licence"],["seg-a","Agents"],["seg-p","People's time"]].forEach(function(k){ var p2=el("span","pill"); add(p2, el("span","sw "+k[0])); p2.append(k[1]); add(lg,p2); });
+    add(sec2, bars, lg);
+    var gk=el("div","pillars");
+    [["Labour", ec.labour_x ? ec.labour_x+"× lower" : null],["Customer saves", fmt(T-A)+" ("+Math.round((T-A)/T*100)+"%)"],["Our revenue", ec.revenue_x ? ec.revenue_x+"×" : null]].forEach(function(k){ if(!k[1]) return; var c=el("div","card"); add(c, el("div","eyebrow",k[0]), el("span","score",k[1])); add(gk,c); });
+    add(sec2, gk);
+    if(ec.note) add(sec2, el("p","muted",ec.note));
+  } else add(sec2, todo("/ai-product-research"));
 
   var hasPn = !!(rs && (rs.panel||rs.objection));
   var spn = slide("panel","Research","Panel verdict","What the panel said",["research/panel.md"], hasPn);
@@ -819,7 +898,86 @@ footer{color:var(--ink-subtle);font-size:12px;border-top:1px solid var(--hairlin
     add(spn, el("p","muted","Synthetic panel: hypotheses, not evidence. Confirm with a real customer."));
   } else add(spn, todo("/ai-product-research"));
 
+  // Flows
+  var fl = d.flows;
+  var hasFl = !!(fl && (fl.flows||[]).length);
+  var sfl = slide("flows","Flows","Right flows","The right flows",["flows/flows.md","flows/panel-tests.md"], hasFl);
+  if(hasFl){
+    add(sfl, table(["Flow","Persona","Value","Trust","Pay","Hours back",""], fl.flows.map(function(f){ var b=el("span","band "+(f.forward==="yes"?"do":f.forward==="later"?"strong":"watch"), f.forward==="yes"?"Take forward":f.forward==="later"?"Later":"No"); return [f.name, f.persona||"", f.value, f.trust, f.pay, f.hours||"", b]; })));
+    if(fl.thinnest) add(sfl, el("p","lead","Thinnest version: "+fl.thinnest));
+  } else add(sfl, todo("/ai-product-flows"));
+
+  (fl && fl.flows || []).filter(function(f){ return (f.steps||[]).length; }).forEach(function(f,fi){
+    var sm2 = slide("flow-"+(fi+1),"Flows","Flow: "+f.name,f.name,["flows/flows.md"], true);
+    if(f.trigger || f.outcome) add(sm2, el("p","lead",(f.trigger?"Starts when "+f.trigger+". ":"")+(f.outcome?"Done when "+f.outcome+".":"")));
+    var n=f.steps.length, wrap=el("div","lanes"), g=el("div","lane-grid"); g.style.setProperty("--n",n);
+    add(g, el("div","lane-head",""));
+    f.steps.forEach(function(s2,k){ add(g, el("div","lane-head",(k+1)+". "+(s2.moment||""))); });
+    [["agent","Agent"],["person","Person"]].forEach(function(lane,li){
+      var nm=el("div","lane-name"+(li===1?" lane-row-last":""),lane[1]); add(g,nm);
+      f.steps.forEach(function(s2,k){
+        var cell=el("div","lane-cell"+(li===1?" lane-row-last":"")+(k===n-1?" last":"")); 
+        var txt=s2[lane[0]]; if(txt){ cell.className+=" has"; var nd=el("div","node "+lane[0]+(s2.exception?" exc":""),txt); nd.style.setProperty("--i",k*2+li); add(cell,nd); }
+        add(g,cell);
+      });
+    });
+    add(wrap,g); var tr=el("div","track"); add(tr, el("i")); add(wrap,tr); add(sm2,wrap);
+    var gw=el("div","grid");
+    if(f.wrong){ var cw=el("div","card"); add(cw, el("div","eyebrow","When it goes wrong"), el("p",null,f.wrong)); add(gw,cw); }
+    if(f.never){ var cn=el("div","card"); add(cn, el("div","eyebrow","The agent never"), el("p",null,f.never)); add(gw,cn); }
+    if(gw.children.length) add(sm2,gw);
+  });
+
+  var hasMk = !!(fl && (fl.mockups||[]).length);
+  var smk = slide("mockups","Flows","Mockups","Flow mockups",["flows/mockups/"], hasMk);
+  if(hasMk){
+    var gm=el("div","grid");
+    fl.mockups.forEach(function(m){ var c=el("div","card"); var a=el("a",null,m.name); a.href=m.file; add(c, el("div","eyebrow","Mockup"), add(el("h3"),a), m.what ? el("p","muted",m.what) : null); add(gm,c); });
+    add(smk, gm, el("p","muted","Mockups for testing flows, not the product."));
+  } else add(smk, todo("/ai-product-flows"));
+
+  var hasFb = !!(fl && (fl.panel || fl.customers));
+  var sfb = slide("feedback","Flows","Feedback","What customers and the panel said",["flows/panel-tests.md"], hasFb);
+  if(hasFb){
+    var gfb=el("div","grid");
+    if(fl.customers){ var c1=el("div","card chosen"); add(c1, el("div","eyebrow","Real customers"), el("p",null,fl.customers)); add(gfb,c1); }
+    if(fl.panel){ var c2=el("div","card"); add(c2, el("div","eyebrow","Synthetic panel"), el("p",null,fl.panel), el("p","muted","Hypotheses, not evidence.")); add(gfb,c2); }
+    add(sfb, gfb);
+    if(fl.never) add(sfb, el("p","lead","The agent never: "+fl.never));
+  } else add(sfb, todo("/ai-product-flows"));
+
+
+  // Roadmap
+  var rm = d.roadmap;
+  var hasUp = !!(rm && (rm.update||[]).length);
+  var sup = slide("update","Roadmap","This update","This product update",["roadmap/features.md"], hasUp);
+  if(hasUp){
+    if(rm.summary) add(sup, el("p","statement",rm.summary));
+    add(sup, table(["Feature","Flow","Priority"], rm.update.map(function(f){ return [f.name, f.flow||"", typeof f.priority==="number"?f.priority:""]; })));
+    if(rm.slice){ var sl2=el("div","card chosen"); add(sl2, el("div","eyebrow","The build-day slice"), el("p",null,rm.slice)); add(sup,sl2); }
+  } else add(sup, todo("/ai-product-roadmap"));
+
+  var hasRo = !!(rm && (rm.customer_saves || rm.price));
+  var sro = slide("roi","Roadmap","ROI and pricing","What it's worth, and how we charge",["roadmap/roi.md"], hasRo);
+  if(hasRo){
+    var gr=el("div","pillars");
+    [["Customer saves a year",rm.customer_saves],["Their return",rm.customer_return],["New revenue per customer",rm.revenue_per_customer],["Across customers",rm.revenue_total]].forEach(function(k){ if(!k[1]) return; var c=el("div","card"); add(c, el("div","eyebrow",k[0]), el("span","score",k[1])); add(gr,c); });
+    add(sro, gr);
+    if(rm.price){ var pc=el("div","card"); add(pc, el("div","eyebrow","How we charge"), el("p",null,rm.price), rm.price_why ? el("p","muted",rm.price_why) : null); add(sro,pc); }
+  } else add(sro, todo("/ai-product-roadmap"));
+
+  var hasHz = !!(rm && rm.horizons);
+  var shz = slide("roadmap","Roadmap","Roadmap","Roadmap",["roadmap/roadmap.md"], hasHz);
+  if(hasHz){
+    if(d.problem && d.problem.bhag) add(shz, el("p","lead","Toward: "+d.problem.bhag));
+    var gh=el("div","grid hz");
+    [["Now","now"],["Next","next"],["Later","later"]].forEach(function(k){ var h=rm.horizons[k[1]]; if(!h) return; var c=el("div","card"+(k[1]==="now"?" chosen":"")); add(c, el("div","eyebrow",k[0]+(h.level?" · L"+h.level:"")), h.outcome ? el("h3",null,h.outcome) : null, (h.items||[]).length ? list(h.items) : null, h.revenue ? el("p","muted","New revenue: "+h.revenue) : null); add(gh,c); });
+    add(shz, gh);
+  } else add(shz, todo("/ai-product-roadmap"));
+
   add(slides[slides.length-1], el("footer",null,"Built from the files in the product's folder"+(d.updated?" on "+d.updated:"")+". The files are the source; this deck shows them."));
+
+  slides.forEach(function(s){ s.querySelectorAll(".card,.stair").forEach(function(c,k){ if(!c.style.getPropertyValue("--i")) c.style.setProperty("--i",k); }); s.querySelectorAll(".ebar").forEach(function(b){ b.querySelectorAll(".seg").forEach(function(sg,k){ sg.style.setProperty("--i",k); }); }); });
 
   // sidebar
   var nav=document.getElementById("nav"), groups={}, items=[];
