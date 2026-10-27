@@ -14,8 +14,10 @@ In Claude Code, run:
 Then restart Claude Code, open the folder you want to work in, and run:
 
 ```
-/ai-product:00-setup
+/ai-product:ai-product-setup
 ```
+
+Claude asks about your product and creates a folder for it. Put any documents you want Claude to use in its `documents/` folder.
 
 ## Update
 

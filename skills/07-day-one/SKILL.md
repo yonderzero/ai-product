@@ -7,7 +7,7 @@ description: Product Track session 07 (Wrap Up & Reflections). Read the team's d
 
 **Goal.** The team's day in five true lines, so tomorrow starts where today ended.
 
-Work in the team's product folder.
+Work in the team's product folder: the current folder, or the folder below it that has `product.md`. If there is none, run `/ai-product:ai-product-setup` first. Remind the team they can add files to `documents/` at any time, and read any new ones.
 
 ## Steps
 

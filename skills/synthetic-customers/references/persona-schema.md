@@ -1,6 +1,6 @@
 # Persona schema
 
-One persona per file, `panel/<id>.md`. The layout follows MatrAIx's four groups (background, psychology, capability, behaviour) with the business fields a B2B software buyer needs. Every field ends with its grounding tag: `[inputs/<file>]`, `[source: <url>]`, `[team]` or `[assumed]`.
+One persona per file, `panel/<id>.md`. The layout follows MatrAIx's four groups (background, psychology, capability, behaviour) with the business fields a B2B software buyer needs. Every field ends with its grounding tag: `[documents/<file>]`, `[source: <url>]`, `[team]` or `[assumed]`.
 
 ```markdown
 # <id> · <first name>, <role>
@@ -51,7 +51,7 @@ panel_role: buyer | user | sceptic | influencer
 ## Evidence log
 | Kind | Evidence, verbatim | Source |
 |---|---|---|
-| quote | "…" | inputs/<file>, line … |
+| quote | "…" | documents/<file>, line … |
 | pain | … | … |
 ```
 
@@ -77,32 +77,32 @@ panel_role: user
 - organisation: public university, 18,000 students, 3 campuses [assumed]
 - group position: independent; budget through the faculty IT committee [assumed]
 - role and tenure: timetabling manager, 9 years, reports to the registrar [team]
-- runs on: the timetabling product, plus a room-booking spreadsheet and the student record system [inputs/interview-02.md]
+- runs on: the timetabling product, plus a room-booking spreadsheet and the student record system [documents/interview-02.md]
 
 ## Business
 - who signs: registrar above €20,000 [assumed]
 - budget route: renewal [team]
-- what they are measured on: clash-free timetables published on time; room utilisation [inputs/interview-02.md]
+- what they are measured on: clash-free timetables published on time; room utilisation [documents/interview-02.md]
 - renewal or contract moment: August, before term planning [assumed]
 
 ## Psychology
-- attitude to change: pragmatist [inputs/interview-02.md]
-- trust in AI: will use suggestions, won't let it publish without her [inputs/interview-02.md]
-- burned by: a 2023 room-booking integration that double-booked lecture halls [inputs/interview-02.md]
+- attitude to change: pragmatist [documents/interview-02.md]
+- trust in AI: will use suggestions, won't let it publish without her [documents/interview-02.md]
+- burned by: a 2023 room-booking integration that double-booked lecture halls [documents/interview-02.md]
 - will not tolerate: anything that changes a published timetable without telling her [team]
-- would pay for: getting the two-week clash-resolution crunch down to two days [inputs/interview-02.md]
+- would pay for: getting the two-week clash-resolution crunch down to two days [documents/interview-02.md]
 
 ## Capability
 - tech comfort: high [team]
-- data they hold: rooms, staff availability, course structures; staff availability is out of date [inputs/tickets.csv]
+- data they hold: rooms, staff availability, course structures; staff availability is out of date [documents/tickets.csv]
 - time they can give a new tool: two hours a week outside term planning [assumed]
 
 ## Behaviour
-- a normal day: opens the product at 08:00 to check overnight changes, spends the morning on staff change requests, ends with an export to the room spreadsheet [inputs/interview-02.md]
-- workarounds: a shared spreadsheet of room exceptions; phone calls to departments [inputs/interview-02.md]
-- last time it went wrong: a staff absence in week 1 cascaded into 40 manual moves [inputs/interview-02.md]
+- a normal day: opens the product at 08:00 to check overnight changes, spends the morning on staff change requests, ends with an export to the room spreadsheet [documents/interview-02.md]
+- workarounds: a shared spreadsheet of room exceptions; phone calls to departments [documents/interview-02.md]
+- last time it went wrong: a staff absence in week 1 cascaded into 40 manual moves [documents/interview-02.md]
 - how they buy: reference call with another university, then procurement [assumed]
 
 ## Voice
-- sounds like: "I don't need it to be clever. I need it to stop me moving forty lectures by hand in week one." [inputs/interview-02.md]
+- sounds like: "I don't need it to be clever. I need it to stop me moving forty lectures by hand in week one." [documents/interview-02.md]
 ```

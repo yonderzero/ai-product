@@ -12,7 +12,7 @@ What our own data says about our customers, before any persona is written. One r
 
 | Customer type | Kind | What they said or did | Source (file, line) |
 |---|---|---|---|
-| | quote | "…" | inputs/… |
+| | quote | "…" | documents/… |
 | | pain | | |
 | | workaround | | |
 | | trigger (what made them act) | | |

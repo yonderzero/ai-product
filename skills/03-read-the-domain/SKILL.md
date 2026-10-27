@@ -7,7 +7,7 @@ description: Product Track session 03 workshop (Assessing Intelligence Maturity)
 
 **Goal.** One page the developers can read in two minutes: where the product is strong, where it's exposed, and where the AI opportunity sits. It is the first file in the handoff.
 
-Work in the team's product folder. Read `product.md`, `01-brief.md`, `02-ai-market-map.md` and `02b-threats.md`.
+Work in the team's product folder: the current folder, or the folder below it that has `product.md`. If there is none, run `/ai-product:ai-product-setup` first. Remind the team they can add files to `documents/` at any time, and read any new ones. Read `product.md`, `01-brief.md`, `02-ai-market-map.md` and `02b-threats.md`.
 
 ## Steps
 

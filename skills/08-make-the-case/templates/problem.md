@@ -22,11 +22,11 @@ For the developers: what we're solving, for whom, and how we know.
 
 | What we know | Source | Strength |
 |---|---|---|
-| | inputs/… | real customer |
+| | documents/… | real customer |
 | | panel/… | synthetic |
 | | 04b-gaps.md | market |
 
-**In their words:** "…" (inputs/…, line …)
+**In their words:** "…" (documents/…, line …)
 
 ## What would show it worked
 

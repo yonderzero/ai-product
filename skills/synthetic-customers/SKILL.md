@@ -11,9 +11,9 @@ A synthetic customer is a structured persona record that Claude plays, built fro
 
 ## Where things live
 
-The team's product folder (the current working directory, usually `my-product/`):
+The team's product folder (the folder made by `ai-product-setup`, with `product.md` in it):
 
-- `inputs/`: what the team brought (interviews, tickets, sales and support notes, churn reasons, usage exports, `idea.md`). Personal data is removed before use.
+- `documents/`: what the team brought (interviews, tickets, sales and support notes, churn reasons, usage exports, `idea.md`). Personal data is removed before use.
 - `panel/`, written by this skill:
   - `evidence.md`: the evidence map
   - `icp.md`: the ideal customer profile
@@ -25,8 +25,8 @@ Read `references/persona-schema.md` before writing or changing a persona. Templa
 ## Ground rules
 
 - **Evidence first.** No persona before its evidence map.
-- **Every field is sourced**: `[inputs/<file>]`, `[source: <url>]`, `[team]` or `[assumed]`. Fewer than a third `[assumed]`; if you can't get there, say which gap causes it.
-- **No personal data.** If `inputs/` holds names, emails or phone numbers of individuals, stop and ask the team to remove them. A persona may be *modelled on* a customer organisation (kept in `modelled_on`), never named after a real person.
+- **Every field is sourced**: `[documents/<file>]`, `[source: <url>]`, `[team]` or `[assumed]`. Fewer than a third `[assumed]`; if you can't get there, say which gap causes it.
+- **No personal data.** If `documents/` holds names, emails or phone numbers of individuals, stop and ask the team to remove them. A persona may be *modelled on* a customer organisation (kept in `modelled_on`), never named after a real person.
 - **No sycophancy.** Real B2B customers are busy, sceptical and protective of budget. Each persona starts from "no" and needs a reason, from its own record, to say yes. Compliments are not evidence: a persona never says an idea is "great" without naming what it would replace and what it would cost them.
 - **One persona, one agent.** When several personas answer the same thing (score, vote, react), run each in its own subagent with only its own file and the material being judged, so they can't anchor on each other. Start the sceptic first. If subagents aren't available, answer one persona at a time and don't let later answers see earlier ones.
 - **Stay specific**: numbers, systems, days of the week. No marketing voice.
@@ -38,7 +38,7 @@ Ask which mode the team wants if the request doesn't say.
 
 ### 1. Map the evidence
 
-1. Read every file in `inputs/` and `01-brief.md` if present. Check for personal data first (see the ground rules).
+1. Read every file in `documents/` and `01-brief.md` if present. Check for personal data first (see the ground rules).
 2. Group what you find by **customer type** (segment and role). For each type, list every piece of evidence by kind: quote, pain, workaround, trigger (what made them act), objection, budget signal, churn reason. Each row has its file and line.
 3. List the **gaps**: what the data doesn't say (often budget, who signs, how they buy).
 4. Write `panel/evidence.md` from `templates/evidence.md`. Show the team the customer types and the gaps, and ask what they know that the files don't. Add it, tagged `[team]`.
@@ -60,7 +60,7 @@ Ask which mode the team wants if the request doesn't say.
 
 Checks a persona against a real answer it hasn't seen.
 
-1. Ask the team for one real question and answer from an interview, or pick one from `inputs/` and hold it back.
+1. Ask the team for one real question and answer from an interview, or pick one from `documents/` and hold it back.
 2. In a subagent that sees the persona's file **without** that answer, ask the persona the question.
 3. Compare the two: same facts? same tone? same objection? Score 1–5 and say what differs.
 4. If it scores 3 or less, propose the fields to change, apply what the team accepts, and log the result in `panel/README.md`.

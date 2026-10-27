@@ -1,6 +1,6 @@
 # Our ideal customer · [product name]
 
-The account we most want to win: the most pain, the money to fix it, and a reason to choose us. Every line ends with its source: `[inputs/<file>]`, `[source: <url>]`, `[team]` or `[assumed]`.
+The account we most want to win: the most pain, the money to fix it, and a reason to choose us. Every line ends with its source: `[documents/<file>]`, `[source: <url>]`, `[team]` or `[assumed]`.
 
 ## The account
 

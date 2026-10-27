@@ -7,7 +7,7 @@ description: Product Track session 08 workshop (Ideation, Prioritisation, ROI & 
 
 **Goal.** One idea, the case for it, and a first clickable prototype, ready for the developers at Align.
 
-Work in the team's product folder. Read `04-long-list.md`, `06-interviews.md`, `panel/` and `handoff/domain-read.md`.
+Work in the team's product folder: the current folder, or the folder below it that has `product.md`. If there is none, run `/ai-product:ai-product-setup` first. Remind the team they can add files to `documents/` at any time, and read any new ones. Read `04-long-list.md`, `06-interviews.md`, `panel/` and `handoff/domain-read.md`.
 
 Five parts. Keep the team moving: if they are still on part B at the halfway point, push them to pick.
 

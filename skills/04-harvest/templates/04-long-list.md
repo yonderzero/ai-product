@@ -13,7 +13,7 @@
 | 7 | | | | | | |
 | 8 | | | | | | |
 | 9 | | | | | | |
-| 10 | Our incoming idea: … | | | | | inputs/idea.md |
+| 10 | Our incoming idea: … | | | | | documents/idea.md |
 
 ## The top five, in shape
 
