@@ -104,6 +104,8 @@ Both now ship with AI agents under the Agentforce name. They qualify leads, answ
 
 Sellers still spend time keeping the CRM up to date instead of selling. We want Sales Cloud to keep its own records, and to tell each team what is working in deals like theirs. `[PM, illustrative]`
 
+- The right problem: sales managers can't see where every deal really stands without chasing reps. BHAG: by 2031, sellers spend 70% of their week selling, up from 40%, and no manager has to ask where a deal stands. See `problem/problem.md`. `[PM, illustrative]`
+
 ## Still unknown
 
 - How many companies use Sales Cloud and Service Cloud, and how revenue splits between them: not reported separately. [https://investor.salesforce.com/news/news-details/2026/Salesforce-Delivers-Record-Second-Quarter-Fiscal-2027-Results/default.aspx]

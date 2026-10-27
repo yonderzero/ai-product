@@ -422,6 +422,58 @@ footer{color:var(--ink-subtle);font-size:12px;border-top:1px solid var(--hairlin
       }
     ],
     "urgency": "immediate: rivals ship agents in the same sales and service workflows now"
+  },
+  "problem": {
+    "complete": true,
+    "bhag": "By 2031, sellers spend 70% of their week selling, up from 40%, and no sales manager has to ask a rep where a deal stands.",
+    "bhag_why": "Both people feel it: the rep gets the week back, and the manager stops chasing.",
+    "statement": "When the quarter is on the line, a sales manager wants to know where every deal really stands without chasing reps, so they can call the number with confidence and coach.",
+    "framing": "The bigger job",
+    "levels": "2 → 4",
+    "evidence": "Good",
+    "switching": "Push and pull beat habit; anxiety about wrong updates decides it, so reps must see and correct every change.",
+    "framings": [
+      {
+        "name": "As stated",
+        "level": 4,
+        "problem": "Reps' deal records are never current, so managers don't trust the forecast and reps lose selling time.",
+        "size": "$45M–$181M a year",
+        "chosen": false
+      },
+      {
+        "name": "The bigger job",
+        "level": 4,
+        "problem": "Sales managers can't see where every deal stands, or which need them, without chasing reps and rebuilding the forecast.",
+        "size": "$135M–$542M a year",
+        "chosen": true
+      },
+      {
+        "name": "The moonshot",
+        "level": 6,
+        "problem": "By 2031, sellers spend 70% of their week selling, and no manager asks where a deal stands.",
+        "size": "Not sized",
+        "chosen": false
+      }
+    ],
+    "opportunity": "Managers get a forecast they believe and time to coach; reps get selling time back. Financial advisors already pay for the same job. $135M–$542M a year from $9.03B Sales revenue, with two labelled assumptions.",
+    "learn": [
+      {
+        "assumption": "Records are stale because updating takes time, not because reps hold back bad news",
+        "ask": "Tell me about the last deal that slipped without warning. When did the rep know?"
+      },
+      {
+        "assumption": "Managers and reps will trust a deal record they didn't type",
+        "ask": "Tell me about the last time you found a wrong number in the pipeline. How did you find it?"
+      },
+      {
+        "assumption": "Managers use spreadsheets because the CRM is behind, not for other reasons",
+        "ask": "Walk me through last week's forecast. Where did each number come from?"
+      },
+      {
+        "assumption": "Customers would pay us for this rather than Gong or Clari",
+        "ask": "What do you pay today for call recording or forecasting? Who signed it?"
+      }
+    ]
   }
 }
 </script>
@@ -462,7 +514,7 @@ footer{color:var(--ink-subtle);font-size:12px;border-top:1px solid var(--hairlin
   if(v && v.statement) add(c0, el("p","statement",v.statement));
   else if(p.what) add(c0, el("p","lead",p.what));
   var prog = el("div","pills");
-  [["Start", !!p.what], ["Vision", v ? (v.complete ? true : "part") : false], ["Discovery", x ? (x.complete ? true : "part") : false], ["Problem", d.problem ? (d.problem.complete ? true : "part") : false]].forEach(function(s){
+  [["Start", !!p.what], ["Vision", v ? (v.complete ? true : "part") : false], ["Discovery", x ? (x.complete ? true : "part") : false], ["Problem", d.problem ? (d.problem.complete ? true : "part") : false], ["Research", d.research ? (d.research.complete ? true : "part") : false]].forEach(function(s){
     var c=el("span","pill"); add(c, el("span","dot"+(s[1]===true?" done":""))); c.append(s[0] + (s[1]===true ? "" : s[1]==="part" ? " · in progress" : " · not started")); add(prog,c);
   });
   add(c0, prog);
@@ -600,6 +652,40 @@ footer{color:var(--ink-subtle);font-size:12px;border-top:1px solid var(--hairlin
     if((pr.learn||[]).length){ add(sop, el("h3",null,"What we need to learn before building")); add(sop, table(["Assumption","Ask customers"], pr.learn.map(function(r){ return [r.assumption, r.ask]; }))); }
   } else add(sop, todo("/ai-product-problem"));
 
+
+  // Research
+  var rs = d.research;
+  var hasPe = !!(rs && (rs.personas||[]).length);
+  var spe = slide("personas","Research","Personas","Who has the problem",["research/personas/","research/icp.md"], hasPe);
+  if(hasPe){
+    if(rs.icp) add(spe, el("p","lead","Ideal customer: "+rs.icp));
+    var gp=el("div","grid");
+    rs.personas.forEach(function(r){ var c=el("div","card"); add(c, el("div","eyebrow",r.role||""), el("h3",null,r.name), r.sees ? el("p",null,"\u201c"+r.sees+"\u201d") : null, r.today ? el("p","muted","Today: "+r.today) : null, r.wont ? el("p","muted","Won't tolerate: "+r.wont) : null); add(gp,c); });
+    add(spe, gp);
+  } else add(spe, todo("/ai-product-research"));
+
+  var hasOt = !!(rs && (rs.options||[]).length);
+  var sot = slide("options","Research","Options today","What customers do today",["research/market.md"], hasOt);
+  if(hasOt){
+    add(sot, table(["Option","Who uses it","Good at","Bad at"], rs.options.map(function(o){ return [o.option, o.who, o.good, o.bad]; })));
+    if(rs.gap) add(sot, el("p","statement","What no option does well: "+rs.gap));
+  } else add(sot, todo("/ai-product-research"));
+
+  var hasEx = !!(rs && (rs.experiences||[]).length);
+  var sex = slide("experiences","Research","Agentic experiences","Agentic customer experiences",["research/experiences.md"], hasEx);
+  if(hasEx){
+    var ge=el("div","grid");
+    rs.experiences.forEach(function(x2){ var c=el("div","card"+(x2.first?" chosen":"")); add(c, el("div","eyebrow",(x2.persona||"")+(x2.levels?" · L"+x2.levels:"")+(x2.first?" · explore first":"")), el("h3",null,x2.name), x2.today ? el("p","muted","Today: "+x2.today) : null, x2.agent ? el("p",null,"With agents: "+x2.agent) : null); add(ge,c); });
+    add(sex, ge);
+  } else add(sex, todo("/ai-product-research"));
+
+  var hasPn = !!(rs && (rs.panel||rs.objection));
+  var spn = slide("panel","Research","Panel verdict","What the panel said",["research/panel.md"], hasPn);
+  if(hasPn){
+    if(rs.panel) add(spn, el("p","lead",rs.panel));
+    if(rs.objection){ var ob=el("div","card"); add(ob, el("div","eyebrow","Best objection"), el("p",null,rs.objection)); add(spn,ob); }
+    add(spn, el("p","muted","Synthetic panel: hypotheses, not evidence. Confirm with a real customer."));
+  } else add(spn, todo("/ai-product-research"));
 
   add(slides[slides.length-1], el("footer",null,"Built from the files in the product's folder"+(d.updated?" on "+d.updated:"")+". The files are the source; this deck shows them."));
 

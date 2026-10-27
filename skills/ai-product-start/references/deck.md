@@ -1,6 +1,6 @@
 # index.html: the product's deck
 
-`index.html` sits at the top of the product folder, next to `product.md`. It's the main file to open: a slide deck that grows with each skill: the product, the customers, the six levels, the opportunities, Imagine, the vision, where to take the product, the four pillars, the move, where value flows, readiness, the BHAG, the right problem, three framings, and what to learn first. A sidebar lists every section, grouped into Start, Vision, Discovery and Problem, with a dot for done or not done, so the product manager can jump anywhere. Every section links to the files it comes from. Slides a skill hasn't reached yet say "Not done yet" and name the skill to run.
+`index.html` sits at the top of the product folder, next to `product.md`. It's the main file to open: a slide deck that grows with each skill: the product, the customers, the six levels, the opportunities, Imagine, the vision, where to take the product, the four pillars, the move, where value flows, readiness, the BHAG, the right problem, three framings, and what to learn first. A sidebar lists every section, grouped into Start, Vision, Discovery, Problem and Research, with a dot for done or not done, so the product manager can jump anywhere. Every section links to the files it comes from. Slides a skill hasn't reached yet say "Not done yet" and name the skill to run.
 
 The files are the source of truth. The deck only shows them.
 
@@ -99,3 +99,21 @@ After `/ai-product-problem`, set `problem` (from `problem/`):
 - `framings`: as stated, the bigger job, the moonshot, with `chosen` true on the one picked.
 - `learn`: the riskiest assumptions, most dangerous first.
 - `complete`: true only when `problem.md` is agreed.
+
+After `/ai-product-research`, set `research` (from `research/`); talking to the personas again updates `panel` and `objection`:
+
+```json
+{
+  "complete": false,
+  "icp": "one line: the account we most want to win",
+  "personas": [ { "name": "Dana", "role": "Buyer", "sees": "the problem in their words", "today": "what they do now", "wont": "won't tolerate" } ],
+  "options": [ { "option": "Spreadsheets", "who": "", "good": "", "bad": "" } ],
+  "gap": "what no option does well today",
+  "experiences": [ { "name": "", "persona": "", "levels": "1 → 4", "today": "one line", "agent": "one line: what the agent does, what the person does", "first": false } ],
+  "panel": "two or three lines: what the panel said about the problem",
+  "objection": "the single best objection"
+}
+```
+
+- `experiences`: the agentic customer experiences, with `first` true on the one to explore first.
+- `complete`: true when the personas are checked and the panel has run once.

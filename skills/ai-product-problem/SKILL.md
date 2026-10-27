@@ -81,7 +81,7 @@ If files from an earlier run exist, say which steps are done and which aren't (l
 
 10. **The deck.** Update `index.html`, the product's deck: follow `references/deck.md` in the ai-product-start skill's folder (next to this skill's folder).
 
-11. **Done.** Show the files you wrote and sum up in three lines: the BHAG, the right problem, and the riskiest assumption to test first.
+11. **Done.** Show the files you wrote and sum up in three lines: the BHAG, the right problem, and the riskiest assumption to test first. Say the next step is `/ai-product-research`.
 
 ## Done when
 

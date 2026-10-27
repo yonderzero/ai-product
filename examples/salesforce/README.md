@@ -2,11 +2,11 @@
 
 > **Illustrative example built from public sources on 27 Oct 2026. Not affiliated with or endorsed by Salesforce. The product manager's answers and the vision are invented to show how the skills work. Salesforce, Sales Cloud, Service Cloud, Einstein and Agentforce are trademarks of Salesforce, Inc.**
 
-This folder shows what a product manager has after running `/ai-product-start`, `/ai-product-vision` and `/ai-product-discovery`, using Salesforce Sales Cloud and Service Cloud as the product. The first skill builds a sourced profile of the product and its customers. The second places the product's AI features on six levels, from System of Record to System of Understanding, maps the market on the same levels, maps who is moving in, finds and ranks opportunities, and turns it all into a vision. The third scores what protects the product, how strong it is, the AI opportunity and the exposure, checks readiness for the vision, maps where value flows, chooses the move and sets where to take the product. Facts come from public pages cited by URL. Anything a real product manager would have supplied is tagged `[PM, illustrative]`.
+This folder shows what a product manager has after running `/ai-product-start`, `/ai-product-vision`, `/ai-product-discovery` and `/ai-product-problem`, using Salesforce Sales Cloud and Service Cloud as the product. The first skill builds a sourced profile of the product and its customers. The second places the product's AI features on six levels, from System of Record to System of Understanding, maps the market on the same levels, maps who is moving in, finds and ranks opportunities, and turns it all into a vision. The third scores what protects the product, how strong it is, the AI opportunity and the exposure, checks readiness for the vision, maps where value flows, chooses the move and sets where to take the product. The fourth takes the problem discovery chose, says it as a customer job, grades the evidence with the Mom Test, pressure-tests it, thinks bigger with a BHAG, and lays out three sized framings so the product manager picks the right problem. Facts come from public pages cited by URL. Anything a real product manager would have supplied is tagged `[PM, illustrative]`.
 
 ## Files
 
-- [`index.html`](index.html): open this first. The deck: product, customers, levels, opportunities, vision, direction, pillars, move, value and readiness, with links to every file.
+- [`index.html`](index.html): open this first. The deck: product, customers, levels, opportunities, vision, direction, pillars, move, value and readiness, the BHAG, the right problem, three framings and what to learn first, with links to every file.
 - [`product.md`](product.md): the product profile: company, customers and four personas, workflows, pricing, competitors, data and AI today.
 
 From `/ai-product-vision`, in [`vision/`](vision/):
@@ -25,5 +25,11 @@ From `/ai-product-discovery`, in [`discovery/`](discovery/):
 - [`discovery/exposure.md`](discovery/exposure.md): 11 risks, 1 safest to 5 most exposed; 2.64 overall, highest on AI disruption and its timing.
 - [`discovery/value.md`](discovery/value.md): where value flows today, where it leaks, where it would flow at level 5, who else could capture it, and how to charge.
 - [`discovery/discovery.md`](discovery/discovery.md): the one page: where to take the product, the four pillars, the move (Build on it), readiness for the vision and where value flows.
+
+From `/ai-product-problem`, in [`problem/`](problem/):
+
+- [`problem/evidence.md`](problem/evidence.md): what backs the problem, graded with the Mom Test: spend, workarounds and surveys, with what's missing; overall Strong.
+- [`problem/framings.md`](problem/framings.md): the job, the pressure test with the four forces and the case against, the BHAG, the job map, what customers most want fixed, adjacent segments, and three sized framings.
+- [`problem/problem.md`](problem/problem.md): the right problem (the bigger job: sales managers can't see where every deal stands without chasing reps), the opportunity, what success looks like, and the riskiest assumptions as Mom Test questions.
 
 Placements are a snapshot from public sources on 27 Oct 2026. Check the ones you act on.

@@ -56,7 +56,7 @@ Claude asks one question at a time, like a conversation.
 
 9. **The deck.** Claude adds the BHAG, the right problem, the three framings and what to learn first to `index.html`, and opens it in the preview.
 
-10. **Done.** Claude adds the right problem and the BHAG to `product.md`, and sums up: the BHAG, the right problem, and the riskiest assumption to test first.
+10. **Done.** Claude adds the right problem and the BHAG to `product.md`, and sums up: the BHAG, the right problem, and the riskiest assumption to test first. Next: [`/ai-product-research`](ai-product-research.md).
 
 ## What you get
 
