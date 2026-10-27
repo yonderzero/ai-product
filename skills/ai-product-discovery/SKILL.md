@@ -17,7 +17,7 @@ Write each file as soon as its step has content, and update it as you go. Mark a
 
 ## Before you start
 
-Work in the product folder: the current folder, or the folder below it that has `product.md`.
+Work in the product folder: the current folder, or the folder below it that has `product.md`. This skill's files go in `3-discovery/` inside it: `protection.md`, `strength.md`, `exposure.md` and `discovery.md` mean `3-discovery/<name>`. The vision skill's files are in `2-vision/`. `product.md` and `documents/` stay at the top. Create `3-discovery/` if it doesn't exist.
 
 - No `product.md`, or it's empty: say in one line that the product profile comes first, ask them to run `/ai-product-start`, and stop.
 - None of the vision files (`ai-levels.md`, `market-map.md`, `market-moves.md`, `opportunities.md`, `vision.md`): say in one line that discovery builds on the vision, ask them to run `/ai-product-vision` first, and stop. Any one of them is enough to go on.
@@ -34,7 +34,7 @@ If files from an earlier run exist (`protection.md`, `strength.md`, `exposure.md
 
    Then ask: "Shall we start?" Wait for a yes.
 
-2. **Research, in the background.** Start three subagents in parallel, and tell the product manager in one line that research is running. Pass each the full path of its folder, the product, company, website and industry from `product.md`, and the scope (which product, if the company has several). Each follows `instructions.md` in its folder, works in a scratch folder, and writes its report into the product folder:
+2. **Research, in the background.** Start three subagents in parallel, and tell the product manager in one line that research is running. Pass each the full path of its folder, the product, company, website and industry from `product.md`, and the scope (which product, if the company has several). Each follows `instructions.md` in its folder, works in a scratch folder, and writes its report into `3-discovery/`:
    - **Protection:** `references/protection/` → `protection.md`. What protects the product: 24 levers in four groups (switching costs, domain knowledge, speed and cost of building, distribution).
    - **Strength and AI opportunity:** `references/strength/` → `strength.md`. Business quality, customer strength, and the AI opportunity.
    - **Exposure:** `references/exposure/` → `exposure.md`. 11 risks: the market, defensibility, and business health. 1 is safest, 5 most exposed.
@@ -75,7 +75,7 @@ If files from an earlier run exist (`protection.md`, `strength.md`, `exposure.md
 
    Propose the quadrant with one or two lines of reasoning, and ask: "Is that where you'd put it?" They confirm or move it; record why.
 
-8. **One page.** Fill `templates/discovery.md` into `discovery.md` in the product folder. Plain language, every claim with its source (a report, a link, `documents/`, or `[PM]`). End with three next steps that follow from the move and the gaps. Show the "In short" and the move, and ask: "Is this right?"
+8. **One page.** Fill `templates/discovery.md` into `discovery.md`. Plain language, every claim with its source (a report, a link, `documents/`, or `[PM]`). End with three next steps that follow from the move and the gaps. Show the "In short" and the move, and ask: "Is this right?"
 
 9. **Update the profile.** In `product.md`, under `## AI today`, add one line: the move, pointing to `discovery.md`.
 

@@ -98,12 +98,13 @@ See finished ones in [the Salesforce example](../examples/salesforce/): [`ai-lev
 ```
 acme-scheduler/
   product.md          now with today's level and your target level
-  ai-levels.md        the value your product gives at each level: features, for whom, how they pay
-  market-map.md       every company on the six levels, with sources, and the openings
-  market-map.html     the market as a picture: open it in a browser
-  market-moves.md     who's moving in your market, and what it opens up for you
-  opportunities.md    your customers' work, and the opportunities in and around your product, ranked
-  vision.md           your product's AI vision
+  2-vision/
+    ai-levels.md        the value your product gives at each level: features, for whom, how they pay
+    market-map.md       every company on the six levels, with sources, and the openings
+    market-map.html     the market as a picture: open it in a browser
+    market-moves.md     who's moving in your market, and what it opens up for you
+    opportunities.md    your customers' work, and the opportunities in and around your product, ranked
+    vision.md           your product's AI vision
 ```
 
 `vision.md` holds:

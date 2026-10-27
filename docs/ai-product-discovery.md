@@ -79,10 +79,11 @@ Claude asks one question at a time, like a conversation.
 ```
 acme-scheduler/
   product.md       now with your move
-  protection.md    what protects your product: 24 levers, scored, with sources
-  strength.md      business quality, customer strength and the AI opportunity, scored, with sources
-  exposure.md      11 risks, scored, with sources
-  discovery.md     the one page: four pillars, readiness for the vision, your move, next steps
+  3-discovery/
+    protection.md    what protects your product: 24 levers, scored, with sources
+    strength.md      business quality, customer strength and the AI opportunity, scored, with sources
+    exposure.md      11 risks, scored, with sources
+    discovery.md     the one page: four pillars, readiness for the vision, your move, next steps
 ```
 
 `discovery.md` holds:

@@ -47,19 +47,21 @@ Each skill is a conversation. Claude asks one question at a time, researches the
 You don't have to finish a skill before moving on. Claude saves as you go and marks what's not done yet. As long as something is saved, you can go on to the next skill, and come back to any skill later to finish it, redo a step or update it. You can also edit the files yourself; the next skill reads your edits.
 
 ```
-acme-scheduler/       named after your product
-  product.md          from /ai-product-start
-  documents/          your files: Claude reads everything here
-  ai-levels.md        from /ai-product-vision
-  market-map.md       from /ai-product-vision
-  market-map.html     from /ai-product-vision
-  market-moves.md     from /ai-product-vision
-  opportunities.md    from /ai-product-vision
-  vision.md           from /ai-product-vision
-  protection.md       from /ai-product-discovery
-  strength.md         from /ai-product-discovery
-  exposure.md         from /ai-product-discovery
-  discovery.md        from /ai-product-discovery
+acme-scheduler/          named after your product
+  product.md             your product's profile, from /ai-product-start
+  documents/             your files: Claude reads everything here
+  2-vision/              from /ai-product-vision
+    ai-levels.md
+    market-map.md
+    market-map.html
+    market-moves.md
+    opportunities.md
+    vision.md
+  3-discovery/           from /ai-product-discovery
+    protection.md
+    strength.md
+    exposure.md
+    discovery.md
 ```
 
 Every fact in the files says where it came from: a link for anything found on the web, `[documents/<file>]` for anything from your files, and `[PM]` for anything you said. Claude leaves a gap rather than guess, and lists what's still unknown.
@@ -92,7 +94,7 @@ You get:
 - **`exposure.md`**: 11 risks, from AI disruption to ageing tech, scored with sources.
 - **`discovery.md`**: the one page: the four pillars, whether you're ready for the vision (data, tech, team, customers, pricing), your move, and three next steps.
 
-All files go in your product's folder, as plain text you can open, edit and share.
+Each skill's files go in its own numbered folder inside your product's folder (`2-vision/`, `3-discovery/`), as plain text you can open, edit and share.
 
 ## Example
 
