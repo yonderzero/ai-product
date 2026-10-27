@@ -7,7 +7,7 @@ description: Product Track session 02 workshop (SoR to SoU). Map the product's m
 
 **Goal.** See who in the product's market is doing what with AI, and at which level, from System of Record to System of Understanding. Know who is already attacking, and where the openings are.
 
-Work in the team's product folder: the current folder, or the folder below it that has `product.md`. If there is none, run `/ai-product:ai-product-setup` first. Remind the team they can add files to `documents/` at any time, and read any new ones. Read `product.md` and `01-brief.md`.
+Work in the team's product folder: the current folder, or the folder below it that has `product.md`. If there is none, run `/ai-product:start` first. Remind the team they can add files to `documents/` at any time, and read any new ones. Read `product.md` and `01-brief.md`.
 
 ## Steps
 

@@ -11,7 +11,7 @@ A synthetic customer is a structured persona record that Claude plays, built fro
 
 ## Where things live
 
-The team's product folder (the folder made by `ai-product-setup`, with `product.md` in it):
+The team's product folder (the folder made by `start`, with `product.md` in it):
 
 - `documents/`: what the team brought (interviews, tickets, sales and support notes, churn reasons, usage exports, `idea.md`). Personal data is removed before use.
 - `panel/`, written by this skill:

@@ -7,7 +7,7 @@ description: Product Track session 01 workshop. Research the team's product from
 
 **Goal.** A sourced brief of the product that the team has corrected, the idea they came in with written down, and one line on what AI should do for the product.
 
-Work in the team's product folder: the current folder, or the folder below it that has `product.md`. If there is none, run `/ai-product:ai-product-setup` first. Remind the team they can add files to `documents/` at any time, and read any new ones.
+Work in the team's product folder: the current folder, or the folder below it that has `product.md`. If there is none, run `/ai-product:start` first. Remind the team they can add files to `documents/` at any time, and read any new ones.
 
 ## Steps
 

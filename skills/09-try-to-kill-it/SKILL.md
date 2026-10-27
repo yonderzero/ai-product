@@ -7,7 +7,7 @@ description: Product Track session 09 workshop (Challenge the Shortlist). The sy
 
 **Goal.** Find what breaks before Friday does. Every change goes to the developers straight away; they're already building.
 
-Work in the team's product folder: the current folder, or the folder below it that has `product.md`. If there is none, run `/ai-product:ai-product-setup` first. Remind the team they can add files to `documents/` at any time, and read any new ones. Read `handoff/` and `panel/`.
+Work in the team's product folder: the current folder, or the folder below it that has `product.md`. If there is none, run `/ai-product:start` first. Remind the team they can add files to `documents/` at any time, and read any new ones. Read `handoff/` and `panel/`.
 
 ## Steps
 

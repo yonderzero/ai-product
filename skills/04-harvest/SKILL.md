@@ -7,7 +7,7 @@ description: Product Track session 04 workshop (Problem Definition & Opportunity
 
 **Goal.** A long list of at least ten problems worth money, from the team's own data first and the market second, with the best five written so an outsider understands them and could count them.
 
-Work in the team's product folder: the current folder, or the folder below it that has `product.md`. If there is none, run `/ai-product:ai-product-setup` first. Remind the team they can add files to `documents/` at any time, and read any new ones. Read `product.md`, `documents/` (including `idea.md`) and `handoff/domain-read.md`.
+Work in the team's product folder: the current folder, or the folder below it that has `product.md`. If there is none, run `/ai-product:start` first. Remind the team they can add files to `documents/` at any time, and read any new ones. Read `product.md`, `documents/` (including `idea.md`) and `handoff/domain-read.md`.
 
 ## Steps
 

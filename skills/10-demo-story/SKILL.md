@@ -7,7 +7,7 @@ description: Product Track session 10 workshop (Group Discussion & Debrief). Dra
 
 **Goal.** The story the team tells on Friday while the software runs, with no slides, and a handoff the developers can work from without the product team in the room.
 
-Work in the team's product folder: the current folder, or the folder below it that has `product.md`. If there is none, run `/ai-product:ai-product-setup` first. Remind the team they can add files to `documents/` at any time, and read any new ones. Read `handoff/` and `09-challenge.md`.
+Work in the team's product folder: the current folder, or the folder below it that has `product.md`. If there is none, run `/ai-product:start` first. Remind the team they can add files to `documents/` at any time, and read any new ones. Read `handoff/` and `09-challenge.md`.
 
 ## Friday's rules
 

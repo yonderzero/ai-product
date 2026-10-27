@@ -7,7 +7,7 @@ description: Product Track, Align session (Wednesday, with the developers). Turn
 
 **Goal.** The product half of the spec the developers build from, written with them in the room. The technical design is theirs.
 
-Work in the team's product folder: the current folder, or the folder below it that has `product.md`. If there is none, run `/ai-product:ai-product-setup` first. Remind the team they can add files to `documents/` at any time, and read any new ones. Read `handoff/proposal.md`, `handoff/problem.md` and `handoff/prototype/`.
+Work in the team's product folder: the current folder, or the folder below it that has `product.md`. If there is none, run `/ai-product:start` first. Remind the team they can add files to `documents/` at any time, and read any new ones. Read `handoff/proposal.md`, `handoff/problem.md` and `handoff/prototype/`.
 
 ## Steps
 

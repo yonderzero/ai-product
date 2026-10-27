@@ -7,7 +7,7 @@ description: Product Track session 06 workshop (Customer Interviews). Write a pa
 
 **Goal.** Put the top five problems in front of customers: a real interview guide, a rehearsal with the personas from session 05, and the evidence from the interviews the team brought. Session 08 shortlists with this evidence in hand.
 
-Work in the team's product folder: the current folder, or the folder below it that has `product.md`. If there is none, run `/ai-product:ai-product-setup` first. Remind the team they can add files to `documents/` at any time, and read any new ones. Read `04-long-list.md` (the top five in shape), `panel/` and `documents/`.
+Work in the team's product folder: the current folder, or the folder below it that has `product.md`. If there is none, run `/ai-product:start` first. Remind the team they can add files to `documents/` at any time, and read any new ones. Read `04-long-list.md` (the top five in shape), `panel/` and `documents/`.
 
 ## Steps
 

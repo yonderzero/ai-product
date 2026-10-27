@@ -7,7 +7,7 @@ description: Product Track session 05 workshop (AI-Assisted Market & User Resear
 
 **Goal.** The team's ideal customer, built from evidence: the account they most want to win, and the three or four people in it who decide, use and resist. These personas are used for the rest of the two days.
 
-Work in the team's product folder: the current folder, or the folder below it that has `product.md`. If there is none, run `/ai-product:ai-product-setup` first. Remind the team they can add files to `documents/` at any time, and read any new ones. Read `product.md`, `01-brief.md` and `04-long-list.md`. This mission runs on the `synthetic-customers` skill; follow its ground rules throughout.
+Work in the team's product folder: the current folder, or the folder below it that has `product.md`. If there is none, run `/ai-product:start` first. Remind the team they can add files to `documents/` at any time, and read any new ones. Read `product.md`, `01-brief.md` and `04-long-list.md`. This mission runs on the `synthetic-customers` skill; follow its ground rules throughout.
 
 ## Steps
 
