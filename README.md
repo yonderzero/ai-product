@@ -118,7 +118,7 @@ You get:
 
 Two worked examples show every file, filled in. Open `index.html` in each first.
 
-- **[Milewright](examples/milewright/)**: a fictional fleet maintenance software company, a vertical product at level 1, like many of yours. It includes a `documents/` folder with invented interviews, tickets and sales notes, to show how your own files become evidence. Everything about Milewright is invented; the competitors and market facts are real and sourced.
+- **[Wrenchly](examples/wrenchly/)**: a fictional fleet maintenance software company, a vertical product at level 1, like many of yours. It includes a `documents/` folder with invented interviews, tickets and sales notes, to show how your own files become evidence. Everything about Wrenchly is invented; the competitors and market facts are real and sourced.
 - **[Salesforce](examples/salesforce/)**: Sales Cloud and Service Cloud, a well-known product already at level 4. Illustrative, built from public sources, and not affiliated with Salesforce.
 
 ## The six levels of AI

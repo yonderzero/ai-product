@@ -1,11 +1,11 @@
-# Milewright · What protects the product
+# Wrenchly · What protects the product
 
-> Fictional example. Milewright, its documents and numbers are invented; inside-view answers are tagged `[PM, illustrative]`. Market facts are real and cite pages retrieved on 27 Oct 2026. Scores computed by `compute_moat_score.py`.
+> Fictional example. Wrenchly, its documents and numbers are invented; inside-view answers are tagged `[PM, illustrative]`. Market facts are real and cite pages retrieved on 27 Oct 2026. Scores computed by `compute_moat_score.py`.
 
 ## 1. Summary
 
 ```
-Company:          Milewright (fictional)
+Company:          Wrenchly (fictional)
 MOAT Composite:   2.7 / 5.0
 Mode:             Mode T — Transitional
 Exposure Ratio:   0.35 (Moderate)
@@ -15,7 +15,7 @@ Most Exposed:     Switching costs (0.58)
 
 ## 2. Verdict
 
-Milewright's protection is real but uneven: fifteen years of edge cases across many kinds of fleet, deep parts and DOT records, and a latent store of repair history no newcomer has. What protects it least is the cost of leaving and the size of its feature set, because Motive and Fleetio have shown they can build a full maintenance product with AI in one release, and AI makes moving records and retraining cheaper. The most important investment is to turn the repair history into something customers use every day, so staying gives them answers they can't get from a bundle.
+Wrenchly's protection is real but uneven: fifteen years of edge cases across many kinds of fleet, deep parts and DOT records, and a latent store of repair history no newcomer has. What protects it least is the cost of leaving and the size of its feature set, because Motive and Fleetio have shown they can build a full maintenance product with AI in one release, and AI makes moving records and retraining cheaper. The most important investment is to turn the repair history into something customers use every day, so staying gives them answers they can't get from a bundle.
 
 ## 3. Pillar summary
 
@@ -39,7 +39,7 @@ Milewright's protection is real but uneven: fifteen years of edge cases across m
 | Customisation volume | 3 | Partial | Inference, Low |
 | Contractual lock-in | 2 | Structural | Direct, Medium |
 
-Leaving Milewright takes some work, and more for larger fleets: churn above 150 vehicles is 4%, against 10.8% overall [documents/churn-note-2026.md]. Records are relational and VMRS-coded, and PM programs and parts setups are built per vehicle class. But nothing here is deep. Rivals onboard fast ("They were live in a week") [documents/lost-deals-h1-2026.md], contracts are annual with no exit fees, and the telematics links are ones every rival also has. Integration depth is the most solid lever because it doesn't depend on AI; the contract is the weakest. A credible rival would use AI to import the history, map PM schedules and train technicians, then make the offer at renewal, as Motive's reps already do [documents/interview-fleet-ops-director-distribution.md].
+Leaving Wrenchly takes some work, and more for larger fleets: churn above 150 vehicles is 4%, against 10.8% overall [documents/churn-note-2026.md]. Records are relational and VMRS-coded, and PM programs and parts setups are built per vehicle class. But nothing here is deep. Rivals onboard fast ("They were live in a week") [documents/lost-deals-h1-2026.md], contracts are annual with no exit fees, and the telematics links are ones every rival also has. Integration depth is the most solid lever because it doesn't depend on AI; the contract is the weakest. A credible rival would use AI to import the history, map PM schedules and train technicians, then make the offer at renewal, as Motive's reps already do [documents/interview-fleet-ops-director-distribution.md].
 
 **AI acceleration risk:** this pillar's AI-exposed levers are both weak and directly targeted by modern AI tooling. Competitor advantage in AI product development would accelerate decay here.
 
@@ -54,7 +54,7 @@ Leaving Milewright takes some work, and more for larger fleets: churn above 150 
 | Terminology and taxonomy | 2 | Structural | Direct, Medium |
 | Historical benchmarks | 3 | Structural | Direct, Medium (latent asset) |
 
-Milewright knows how fleet shops work. It encodes the FMCSA rules on inspection reports, annual inspections and record retention (https://www.law.cornell.edu/cfr/text/49/396.11, https://www.law.cornell.edu/cfr/text/49/396.17, https://www.law.cornell.edu/cfr/text/49/396.3), but those rules are public and every rival handles them. Edge cases are the strongest lever: fifteen years across carriers, distributors, waste haulers, utilities and last-mile fleets, including reefer units and trailers [documents/product-one-pager.md]. Terminology is the weakest: VMRS codes are the industry's, not ours (https://www.samsara.com/ca/blog/sobeys-fleet-maintenance-ai). Historical benchmarks are a latent asset: about 2 million work orders a year across 800 fleets `[PM, illustrative]`, and buyers already ask "How do we compare to fleets like us?" [documents/lost-deals-h1-2026.md]. This is a named investment opportunity, not a weakness.
+Wrenchly knows how fleet shops work. It encodes the FMCSA rules on inspection reports, annual inspections and record retention (https://www.law.cornell.edu/cfr/text/49/396.11, https://www.law.cornell.edu/cfr/text/49/396.17, https://www.law.cornell.edu/cfr/text/49/396.3), but those rules are public and every rival handles them. Edge cases are the strongest lever: fifteen years across carriers, distributors, waste haulers, utilities and last-mile fleets, including reefer units and trailers [documents/product-one-pager.md]. Terminology is the weakest: VMRS codes are the industry's, not ours (https://www.samsara.com/ca/blog/sobeys-fleet-maintenance-ai). Historical benchmarks are a latent asset: about 2 million work orders a year across 800 fleets `[PM, illustrative]`, and buyers already ask "How do we compare to fleets like us?" [documents/lost-deals-h1-2026.md]. This is a named investment opportunity, not a weakness.
 
 ### Speed and cost of building (2.4/5.0 | Exposure: 0.50)
 
@@ -80,7 +80,7 @@ A fifteen-year codebase is hardened across many fleets, but it is not a barrier 
 | Customer success depth | 3 | Structural | Direct, Medium |
 | Geographic and language coverage | 2 | Structural | Direct, Medium |
 
-Distribution is safe from AI but thin. The strongest levers are people: implementation specialists who ran fleet shops, and business reviews with the top 50 accounts [documents/lost-deals-h1-2026.md] [documents/churn-note-2026.md]. Brand is the weakest: Samsara, Motive and Fleetio dominate the trade press (`../vision/market-map.md`), and the telematics vendors reach the CFO directly. There is no partner channel; the telematics marketplaces Milewright is listed in belong to its biggest rivals `[PM, illustrative]`.
+Distribution is safe from AI but thin. The strongest levers are people: implementation specialists who ran fleet shops, and business reviews with the top 50 accounts [documents/lost-deals-h1-2026.md] [documents/churn-note-2026.md]. Brand is the weakest: Samsara, Motive and Fleetio dominate the trade press (`../vision/market-map.md`), and the telematics vendors reach the CFO directly. There is no partner channel; the telematics marketplaces Wrenchly is listed in belong to its biggest rivals `[PM, illustrative]`.
 
 ## 5. Exposure map
 
@@ -105,7 +105,7 @@ Distribution is safe from AI but thin. The strongest levers are people: implemen
 - *Customer success.* Extend business reviews beyond the top 50 to the 37 customers facing a bundled offer [documents/churn-note-2026.md].
 
 **Act on**
-- *Data migration and retraining.* Make Milewright the easiest to use for technicians: voice notes and fewer clicks (`../vision/opportunities.md` #3), so the reason to leave disappears.
+- *Data migration and retraining.* Make Wrenchly the easiest to use for technicians: voice notes and fewer clicks (`../vision/opportunities.md` #3), so the reason to leave disappears.
 - *Feature parity.* Stop competing feature for feature; compete on doing the shop's work, from fault code to ready work order (`../vision/opportunities.md` #1).
 
 **Watch**

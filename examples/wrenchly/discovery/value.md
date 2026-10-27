@@ -1,6 +1,6 @@
-# Milewright · Where value flows
+# Wrenchly · Where value flows
 
-> Fictional example. Milewright, its documents, prices and numbers are invented; the product manager's answers are tagged `[PM, illustrative]`. Market facts are real and sourced.
+> Fictional example. Wrenchly, its documents, prices and numbers are invented; the product manager's answers are tagged `[PM, illustrative]`. Market facts are real and sourced.
 
 Built from `../product.md`, `../vision/ai-levels.md`, `../vision/opportunities.md`, `../vision/market-moves.md`, the discovery reports and the product manager's answers on 27 Oct 2026.
 

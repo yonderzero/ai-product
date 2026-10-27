@@ -1,6 +1,6 @@
-# Milewright · Problem evidence
+# Wrenchly · Problem evidence
 
-> Fictional example. Milewright, its documents and the product manager's answers are invented, tagged `[PM, illustrative]`. Market sources are real, retrieved on 27 Oct 2026; "search result" means seen in search results but not opened.
+> Fictional example. Wrenchly, its documents and the product manager's answers are invented, tagged `[PM, illustrative]`. Market sources are real, retrieved on 27 Oct 2026; "search result" means seen in search results but not opened.
 
 What backs the problem, graded with the Mom Test. Built on 27 Oct 2026.
 

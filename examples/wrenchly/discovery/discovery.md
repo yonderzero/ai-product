@@ -1,12 +1,12 @@
-# Milewright · Discovery
+# Wrenchly · Discovery
 
-> Fictional example. Milewright, its documents and numbers, the product manager's answers and the score they overturned are invented, tagged `[PM, illustrative]`. Market facts cite the reports in this folder or a public source retrieved on 27 Oct 2026.
+> Fictional example. Wrenchly, its documents and numbers, the product manager's answers and the score they overturned are invented, tagged `[PM, illustrative]`. Market facts cite the reports in this folder or a public source retrieved on 27 Oct 2026.
 
 Is the product ready to go where the vision says? Built from `protection.md`, `strength.md`, `exposure.md`, `value.md`, `../vision/vision.md` and the product manager's answers on 27 Oct 2026.
 
 ## In short
 
-Milewright is strong inside the fleet's own shop: deeply vertical, embedded in daily work orders, parts and DOT records, and loyal larger customers. It is exposed because the telematics vendors and Fleetio shipped maintenance AI this year, are winning smaller customers, and supply the data our own AI depends on. The move is **Move first**: protect the shop's work for fleets of 150 to 500 vehicles, and go fast on turning fault codes, invoices and notes into ready work, starting by learning exactly how managers triage fault codes today.
+Wrenchly is strong inside the fleet's own shop: deeply vertical, embedded in daily work orders, parts and DOT records, and loyal larger customers. It is exposed because the telematics vendors and Fleetio shipped maintenance AI this year, are winning smaller customers, and supply the data our own AI depends on. The move is **Move first**: protect the shop's work for fleets of 150 to 500 vehicles, and go fast on turning fault codes, invoices and notes into ready work, starting by learning exactly how managers triage fault codes today.
 
 ## Where to take the product
 
@@ -75,7 +75,7 @@ Milewright is strong inside the fleet's own shop: deeply vertical, embedded in d
 
 We are in **Move first**: AI opportunity 3.67, risk 3.0. The risk score is borderline: it sits on the 3.0 line, and one point on any single risk would move it across.
 
-The opportunity is clearly above the line. The work AI could take off customers is large, and it's the shop's own work, where Milewright is deepest. The risk is on the line because the market and rules are safe, but rivals are shipping AI in the same workflow now. For us, Move first means doing the shop's paperwork with AI before the bundles reach the fleets of 150 to 500 vehicles.
+The opportunity is clearly above the line. The work AI could take off customers is large, and it's the shop's own work, where Wrenchly is deepest. The risk is on the line because the market and rules are safe, but rivals are shipping AI in the same workflow now. For us, Move first means doing the shop's paperwork with AI before the bundles reach the fleets of 150 to 500 vehicles.
 
 `[PM, illustrative]` Confirmed on the higher-risk side. Motive's agents shipped this month and 37 renewals face a bundled offer, so we read the borderline score as exposed, not safe.
 
@@ -113,5 +113,5 @@ In short, from `value.md`:
 
 | Score | From | To | Why | Evidence |
 |---|---|---|---|---|
-| Strength: market position | 2 | 3 (strength 3.5 → 3.58) | The public read compared Milewright with the whole market, where Fleetio's 8,500+ fleets and the telematics bundles lead. The product manager showed that in fleets of 150–500 vehicles with their own shops, Milewright wins 51% of deals and churn is 4%. That meets the "strong second player with defensible relevance" anchor when scored in its niche, as the rubric's niche rule requires. `[PM, illustrative]` | [documents/lost-deals-h1-2026.md] [documents/churn-note-2026.md] |
+| Strength: market position | 2 | 3 (strength 3.5 → 3.58) | The public read compared Wrenchly with the whole market, where Fleetio's 8,500+ fleets and the telematics bundles lead. The product manager showed that in fleets of 150–500 vehicles with their own shops, Wrenchly wins 51% of deals and churn is 4%. That meets the "strong second player with defensible relevance" anchor when scored in its niche, as the rubric's niche rule requires. `[PM, illustrative]` | [documents/lost-deals-h1-2026.md] [documents/churn-note-2026.md] |
 | Exposure: AI disruption | 4 | 4 (kept) | The product manager argued it should be 3, because bundles mostly win fleets under 100 vehicles. Kept: the rubric looks at forward signals, not today's retention. Motive's release covers parts and warranty too, and its agents now act on their own, which meets "likely affecting decision-making". `[PM, illustrative]` | `exposure.md`; https://www.truckinginfo.com/news/motive-adds-ai-agents-for-fleet-operations |

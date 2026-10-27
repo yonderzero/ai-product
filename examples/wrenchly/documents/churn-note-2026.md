@@ -1,6 +1,6 @@
 # Churn note: October 2025 to September 2026
 
-*Fictional. Prepared by Milewright customer success for the leadership team, October 2026.*
+*Fictional. Prepared by Wrenchly customer success for the leadership team, October 2026.*
 
 ## Summary
 
@@ -23,7 +23,7 @@
 
 - Larger fleets with their own shops rarely leave: churn above 150 vehicles was 4%.
 - Customers using parts inventory in two or more shops: churn 3%.
-- Customers who pass a DOT audit with Milewright reports tend to mention it at renewal.
+- Customers who pass a DOT audit with Wrenchly reports tend to mention it at renewal.
 
 ## Watch list
 

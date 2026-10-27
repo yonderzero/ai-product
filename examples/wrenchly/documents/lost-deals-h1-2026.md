@@ -1,6 +1,6 @@
 # Sales notes: won and lost deals, first half of 2026
 
-*Fictional. Summary by Milewright's head of sales for the product team, July 2026. Customer names removed.*
+*Fictional. Summary by Wrenchly's head of sales for the product team, July 2026. Customer names removed.*
 
 ## The numbers
 

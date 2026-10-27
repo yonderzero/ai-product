@@ -1,17 +1,17 @@
-# Milewright · What could go wrong
+# Wrenchly · What could go wrong
 
-> Fictional example. Milewright, its documents and numbers are invented; inside-view answers are tagged `[PM, illustrative]`. Market facts are real and cite pages retrieved on 27 Oct 2026. Scores computed by `compute_risk_score.py`. 1 is safest, 5 most exposed.
+> Fictional example. Wrenchly, its documents and numbers are invented; inside-view answers are tagged `[PM, illustrative]`. Market facts are real and cite pages retrieved on 27 Oct 2026. Scores computed by `compute_risk_score.py`. 1 is safest, 5 most exposed.
 
 ## 1. Risk summary
 
 ```
-Company:         Milewright (fictional)
+Company:         Wrenchly (fictional)
 Risk Composite:  3.0 / 5.0   (lower = safer, higher = more exposed)
 Highest Risk:    AI disruption (4), partner and ecosystem dependency (4), timing of disruption (4)
 Lowest Risk:     Market growth (2), regulatory shift (2), audit embeddedness (2)
 ```
 
-**Borderline:** the composite of 3.00 sits right on the 3.0 line. One point on any single risk moves it by about 0.09. If AI disruption fell to 3, for example by a partnership that made the telematics vendors' data work for Milewright rather than against it, the composite would be 2.91, just on the safer side. If price pressure rose to 4, it would be 3.09. That matters: it is the difference between "exposed, move now" and "moderately safe, build steadily", and it is close enough that the product manager should decide.
+**Borderline:** the composite of 3.00 sits right on the 3.0 line. One point on any single risk moves it by about 0.09. If AI disruption fell to 3, for example by a partnership that made the telematics vendors' data work for Wrenchly rather than against it, the composite would be 2.91, just on the safer side. If price pressure rose to 4, it would be 3.09. That matters: it is the difference between "exposed, move now" and "moderately safe, build steadily", and it is close enough that the product manager should decide.
 
 ## 2. Top risks
 
@@ -39,7 +39,7 @@ Lowest Risk:     Market growth (2), regulatory shift (2), audit embeddedness (2)
 
 **Product defensibility.** Integrations are real but standard, and alternatives are credible and fast to set up (https://www.fleetio.com/pricing). Leaving is real work for larger fleets with years of records and parts setups, and easy for small ones. Timing is the accelerating risk in this section; integration depth and substitution are stable.
 
-**Business health.** Price pressure is mixed. Milewright charges $8–$13 per vehicle [documents/product-one-pager.md] against Fleetio's $4–$10 (https://www.fleetio.com/pricing) and free inspection apps (https://www.worktruckonline.com/news/fleetpal-makes-its-driver-inspection-app-free-for-qualified-fleets). 12 customers left over the 2026 increase, yet net retention is 101% [documents/churn-note-2026.md]. The product is meaningfully embedded in DOT audits, which lowers risk. Brand is adequate and the stack is mixed, with legacy parts and mobile problems visible in churn.
+**Business health.** Price pressure is mixed. Wrenchly charges $8–$13 per vehicle [documents/product-one-pager.md] against Fleetio's $4–$10 (https://www.fleetio.com/pricing) and free inspection apps (https://www.worktruckonline.com/news/fleetpal-makes-its-driver-inspection-app-free-for-qualified-fleets). 12 customers left over the 2026 increase, yet net retention is 101% [documents/churn-note-2026.md]. The product is meaningfully embedded in DOT audits, which lowers risk. Brand is adequate and the stack is mixed, with legacy parts and mobile problems visible in churn.
 
 | Dimension | Score | Section |
 |---|---|---|
@@ -71,11 +71,11 @@ Lowest Risk:     Market growth (2), regulatory shift (2), audit embeddedness (2)
 | AI disruption | Have bundles won any fleet above 150 vehicles in the last year? | 4 → 5 |
 | Price-value pressure | How many renewals this year asked for a discount, citing Fleetio's price? | 3 → 4 |
 
-`[PM, illustrative]` On the first question: sales says Milewright is shortlisted unprompted in about half of 150–500-vehicle deals, which supports keeping brand and trust at 3.
+`[PM, illustrative]` On the first question: sales says Wrenchly is shortlisted unprompted in about half of 150–500-vehicle deals, which supports keeping brand and trust at 3.
 
 ## 6. Methodology note
 
-Market, competitor and regulatory evidence comes from pages retrieved on 27 Oct 2026: competitor launch pages and trade press, Cornell's copy of the FMCSA rules, J. J. Keller on deregulation, and a Global Market Insights forecast. Everything about Milewright comes from the invented `documents/` and the product manager's answers. A fictional company has no reviews on G2, Capterra or Trustpilot, so brand and trust is capped at Low confidence.
+Market, competitor and regulatory evidence comes from pages retrieved on 27 Oct 2026: competitor launch pages and trade press, Cornell's copy of the FMCSA rules, J. J. Keller on deregulation, and a Global Market Insights forecast. Everything about Wrenchly comes from the invented `documents/` and the product manager's answers. A fictional company has no reviews on G2, Capterra or Trustpilot, so brand and trust is capped at Low confidence.
 
 ## 7. Evidence quality
 

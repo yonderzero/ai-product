@@ -1,15 +1,15 @@
-# Milewright
+# Wrenchly
 
-> Fictional example. Milewright, its company, customers, documents and numbers are invented. Facts about Milewright cite the invented files in `documents/` or are tagged `[PM, illustrative]`. Facts about the market, competitors and regulation are real and cite public sources retrieved on 27 Oct 2026.
+> Fictional example. Wrenchly, its company, customers, documents and numbers are invented. Facts about Wrenchly cite the invented files in `documents/` or are tagged `[PM, illustrative]`. Facts about the market, competitors and regulation are real and cite public sources retrieved on 27 Oct 2026.
 
-- company: Milewright Software, Columbus, Ohio. Founded 2011; part of Halvard Software Group, a group of vertical software companies, since 2019. About 120 employees. `[PM, illustrative]`
+- company: Wrenchly Software, Columbus, Ohio. Founded 2011; part of Halvard Software Group, a group of vertical software companies, since 2019. About 120 employees. `[PM, illustrative]`
 - industry: transportation software. Niche: fleet maintenance software for US trucking and delivery fleets that run their own shops, mostly 50 to 500 vehicles. [documents/product-one-pager.md]
 - links: website, pricing and help centre (fictional, not linked). Sales one-pager: [documents/product-one-pager.md]
 - team: a product manager for the core product, working with an engineering lead, a designer and the head of customer success `[PM, illustrative]`
 
 ## What it does
 
-Milewright runs the maintenance side of a fleet. It plans preventive maintenance (PM) by miles, engine hours or days, with meter readings synced from telematics. It takes a defect from a driver's inspection or a fault code to a closed work order, with labor, parts, VMRS repair codes and the technician's sign-off. It manages parts across shops, purchase orders and outside vendor repairs, and keeps the inspection and repair records US fleets must hold for DOT audits. [documents/product-one-pager.md]
+Wrenchly runs the maintenance side of a fleet. It plans preventive maintenance (PM) by miles, engine hours or days, with meter readings synced from telematics. It takes a defect from a driver's inspection or a fault code to a closed work order, with labor, parts, VMRS repair codes and the technician's sign-off. It manages parts across shops, purchase orders and outside vendor repairs, and keeps the inspection and repair records US fleets must hold for DOT audits. [documents/product-one-pager.md]
 
 About 800 fleets manage more than 115,000 trucks, tractors, vans and trailers with it. [documents/product-one-pager.md] [documents/churn-note-2026.md]
 
@@ -23,7 +23,7 @@ About 800 fleets manage more than 115,000 trucks, tractors, vans and trailers wi
 - who they are: runs one or more shops at a fleet of 100 to 500 vehicles, with 5 to 20 technicians and a parts manager. The main daily user; strongly influences the purchase and the renewal. [documents/interview-maintenance-manager-regional-carrier.md]
 - what they're trying to get done: keep trucks safe and on the road. Measured on road calls (breakdowns on the road) per million miles, PM compliance, out-of-service rate at roadside inspections, and cost per mile. [documents/interview-maintenance-manager-regional-carrier.md]
 - the problems this product solves for them: PM schedules that follow real miles and engine hours; every work order and inspection in one place; DOT audit records printed in minutes, not a week. [documents/interview-maintenance-manager-regional-carrier.md]
-- how they handled it before: a wall calendar, paper work orders and binders. "Before Milewright we did PMs off a wall calendar and missed a third of them." [documents/interview-maintenance-manager-regional-carrier.md]
+- how they handled it before: a wall calendar, paper work orders and binders. "Before Wrenchly we did PMs off a wall calendar and missed a third of them." [documents/interview-maintenance-manager-regional-carrier.md]
 - what still frustrates them: hundreds of fault codes a day, most of them noise, read one by one; technicians' notes too thin for warranty claims; PM slots missed when dispatch keeps a truck on the road, with nothing rescheduling it. [documents/interview-maintenance-manager-regional-carrier.md] [documents/support-tickets-q3-2026.csv]
 
 ### Shop technician
@@ -50,12 +50,12 @@ About 800 fleets manage more than 115,000 trucks, tractors, vans and trailers wi
 - how they handled it before: the shop's paper files and the accounting system. `[PM, illustrative]`
 - what still frustrates them: rebuilding the cost-per-mile report in Excel every month ("two days a month, every month"); no idea which outside vendor overcharges; too many logins. Telematics vendors offer maintenance in the same bill. [documents/interview-fleet-ops-director-distribution.md] [documents/lost-deals-h1-2026.md]
 
-Drivers also use the Milewright Driver app for pre- and post-trip inspections, but don't choose the product. [documents/product-one-pager.md]
+Drivers also use the Wrenchly Driver app for pre- and post-trip inspections, but don't choose the product. [documents/product-one-pager.md]
 
 ## Main workflows
 
 - Driver inspection to defect: pre- and post-trip inspections in the Driver app; defects go to the shop queue. [documents/product-one-pager.md]
-- Fault code to work order: telematics codes arrive in Milewright; a person reads each one and decides whether to open a work order. The lead tech at one customer spends "the first hour of his day as a fault-code clerk". [documents/interview-maintenance-manager-regional-carrier.md]
+- Fault code to work order: telematics codes arrive in Wrenchly; a person reads each one and decides whether to open a work order. The lead tech at one customer spends "the first hour of his day as a fault-code clerk". [documents/interview-maintenance-manager-regional-carrier.md]
 - PM planning: schedules by miles, hours or days; the shop plans the day on a whiteboard, then types it in. [documents/interview-maintenance-manager-regional-carrier.md]
 - Work order to close: labor, parts, VMRS codes, notes and sign-off. Where technicians spend the most time typing. [documents/support-tickets-q3-2026.csv]
 - Parts and purchasing, outside vendor invoices, and DOT records and reports. [documents/product-one-pager.md]
@@ -96,7 +96,7 @@ Drivers also use the Milewright Driver app for pre- and post-trip inspections, b
 
 ## The idea we have in mind
 
-Our customers drown in fault codes and paperwork. We want Milewright to turn a fault code into a ready work order, with the parts pulled and the slot booked, so the maintenance manager approves instead of types. `[PM, illustrative]`
+Our customers drown in fault codes and paperwork. We want Wrenchly to turn a fault code into a ready work order, with the parts pulled and the slot booked, so the maintenance manager approves instead of types. `[PM, illustrative]`
 
 - **The right problem:** getting every truck that needs work from the first signal back on the road, starting where managers read fault codes by hand. BHAG: by 2031, every truck ready when dispatch needs it, road calls halved, and no one reads a fault code by hand. See `problem/problem.md`. `[PM, illustrative]`
 

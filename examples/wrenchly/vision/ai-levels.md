@@ -1,8 +1,8 @@
-# Milewright · value at each AI level
+# Wrenchly · value at each AI level
 
-> Fictional example. Milewright and its features, customers and numbers are invented. The product manager's answers are tagged `[PM, illustrative]`.
+> Fictional example. Wrenchly and its features, customers and numbers are invented. The product manager's answers are tagged `[PM, illustrative]`.
 
-**Level today:** 1, System of Record: the highest level with value that is shipped and used. Milewright stores and runs the maintenance work; people do all of it.
+**Level today:** 1, System of Record: the highest level with value that is shipped and used. Wrenchly stores and runs the maintenance work; people do all of it.
 **Planned or in beta:** level 2, Fault Code Assist, in beta with 46 customers since May 2026 [documents/fault-code-assist-beta-feedback.md]. Beta doesn't count towards the level today.
 
 ## Summary
@@ -55,7 +55,7 @@ none.
 
 AI brings expertise learned from data across many customers.
 
-none. `[PM, illustrative]` Milewright holds about 2 million work orders a year across 800 fleets, and buyers ask "How do we compare to fleets like us?", but nothing uses this data across customers yet. [documents/lost-deals-h1-2026.md]
+none. `[PM, illustrative]` Wrenchly holds about 2 million work orders a year across 800 fleets, and buyers ask "How do we compare to fleets like us?", but nothing uses this data across customers yet. [documents/lost-deals-h1-2026.md]
 
 ## Level 6 · System of Understanding
 

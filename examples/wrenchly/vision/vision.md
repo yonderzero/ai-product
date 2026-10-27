@@ -1,44 +1,44 @@
-# Milewright · AI vision
+# Wrenchly · AI vision
 
-> Fictional example. Milewright and the product manager's answers are invented, tagged `[PM, illustrative]`. Market facts cite the other files in this folder; the real products named under Imagine cite their own pages.
+> Fictional example. Wrenchly and the product manager's answers are invented, tagged `[PM, illustrative]`. Market facts cite the other files in this folder; the real products named under Imagine cite their own pages.
 
 **Today:** level 1, System of Record. Nothing AI is shipped and used; Fault Code Assist is a level 2 beta. Ten of the fifteen placed companies are already at level 3 or above, including Samsara, Motive and Fleetio (`market-map.md`, `ai-levels.md`).
 **Where we're going:** level 4, AI Delegated, by the end of 2028. `[PM, illustrative]`
 
 ## The vision
 
-By the end of 2028, Milewright does the paperwork of the shop. Every fault code, driver defect and outside invoice becomes ready work: a drafted work order with the likely cause, the parts reserved and a slot booked around the truck's route. The maintenance manager approves instead of types, and spends the morning on the three trucks that need a person's judgement. `[PM, illustrative]`
+By the end of 2028, Wrenchly does the paperwork of the shop. Every fault code, driver defect and outside invoice becomes ready work: a drafted work order with the likely cause, the parts reserved and a slot booked around the truck's route. The maintenance manager approves instead of types, and spends the morning on the three trucks that need a person's judgement. `[PM, illustrative]`
 
 ## Imagine
 
-*Illustrative sketches, not plans. They show what each level could mean for Milewright.*
+*Illustrative sketches, not plans. They show what each level could mean for Wrenchly.*
 
 ### Our product at each level
 
 | Level | Already there | Our product at this level |
 |---|---|---|
 | 2 AI Assisted | **Grammarly**: suggests clearer, correct writing as you type [https://www.grammarly.com/]. **Gmail Smart Compose**: suggests the rest of the sentence [https://workspaceupdates.googleblog.com/2018/09/gmail-smart-compose-gsuite.html] | Fault Code Assist, shipped: every code explained, rated and given a suggested repair code. Work orders suggest the VMRS code and parts from the truck's history as the technician types. The manager still decides and clicks everything. Included in Pro, to win the "What does your AI do?" question in demos. |
-| 3 AI Directed | **Microsoft 365 Copilot**: drafts documents from your files when asked [https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-copilot]. **Shopify Sidekick**: does a merchant's task and shows the change for approval [https://help.shopify.com/en/manual/shopify-admin/productivity-tools/sidekick] | The technician says "Replaced the left steer tire, cut sidewall, 4/32 tread on the right" and Milewright writes the complaint, cause and correction, codes it and fills the time. The manager asks "Which trucks are due a PM and an annual inspection next week?" and gets the plan, ready to send to dispatch. Paid as a per-vehicle add-on. |
-| 4 AI Delegated | **Intercom Fin**: answers support conversations end to end, paid per outcome [https://fin.ai/pricing]. **Abridge**: writes the clinical note from the doctor's visit; the doctor signs it [https://www.abridge.com/] | Milewright triages every fault code overnight, drafts the work orders that matter with parts reserved and a bay booked, reads and checks every outside invoice, and files warranty claims. The maintenance manager approves a short list each morning; small known jobs go through by rule. Paid per vehicle for the shop agent, plus a share of warranty money recovered. |
-| 5 AI Domain Intelligence | **Harvey**: legal research and drafting that law firms trust [https://www.harvey.ai/]. **OpenEvidence**: answers clinicians' questions from the medical literature [https://siliconangle.com/2025/10/20/medical-search-engine-startup-openevidence-closes-200m-investment-led-gv/] | Milewright knows how trucks fail across 800 fleets and 15 years of repairs. "Tractors like yours, on routes like yours, lose this turbo actuator at 410,000 miles. Four of yours are past 390,000." The director sees cost per mile against fleets like theirs, and which vendors charge more for the same job. Sold as a yearly benchmark and prediction subscription. |
-| 6 System of Understanding | **Waymo**: drives riders with no one at the wheel [https://waymo.com/]. **Tempus**: combines clinical and molecular data to guide cancer care [https://www.tempus.com/oncology/] | Milewright understands how each truck, route and shop behaves. It plans the shop around dispatch's week, orders parts before they're needed, pulls a truck in before it breaks down, and tells the director when to replace a truck rather than repair it. Fleets pay for uptime: trucks ready when dispatch needs them. |
+| 3 AI Directed | **Microsoft 365 Copilot**: drafts documents from your files when asked [https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-copilot]. **Shopify Sidekick**: does a merchant's task and shows the change for approval [https://help.shopify.com/en/manual/shopify-admin/productivity-tools/sidekick] | The technician says "Replaced the left steer tire, cut sidewall, 4/32 tread on the right" and Wrenchly writes the complaint, cause and correction, codes it and fills the time. The manager asks "Which trucks are due a PM and an annual inspection next week?" and gets the plan, ready to send to dispatch. Paid as a per-vehicle add-on. |
+| 4 AI Delegated | **Intercom Fin**: answers support conversations end to end, paid per outcome [https://fin.ai/pricing]. **Abridge**: writes the clinical note from the doctor's visit; the doctor signs it [https://www.abridge.com/] | Wrenchly triages every fault code overnight, drafts the work orders that matter with parts reserved and a bay booked, reads and checks every outside invoice, and files warranty claims. The maintenance manager approves a short list each morning; small known jobs go through by rule. Paid per vehicle for the shop agent, plus a share of warranty money recovered. |
+| 5 AI Domain Intelligence | **Harvey**: legal research and drafting that law firms trust [https://www.harvey.ai/]. **OpenEvidence**: answers clinicians' questions from the medical literature [https://siliconangle.com/2025/10/20/medical-search-engine-startup-openevidence-closes-200m-investment-led-gv/] | Wrenchly knows how trucks fail across 800 fleets and 15 years of repairs. "Tractors like yours, on routes like yours, lose this turbo actuator at 410,000 miles. Four of yours are past 390,000." The director sees cost per mile against fleets like theirs, and which vendors charge more for the same job. Sold as a yearly benchmark and prediction subscription. |
+| 6 System of Understanding | **Waymo**: drives riders with no one at the wheel [https://waymo.com/]. **Tempus**: combines clinical and molecular data to guide cancer care [https://www.tempus.com/oncology/] | Wrenchly understands how each truck, route and shop behaves. It plans the shop around dispatch's week, orders parts before they're needed, pulls a truck in before it breaks down, and tells the director when to replace a truck rather than repair it. Fleets pay for uptime: trucks ready when dispatch needs them. |
 
 ### A day with our System of Understanding
 
 Rosa runs maintenance for a 240-tractor regional carrier with two shops, in 2031.
 
-At 5:30 she opens Milewright on her phone. Overnight it read 1,900 fault codes from the trucks. It dropped the noise, and found two that matter. Truck 418's coolant temperature pattern matches 37 trucks across other fleets that lost a water pump within a week. Nobody told it to look; it knows what that pattern led to before. It has already moved 418's PM forward to this morning, reserved the pump in the north shop, and asked dispatch to swap the load to truck 422. Dispatch said yes at 4 am.
+At 5:30 she opens Wrenchly on her phone. Overnight it read 1,900 fault codes from the trucks. It dropped the noise, and found two that matter. Truck 418's coolant temperature pattern matches 37 trucks across other fleets that lost a water pump within a week. Nobody told it to look; it knows what that pattern led to before. It has already moved 418's PM forward to this morning, reserved the pump in the north shop, and asked dispatch to swap the load to truck 422. Dispatch said yes at 4 am.
 
 She never reads a fault-code list again. She never types an outside invoice, and never rebuilds the cost-per-mile report: the CFO gets it on the first of the month, with the reasons it moved.
 
-At 9 she gets one question she has to answer herself. A dealer quoted $4,800 for an aftertreatment job that costs $3,100 at the shop down the road, but the dealer can do it today and the road shop can't until Thursday. Milewright shows the cost of two days off the road. She chooses the dealer.
+At 9 she gets one question she has to answer herself. A dealer quoted $4,800 for an aftertreatment job that costs $3,100 at the shop down the road, but the dealer can do it today and the road shop can't until Thursday. Wrenchly shows the cost of two days off the road. She chooses the dealer.
 
-The technicians talk to the tablets as they work. Their notes are complete, so warranty claims go out the same day, and Milewright files them.
+The technicians talk to the tablets as they work. Their notes are complete, so warranty claims go out the same day, and Wrenchly files them.
 
 Rosa spends the afternoon with her two newest technicians, on the jobs the system flagged as ones new techs most often get wrong. Road calls are down by half since 2027. Her job is the people, the vendors and the judgement calls.
 
 **What excites us:** the morning fault-code list disappears, and the shop works on the right trucks before they break down. `[PM, illustrative]`
-**What it would need to know, and the data that takes:** what each fault code actually led to, which needs technicians' findings captured on every job (opportunity #3), and repair outcomes across fleets, which needs customers' permission. It would also need dispatch's plan, which sits in the fleet's dispatch system, not in Milewright. `[PM, illustrative]`
+**What it would need to know, and the data that takes:** what each fault code actually led to, which needs technicians' findings captured on every job (opportunity #3), and repair outcomes across fleets, which needs customers' permission. It would also need dispatch's plan, which sits in the fleet's dispatch system, not in Wrenchly. `[PM, illustrative]`
 
 ## Built on
 
@@ -59,9 +59,9 @@ Rosa spends the afternoon with her two newest technicians, on the jobs the syste
 
 | Workflow | Today | Tomorrow |
 |---|---|---|
-| Fault code to work order | A person reads every code, looks it up and types a work order (`opportunities.md` step 2) | Milewright triages every code and drafts the work order with parts and a slot. The manager approves; small known jobs go through by rule `[PM, illustrative]` |
-| Outside repairs | Office staff type invoices line by line; nobody compares vendors (`opportunities.md` step 7) | Milewright reads, codes and checks every invoice; a person sees only the ones that don't match `[PM, illustrative]` |
-| Repair notes | Technicians type, or don't (`opportunities.md` step 4) | Technicians speak; Milewright writes, technicians sign `[PM, illustrative]` |
+| Fault code to work order | A person reads every code, looks it up and types a work order (`opportunities.md` step 2) | Wrenchly triages every code and drafts the work order with parts and a slot. The manager approves; small known jobs go through by rule `[PM, illustrative]` |
+| Outside repairs | Office staff type invoices line by line; nobody compares vendors (`opportunities.md` step 7) | Wrenchly reads, codes and checks every invoice; a person sees only the ones that don't match `[PM, illustrative]` |
+| Repair notes | Technicians type, or don't (`opportunities.md` step 4) | Technicians speak; Wrenchly writes, technicians sign `[PM, illustrative]` |
 
 ## Why us
 

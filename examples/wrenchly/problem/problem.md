@@ -1,12 +1,12 @@
-# Milewright · The right problem
+# Wrenchly · The right problem
 
-> Fictional example. Milewright, its documents and the product manager's choices are invented, tagged `[PM, illustrative]`. Market sources are real, retrieved on 27 Oct 2026.
+> Fictional example. Wrenchly, its documents and the product manager's choices are invented, tagged `[PM, illustrative]`. Market sources are real, retrieved on 27 Oct 2026.
 
 Built from `evidence.md`, `framings.md` and the product manager's choices on 27 Oct 2026.
 
 ## The BHAG
 
-**By 2031, every truck in a Milewright fleet is ready when dispatch needs it: road calls halved against 2026, and no one at a Milewright fleet reads a fault code by hand.** `[PM, illustrative]`
+**By 2031, every truck in a Wrenchly fleet is ready when dispatch needs it: road calls halved against 2026, and no one at a Wrenchly fleet reads a fault code by hand.** `[PM, illustrative]`
 
 ## The problem we'll solve
 

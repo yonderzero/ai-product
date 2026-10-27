@@ -1,6 +1,6 @@
-# Milewright · Framing the problem
+# Wrenchly · Framing the problem
 
-> Fictional example. Milewright, its documents and the product manager's answers are invented, tagged `[PM, illustrative]`. Market sources are real, retrieved on 27 Oct 2026; "search result" means seen in search results but not opened.
+> Fictional example. Wrenchly, its documents and the product manager's answers are invented, tagged `[PM, illustrative]`. Market sources are real, retrieved on 27 Oct 2026; "search result" means seen in search results but not opened.
 
 Built from `../product.md`, `../vision/`, `../discovery/`, `evidence.md` and the product manager's answers on 27 Oct 2026.
 
@@ -20,7 +20,7 @@ Asking "why?" behind the task: "read the fault codes" → "find the trucks that 
 | Question | Answer | Evidence |
 |---|---|---|
 | Is it real? | Yes, at every customer with a telematics feed: about 310 of 812. Daily, in the customers' own words, and visible in tickets and churn | `evidence.md`; [documents/fault-code-assist-beta-feedback.md] |
-| Does it hurt enough? | An hour a day of a scarce technician at one carrier; a truck down costs more in a day than a year of Milewright for that truck. The buyer pays for downtime, and says he'd pay more for less of it | [documents/interview-maintenance-manager-regional-carrier.md] [documents/interview-fleet-ops-director-distribution.md] |
+| Does it hurt enough? | An hour a day of a scarce technician at one carrier; a truck down costs more in a day than a year of Wrenchly for that truck. The buyer pays for downtime, and says he'd pay more for less of it | [documents/interview-maintenance-manager-regional-carrier.md] [documents/interview-fleet-ops-director-distribution.md] |
 | What do they do today? | Read codes by hand, ignore the "watch" ones, rank trucks with homemade reports, or switch to a telematics bundle | `evidence.md` |
 | Why us? | The shop's work order, parts, PM history and 15 years of repairs sit with us; we see codes from Samsara, Motive and Geotab in one place | `../vision/vision.md`, "Why us" |
 | Why now? | Motive turns codes into work orders and its agents act on their own; 37 customers face a bundled offer at renewal | https://www.truckinginfo.com/news/motive-adds-ai-agents-for-fleet-operations; [documents/churn-note-2026.md] |
@@ -46,10 +46,10 @@ Fault-code triage is the part of the job the telematics vendors do best, because
 
 ### The BHAG
 
-**By 2031, every truck in a Milewright fleet is ready when dispatch needs it: road calls halved against 2026, and no one at a Milewright fleet reads a fault code by hand.** `[PM, illustrative]`
+**By 2031, every truck in a Wrenchly fleet is ready when dispatch needs it: road calls halved against 2026, and no one at a Wrenchly fleet reads a fault code by hand.** `[PM, illustrative]`
 
 Options we considered:
-- "By 2031, no Milewright fleet has a breakdown on the road from a failure its own data warned about."
+- "By 2031, no Wrenchly fleet has a breakdown on the road from a failure its own data warned about."
 - "By 2030, a maintenance manager's morning takes ten minutes of approvals." Dropped: about the manager's time, not the truck.
 
 The chosen one goes beyond `../vision/vision.md`, which targets level 4 by 2028. Road calls halved needs prediction across fleets, level 5 and above; the vision can be updated later.
@@ -67,7 +67,7 @@ The chosen one goes beyond `../vision/vision.md`, which targets level 4 by 2028.
 | Modify | Reschedule when a truck doesn't come in, a part is missing, or a job grows | no | none |
 | Conclude | Record cause and correction, close, claim warranty, learn | partly: records, thin notes, warranty little used | 1 |
 
-Milewright covers execute and conclude, as a level 1 product does. Define, prepare, confirm and modify are where the bigger version of the problem sits.
+Wrenchly covers execute and conclude, as a level 1 product does. Define, prepare, confirm and modify are where the bigger version of the problem sits.
 
 ### What customers most want fixed
 
@@ -75,7 +75,7 @@ The biggest pains of current customers, beyond the problem we started with.
 
 | Pain | Who | How big | Evidence |
 |---|---|---|---|
-| Trucks not ready at 5 am | Director of fleet operations | "A truck down for a day costs me more than Milewright costs me for a year for that truck" | [documents/interview-fleet-ops-director-distribution.md] |
+| Trucks not ready at 5 am | Director of fleet operations | "A truck down for a day costs me more than Wrenchly costs me for a year for that truck" | [documents/interview-fleet-ops-director-distribution.md] |
 | Trucks waiting for parts the PM predicted | Director, parts manager | Recurring at a 180-vehicle distributor | [documents/interview-fleet-ops-director-distribution.md] |
 | PMs missed when dispatch keeps a truck out, with nothing rescheduling | Maintenance manager | Meter and PM issues are 18% of tickets | [documents/interview-maintenance-manager-regional-carrier.md] [documents/support-tickets-q3-2026.csv] |
 | Outside vendor invoices and overcharges | Director | Half one distributor's repair spend | [documents/interview-fleet-ops-director-distribution.md] |

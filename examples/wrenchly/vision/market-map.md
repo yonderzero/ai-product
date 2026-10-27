@@ -1,8 +1,8 @@
 # AI level map · US fleet maintenance software
 
-> Fictional example: Milewright is invented. Every other company here is real, and placed from public sources retrieved on 27 Oct 2026.
+> Fictional example: Wrenchly is invented. Every other company here is real, and placed from public sources retrieved on 27 Oct 2026.
 
-Milewright owns preventive maintenance, work orders, parts and DOT records for US trucking and delivery fleets of 50 to 500 vehicles that run their own shops (`../product.md`). Snapshot from public sources on 27 Oct 2026. Most metrics below are the vendors' own claims.
+Wrenchly owns preventive maintenance, work orders, parts and DOT records for US trucking and delivery fleets of 50 to 500 vehicles that run their own shops (`../product.md`). Snapshot from public sources on 27 Oct 2026. Most metrics below are the vendors' own claims.
 
 ## The market on the curve
 
@@ -13,9 +13,9 @@ Milewright owns preventive maintenance, work orders, parts and DOT records for U
 | 4 AI Delegated | Fleetio | ServiceUp | |
 | 3 AI Directed | RTA Fleet, Collective Data, Trimble TMT (low confidence) | | Samsara, Motive, Geotab, MaintainX |
 | 2 AI Assisted | Fullbay, Whip Around | | |
-| 1 System of Record | **Milewright (us)**, Cetaris, Chevin FleetWave, Decisiv | | |
+| 1 System of Record | **Wrenchly (us)**, Cetaris, Chevin FleetWave, Decisiv | | |
 
-**Us:** level 1, because nothing AI is shipped and used. Fault Code Assist, in beta with 46 customers, would be level 2 once shipped; under the placement rules a beta counts as half a level at most, so we don't round up (`ai-levels.md`, `../documents/fault-code-assist-beta-feedback.md`). There is no public evidence for Milewright to check this against: it's the product manager's own reading, with the same rules applied. `[PM, illustrative]`
+**Us:** level 1, because nothing AI is shipped and used. Fault Code Assist, in beta with 46 customers, would be level 2 once shipped; under the placement rules a beta counts as half a level at most, so we don't round up (`ai-levels.md`, `../documents/fault-code-assist-beta-feedback.md`). There is no public evidence for Wrenchly to check this against: it's the product manager's own reading, with the same rules applied. `[PM, illustrative]`
 
 ## Company by company
 
@@ -53,6 +53,6 @@ Milewright owns preventive maintenance, work orders, parts and DOT records for U
 
 - **Empty or thin levels:** nobody is at level 6, and level 5 has one low-confidence player that sells mostly to large fleets and OEMs. Level 4 has two, and neither runs the in-house shop end to end: Fleetio approves repairs, ServiceUp coordinates outside repairs. Turning a fault code into a planned, parted and scheduled job in the fleet's own shop is open.
 - **Moving up fastest:** Fleetio, from a beta in March to delegated approvals in September 2026; Samsara and Motive, which shipped maintenance AI in June and August 2026 and sell it with telematics.
-- **Where we could lead:** the mid-size fleet with its own shops and parts rooms, where Milewright already wins half its deals (`../documents/lost-deals-h1-2026.md`). Fifteen years of repair outcomes could support level 5 benchmarks and predictions for that segment, if contracts allow it.
+- **Where we could lead:** the mid-size fleet with its own shops and parts rooms, where Wrenchly already wins half its deals (`../documents/lost-deals-h1-2026.md`). Fifteen years of repair outcomes could support level 5 benchmarks and predictions for that segment, if contracts allow it.
 
 *Placements are a snapshot from public sources. Check the ones you act on.*

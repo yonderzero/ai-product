@@ -1,11 +1,11 @@
-# Milewright · How strong the product is, and the AI opportunity
+# Wrenchly · How strong the product is, and the AI opportunity
 
-> Fictional example. Milewright, its documents and numbers are invented; inside-view answers are tagged `[PM, illustrative]`. Market facts are real and cite pages retrieved on 27 Oct 2026. Scores computed by `compute_maturity_score.py`; the AI opportunity pillar by `compute_pillars.py`.
+> Fictional example. Wrenchly, its documents and numbers are invented; inside-view answers are tagged `[PM, illustrative]`. Market facts are real and cite pages retrieved on 27 Oct 2026. Scores computed by `compute_maturity_score.py`; the AI opportunity pillar by `compute_pillars.py`.
 
 ## 1. Maturity summary
 
 ```
-Company:            Milewright (fictional)
+Company:            Wrenchly (fictional)
 Maturity Composite:  3.44 / 5.0
   Section A (Business Quality):   3.67
   Section B (Customer Strength):  3.5
@@ -18,7 +18,7 @@ Market position was overturned from 2 to 3 by the product manager, with evidence
 
 ## 2. Verdict
 
-Milewright is a solid, deeply vertical system of record that larger fleets with their own shops depend on every day. Its strongest asset is how deeply it sits in the shop's daily work: work orders, parts across shops and DOT records, where customers using parts in two or more shops almost never leave. Its biggest gap is AI: nothing is shipped, while the category leaders shipped AI in exactly this workflow in the last few months.
+Wrenchly is a solid, deeply vertical system of record that larger fleets with their own shops depend on every day. Its strongest asset is how deeply it sits in the shop's daily work: work orders, parts across shops and DOT records, where customers using parts in two or more shops almost never leave. Its biggest gap is AI: nothing is shipped, while the category leaders shipped AI in exactly this workflow in the last few months.
 
 ## 3. Dimension scores
 
@@ -41,7 +41,7 @@ Milewright is a solid, deeply vertical system of record that larger fleets with 
 
 ### Section A (Business Quality) — 3.67/5.0
 
-Milewright is the system of record for maintenance, repairs, parts and the DOT inspection records fleets must keep (https://www.law.cornell.edu/cfr/text/49/396.3). It is built only for fleet maintenance, with VMRS codes, driver inspections, annual inspections and multi-shop parts [documents/product-one-pager.md], which makes vertical depth the strongest dimension. It is mission-critical: a truck down for a day "costs me more than Milewright costs me for a year for that truck" [documents/interview-fleet-ops-director-distribution.md]. Market position is a strong second in its own segment, fleets of 150 to 500 vehicles with their own shops, where it wins 51% of deals [documents/lost-deals-h1-2026.md]; overall, Fleetio's 8,500+ fleets and the telematics bundles lead (https://itbrief.co.uk/story/fleetio-opens-ai-service-advisor-after-maintenance-beta). The weakest dimensions are leadership mindset and technology: an AI beta without a budget line, and a .NET Framework monolith with newer services around it `[PM, illustrative]`.
+Wrenchly is the system of record for maintenance, repairs, parts and the DOT inspection records fleets must keep (https://www.law.cornell.edu/cfr/text/49/396.3). It is built only for fleet maintenance, with VMRS codes, driver inspections, annual inspections and multi-shop parts [documents/product-one-pager.md], which makes vertical depth the strongest dimension. It is mission-critical: a truck down for a day "costs me more than Wrenchly costs me for a year for that truck" [documents/interview-fleet-ops-director-distribution.md]. Market position is a strong second in its own segment, fleets of 150 to 500 vehicles with their own shops, where it wins 51% of deals [documents/lost-deals-h1-2026.md]; overall, Fleetio's 8,500+ fleets and the telematics bundles lead (https://itbrief.co.uk/story/fleetio-opens-ai-service-advisor-after-maintenance-beta). The weakest dimensions are leadership mindset and technology: an AI beta without a budget line, and a .NET Framework monolith with newer services around it `[PM, illustrative]`.
 
 ### Section B (Customer Strength) — 3.5/5.0
 
@@ -53,7 +53,7 @@ The opportunity is large and the clock is short. Fault Code Assist is in beta wi
 
 ## 5. AI picture
 
-Read together, Milewright is behind the market. It sits with the "Emerging" companies in the Houlihan Lokey calibration the rubric uses: an AI beta, no shipped feature, no AI line in revenue. Its competitors are "Scaling": Fleetio's AI Service Advisor approves repairs on its own, Motive's agents open work orders (https://www.truckinginfo.com/news/motive-adds-ai-agents-for-fleet-operations).
+Read together, Wrenchly is behind the market. It sits with the "Emerging" companies in the Houlihan Lokey calibration the rubric uses: an AI beta, no shipped feature, no AI line in revenue. Its competitors are "Scaling": Fleetio's AI Service Advisor approves repairs on its own, Motive's agents open work orders (https://www.truckinginfo.com/news/motive-adds-ai-agents-for-fleet-operations).
 
 The automation upside sits in the **agentic layer**: closed-loop triage, drafting work orders, reserving parts, booking bays and filing warranty claims. That has a higher ceiling and is harder to copy once it runs inside a shop than prediction alone.
 

@@ -1,10 +1,10 @@
-# Milewright · Who's moving in your market
+# Wrenchly · Who's moving in your market
 
-> Fictional example: Milewright is invented. Every company, product and number about the market here is real and sourced. "Search result" means the page was seen in search results but not opened.
+> Fictional example: Wrenchly is invented. Every company, product and number about the market here is real and sourced. "Search result" means the page was seen in search results but not opened.
 
 Snapshot from public sources on 27 Oct 2026.
 
-**In short:** all five ways into fleet maintenance are in use, and the strongest is the telematics vendors. Motive and Samsara now sell maintenance with AI in the same bill as their trackers, which matches what Milewright hears in lost deals and churn (`../documents/lost-deals-h1-2026.md`, `../documents/churn-note-2026.md`). This opens a clear space for Milewright: the fleet with its own shop, parts room and technicians, where the work after the fault code is still done by hand and nobody yet does it end to end.
+**In short:** all five ways into fleet maintenance are in use, and the strongest is the telematics vendors. Motive and Samsara now sell maintenance with AI in the same bill as their trackers, which matches what Wrenchly hears in lost deals and churn (`../documents/lost-deals-h1-2026.md`, `../documents/churn-note-2026.md`). This opens a clear space for Wrenchly: the fleet with its own shop, parts room and technicians, where the work after the fault code is still done by hand and nobody yet does it end to end.
 
 ## Five ways others move into a market
 
@@ -18,10 +18,10 @@ Snapshot from public sources on 27 Oct 2026.
 
 ## What this opens up for us
 
-- **The shop's own work, end to end.** Telematics bundles turn a fault code into a work order. Nobody yet plans the job, orders the parts, books the bay and checks warranty in the fleet's own shop. That's where Milewright is deepest (`../documents/lost-deals-h1-2026.md`).
-- **The landing place for predictions.** Uptake, Bosch and Decisiv produce predictions and service cases; they need a shop record to act on. Open connections make Milewright that record.
-- **Working with telematics, not against it.** About 310 customers already stream codes from Samsara, Motive or Geotab into Milewright (`../documents/fault-code-assist-beta-feedback.md`). Doing more with that data than its source does is a reason to keep both.
-- **Ready for outside assistants.** A safe connection for ChatGPT, Claude or Copilot to read Milewright records would keep us in the conversation when managers ask those tools.
+- **The shop's own work, end to end.** Telematics bundles turn a fault code into a work order. Nobody yet plans the job, orders the parts, books the bay and checks warranty in the fleet's own shop. That's where Wrenchly is deepest (`../documents/lost-deals-h1-2026.md`).
+- **The landing place for predictions.** Uptake, Bosch and Decisiv produce predictions and service cases; they need a shop record to act on. Open connections make Wrenchly that record.
+- **Working with telematics, not against it.** About 310 customers already stream codes from Samsara, Motive or Geotab into Wrenchly (`../documents/fault-code-assist-beta-feedback.md`). Doing more with that data than its source does is a reason to keep both.
+- **Ready for outside assistants.** A safe connection for ChatGPT, Claude or Copilot to read Wrenchly records would keep us in the conversation when managers ask those tools.
 
 ## What we looked for and didn't find
 

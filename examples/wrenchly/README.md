@@ -1,17 +1,17 @@
-# Worked example: Milewright, fleet maintenance software
+# Worked example: Wrenchly, fleet maintenance software
 
-> **Fictional example. Milewright and everything about it, its customers, documents and numbers are invented to show how the skills work. The competitors and market facts are real and sourced as of 27 Oct 2026.**
+> **Fictional example. Wrenchly and everything about it, its customers, documents and numbers are invented to show how the skills work. The competitors and market facts are real and sourced as of 27 Oct 2026.**
 
 This folder shows what a product manager has after running `/ai-product-start`, `/ai-product-vision`, `/ai-product-discovery` and `/ai-product-problem` for a typical vertical software product.
 
-Milewright is a mid-size, 15-year-old company in a software group. It sells fleet maintenance software to about 800 US trucking and delivery fleets, priced per vehicle per month. Its AI is at level 1 today, with one level 2 feature in beta. The product manager brought seven files, in `documents/`, which are the evidence for many facts.
+Wrenchly is a mid-size, 15-year-old company in a software group. It sells fleet maintenance software to about 800 US trucking and delivery fleets, priced per vehicle per month. Its AI is at level 1 today, with one level 2 feature in beta. The product manager brought seven files, in `documents/`, which are the evidence for many facts.
 
 - **Start:** builds a profile of the product and four personas from those files.
-- **Vision:** maps the real market on six AI levels, finds and ranks the opportunities, imagines Milewright at each higher level, and agrees a vision.
+- **Vision:** maps the real market on six AI levels, finds and ranks the opportunities, imagines Wrenchly at each higher level, and agrees a vision.
 - **Discovery:** scores protection, strength, AI opportunity and exposure; one score is overturned. It checks readiness, maps where value flows, chooses the move and sets where to take the product.
 - **Problem:** sharpens the problem to start with, grades its evidence, thinks bigger and picks the right problem.
 
-Facts about Milewright cite `[documents/<file>]` or are tagged `[PM, illustrative]`. Facts about the market cite the public page they came from.
+Facts about Wrenchly cite `[documents/<file>]` or are tagged `[PM, illustrative]`. Facts about the market cite the public page they came from.
 
 ## Files
 
@@ -27,12 +27,12 @@ Facts about Milewright cite `[documents/<file>]` or are tagged `[PM, illustrativ
 
 From `/ai-product-vision`, in [`vision/`](vision/):
 
-- [`vision/ai-levels.md`](vision/ai-levels.md): the value Milewright gives at each level. Level today is 1, System of Record, with Fault Code Assist in beta at level 2.
+- [`vision/ai-levels.md`](vision/ai-levels.md): the value Wrenchly gives at each level. Level today is 1, System of Record, with Fault Code Assist in beta at level 2.
 - [`vision/market-map.md`](vision/market-map.md): 15 real companies placed on the six levels, each with source, status and confidence. Fleetio and ServiceUp are at level 4.
 - [`vision/market-map.html`](vision/market-map.html): the same map as a page; open it in a browser.
 - [`vision/market-moves.md`](vision/market-moves.md): who is moving into the market across five ways in. Telematics vendors bundling maintenance is the strongest.
 - [`vision/opportunities.md`](vision/opportunities.md): the fleet's maintenance work as nine steps, then six opportunities, rated and ranked. First is "From fault code to a ready work order", at 4.60.
-- [`vision/vision.md`](vision/vision.md): Milewright imagined at levels 2 to 6, a day with its System of Understanding, and the vision: level 4 by the end of 2028.
+- [`vision/vision.md`](vision/vision.md): Wrenchly imagined at levels 2 to 6, a day with its System of Understanding, and the vision: level 4 by the end of 2028.
 
 From `/ai-product-discovery`, in [`discovery/`](discovery/):
 
