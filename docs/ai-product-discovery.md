@@ -72,7 +72,9 @@ Claude asks one question at a time, like a conversation.
 
 8. **One page.** Claude writes `discovery.md` and asks: "Is this right?"
 
-9. **Done.** Claude adds your move to `product.md` and sums up: the move, the biggest gap to the vision, and the first next step.
+9. **The overview.** Claude adds the four pillars, your move and the readiness check to `overview.html`, and opens it in the preview.
+
+10. **Done.** Claude adds your move to `product.md` and sums up: the move, the biggest gap to the vision, and the first next step.
 
 ## What you get
 

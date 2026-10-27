@@ -13,7 +13,7 @@ Conversational, short messages, one question at a time. Never send a list of que
 
 ## Save as you go
 
-Write each file as soon as its step has content, and update it as you go. Mark any section you haven't reached `Not done yet`. If the product manager says they're out of time or wants to move on, stop cleanly: save what's there, say which steps are left, and that they can run this skill again to continue, or edit the files themselves. Moving on is fine as long as something is saved.
+Write each file as soon as its step has content, and update it as you go. Mark any section you haven't reached `Not done yet`. If the product manager says they're out of time or wants to move on, stop cleanly: save what's there, say which steps are left, and that they can run this skill again to continue, or edit the files themselves. Update the overview deck before you stop. Moving on is fine as long as something is saved.
 
 ## Before you start
 
@@ -79,7 +79,9 @@ If files from an earlier run exist (`protection.md`, `strength.md`, `exposure.md
 
 9. **Update the profile.** In `product.md`, under `## AI today`, add one line: the move, pointing to `discovery.md`.
 
-10. **Done.** Show the files you wrote and sum up in three lines: the move, the biggest gap to the vision, and the first next step.
+10. **The overview.** Update the overview deck: follow `references/overview.md` in the ai-product-start skill's folder (next to this skill's folder).
+
+11. **Done.** Show the files you wrote and sum up in three lines: the move, the biggest gap to the vision, and the first next step.
 
 ## Done when
 

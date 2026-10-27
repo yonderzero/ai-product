@@ -13,7 +13,7 @@ Conversational, short messages, one question at a time. Never send a list of que
 
 ## Save as you go
 
-Write each file as soon as its step has content, and update it as you go. Mark any section you haven't reached `Not done yet`. If the product manager says they're out of time or wants to move on, stop cleanly: save what's there, say which steps are left, and that they can run this skill again to continue, or edit the files themselves. Moving on is fine as long as something is saved.
+Write each file as soon as its step has content, and update it as you go. Mark any section you haven't reached `Not done yet`. If the product manager says they're out of time or wants to move on, stop cleanly: save what's there, say which steps are left, and that they can run this skill again to continue, or edit the files themselves. Update the overview deck before you stop. Moving on is fine as long as something is saved.
 
 ## Steps
 
@@ -103,7 +103,9 @@ Write each file as soon as its step has content, and update it as you go. Mark a
 
 8. **Documents check.** If `documents/` is still empty, remind them once more what to add. If it has files, list them. Then scan them for personal data (people's names, email addresses, phone numbers). If you find any, list the files and ask them to remove or redact it before personas are built. Don't change their files yourself.
 
-9. **Done.** Show the folder tree and sum up in three lines: the product, its customer personas, and what's still unknown. Say they can keep adding files to `documents/`, and that the next step is `/ai-product-vision`.
+9. **The overview.** Update the overview deck: follow `references/overview.md`. This first time, it shows the product and the customers.
+
+10. **Done.** Show the folder tree and sum up in three lines: the product, its customer personas, and what's still unknown. Say they can keep adding files to `documents/`, and that the next step is `/ai-product-vision`.
 
 ## Done when
 
