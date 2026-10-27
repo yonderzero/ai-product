@@ -48,7 +48,7 @@ Claude asks one question at a time, like a conversation.
    - **Now:** this product update: the clear features, the flow they make real, the outcome, the price, the new revenue, how you'll know it worked;
    - **Next** and **Later:** climbing the AI levels toward your vision and your BHAG.
 
-7. **This product update.** The clear list of features in Now, and **the build-day slice**: the smallest end-to-end slice your developers can build first to make the flow real and testable, with what's in, what's out for now, and when it's done.
+7. **This product update.** The clear list of features in Now, and **the build-day slice**: the smallest end-to-end slice your developers can build first to make the flow real and testable, with what's in, what's out for now, and when it's done. It points your developers to `flows/DESIGN.md` and the mockups, so what they build looks like what customers tested.
 
 8. **The deck.** Claude adds this update, ROI and pricing, and the roadmap to `index.html`.
 

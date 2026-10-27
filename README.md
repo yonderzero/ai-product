@@ -1,6 +1,6 @@
 # ai-product
 
-**Version 1.0.0** · 27 Oct 2026
+**Version 1.1.0** · 27 Oct 2026
 
 The AI era gives you, as a product manager, a chance to re-imagine your product and grow the business.
 
@@ -85,6 +85,7 @@ acme-scheduler/          named after your product
     panel.md
   flows/                 from /ai-product-flows
     flows.md
+    DESIGN.md
     mockups/
     panel-tests.md
     script.md
@@ -150,6 +151,7 @@ You get:
 Finds the right flows. Maps your agentic experiences as flows (what the agent does, what people see and decide, what happens when it goes wrong), makes them clickable, and tests them with real customers and your synthetic panel side by side. Real customers outweigh the panel.
 
 You get:
+- **`DESIGN.md`**: the design direction for the mockups: your product's look from screenshots, or a style you picked from getdesign.md.
 - **`flows.md`**: each flow mapped and ranked on value, trust, what customers would pay for and hours given back; the flows to take forward and their thinnest versions.
 - **`mockups/`**: one clickable mockup per flow, revised after the panel.
 - **`panel-tests.md`**: every round with the panel and every real interview, side by side.
@@ -216,6 +218,7 @@ Then restart Claude Code.
 
 | Version | Date | What's in it |
 |---|---|---|
+| 1.1.0 | 27 Oct 2026 | Design direction in `/ai-product-flows`: `DESIGN.md` from your product's screenshots or a style from getdesign.md; mockups follow it, and `/ai-product-roadmap` hands it to developers with the build-day slice. |
 | 1.0.0 | 27 Oct 2026 | Seven skills, from `/ai-product-start` to `/ai-product-roadmap`; the deck (`index.html`) that updates after every step; the Salesforce and FleetDesk examples. |
 
 Fixes reach you whenever you update the plugin (see [Update](#update)), even between version numbers.

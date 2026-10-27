@@ -53,7 +53,7 @@ If files from an earlier run exist, say which steps are done and which aren't (l
 
    Walk through it one horizon at a time and ask what to change. Add what's not on the roadmap, and why.
 
-7. **This product update.** Finish `features.md`: the clear list of features in Now, and **the build-day slice**: the smallest end-to-end slice of the update that developers can build first to make the flow real and testable, with what's in, what's out for now, and when it's done. Ask: "Is this the update you want to put in front of your developers?"
+7. **This product update.** Finish `features.md`: the clear list of features in Now, and **the build-day slice**: the smallest end-to-end slice of the update that developers can build first to make the flow real and testable, with what's in, what's out for now, and when it's done. Ask: "Is this the update you want to put in front of your developers?" Point the slice to the design: the developers build it to look like the mockups, following `flows/DESIGN.md` and the mockups in `flows/mockups/`. If `flows/DESIGN.md` is missing, say so and offer to write it first (see the ai-product-flows skill's `references/design.md`).
 
 8. **Update the profile.** In `product.md`, under `## The idea we have in mind`, add one line: this product update in a few words, its price, and the build-day slice, pointing to `roadmap/roadmap.md`.
 
@@ -63,6 +63,6 @@ If files from an earlier run exist, say which steps are done and which aren't (l
 
 ## Done when
 
-- `features.md` has the ideas, the features prioritised with the working shown, the features in this product update, and the build-day slice;
+- `features.md` has the ideas, the features prioritised with the working shown, the features in this product update, and the build-day slice, pointing to `flows/DESIGN.md` and the mockups;
 - `roi.md` has the ROI for a typical customer and for us, with the working, and the pricing choice with the panel's vote and what real customers said;
 - `roadmap.md` has Now (this update), Next and Later, toward the vision and the BHAG, without dates.

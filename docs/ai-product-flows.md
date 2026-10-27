@@ -17,7 +17,7 @@ Flows, not features yet: features come in the next skill.
 ## Before you begin
 
 - **Your research.** Run [`/ai-product-research`](ai-product-research.md) first: this skill needs its agentic experiences and personas. They don't have to be finished.
-- **A screenshot of your product** (optional), or its colours and logo, so the mockups feel like yours.
+- **Two or three screenshots of your product** (optional), so the mockups look like yours. Without them, you'll pick a style.
 - **Real customers to talk to**, today or this week. Real interviews are the strongest evidence for which flows matter.
 
 ## What happens
@@ -34,24 +34,26 @@ Claude asks one question at a time, like a conversation.
 
    At each moment Claude asks what the persona would need to see to trust it.
 
-3. **The mockups.** One clickable mockup per flow, walking through its key moments in order: the trigger, what the agent did, the moment the person approves, an exception being handled. They use realistic data and open in the preview. They're mockups for testing flows, not the product.
+3. **The design direction.** Claude asks for two or three screenshots of your product and describes its look: colours, type, spacing, components. No screenshots, or want something fresher? Claude offers three styles that suit your product from [getdesign.md](https://getdesign.md), a public collection of design descriptions (styles like Linear, Stripe or IBM Carbon, never their brands), and you pick one. It's saved as `DESIGN.md`, and every mockup follows it.
 
-4. **The interview kit.** A script for real customers: questions about their past first (the Mom Test), then each flow one moment at a time, then a real next step. Claude asks who you can talk to.
+4. **The mockups.** One clickable mockup per flow, walking through its key moments in order: the trigger, what the agent did, the moment the person approves, an exception being handled. They use realistic data and open in the preview. They're mockups for testing flows, not the product.
 
-5. **Interview the panel.** Each persona walks through each flow as themselves, sceptic first, each in its own agent: what they'd do first, where they'd get stuck, what they'd let the agent do alone, what never, what's missing. Each scores every flow 1 to 5 on:
+5. **The interview kit.** A script for real customers: questions about their past first (the Mom Test), then each flow one moment at a time, then a real next step. Claude asks who you can talk to.
+
+6. **Interview the panel.** Each persona walks through each flow as themselves, sceptic first, each in its own agent: what they'd do first, where they'd get stuck, what they'd let the agent do alone, what never, what's missing. Each scores every flow 1 to 5 on:
    - **value:** does it give their time back?
    - **trust:** would they let the agent do it?
    - **pay:** would their organisation pay for it?
 
-6. **Iterate.** Claude proposes the three changes that would win over the most personas, updates the flows and mockups with the ones you choose, and runs a second round.
+7. **Iterate.** Claude proposes the three changes that would win over the most personas, updates the flows and mockups with the ones you choose, and runs a second round.
 
-7. **Real customers.** Add interview transcripts or notes to `documents/`, or paste them in. Claude summarises each, without names, and shows where real customers agree or disagree with the panel.
+8. **Real customers.** Add interview transcripts or notes to `documents/`, or paste them in. Claude summarises each, without names, and shows where real customers agree or disagree with the panel.
 
-8. **The right flows.** Claude ranks the flows on value, trust, pay and hours given back, with real customers outweighing the panel. You decide which flows to take forward, which later and which not, and the thinnest version of each that still shows the whole experience end to end.
+9. **The right flows.** Claude ranks the flows on value, trust, pay and hours given back, with real customers outweighing the panel. You decide which flows to take forward, which later and which not, and the thinnest version of each that still shows the whole experience end to end.
 
-9. **The deck.** Claude adds the flows, the mockups and the feedback to `index.html`.
+10. **The deck.** Claude adds the flows, the mockups and the feedback to `index.html`.
 
-10. **Done.** Claude sums up the flow customers valued most, the flows to take forward, and the next real interview to do.
+11. **Done.** Claude sums up the flow customers valued most, the flows to take forward, and the next real interview to do.
 
 ## What you get
 
@@ -59,6 +61,7 @@ Claude asks one question at a time, like a conversation.
 acme-scheduler/
   flows/
     flows.md         each flow mapped and ranked; the flows to take forward and their thinnest versions
+    DESIGN.md        the design direction: your product's look, or a style you picked
     mockups/         one clickable mockup per flow
     panel-tests.md   each round with the panel, and every real interview, side by side
     script.md        the interview kit for real customers
