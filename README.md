@@ -40,17 +40,17 @@ You run the skills in order, in one folder:
 
 1. **`/ai-product-start`**: set up your product's folder, build its profile, describe your customers.
 2. **`/ai-product-vision`**: place your product and your market on six levels of AI, rank the opportunities, imagine the future, and agree a vision.
-3. **`/ai-product-discovery`**: check whether your product is ready for that vision: what protects it, how strong it is, the AI opportunity, what could go wrong, what has to be true, and your move.
+3. **`/ai-product-discovery`**: check whether your product is ready for that vision: what protects it, how strong it is, the AI opportunity, what could go wrong, what has to be true, where value flows, and where to take the product.
 
 Each skill is a conversation. Claude asks one question at a time, researches the web in the background, and writes what you build together into files in your product's folder. Each skill reads what the earlier ones wrote, so run them in the same place.
 
-After each skill, Claude updates **`overview.html`**: a slide deck of everything so far, from the product and its customers to the vision and your move. In Claude Desktop it opens in the preview next to the chat. Every slide links to the files it comes from, and slides you haven't reached yet say which skill fills them.
+After each skill, Claude updates **`index.html`**: a slide deck of everything so far, from the product and its customers to the vision and your move. In Claude Desktop it opens in the preview next to the chat. Every slide links to the files it comes from, and slides you haven't reached yet say which skill fills them.
 
 You don't have to finish a skill before moving on. Claude saves as you go and marks what's not done yet. As long as something is saved, you can go on to the next skill, and come back to any skill later to finish it, redo a step or update it. You can also edit the files yourself; the next skill reads your edits.
 
 ```
 acme-scheduler/          named after your product
-  overview.html          a slide deck of everything so far, updated by every skill
+  index.html             a slide deck of everything so far, updated by every skill
   product.md             your product's profile, from /ai-product-start
   documents/             your files: Claude reads everything here
   vision/                from /ai-product-vision
@@ -64,6 +64,7 @@ acme-scheduler/          named after your product
     protection.md
     strength.md
     exposure.md
+    value.md
     discovery.md
 ```
 
@@ -89,13 +90,14 @@ You get:
 - **`vision.md`**: your product's AI vision: your product imagined at each higher level, a day with your System of Understanding, the vision you agreed, and the first step. *([example](examples/salesforce/vision.md))*
 
 **[`/ai-product-discovery`](docs/ai-product-discovery.md)**\
-Checks whether your product is ready for its vision. Scores four pillars with evidence and your inside knowledge, tests what has to be true for the vision, and helps you choose your move.
+Checks whether your product is ready for its vision and sets a clear direction. Scores four pillars with evidence and your inside knowledge, tests what has to be true for the vision, maps where value flows, and ends with where to take the product: what to protect, where to grow, what to build first.
 
 You get:
 - **`protection.md`**: what protects your product: switching costs, domain knowledge, speed and cost of building, and distribution, scored with sources.
 - **`strength.md`**: how strong the product and its customers are, and how big the AI opportunity is, scored with sources.
 - **`exposure.md`**: 11 risks, from AI disruption to ageing tech, scored with sources.
-- **`discovery.md`**: the one page: the four pillars, whether you're ready for the vision (data, tech, team, customers, pricing), your move, and three next steps.
+- **`value.md`**: where value flows today, where it leaks, where it would flow at your vision's target level, who else could capture it, and how you'd charge.
+- **`discovery.md`**: the one page: where to take the product, the four pillars, whether you're ready for the vision (data, tech, team, customers, pricing), your move, and where value flows.
 
 Each skill's files go in a folder named after it inside your product's folder (`vision/`, `discovery/`), as plain text you can open, edit and share.
 

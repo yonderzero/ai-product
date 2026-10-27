@@ -4,13 +4,13 @@
 /ai-product-discovery
 ```
 
-The third skill, after [`ai-product-vision`](ai-product-vision.md). Your vision says where your product could go. Discovery checks whether it's ready: what protects it, how strong it is, how big the AI opportunity is, and what could go wrong. Then it looks at what has to be true to reach the vision, and helps you choose your move.
+The third skill, after [`ai-product-vision`](ai-product-vision.md). Your vision says where your product could go. Discovery checks whether it's ready: what protects it, how strong it is, how big the AI opportunity is, and what could go wrong. Then it looks at what has to be true to reach the vision, maps where value flows today and tomorrow, and ends with a clear direction: what to protect, where to grow, what to build first, and what not to do.
 
 It goes deeper than the vision in two ways: it adds your inside knowledge, which public research can't see, and it tests the vision against what it would take.
 
 **Who runs it:** the product manager, ideally with someone who knows the numbers and the tech.
 **Run it:** in the folder that holds your product's folder.
-**You leave with:** your product scored on four pillars, a readiness check for your vision, your move, and three next steps.
+**You leave with:** your product scored on four pillars, a readiness check for your vision, your move, where value flows, and where to take the product.
 
 ## Before you begin
 
@@ -70,11 +70,26 @@ Claude asks one question at a time, like a conversation.
 
 7. **Your move.** Claude places your product on the grid, explains why, and asks if that's where you'd put it.
 
-8. **One page.** Claude writes `discovery.md` and asks: "Is this right?"
+8. **Where value flows.** Claude drafts it from everything so far, then checks it with you, one question at a time:
+   - **today:** for each persona, the value they get, who pays, for what and roughly how much, and where value leaks: manual work and spreadsheets around the product, partners, other tools, or value you don't charge for;
+   - **at your vision's target level:** the job AI does, who gets the value, what customers would pay for (the outcome, not the seat), who else could capture it, and what keeps it with you.
 
-9. **The overview.** Claude adds the four pillars, your move and the readiness check to `overview.html`, and opens it in the preview.
+   It asks: "Where does most of the value go today, and where should it go tomorrow?", and writes `value.md`, including how you'd charge today and tomorrow.
 
-10. **Done.** Claude adds your move to `product.md` and sums up: the move, the biggest gap to the vision, and the first next step.
+9. **Where to take the product.** Claude turns everything into one direction, and you confirm or change each part:
+   - **Protect:** the core to defend.
+   - **Grow:** one to three bets in and around the product, each with where its value comes from.
+   - **Build first:** the first thing to build, small enough to test with real customers, and what it proves.
+   - **Don't:** what not to spend on now, and why.
+   - **How we'll know:** two or three signals that it's working.
+
+   The direction fits your move: Build on it invests from strength, Move first goes fast on the bet, Optimise makes the most of the core, Defend protects the core before betting.
+
+10. **One page.** Claude writes `discovery.md` and asks: "Is this right?"
+
+11. **The deck.** Claude adds the direction, the four pillars, your move, where value flows and the readiness check to `index.html`, and opens it in the preview.
+
+12. **Done.** Claude adds your move and direction to `product.md` and sums up: the move, where to take the product, and what to build first.
 
 ## What you get
 
@@ -85,21 +100,23 @@ acme-scheduler/
     protection.md    what protects your product: 24 levers, scored, with sources
     strength.md      business quality, customer strength and the AI opportunity, scored, with sources
     exposure.md      11 risks, scored, with sources
-    discovery.md     the one page: four pillars, readiness for the vision, your move, next steps
+    value.md         where value flows today, where it leaks, where it would flow tomorrow, and how you'd charge
+    discovery.md     the one page: where to take the product, four pillars, your move, readiness for the vision
 ```
 
 `discovery.md` holds:
 
 | Section | What's in it |
 |---|---|
-| In short | Where you're strong, where you're exposed, and the move |
+| In short | Where you're strong, where you're exposed, the move, and where to take the product |
+| Where to take the product | Protect, grow, build first, don't, and how you'll know |
 | The four pillars | Each score and what it means |
 | Where we're strong / exposed | The findings that matter most, with sources |
 | The AI opportunity | Your level today, where AI could earn money and take work off customers |
 | Our move | Your quadrant, why, and what it means |
 | Ready for the vision? | Data, tech, team, customers and pricing: what you have, the gap, what must be true, how to check |
+| Where value flows | The summary of `value.md`: today, tomorrow, and the shift |
 | What we corrected | Every score you challenged, and why it changed or didn't |
-| Next steps | Three steps that follow from the move and the gaps |
 
 ## Troubleshooting
 

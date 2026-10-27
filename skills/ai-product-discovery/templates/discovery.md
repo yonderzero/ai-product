@@ -1,10 +1,18 @@
 # [Product] · Discovery
 
-Is the product ready to go where the vision says? Built from `protection.md`, `strength.md`, `exposure.md`, `vision.md` and the product manager's answers on [date].
+Is the product ready to go where the vision says? Built from `protection.md`, `strength.md`, `exposure.md`, `value.md`, `vision/vision.md` and the product manager's answers on [date].
 
 ## In short
 
-[Three sentences: where the product is strong, where it's exposed, and the move.]
+[Three sentences: where the product is strong, where it's exposed, the move, and where to take the product.]
+
+## Where to take the product
+
+- **Protect:** [the core to defend] [source]
+- **Grow:** [one to three bets, each with where its value comes from] [source]
+- **Build first:** [the first thing to build, and what it proves]
+- **Don't:** [what not to spend on now, and why]
+- **How we'll know:** [two or three signals]
 
 ## The four pillars
 
@@ -56,14 +64,23 @@ The vision: level [n] by [when], starting with [opportunity] (`vision.md`).
 **Builds on:** [the strengths the vision uses]
 **Could stop it:** [the risks that matter most for the vision]
 
+## Where value flows
+
+In short, from `value.md`:
+
+| | Today | At the vision's target level |
+|---|---|---|
+| **Who gets value** | | |
+| **Who pays, and for what** | | |
+| **Where value leaks** | | |
+| **Who else could capture it** | | |
+| **What keeps it with us** | | |
+
+**The shift:** [today] → [tomorrow]
+
 ## What we corrected
 
 | Score | From | To | Why | Evidence |
 |---|---|---|---|---|
 | | | | `[PM]` | |
 
-## Next steps
-
-1. …
-2. …
-3. …

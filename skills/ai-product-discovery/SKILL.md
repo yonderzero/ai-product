@@ -1,6 +1,6 @@
 ---
 name: ai-product-discovery
-description: Third step, after ai-product-vision. A deeper check of whether the product is ready to go where the vision says. Scores four pillars with evidence (protection, strength, AI opportunity, exposure), adds the product manager's inside view, lets them overturn scores with evidence, checks what has to be true for the vision (data, tech, team, customers, pricing), and places the product on AI opportunity against AI risk to choose its move. Writes protection.md, strength.md, exposure.md and discovery.md.
+description: Third step, after ai-product-vision. A deeper check of whether the product is ready to go where the vision says. Scores four pillars with evidence (protection, strength, AI opportunity, exposure), adds the product manager's inside view, lets them overturn scores with evidence, checks what has to be true for the vision (data, tech, team, customers, pricing), places the product on AI opportunity against AI risk to choose its move, maps where value flows today and tomorrow, and sets a clear direction: what to protect, where to grow, what to build first. Writes protection.md, strength.md, exposure.md, value.md and discovery.md.
 ---
 
 # ai-product-discovery
@@ -13,18 +13,18 @@ Conversational, short messages, one question at a time. Never send a list of que
 
 ## Save as you go
 
-Write each file as soon as its step has content, and update it as you go. Mark any section you haven't reached `Not done yet`. If the product manager says they're out of time or wants to move on, stop cleanly: save what's there, say which steps are left, and that they can run this skill again to continue, or edit the files themselves. Update the overview deck before you stop. Moving on is fine as long as something is saved.
+Write each file as soon as its step has content, and update it as you go. Mark any section you haven't reached `Not done yet`. If the product manager says they're out of time or wants to move on, stop cleanly: save what's there, say which steps are left, and that they can run this skill again to continue, or edit the files themselves. Update `index.html` before you stop. Moving on is fine as long as something is saved.
 
 ## Before you start
 
-Work in the product folder: the current folder, or the folder below it that has `product.md`. This skill's files go in `discovery/` inside it: `protection.md`, `strength.md`, `exposure.md` and `discovery.md` mean `discovery/<name>`. The vision skill's files are in `vision/`. `product.md` and `documents/` stay at the top. Create `discovery/` if it doesn't exist.
+Work in the product folder: the current folder, or the folder below it that has `product.md`. This skill's files go in `discovery/` inside it: `protection.md`, `strength.md`, `exposure.md`, `value.md` and `discovery.md` mean `discovery/<name>`. The vision skill's files are in `vision/`. `product.md` and `documents/` stay at the top. Create `discovery/` if it doesn't exist.
 
 - No `product.md`, or it's empty: say in one line that the product profile comes first, ask them to run `/ai-product-start`, and stop.
 - None of the vision files (`ai-levels.md`, `market-map.md`, `market-moves.md`, `opportunities.md`, `vision.md`): say in one line that discovery builds on the vision, ask them to run `/ai-product-vision` first, and stop. Any one of them is enough to go on.
 
 Read `product.md`, `ai-levels.md`, `market-map.md`, `market-moves.md`, `opportunities.md`, `vision.md` and anything in `documents/` you haven't read yet.
 
-If files from an earlier run exist (`protection.md`, `strength.md`, `exposure.md`, `discovery.md`), say which steps are done and which aren't (look for `Not done yet`), and ask whether to continue, redo a step, or start again. Read the files as they are now: the product manager may have edited them.
+If files from an earlier run exist (`protection.md`, `strength.md`, `exposure.md`, `value.md`, `discovery.md`), say which steps are done and which aren't (look for `Not done yet`), and ask whether to continue, redo a step, or start again. Read the files as they are now: the product manager may have edited them.
 
 ## Steps
 
@@ -75,17 +75,33 @@ If files from an earlier run exist (`protection.md`, `strength.md`, `exposure.md
 
    Propose the quadrant with one or two lines of reasoning, and ask: "Is that where you'd put it?" They confirm or move it; record why.
 
-8. **One page.** Fill `templates/discovery.md` into `discovery.md`. Plain language, every claim with its source (a report, a link, `documents/`, or `[PM]`). End with three next steps that follow from the move and the gaps. Show the "In short" and the move, and ask: "Is this right?"
+8. **Where value flows.** Draft it first from `product.md`, `vision/ai-levels.md`, `vision/opportunities.md`, `vision/market-moves.md` and the reports, then check it with the product manager one question at a time.
+   - **Today:** for each persona, the value they get and who pays for it, for what (seat, module, add-on, usage) and roughly how much. Then where value leaks: work customers still do by hand or in spreadsheets around the product, value partners or other tools capture, and value the product creates but doesn't charge for.
+   - **At the vision's target level:** the job AI does, who gets the value, what customers would pay for (the outcome, not the seat), and who else could capture that value: a general AI assistant, a challenger, a partner, the customer's own build. What keeps it with us: data, workflow, trust, distribution.
 
-9. **Update the profile.** In `product.md`, under `## AI today`, add one line: the move, pointing to `discovery.md`.
+   Ask: "Where does most of the value go today, and where should it go tomorrow?" Fill `templates/value.md` into `value.md`, with the shift as one from → to line at the top, and how you'd charge today and tomorrow.
 
-10. **The overview.** Update the overview deck: follow `references/overview.md` in the ai-product-start skill's folder (next to this skill's folder).
+9. **Where to take the product.** Turn everything into one direction. Propose it, then ask the product manager to confirm or change each part, one at a time:
+   - **Protect:** the core to defend, from protection and exposure.
+   - **Grow:** one to three bets in and around the product, from the top opportunities and the vision, each with where its value comes from.
+   - **Build first:** the first thing to build, small enough to test with real customers, and what it proves.
+   - **Don't:** what not to spend on now, and why.
+   - **How we'll know:** two or three signals that it's working, such as adoption, usage, retention or willingness to pay.
 
-11. **Done.** Show the files you wrote and sum up in three lines: the move, the biggest gap to the vision, and the first next step.
+   The direction must fit the move: Build on it invests from strength, Move first goes fast on the bet, Optimise makes the most of the core, Defend protects the core before betting.
+
+10. **One page.** Fill `templates/discovery.md` into `discovery.md`. Plain language, every claim with its source (a report, a link, `documents/`, or `[PM]`). Show the "In short", the move and the direction, and ask: "Is this right?"
+
+11. **Update the profile.** In `product.md`, under `## AI today`, add one line: the move and the direction in a few words, pointing to `discovery.md`.
+
+12. **The deck.** Update `index.html`, the product's deck: follow `references/deck.md` in the ai-product-start skill's folder (next to this skill's folder).
+
+13. **Done.** Show the files you wrote and sum up in three lines: the move, where to take the product, and what to build first.
 
 ## Done when
 
 - `protection.md`, `strength.md` and `exposure.md` are written, each score with a source and computed by its script;
 - the product manager's inside view is in the scores, tagged `[PM]`;
 - at least one score was challenged, and changed or kept with the reason;
-- `discovery.md` has the four pillars, the readiness check for the vision with what must be true and how to check it, the move the product manager confirmed, and three next steps.
+- `value.md` shows where value flows today, where it leaks, where it would flow at the vision's target level, who else could capture it, and how we'd charge;
+- `discovery.md` has the four pillars, the readiness check for the vision, the move, where value flows today and tomorrow, and a direction the product manager confirmed: protect, grow, build first, don't, and how we'll know.

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Product overview</title>
+<title>Product deck</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -107,7 +107,7 @@ html,body{height:100%}
 <body>
 <div class="deck" id="deck">
   <div class="bar">
-    <span class="title" id="decktitle">Product overview</span>
+    <span class="title" id="decktitle">Product deck</span>
     <div class="dots" id="dots" aria-label="Slides"></div>
     <div class="nav">
       <button type="button" id="prev" aria-label="Previous slide">←</button>
@@ -120,7 +120,7 @@ html,body{height:100%}
   <div></div>
 </div>
 
-<!-- Replace only the JSON below. Any section left null shows "Not done yet". See the ai-product-start skill's references/overview.md for the fields. -->
+<!-- Replace only the JSON below. Any section left null shows "Not done yet". See the ai-product-start skill's references/deck.md for the fields. -->
 <script type="application/json" id="data">
 {
   "product": {
@@ -152,7 +152,7 @@ html,body{height:100%}
 
   var p = d.product || {}, v = d.vision, x = d.discovery;
   var name = p.name || "[Product]";
-  document.title = name + " overview";
+  document.title = name;
   document.getElementById("decktitle").textContent = name;
 
   // 1 Cover
@@ -219,7 +219,18 @@ html,body{height:100%}
     if(v.first_step){ var fs=el("div","card"); add(fs, el("div","eyebrow","First step"), el("p",null,v.first_step)); add(sv,fs); }
   } else add(sv, todo("/ai-product-vision"));
 
-  // 8 Pillars
+  // 8 Direction
+  var sdir = slide("direction","Discovery","Where to take the product",["discovery/discovery.md"]);
+  if(x && x.direction){
+    var dr=x.direction, gd=el("div","grid");
+    [["Protect",dr.protect],["Grow",dr.grow],["Build first",dr.build_first],["Don't",dr.dont],["How we'll know",dr.signals]].forEach(function(k){
+      if(!k[1] || (Array.isArray(k[1]) && !k[1].length)) return;
+      var c=el("div","card"); add(c, el("div","eyebrow",k[0]), Array.isArray(k[1]) ? list(k[1]) : el("p",null,k[1])); add(gd,c);
+    });
+    add(sdir, gd);
+  } else add(sdir, todo("/ai-product-discovery"));
+
+  // 9 Pillars
   var sx = slide("pillars","Discovery","Is it ready? The four pillars",["discovery/protection.md","discovery/strength.md","discovery/exposure.md"]);
   if(x && x.pillars){
     if(x.in_short) add(sx, el("p","lead",x.in_short));
@@ -232,7 +243,7 @@ html,body{height:100%}
     add(sx, pl);
   } else add(sx, todo("/ai-product-discovery"));
 
-  // 9 Move
+  // 10 Move
   var sm = slide("move","Discovery","Our move",["discovery/discovery.md"]);
   if(x && x.move){
     var q=el("div","quad"), on=function(n){ return x.move===n ? "on" : ""; };
@@ -242,7 +253,14 @@ html,body{height:100%}
     add(sm, el("h3",null,x.move), x.move_why ? el("p","muted",x.move_why) : null, q);
   } else add(sm, todo("/ai-product-discovery"));
 
-  // 10 Ready + next steps
+  // 11 Value flows
+  var sf = slide("value","Discovery","Where value flows",["discovery/discovery.md"]);
+  if(x && (x.value_flows||[]).length){
+    if(x.value_shift) add(sf, el("p","statement",x.value_shift));
+    add(sf, table(["","Today","Tomorrow"], x.value_flows.map(function(r){ return [r.flow, r.today, r.tomorrow]; })));
+  } else add(sf, todo("/ai-product-discovery"));
+
+  // 12 Ready
   var sr = slide("ready","Discovery","Ready for the vision?",["discovery/discovery.md"]);
   if(x && ((x.readiness||[]).length || (x.next_steps||[]).length)){
     if((x.readiness||[]).length) add(sr, table(["Area","The gap","Must be true"], x.readiness.map(function(r){ return [r.area, r.gap, r.must_be_true]; })));

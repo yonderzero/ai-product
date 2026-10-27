@@ -89,7 +89,7 @@ Claude asks one question at a time, like a conversation.
 
 10. **The vision.** Claude writes your vision and asks: "Is this right?" It revises until you say yes.
 
-11. **The overview.** Claude adds the levels, the market, the opportunities, Imagine and your vision to `overview.html`, and opens it in the preview.
+11. **The deck.** Claude adds the levels, the market, the opportunities, Imagine and your vision to `index.html`, and opens it in the preview.
 
 12. **Done.** Claude adds today's level and your target level to `product.md`, and sums up where you are, where you're going, and the first step. Next: [`/ai-product-discovery`](ai-product-discovery.md).
 

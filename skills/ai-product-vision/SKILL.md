@@ -13,7 +13,7 @@ Conversational, short messages, one question at a time. Never send a list of que
 
 ## Save as you go
 
-Write each file as soon as its step has content, and update it as you go. Mark any section you haven't reached `Not done yet`. If the product manager says they're out of time or wants to move on, stop cleanly: save what's there, say which steps are left, and that they can run this skill again to continue, or edit the files themselves. Update the overview deck before you stop. Moving on is fine as long as something is saved.
+Write each file as soon as its step has content, and update it as you go. Mark any section you haven't reached `Not done yet`. If the product manager says they're out of time or wants to move on, stop cleanly: save what's there, say which steps are left, and that they can run this skill again to continue, or edit the files themselves. Update `index.html` before you stop. Moving on is fine as long as something is saved.
 
 ## Before you start
 
@@ -106,7 +106,7 @@ Read `product.md` and anything in `documents/` you haven't read yet. If files fr
 
 11. **Update the profile.** In `product.md`, under `## AI today`, add one line: today's level and the target level, pointing to `ai-levels.md` and `vision.md`.
 
-12. **The overview.** Update the overview deck: follow `references/overview.md` in the ai-product-start skill's folder (next to this skill's folder).
+12. **The deck.** Update `index.html`, the product's deck: follow `references/deck.md` in the ai-product-start skill's folder (next to this skill's folder).
 
 13. **Done.** Show the files you wrote and sum up in four lines: where the product is today, the top opportunity, where it's going, and the first step. Say the next step is `/ai-product-discovery`. End with: "Placements are a snapshot from public sources on [date]. Check the ones you act on."
 

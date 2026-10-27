@@ -58,7 +58,7 @@ Claude asks one question at a time, like a conversation.
 
 8. **Documents check.** Claude lists what's in `documents/` and checks it for personal data (people's names, email addresses, phone numbers). If it finds any, it tells you which files to clean up. It never edits your files.
 
-9. **The overview.** Claude creates `overview.html`, a slide deck of your product that every skill adds to, and opens it in the preview.
+9. **The deck.** Claude creates `index.html`, a slide deck of your product that every skill adds to, and opens it in the preview.
 
 10. **Done.** Claude shows the folder and sums up the product, its personas, and what's still unknown. Next: [`/ai-product-vision`](ai-product-vision.md).
 
@@ -68,7 +68,7 @@ See a finished one: [`product.md` for Salesforce](../examples/salesforce/product
 
 ```
 acme-scheduler/          named after your product
-  overview.html          a slide deck of everything so far: every skill adds to it
+  index.html             a slide deck of everything so far: every skill adds to it
   product.md             the product profile
   documents/             your files: Claude reads everything here
 ```
