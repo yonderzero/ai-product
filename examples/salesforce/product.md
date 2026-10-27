@@ -106,6 +106,7 @@ Both now ship with AI agents under the Agentforce name. They qualify leads, answ
 Sellers still spend time keeping the CRM up to date instead of selling. We want Sales Cloud to keep its own records, and to tell each team what is working in deals like theirs. `[PM, illustrative]`
 
 - The right problem: sales managers can't see where every deal really stands without chasing reps. BHAG: by 2031, sellers spend 70% of their week selling, up from 40%, and no manager has to ask where a deal stands. See `problem/problem.md`. `[PM, illustrative]`
+- This product update: the rep confirms each deal change the agent proposes, and the manager's forecast brief is built only from what reps confirmed (flows 1 and 2 in `flows/flows.md`); $45 a user a month, a fixed line at renewal; build-day slice: one team's sample data, from a call to a proposed change, the rep's confirmation, the brief and an override with a reason. See `roadmap/roadmap.md`. `[PM, illustrative]`
 
 ## Still unknown
 

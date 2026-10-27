@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morning shortlist · mockup</title>
+<style>
+:root{--bg:#f5f6f8;--card:#fff;--ink:#1d2430;--muted:#667085;--line:#e4e7ec;--accent:#1f6f78;--accent-soft:#e6f2f3;--warn:#b54708;--warn-soft:#fef3e6;--red:#b42318;--red-soft:#fdecea;--ok:#067647;--ok-soft:#e7f6ee;--agent:#5b4bc4;--agent-soft:#efedfb}
+*{box-sizing:border-box}
+body{margin:0;font:15px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.app{display:grid;grid-template-columns:210px 1fr;min-height:100vh}
+nav{background:#fff;border-right:1px solid var(--line);padding:18px 14px}
+.logo{font-weight:700;letter-spacing:.2px;margin-bottom:22px;display:flex;align-items:center;gap:8px}
+.logo i{width:22px;height:22px;border-radius:6px;background:var(--accent);display:inline-block}
+nav a{display:block;padding:8px 10px;border-radius:8px;color:var(--muted);text-decoration:none;font-size:14px}
+nav a.on{background:var(--accent-soft);color:var(--accent);font-weight:600}
+main{padding:22px 28px 110px;max-width:1040px}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;gap:12px;flex-wrap:wrap}
+h1{font-size:21px;margin:0}
+h2{font-size:15px;margin:0 0 10px}
+.sub{color:var(--muted);font-size:13px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:14px}
+.row{display:flex;gap:12px;align-items:flex-start}
+.pill{display:inline-block;font-size:12px;padding:2px 8px;border-radius:999px;background:#eef0f3;color:var(--muted);white-space:nowrap}
+.pill.red{background:var(--red-soft);color:var(--red)}.pill.warn{background:var(--warn-soft);color:var(--warn)}.pill.ok{background:var(--ok-soft);color:var(--ok)}.pill.agent{background:var(--agent-soft);color:var(--agent)}
+.truck{display:grid;grid-template-columns:70px 1fr auto;gap:12px;padding:12px 0;border-top:1px solid var(--line);align-items:center}
+.truck:first-of-type{border-top:0}
+.unit{font-weight:700;font-size:16px}
+.why{font-size:14px}
+.muted{color:var(--muted)}
+.btn{border:1px solid var(--line);background:#fff;border-radius:8px;padding:7px 12px;font:inherit;font-size:14px;cursor:pointer;color:var(--ink)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.ghost{background:transparent}
+.btn.strike{color:var(--red);border-color:#f3c7c2}
+.banner{border-radius:10px;padding:10px 14px;margin-bottom:14px;font-size:14px;display:flex;gap:10px;align-items:center}
+.banner.agent{background:var(--agent-soft);color:#3b2f8f}
+.banner.warn{background:var(--warn-soft);color:#7a2e0e}
+.banner.ok{background:var(--ok-soft);color:#05603a}
+.grid2{display:grid;grid-template-columns:1.3fr 1fr;gap:14px}
+dl{margin:0;display:grid;grid-template-columns:110px 1fr;gap:6px 12px;font-size:14px}
+dt{color:var(--muted)}dd{margin:0}
+.code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;background:#f2f4f7;border-radius:6px;padding:1px 6px}
+ul.ev{margin:0;padding-left:18px;font-size:14px}ul.ev li{margin:3px 0}
+.reasons{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.reasons .btn{font-size:13px;padding:6px 10px}
+.reasons .btn.sel{background:var(--red-soft);border-color:#f3c7c2;color:var(--red)}
+.collapsed{color:var(--muted);font-size:14px;padding:10px 0;border-top:1px solid var(--line)}
+.who{font-size:12px;color:var(--muted)}
+.mock{position:fixed;top:12px;right:14px;background:#fff7d6;color:#7a5b00;border:1px solid #f0dc8a;font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;z-index:5}
+.stepper{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);padding:12px 20px;display:flex;align-items:center;gap:14px;justify-content:space-between;z-index:4}
+.stepper .t{font-size:14px}.stepper .t b{display:block;font-size:15px}
+.dots{display:flex;gap:6px}.dots span{width:8px;height:8px;border-radius:50%;background:#d0d5dd}.dots span.on{background:var(--accent)}
+.phone{max-width:380px;border:1px solid var(--line);border-radius:22px;background:#fff;padding:18px;margin:10px 0}
+.notif{background:#f2f4f7;border-radius:14px;padding:12px 14px;font-size:14px}
+@media (max-width:760px){.app{grid-template-columns:1fr}nav{display:none}main{padding:16px 16px 120px}.grid2{grid-template-columns:1fr}.truck{grid-template-columns:56px 1fr}.truck .act{grid-column:1/-1}}
+</style>
+</head>
+<body>
+<div class="mock">Mockup for testing</div>
+<div class="app">
+  <nav>
+    <div class="logo"><i></i>FleetDesk</div>
+    <a class="on" href="#">Morning shortlist</a>
+    <a href="#">Work orders</a>
+    <a href="#">PM schedule</a>
+    <a href="#">Parts</a>
+    <a href="#">Vehicles</a>
+    <a href="#">Reports</a>
+  </nav>
+  <main id="screen"></main>
+</div>
+<div class="stepper">
+  <button class="btn" id="back">Back</button>
+  <div class="t" id="label"></div>
+  <div class="dots" id="dots"></div>
+  <button class="btn primary" id="next">Next</button>
+</div>
+<script>
+var moments = [
+{ t:"1. Overnight", d:"The agent read everything that came in overnight.", h:function(){ return '\
+<div class="top"><div><h1>Good morning, Rosa</h1><div class="sub">Tuesday · North and south shops · 240 tractors</div></div></div>\
+<div class="phone"><div class="sub" style="margin-bottom:8px">5:15 am · lock screen</div>\
+<div class="notif"><b>FleetDesk · Your shortlist is ready</b><br>Overnight: 214 fault codes, 31 driver write-ups and 9 PMs coming due, from 46 trucks. 4 to pull in today. 1 truck is back on the list.</div></div>\
+<div class="card"><h2>What the agent did overnight</h2>\
+<ul class="ev"><li>Grouped 254 signals into 46 trucks</li><li>Dropped 151 exact repeats and 22 codes you marked as noise</li><li>Ranked every truck by risk, using its codes, write-ups, PM due and last repairs</li><li>Drafted 4 work orders. Nothing has been opened.</li></ul>\
+<p class="who" style="margin-top:10px">Data: Samsara codes and meters up to 5:02 am · Driver app write-ups · PM schedule · repair history</p></div>'; }},
+{ t:"2. The lead tech's say", d:"Dwayne sees the picks first and can strike one in one tap, before Rosa sees the list.", h:function(){ return '\
+<div class="top"><div><h1>Today’s picks · lead tech</h1><div class="sub">5:05 am · shop desktop · Dwayne · nothing opens until Rosa approves</div></div></div>\
+<div class="card">'+truck("2217","Coolant temperature high, three nights. Driver write-up.","Keep","ok")+truck("3105","Air leak, rear axle. Safety item.","Keep","ok")+truck("1840","Aftertreatment NOx, third night, derate warning.","Keep","ok")+truck("2045","Low boost pressure under load, twice in two days.","Keep","ok")+'\
+<div class="truck"><div class="unit">1876</div><div class="why">DEF quality code at cold start. <span class="muted">(was in Pull in today)</span>\
+<div class="reasons"><button class="btn sel">Known sensor glitch on this model</button><button class="btn">Already fixed</button><button class="btn">Not today</button><button class="btn">Other…</button></div></div>\
+<div class="act"><span class="pill red">Struck by Dwayne</span></div></div></div>\
+<div class="banner agent">✓ 1876 moved to Watching. Your suggested rule, “treat this code at cold start as noise on 2019 Cascadias”, goes to Rosa: nothing changes for other trucks until she approves it. <a href="#" style="color:inherit">Undo</a></div>\
+<p class="sub">No typing: one tap, with a reason. Every strike shows what it changed. A rule for the whole fleet needs Rosa.</p>'; }},
+{ t:"3. The shortlist", d:"One page: pull in today, plan this week, watching.", h:function(){ return '\
+<div class="top"><div><h1>Morning shortlist</h1><div class="sub">Tuesday, 5:15 am · Dwayne checked the picks at 5:05 am and struck 1</div></div><span class="pill ok">Feed OK · codes up to 5:02 am</span></div>\
+<div class="card"><h2>Pull in today <span class="pill red">4</span></h2>\
+'+truck("2217","Coolant temperature high, three nights running. A driver wrote “temp gauge high on hills”. PM due in 1,200 miles: do both.","Parts on the shelf","ok")+'\
+'+truck("3105","Driver write-up: air leak at the rear axle, audible. Safety item: always pulled in.","Parts on the shelf","ok",true)+'\
+'+truck("1840","Aftertreatment NOx code, third night in a row, now with a derate warning. Back from Watching.","Sensor on order: due Wed","warn")+'\
+'+truck("2045","Low boost pressure under load, twice in two days. Last turbo work 14 months ago.","Parts on the shelf","ok")+'\
+</div>\
+<div class="card"><h2>Plan this week <span class="pill">5</span></h2><div class="collapsed">2390 · 1912 · 2266 · 3302 · 2071, each with one line of why. Tap to open.</div></div>\
+<div class="card"><h2>Watching <span class="pill">37</span></h2><div class="collapsed">Every truck not chosen, with its reason and how many days it has been here. Nothing is hidden. Tap to open.</div></div>'; }},
+{ t:"4. Why this truck", d:"The drafted work order and the evidence behind it.", h:function(){ return '\
+<div class="top"><div><h1>Truck 2217 · draft work order</h1><div class="sub">2019 Freightliner Cascadia · 412,880 miles · north shop</div></div><span class="pill agent">Drafted by the agent · not opened</span></div>\
+<div class="grid2"><div class="card"><h2>The draft</h2><dl>\
+<dt>Complaint</dt><dd>Coolant temperature high on three overnight runs; driver reports gauge high on hills.</dd>\
+<dt>Likely cause</dt><dd>Thermostat sticking. Second guess: fan clutch.</dd>\
+<dt>VMRS</dt><dd><span class="code">042</span> Cooling system</dd>\
+<dt>Parts</dt><dd>1 thermostat, 1 gasket, coolant <span class="pill ok">on the shelf · north shop</span></dd>\
+<dt>Also do</dt><dd>PM A, due in 1,200 miles</dd></dl>\
+<div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap"><button class="btn primary">Approve</button><button class="btn">Edit</button><button class="btn">Reject…</button></div></div>\
+<div class="card"><h2>Why this truck</h2><ul class="ev">\
+<li><span class="code">SPN 110 FMI 0</span> coolant temp high · Sun 11:42 pm, Mon 10:58 pm, Tue 1:15 am</li>\
+<li>Driver write-up, Mon: “temp gauge high on hills”</li>\
+<li>Last repairs: water pump (Mar), PM A (Jul), tyres (Sep)</li>\
+<li>Across our fleet, this code three nights running led to a cooling repair 7 times out of 9 <a href="#">See the 9 trucks</a></li></ul>\
+<p class="who" style="margin-top:10px">Raw codes and freeze-frame data: open in Samsara feed</p></div></div>'; }},
+{ t:"5. Approve", d:"Rosa approves, edits or rejects. Work orders open with her name on them.", h:function(){ return '\
+<div class="top"><div><h1>Morning shortlist</h1><div class="sub">5:40 am · Rosa</div></div><span class="pill ok">3 approved · 1 struck</span></div>\
+<div class="banner ok">3 work orders opened by Rosa and put on the shop board. If Dwayne hasn\u2019t looked yet, a job waits for him before it gets a bay.</div>\
+<div class="card">\
+<div class="truck"><div class="unit">2217</div><div class="why">WO-58114 · cooling system · thermostat, gasket, coolant reserved <div class="who">Approved by Rosa 5:38 am · kept by Dwayne</div></div><div class="act"><span class="pill ok">Opened</span></div></div>\
+<div class="truck"><div class="unit">3105</div><div class="why">WO-58115 · brakes · air leak, rear axle <div class="who">Approved by Rosa 5:38 am · safety item</div></div><div class="act"><span class="pill ok">Opened</span></div></div>\
+<div class="truck"><div class="unit">2045</div><div class="why">WO-58116 · turbo boost · edited by Rosa: “check charge air cooler first” <div class="who">Approved by Rosa 5:39 am</div></div><div class="act"><span class="pill ok">Opened</span></div></div>\
+<div class="truck"><div class="unit">1840</div><div class="why">Rejected by Rosa: “sensor arrives Wed, book it then”. Moved to Plan this week. <div class="who">Reason saved · it will come back if the derate gets worse</div></div><div class="act"><span class="pill warn">Plan this week</span></div></div>\
+<div class="truck"><div class="unit">1876</div><div class="why">Struck by Dwayne: known sensor glitch on this model. Suggested rule: treat this code at cold start as noise on 2019 Cascadias. <div class="who">Rosa can override the strike, and approves or declines the rule</div></div><div class="act"><button class="btn">Approve rule</button> <button class="btn">Override</button></div></div>\
+</div>'; }},
+{ t:"6. When it goes wrong", d:"The feed stopped for some trucks. The agent says so and doesn't guess.", h:function(){ return '\
+<div class="top"><div><h1>Morning shortlist</h1><div class="sub">Wednesday, 5:15 am</div></div><span class="pill warn">Feed incomplete</span></div>\
+<div class="banner warn"><b>No codes from Samsara since 1:12 am for 38 trucks.</b> This list is incomplete for them. Meter readings may be out of date too, so PMs due could be wrong. <a href="#" style="color:inherit">See the 38 trucks</a></div>\
+<div class="card"><h2>Pull in today <span class="pill red">2</span></h2>\
+'+truck("2911","Driver write-up: steering pulls left, worse when braking. Safety item: always pulled in, whatever the codes say.","Parts unknown","warn",true)+'\
+'+truck("2266","Oil pressure low at idle, twice since Monday. Not sure: the latest readings are missing.","Not sure: check","warn")+'\
+</div>\
+<p class="sub">Driver write-ups still arrive from the Driver app. Safety items never go to Watching.</p>'; }},
+{ t:"7. Watching", d:"Nothing is dropped. Trucks come back when a code repeats or gets worse.", h:function(){ return '\
+<div class="top"><div><h1>Watching · 37 trucks</h1><div class="sub">Sorted by days here · you can sort it your way</div></div></div>\
+<div class="card">\
+<div class="truck"><div class="unit">1840</div><div class="why"><b>Back on your list: third night.</b> Aftertreatment NOx code, now with a derate warning. <div class="who">In Watching 6 days · moved up at 4:50 am</div></div><div class="act"><span class="pill red">Back</span></div></div>\
+<div class="truck"><div class="unit">1655</div><div class="why">Intermittent ABS lamp, once. No write-up. <div class="who">In Watching 3 days · comes back if it repeats</div></div><div class="act"><span class="pill">Watching</span></div></div>\
+<div class="truck"><div class="unit">1876</div><div class="why">DEF quality at cold start. Struck by Dwayne: known sensor glitch on this model. <div class="who">In Watching 1 day</div></div><div class="act"><span class="pill">Watching</span></div></div>\
+<div class="truck"><div class="unit">2502</div><div class="why">Fuel level sender out of range, twice. Low risk. <div class="who">In Watching 9 days</div></div><div class="act"><span class="pill">Watching</span></div></div>\
+<div class="collapsed">33 more, each with its reason.</div></div>\
+<p class="sub">If a truck in Watching later breaks down, the agent shows the history it had and asks you and Dwayne why it was ranked low. Your answer tunes the ranking.</p>'; }}
+];
+function truck(u,why,parts,cls,safety){ return '<div class="truck"><div class="unit">'+u+'</div><div class="why">'+why+(safety?' <span class="pill red">Safety</span>':'')+'</div><div class="act"><span class="pill '+cls+'">'+parts+'</span></div></div>'; }
+var i=0, scr=document.getElementById("screen");
+function show(){ scr.innerHTML=moments[i].h(); document.getElementById("label").innerHTML="<b>"+moments[i].t+"</b>"+moments[i].d;
+  var d=document.getElementById("dots"); d.innerHTML=""; moments.forEach(function(_,k){ var s=document.createElement("span"); if(k===i) s.className="on"; d.appendChild(s); });
+  document.getElementById("back").disabled=i===0; document.getElementById("next").textContent=i===moments.length-1?"Start again":"Next"; window.scrollTo(0,0); }
+document.getElementById("next").onclick=function(){ i=(i+1)%moments.length; show(); };
+document.getElementById("back").onclick=function(){ if(i>0){ i--; show(); } };
+document.addEventListener("keydown",function(e){ if(e.key==="ArrowRight") document.getElementById("next").click(); if(e.key==="ArrowLeft") document.getElementById("back").click(); });
+show();
+</script>
+</body>
+</html>

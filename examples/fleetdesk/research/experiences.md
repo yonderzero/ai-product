@@ -164,15 +164,15 @@ For a typical customer, today against with agents (experiences 1 to 4). Agents a
 - **Our revenue per customer:** from $31,200 to $50,400, about 1.6 times.
 - **Working:** remaining labour = lead tech 25 h ($1,300) + Rosa's review 50 h ($3,600) + planning 75 h ($5,400) + parts 150 h ($6,000) + technicians 280 h ($14,600) = 580 h, $30,900. Labour saved = $101,900. Agents at $8 per vehicle a month × 200 vehicles × 12 = $19,200, about 19% of the labour saved `[PM, illustrative]`. Hourly costs and job counts as in "The double cost today"; the remaining hours are assumptions `[assumed]`.
 
-The $8 is far above the 25% uplift assumed in `../problem/problem.md` (about $3.25 a vehicle), and above the $3 add-on the vision proposed to test (`../vision/vision.md`). The panel and the beta calls should test both. Ask: "Would your customers pay for agents at that price, for that saving?"
+The $8 is the price of the full shop agent, once all four in-shop experiences are live. It was never the price for one experience on its own. The pricing story is settled in `../roadmap/roi.md`: the morning shortlist starts alone at $3 per powered vehicle a month (the add-on the vision proposed to test, and close to the 25% uplift in `../problem/problem.md`), rising to $6 when the notes join and $8 for the full shop agent.
 
 ## The experience to explore first
 
-**The morning shortlist**, because it's where the struggle is sharpest, it tests the riskiest assumption in `../problem/problem.md` (will managers let something else decide which trucks need work?), and every other experience starts from a job it picks. It gives back fewer hours than "Say it, sign it", which carries most of the money; that one should follow, because it also produces the record that tells us whether the shortlist was right.
+**The morning shortlist**, mapped and tested as a flow in `../flows/flows.md`, because it's where the struggle is sharpest, it tests the riskiest assumption in `../problem/problem.md` (will managers let something else decide which trucks need work?), and every other experience starts from a job it picks. It gives back fewer hours than "Say it, sign it", which carries most of the money; that one should follow, because it also produces the record that tells us whether the shortlist was right.
 
 It's small enough to prototype end to end: one pilot fleet's last day of fault codes, write-ups and PMs due, pulled through the public API. The agent groups them by truck and ranks them with Fault Code Assist's library and the truck's last repairs. It sends Rosa a single page before the shop opens: three to five trucks to pull in, each with one line of why, a drafted work order, and whether its parts are on the shelf (read only, the panel's suggestion for the buyer). "Approve" opens the work order through the API, and "Reject" asks for one line of reason. Everything else sits in "watching". Every decision is logged. No parts, bays or dispatch yet.
 
-**What the panel changed:** a quick veto for the lead tech on every pick, and the parts line on each draft (`panel.md`). No persona said yes to $8 a vehicle before a pilot on their own trucks.
+**What the panel changed:** a quick veto for the lead tech on every pick, and the parts line on each draft (`panel.md`). No persona said yes to $8 a vehicle before a pilot on their own trucks; for the shortlist alone they put the bargain at $2–$3 (`../roadmap/roi.md`).
 
 **Open questions for real customers:**
 - Would you approve a drafted work order without re-reading the codes? What would you need to see?

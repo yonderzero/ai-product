@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Say it, sign it · mockup</title>
+<style>
+:root{--bg:#f5f6f8;--card:#fff;--ink:#1d2430;--muted:#667085;--line:#e4e7ec;--accent:#1f6f78;--accent-soft:#e6f2f3;--warn:#b54708;--warn-soft:#fef3e6;--ok:#067647;--ok-soft:#e7f6ee;--agent:#5b4bc4;--agent-soft:#efedfb}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.tablet{max-width:900px;margin:24px auto 120px;background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.bar{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid var(--line);gap:10px;flex-wrap:wrap}
+.bar b{font-size:17px}
+.body{padding:20px}
+.sub{color:var(--muted);font-size:14px}
+h2{font-size:15px;margin:0 0 8px}
+.card{border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:14px}
+.pill{display:inline-block;font-size:12px;padding:2px 9px;border-radius:999px;background:#eef0f3;color:var(--muted);white-space:nowrap}
+.pill.ok{background:var(--ok-soft);color:var(--ok)}.pill.warn{background:var(--warn-soft);color:var(--warn)}.pill.agent{background:var(--agent-soft);color:var(--agent)}
+.field{display:grid;grid-template-columns:120px 1fr;gap:12px;padding:10px 0;border-top:1px solid var(--line);align-items:start}
+.field:first-of-type{border-top:0}
+.field .k{color:var(--muted);font-size:14px}
+.talk{display:flex;flex-direction:column;align-items:center;gap:12px;padding:20px 0}
+.mic{width:120px;height:120px;border-radius:50%;background:var(--accent);color:#fff;border:0;font:inherit;font-weight:600;box-shadow:0 0 0 10px var(--accent-soft)}
+.mic.live{animation:pulse 1.4s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(31,111,120,.35)}100%{box-shadow:0 0 0 22px rgba(31,111,120,0)}}
+@media (prefers-reduced-motion:reduce){.mic.live{animation:none}}
+.words{background:#f2f4f7;border-radius:12px;padding:12px 14px;font-size:15px;max-width:640px}
+mark{background:#fde9c4;border-radius:4px;padding:0 3px}
+.btn{border:1px solid var(--line);background:#fff;border-radius:10px;padding:10px 16px;font:inherit;font-size:15px;cursor:pointer;color:var(--ink)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.small{padding:6px 10px;font-size:14px}
+.banner{border-radius:10px;padding:10px 14px;margin-bottom:14px;font-size:14px}
+.banner.agent{background:var(--agent-soft);color:#3b2f8f}.banner.warn{background:var(--warn-soft);color:#7a2e0e}.banner.ok{background:var(--ok-soft);color:#05603a}
+.promise{font-size:13px;color:var(--muted);border-top:1px dashed var(--line);padding-top:10px;margin-top:6px}
+.list .row{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-top:1px solid var(--line)}
+.list .row:first-child{border-top:0}
+.mock{position:fixed;top:12px;right:14px;background:#fff7d6;color:#7a5b00;border:1px solid #f0dc8a;font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;z-index:5}
+.stepper{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);padding:12px 20px;display:flex;align-items:center;gap:14px;justify-content:space-between;z-index:4}
+.stepper .t{font-size:14px}.stepper .t b{display:block;font-size:15px}
+.dots{display:flex;gap:6px}.dots span{width:8px;height:8px;border-radius:50%;background:#d0d5dd}.dots span.on{background:var(--accent)}
+@media (max-width:640px){.tablet{margin:12px 16px 130px;border-radius:14px}.field{grid-template-columns:1fr;gap:4px}.body{padding:16px}}
+</style>
+</head>
+<body>
+<div class="mock">Mockup for testing</div>
+<div class="tablet">
+  <div class="bar"><div><b id="title">WO-58114 · Truck 2217</b><div class="sub">North shop · bay 2 · Dwayne</div></div><span class="pill" id="state">In progress</span></div>
+  <div class="body" id="screen"></div>
+</div>
+<div class="stepper">
+  <button class="btn small" id="back">Back</button>
+  <div class="t" id="label"></div>
+  <div class="dots" id="dots"></div>
+  <button class="btn small primary" id="next">Next</button>
+</div>
+<script>
+var said='Pressure tested the cooling system, no leaks. Thermostat was stuck <mark>half closed</mark>. Replaced the thermostat and the gasket. Topped off coolant, about a gallon and a half. Road tested, temp held at one ninety.';
+var moments=[
+{t:"1. Open the job",d:"The complaint is already filled from the morning shortlist.",s:"In progress",h:function(){return '\
+<div class="card"><h2>The job</h2>\
+<div class="field"><div class="k">Complaint</div><div>Coolant temperature high on three overnight runs; driver reports gauge high on hills. <span class="pill agent">from the shortlist</span></div></div>\
+<div class="field"><div class="k">Likely cause</div><div>Thermostat sticking. Second guess: fan clutch.</div></div>\
+<div class="field"><div class="k">Parts out</div><div>1 thermostat · 1 gasket · 2 gal coolant</div></div>\
+<div class="field"><div class="k">Also do</div><div>PM A</div></div></div>\
+<p class="sub">When you’re done, hold the button and say what you found and what you did.</p>';}},
+{t:"2. Say it",d:"Dwayne holds the button at the bench and talks. No typing.",s:"Listening",h:function(){return '\
+<div class="talk"><button class="mic live">Hold to talk</button><div class="sub">Listening… release when you’re done</div>\
+<div class="words">“'+said.replace(/<\/?mark>/g,"")+'”</div></div>';}},
+{t:"3. The draft",d:"The agent writes cause and correction in his words, matches parts and suggests the code.",s:"Draft",h:function(){return '\
+<div class="banner agent">Drafted from what you said. Check it, fix anything, then sign.</div>\
+<div class="card">\
+<div class="field"><div class="k">Complaint</div><div>Coolant temperature high on three overnight runs; driver reports gauge high on hills.</div></div>\
+<div class="field"><div class="k">Cause</div><div>Thermostat stuck <mark>half closed</mark>. No leaks on pressure test.</div></div>\
+<div class="field"><div class="k">Correction</div><div>Replaced thermostat and gasket. Topped off coolant, about 1.5 gal. Road tested; temperature held at 190°F.</div></div>\
+<div class="field"><div class="k">VMRS</div><div>042 Cooling system <span class="pill">suggested</span></div></div>\
+<div class="field"><div class="k">Parts</div><div>1 thermostat ✓ · 1 gasket ✓ · coolant: 2 gal out, 1.5 gal used</div></div>\
+<div class="field"><div class="k">Your time</div><div>Clocked on this job: 1.6 h. <button class="btn small">Confirm 1.6 h</button> <button class="btn small">Change</button></div></div>\
+<div class="field"><div class="k">The shortlist</div><div><span class="pill ok">Likely cause matched what you found</span></div></div></div>';}},
+{t:"4. When it isn’t sure",d:"It highlights what it isn’t sure of and asks. It never fills in a finding.",s:"Needs you",h:function(){return '\
+<div class="banner warn">2 things to check before you sign</div>\
+<div class="card"><h2>1. Did you say “half closed”?</h2><div class="words">…Thermostat was stuck <mark>half closed</mark>…</div>\
+<div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap"><button class="btn small primary">Yes, that’s right</button><button class="btn small">Fix it</button><button class="btn small">Say it again</button></div></div>\
+<div class="card"><h2>2. Coolant: 2 gal charged out, you said about 1.5</h2>\
+<div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn small primary">Return 0.5 gal to stock</button><button class="btn small">Used 2 gal</button></div></div>';}},
+{t:"5. Sign it",d:"Nothing closes without his signature.",s:"Ready to sign",h:function(){return '\
+<div class="card"><h2>Complaint, cause, correction</h2><p style="margin:0">Coolant temperature high on three overnight runs; driver reports gauge high on hills. <b>Cause:</b> thermostat stuck half closed; no leaks on pressure test. <b>Correction:</b> replaced thermostat and gasket; topped off coolant, 1.5 gal; road tested, held at 190°F.</p>\
+<p class="sub" style="margin:10px 0 0">VMRS 042 · thermostat, gasket, 1.5 gal coolant · 1.6 h, confirmed by you</p></div>\
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px"><button class="btn primary">Sign and close as Dwayne</button><button class="btn">Edit</button></div>\
+<p class="promise">Your note and recording stay with truck 2217’s record, for warranty and repairs. They are never used for timesheets or to grade anyone.</p>';}},
+{t:"6. What’s left",d:"At the end of the shift, Rosa sees only the work orders the agent couldn’t complete.",s:"Rosa’s view",h:function(){return '\
+<div class="banner ok">23 work orders closed today with cause and correction, signed by the technician.</div>\
+<div class="card list"><h2>2 need you</h2>\
+<div class="row"><div><b>WO-58098 · Truck 1912</b><div class="sub">No cause given. The tech said “replaced the starter” and nothing else.</div></div><button class="btn small">Ask the tech</button></div>\
+<div class="row"><div><b>WO-58107 · Truck 2390</b><div class="sub">Part charged out but not mentioned: 1 air dryer cartridge.</div></div><button class="btn small">Check</button></div></div>';}}
+];
+var i=0, scr=document.getElementById("screen");
+function show(){ var m=moments[i]; scr.innerHTML=m.h(); document.getElementById("state").textContent=m.s; document.getElementById("label").innerHTML="<b>"+m.t+"</b>"+m.d;
+  document.getElementById("title").textContent = i===5 ? "End of shift · north shop" : "WO-58114 · Truck 2217";
+  var d=document.getElementById("dots"); d.innerHTML=""; moments.forEach(function(_,k){ var s=document.createElement("span"); if(k===i) s.className="on"; d.appendChild(s); });
+  document.getElementById("back").disabled=i===0; document.getElementById("next").textContent=i===moments.length-1?"Start again":"Next"; window.scrollTo(0,0); }
+document.getElementById("next").onclick=function(){ i=(i+1)%moments.length; show(); };
+document.getElementById("back").onclick=function(){ if(i>0){ i--; show(); } };
+document.addEventListener("keydown",function(e){ if(e.key==="ArrowRight") document.getElementById("next").click(); if(e.key==="ArrowLeft") document.getElementById("back").click(); });
+show();
+</script>
+</body>
+</html>

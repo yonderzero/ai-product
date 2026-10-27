@@ -2,21 +2,23 @@
 
 > **Fictional example. FleetDesk and everything about it, its customers, documents and numbers are invented to show how the skills work. The competitors and market facts are real and sourced as of 27 Oct 2026.**
 
-This folder shows what a product manager has after running `/ai-product-start`, `/ai-product-vision`, `/ai-product-discovery`, `/ai-product-problem` and `/ai-product-research` for a typical vertical software product.
+This folder shows what a product manager has after running all seven skills, `/ai-product-start`, `/ai-product-vision`, `/ai-product-discovery`, `/ai-product-problem`, `/ai-product-research`, `/ai-product-flows` and `/ai-product-roadmap`, for a typical vertical software product.
 
-FleetDesk is a mid-size, 15-year-old company in a software group. It sells fleet maintenance software to about 800 US trucking and delivery fleets, priced per vehicle per month. Its AI is at level 1 today, with one level 2 feature in beta. The product manager brought seven files, in `documents/`, which are the evidence for many facts.
+FleetDesk is a mid-size, 15-year-old company in a software group. It sells fleet maintenance software to about 800 US trucking and delivery fleets, priced per vehicle per month. Its AI is at level 1 today, with one level 2 feature in beta. The product manager brought seven files, in `documents/`, which are the evidence for many facts, and added two real-customer interview transcripts during the flows step.
 
 - **Start:** builds a profile of the product and four personas from those files.
 - **Vision:** maps the real market on six AI levels, finds and ranks the opportunities, imagines FleetDesk at each higher level, and agrees a vision.
 - **Discovery:** scores protection, strength, AI opportunity and exposure; one score is overturned. It checks readiness, maps where value flows, chooses the move and sets where to take the product.
 - **Problem:** sharpens the problem to start with, grades its evidence, thinks bigger and picks the right problem.
 - **Research:** looks at how each type of customer lives the problem and what options they have, defines the ideal customer, builds four synthetic personas, drafts five agentic customer experiences with their economics, and lets the personas pressure-test the problem.
+- **Flows:** maps each experience as a flow, makes the two leading ones clickable, tests them in two panel rounds and two real interviews, and takes forward the morning shortlist, then the notes.
+- **Roadmap:** turns the flows into prioritised features, works out the ROI and the price ($3 per powered vehicle a month for the shortlist), lays out Now, Next and Later, and defines the build-day slice.
 
 Facts about FleetDesk cite `[documents/<file>]` or are tagged `[PM, illustrative]`. Facts about the market cite the public page they came from. The personas are synthetic: what they say is a hypothesis, not evidence.
 
 ## Files
 
-- [`index.html`](index.html): open this first. The deck covers the product, customers, levels, opportunities, vision, direction, pillars, move, value, readiness, the problem and the research, with links to every file.
+- [`index.html`](index.html): **open this first.** The deck covers every step, from the product and the vision to the flows, this product update, ROI and the roadmap, with links to every file.
 - [`product.md`](product.md): the product profile: company, four personas and their problems, workflows, pricing, competitors, data and tech, AI today.
 - [`documents/`](documents/): the invented files the product manager brought:
   - two customer interviews: a maintenance manager and a director of fleet operations;
@@ -24,7 +26,8 @@ Facts about FleetDesk cite `[documents/<file>]` or are tagged `[PM, illustrative
   - won and lost deal notes;
   - a churn note;
   - the sales one-pager;
-  - notes from the AI beta.
+  - notes from the AI beta;
+  - two transcripts from the flows step, with roles only: a waste hauler's maintenance manager and a beverage distributor's shop supervisor.
 
 From `/ai-product-vision`, in [`vision/`](vision/):
 
@@ -57,5 +60,18 @@ From `/ai-product-research`, in [`research/`](research/):
 - [`research/personas/`](research/personas/): four synthetic personas, every field sourced: Glen, director of fleet operations (buyer); Rosa, maintenance manager (user); Dwayne, lead technician (sceptic); Tess, owner of an independent repair shop (adjacent segment).
 - [`research/experiences.md`](research/experiences.md): how people use the product today, what that time costs a typical customer, five agentic customer experiences, the new economics, and the one to explore first: the morning shortlist.
 - [`research/panel.md`](research/panel.md): the personas at work: an interview with Rosa, the three framings scored, and reactions to the experiences. Hypotheses, not evidence.
+
+From `/ai-product-flows`, in [`flows/`](flows/):
+
+- [`flows/flows.md`](flows/flows.md): the five experiences mapped as flows, moment by moment, ranked on value, trust, pay and hours back. The morning shortlist goes forward first, say it, sign it next; parts and the dispatch slot later; overflow not for now.
+- [`flows/mockups/morning-shortlist.html`](flows/mockups/morning-shortlist.html) and [`flows/mockups/say-it-sign-it.html`](flows/mockups/say-it-sign-it.html): clickable mockups of the two flows taken forward. Open them in a browser.
+- [`flows/panel-tests.md`](flows/panel-tests.md): two panel rounds, the sceptic first, and the two real interviews, with where they agree and disagree.
+- [`flows/script.md`](flows/script.md): the interview kit for real customers.
+
+From `/ai-product-roadmap`, in [`roadmap/`](roadmap/):
+
+- [`roadmap/features.md`](roadmap/features.md): ideas, the features prioritised with the working, this product update (the morning shortlist) and the build-day slice.
+- [`roadmap/roi.md`](roadmap/roi.md): what the update is worth to a typical customer and to FleetDesk, the ways to charge, the panel's price vote, the choice of $3 per powered vehicle a month, and one pricing story across the earlier files.
+- [`roadmap/roadmap.md`](roadmap/roadmap.md): Now, Next and Later, without dates, toward the vision and the BHAG.
 
 Placements are a snapshot from public sources on 27 Oct 2026. Check the ones you act on.

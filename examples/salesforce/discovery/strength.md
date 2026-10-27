@@ -12,6 +12,8 @@ Maturity Composite:  3.87 / 5.0
   Section C (AI Opportunity):     4.0
 ```
 
+**The pillar numbers used in `discovery.md`** come from `compute_pillars.py`, not from the composite above: strength 3.83 (the mean of business quality 3.67 and customer strength 4.0), AI opportunity 5.0 (the mean of AI in the product today, AI revenue and work AI could take off customers, all 5), and AI urgency immediate, reported on its own. The maturity composite (3.87) and the AI section score (4.0) above average urgency in on its inverted scale, which makes a product under heavy AI pressure look like a smaller opportunity, so the pillars leave it out.
+
 Scope: two products inside a larger platform. Sales and service revenue is not reported separately [https://investor.salesforce.com/news/news-details/2026/Salesforce-Delivers-Record-Second-Quarter-Fiscal-2027-Results/default.aspx], so company-level figures are used and marked as such.
 
 ## 2. Verdict
@@ -47,7 +49,7 @@ Customers stay. Revenue attrition ended fiscal 2026 at about 8%, in line with re
 
 ### Section C (AI Opportunity) — 4.0/5.0
 
-AI is shipped and earning money. Agentforce annual recurring revenue passed $1.5B, up more than 240% year on year [https://investor.salesforce.com/news/news-details/2026/Salesforce-Delivers-Record-Second-Quarter-Fiscal-2027-Results/default.aspx]. It is priced per conversation, per resolution or by credits (`../product.md`). Current features, revenue opportunity and labour automation all score 5. Urgency scores 1, the most urgent end, because rivals ship in the same workflows now. Sierra raised $950M and serves over 40% of the Fortune 50 [https://www.vktr.com/customer-experience/sierra-raises-950m-at-15b-valuation-eyes-transformation-beyond-customer-support/]. HubSpot's customer agent resolves about 70% of conversations [https://www.cxtoday.com/contact-center/hubspot-customer-agent-resolution-rate/]. Read the 4.0 as large upside under real time pressure.
+AI is shipped and earning money. Agentforce annual recurring revenue passed $1.5B, up more than 240% year on year [https://investor.salesforce.com/news/news-details/2026/Salesforce-Delivers-Record-Second-Quarter-Fiscal-2027-Results/default.aspx]. It is priced per conversation, per resolution or by credits (`../product.md`). Current features, revenue opportunity and labour automation all score 5. Urgency scores 1, the most urgent end, because rivals ship in the same workflows now. Sierra raised $950M and serves over 40% of the Fortune 50 [https://www.vktr.com/customer-experience/sierra-raises-950m-at-15b-valuation-eyes-transformation-beyond-customer-support/]. HubSpot's customer agent resolves about 70% of conversations [https://www.cxtoday.com/contact-center/hubspot-customer-agent-resolution-rate/]. Read the 4.0 as large upside under real time pressure; without urgency, the AI opportunity pillar is 5.0.
 
 ## 5. AI picture
 

@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rep confirms the deal · mockup</title>
+<style>
+:root{
+  --bg:#f5f6f8; --panel:#ffffff; --ink:#1d2330; --muted:#5f6b7a; --line:#e3e6eb;
+  --accent:#2f6f73; --accent-soft:#e6f1f1; --agent:#5b4bb7; --agent-soft:#efedfa;
+  --warn:#9a5b00; --warn-soft:#fff4e0; --ok:#2e7d4f; --ok-soft:#e7f5ec; --bad:#a23b3b; --bad-soft:#fbeaea;
+  --radius:10px; --shadow:0 1px 2px rgba(20,30,50,.06),0 4px 16px rgba(20,30,50,.05);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.top{display:flex;align-items:center;gap:12px;padding:10px 20px;background:var(--panel);border-bottom:1px solid var(--line)}
+.logo{width:28px;height:28px;border-radius:7px;background:var(--accent);color:#fff;font-weight:700;font-size:12px;display:grid;place-items:center}
+.top b{font-weight:600}.top .crumb{color:var(--muted)}
+.label{margin-left:auto;font-size:12px;font-weight:600;color:var(--warn);background:var(--warn-soft);border:1px solid #f0d9ae;padding:3px 10px;border-radius:99px}
+.wrap{max-width:900px;margin:0 auto;padding:20px 16px 120px}
+.moment{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:4px 0 2px}
+h1{font-size:22px;margin:0 0 14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px;margin:0 0 12px}
+.row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.muted{color:var(--muted)} .small{font-size:13px}
+.pill{display:inline-block;font-size:12px;padding:2px 8px;border-radius:99px;background:var(--line);color:var(--ink)}
+.pill.agent{background:var(--agent-soft);color:var(--agent)} .pill.ok{background:var(--ok-soft);color:var(--ok)} .pill.warn{background:var(--warn-soft);color:var(--warn)} .pill.bad{background:var(--bad-soft);color:var(--bad)}
+.notif{display:flex;gap:12px;align-items:flex-start;border-left:4px solid var(--agent)}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--agent);margin-top:7px;flex:none}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line)} th{font-weight:600;color:var(--muted);font-size:12px}
+.change{display:grid;grid-template-columns:1fr auto;gap:8px 16px}
+.field{font-weight:600}
+.oldnew{font-size:15px}.old{color:var(--muted);text-decoration:line-through}.arrow{margin:0 6px;color:var(--muted)}.new{font-weight:600}
+.evidence{grid-column:1/-1;background:#f8f9fb;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:13px}
+.evidence q{font-style:italic}
+.btns{display:flex;gap:6px;align-items:start}
+button{font:inherit;font-size:14px;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:8px;padding:6px 12px;cursor:pointer}
+button:hover{border-color:#c9ced6}
+button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+button.sel-accept{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}
+button.sel-reject{background:var(--bad-soft);border-color:var(--bad);color:var(--bad)}
+button.sel-edit{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
+input[type=date],input[type=text],textarea,select{font:inherit;border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+textarea{min-height:80px}
+.banner{border-radius:var(--radius);padding:12px 14px;margin:0 0 12px;display:flex;gap:10px;align-items:flex-start}
+.banner.warn{background:var(--warn-soft);border:1px solid #f0d9ae}
+.banner.info{background:var(--accent-soft);border:1px solid #c7e0e0}
+.nav{position:fixed;left:0;right:0;bottom:0;background:var(--panel);border-top:1px solid var(--line);padding:10px 16px}
+.nav .in{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:12px}
+.steps{display:flex;gap:6px;flex:1;flex-wrap:wrap}
+.steps span{font-size:12px;padding:3px 8px;border-radius:99px;background:var(--bg);color:var(--muted);cursor:pointer}
+.steps span.on{background:var(--accent);color:#fff}
+.foot{font-size:12px;color:var(--muted);text-align:center;margin-top:18px}
+.hist li{margin:0 0 6px}
+.hidden{display:none}
+@media (max-width:600px){.change{grid-template-columns:1fr}.top .crumb{display:none}}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="logo">LR</div>
+  <div><b>Pipeline</b> <span class="crumb">· Lumen Ridge Software · Marcus</span></div>
+  <span class="label">Mockup for testing</span>
+</div>
+
+<div class="wrap" id="app"></div>
+
+<div class="nav"><div class="in">
+  <button id="back">Back</button>
+  <div class="steps" id="steps"></div>
+  <button id="next" class="primary">Next</button>
+</div></div>
+
+<script>
+var state = { decisions:{}, times:[], note:"", placed:null, edited:{}, seen:false, lookedAgain:false, reconnected:false };
+var changes = [
+  { id:"date", field:"Close date", old:"28 Nov 2026", nu:"15 Jan 2027", big:true,
+    ev:'Call, 27 Oct, 13:40. Rob Kerr (CFO): <q>budget is frozen until our new fiscal year starts in January</q>' },
+  { id:"cat", field:"Forecast category", old:"Commit", nu:"Best case", big:true,
+    ev:'Same call. The close date leaves this quarter, so it no longer fits Commit under your team\'s rule' },
+  { id:"next", field:"Next step", old:"Follow-up call (due 20 Oct)", nu:"Send revised pricing to Rob Kerr by 31 Oct",
+    ev:'Email from Dana Whit, 27 Oct, 14:02: <q>Can you send Rob the revised pricing before Friday?</q>' }
+];
+function fastAccept(){ var t=state.times; if(t.length<3) return false; return (t[t.length-1]-t[t.length-3]) < 4000 && changes.every(function(c){ return state.decisions[c.id]==="accept"; }); }
+var moments = [
+  { name:"Trigger", render:function(){ return '' +
+    '<div class="moment">1 · Trigger</div><h1>A call with a buyer ends</h1>' +
+    '<div class="card notif"><span class="dot"></span><div><b>3 changes proposed for Halden Freight · Fleet renewal</b><br>' +
+    '<span class="muted small">From your call with Rob Kerr and Dana Whit, and one email. One list to review. Nothing changes, and nobody else sees it, until you do.</span></div></div>' +
+    '<div class="card"><table><tr><th>Deal</th><th>Stage</th><th>Close date</th><th>Amount</th><th></th></tr>' +
+    '<tr><td>Halden Freight · Fleet renewal</td><td>Proposal</td><td>28 Nov 2026</td><td>$84,000</td><td><span class="pill agent">3 to review</span></td></tr>' +
+    '<tr><td>Kestrel Air · Ops suite</td><td>Negotiation</td><td>20 Nov 2026</td><td>$67,000</td><td><span class="pill ok">Up to date</span></td></tr>' +
+    '<tr><td>Lyra Pharma · Pilot</td><td>Discovery</td><td>18 Dec 2026</td><td>$88,000</td><td><span class="pill ok">Up to date</span></td></tr>' +
+    '</table></div>'; } },
+  { name:"What the agent did", render:function(){ return '' +
+    '<div class="moment">2 · What the agent did</div><h1>Logged the activity, linked the people</h1>' +
+    '<div class="card"><p><span class="pill agent">Done by the agent</span></p><ul>' +
+    '<li>Logged the call (27 Oct, 13:40, 32 minutes) from the call summary</li>' +
+    '<li>Logged 1 email from Dana Whit (27 Oct, 14:02)</li>' +
+    '<li>Linked Rob Kerr (CFO) and Dana Whit (Head of Operations), both already contacts on this deal</li></ul>' +
+    '<p class="muted small">It does this on its own. Changes to the deal itself wait for you. Where it isn\'t sure who something belongs to, it leaves it blank and asks.</p></div>' +
+    '<div class="banner info"><span>●</span><div class="small">Capture is on: mailbox, calendar and call summaries. If it stops, you\'ll see it here and in a notification straight away.</div></div>'; } },
+  { name:"Review", render:function(){
+    var h='<div class="moment">3 · Review</div><h1>One list, one decision per change</h1><p class="muted">The evidence sits next to each change. There is no "accept all".</p><div class="card">';
+    changes.forEach(function(c,k){
+      var d=state.decisions[c.id]||"";
+      var val = state.edited[c.id] || c.nu;
+      h+='<div class="change" style="'+(k?'border-top:1px solid var(--line);padding-top:12px;margin-top:12px':'')+'"><div><div class="field">'+c.field+(c.big?' <span class="pill warn">moves the forecast</span>':'')+'</div><div class="oldnew"><span class="old">'+c.old+'</span><span class="arrow">→</span><span class="new">'+val+'</span></div>'+
+        (d==="edit"?'<div style="margin-top:8px"><input type="text" data-edit="'+c.id+'" value="'+val.replace(/"/g,'&quot;')+'"></div>':'')+
+        '<div class="small muted" style="margin-top:4px">'+c.ev+'</div></div><div class="btns"><button data-d="accept" data-c="'+c.id+'" class="'+(d==="accept"?"sel-accept":"")+'">Accept</button>'+
+        '<button data-d="edit" data-c="'+c.id+'" class="'+(d==="edit"?"sel-edit":"")+'">Edit</button>'+
+        '<button data-d="reject" data-c="'+c.id+'" class="'+(d==="reject"?"sel-reject":"")+'">Reject</button></div></div>';
+    });
+    h+='</div>';
+    if(fastAccept() && !state.lookedAgain){
+      h+='<div class="banner warn"><span>!</span><div class="small"><b>Look again at one?</b> You accepted all three in a few seconds. The close date takes $84,000 out of this quarter\'s commit. Is 15 Jan right?<div class="row" style="margin-top:8px"><button data-look="yes">Yes, it\'s right</button><button data-look="edit">Let me change it</button></div></div></div>';
+    }
+    var n=Object.keys(state.decisions).length;
+    h+='<p class="muted small">'+n+' of 3 reviewed. Try accepting all three quickly to see the check.</p>';
+    return h; } },
+  { name:"Your deal in the brief", render:function(){ return '' +
+    '<div class="moment">4 · You see it first</div><h1>How your deal will look in Priya\'s brief</h1>' +
+    '<div class="banner info"><span>🔒</span><div class="small"><b>Only you can see this preview.</b> Nothing about your deals reaches your manager\'s brief until you\'ve seen it here.</div></div>' +
+    '<div class="card"><div class="row"><b>Halden Freight · Fleet renewal</b><span class="pill">$84,000</span><span class="pill warn">Commit → Best case</span></div>' +
+    '<p class="small" style="margin:8px 0 0">Moved out of commit: the buyer\'s budget is frozen until January (call, 27 Oct). Confirmed by Marcus.</p>' +
+    '<p class="small muted">Your note will show here, in your words.</p>' +
+    '<label class="small muted">Note for Priya (optional)</label><textarea id="note" placeholder="e.g. CFO still keen; pricing goes to him this week. I\'d keep it in best case.">'+state.note+'</textarea>' +
+    '<div class="row" style="margin-top:10px">'+(state.seen?'<span class="pill ok">Seen by you · ready for the brief</span>':'<button data-seen="1" class="primary">I\'ve seen it</button>')+'</div></div>'; } },
+  { name:"When it goes wrong", render:function(){
+    var p=state.placed;
+    return '<div class="moment">5 · When it goes wrong</div><h1>Capture stopped, and one email it couldn\'t place</h1>' +
+    (state.reconnected? '<div class="banner info"><span>●</span><div class="small">Capture is back on. It looked again at the last 2 days and found 1 email to review.</div></div>' :
+    '<div class="banner warn"><span>!</span><div class="small"><b>Capture is off for your mailbox since your password change at 09:12.</b> The agent can\'t see new emails, so it has stopped proposing changes from email. Calls and calendar still work.<div class="row" style="margin-top:8px"><button data-recon="1" class="primary">Reconnect</button></div></div></div>') +
+    '<div class="card"><p><span class="pill warn">Couldn\'t place</span></p><p><b>From:</b> j.ortiz@haldenfreight.example · <b>Subject:</b> Security questionnaire<br><span class="muted small">Not a contact on any deal. The agent didn\'t guess.</span></p>' +
+    (p? '<p class="pill '+(p==="link"?"ok":"")+'">'+(p==="link"?"Linked to Halden Freight · Fleet renewal; J. Ortiz added as a contact by you":"Ignored")+'</p>' :
+    '<div class="row"><button data-place="link">Link to Halden Freight</button><button data-place="ignore">Ignore</button></div>') + '</div>'; } },
+  { name:"Done", render:function(){
+    var lines=changes.map(function(c){ var d=state.decisions[c.id]; var v=state.edited[c.id]||c.nu;
+      if(d==="reject") return '<tr><td>'+c.field+'</td><td>'+c.old+'</td><td>kept</td><td><span class="pill bad">agent-proposed, Marcus rejected</span></td></tr>';
+      if(!d) return '<tr><td>'+c.field+'</td><td>'+c.old+'</td><td>not reviewed</td><td><span class="pill warn">not in the brief</span></td></tr>';
+      return '<tr><td>'+c.field+'</td><td>'+c.old+'</td><td>'+v+'</td><td><span class="pill ok">agent-proposed, Marcus '+(d==="edit"?"edited and confirmed":"confirmed")+'</span></td></tr>'; }).join("");
+    return '<div class="moment">6 · Done</div><h1>The deal is current, and the record says how</h1>' +
+    '<div class="card"><b>Halden Freight · Fleet renewal</b> · $84,000<table style="margin-top:10px"><tr><th>Field</th><th>Was</th><th>Now</th><th>Who</th></tr>'+lines+'</table>' +
+    (state.note? '<p class="small"><b>Your note:</b> '+state.note.replace(/</g,"&lt;")+'</p>':'') +
+    '<p class="muted small">Each change is a row in a standard report: old and new value, the evidence, who confirmed it, when, and whether they edited it. Revenue operations can pause the agent for any field. You can undo any change.</p></div>'; } }
+];
+var i=0, app=document.getElementById("app"), steps=document.getElementById("steps");
+function draw(){
+  app.innerHTML = moments[i].render() + '<div class="foot">Illustrative, not affiliated with Salesforce. Companies, people and numbers are invented.</div>';
+  steps.innerHTML = moments.map(function(m,k){ return '<span data-k="'+k+'" class="'+(k===i?"on":"")+'">'+(k+1)+'. '+m.name+'</span>'; }).join("");
+  document.getElementById("back").disabled = i===0;
+  document.getElementById("next").textContent = i===moments.length-1 ? "Start again" : "Next";
+  var note=document.getElementById("note"); if(note) note.oninput=function(){ state.note=note.value; };
+  app.querySelectorAll("[data-edit]").forEach(function(inp){ inp.oninput=function(){ state.edited[inp.dataset.edit]=inp.value; }; });
+}
+app.addEventListener("click", function(e){
+  var b=e.target.closest("button"); if(!b) return;
+  if(b.dataset.d){ state.decisions[b.dataset.c]=b.dataset.d; if(b.dataset.d==="accept") state.times.push(Date.now()); draw(); }
+  if(b.dataset.look){ state.lookedAgain=true; if(b.dataset.look==="edit") state.decisions.date="edit"; draw(); }
+  if(b.dataset.seen){ state.seen=true; draw(); }
+  if(b.dataset.recon){ state.reconnected=true; draw(); }
+  if(b.dataset.place){ state.placed=b.dataset.place; draw(); }
+});
+steps.addEventListener("click", function(e){ var s=e.target.closest("[data-k]"); if(s){ i=+s.dataset.k; draw(); window.scrollTo(0,0); } });
+document.getElementById("back").onclick=function(){ if(i>0){ i--; draw(); window.scrollTo(0,0); } };
+document.getElementById("next").onclick=function(){ if(i<moments.length-1){ i++; } else { i=0; state={decisions:{},times:[],note:"",placed:null,edited:{},seen:false,lookedAgain:false,reconnected:false}; } draw(); window.scrollTo(0,0); };
+draw();
+</script>
+</body>
+</html>

@@ -54,6 +54,7 @@ Level 5, AI Domain Intelligence, by the end of 2028 (`../vision/vision.md`).
 ## How we'd charge
 
 - **Today:** per seat by edition ($25–$550 per user per month), plus the Agentforce add-on ($125 per user per month), Flex Credits, $2 per conversation, or $2 per Help Agent resolution [https://www.salesforce.com/sales/pricing/] [https://www.salesforce.com/agentforce/pricing/]. Large customers increasingly buy seat-based agentic licence agreements [https://www.theregister.com/2025/12/12/ai_agents_salesforce_pricing/].
+- **This product update:** agents for the sales team's forecast flow at $45 a user a month, a fixed line at renewal, about 6.7% of the labour it saves a typical customer (`../roadmap/roi.md`). `[PM, illustrative]`
 - **Tomorrow:** per resolution in service; in sales, a benchmark subscription per sales team priced on pipeline managed, on top of fewer, cheaper seats. `[PM, illustrative]`
 - **What has to be true:**
   - Customers believe the forecast and benchmarks are accurate, and opt in to sharing anonymised deal data.

@@ -58,7 +58,7 @@ Level 4, AI Delegated, by the end of 2028 (`../vision/vision.md`).
 
 ## Open questions
 
-- Is the shop agent a Pro feature, to defend against bundles, or a paid add-on?
+- Is the shop agent a Pro feature, to defend against bundles, or a paid add-on? (Chosen in `../roadmap/roi.md`: a per-vehicle add-on on Pro, $3 for the morning shortlist, growing to $8 for the full shop agent.)
 - How do we measure downtime saved in a way buyers trust?
 - What share of warranty recovered is fair, and who verifies the amount?
 - Should we partner with a telematics vendor rather than compete for the "one bill"?

@@ -86,12 +86,12 @@ Each persona walked through the five experiences in `experiences.md`, sceptic fi
 | Experience | Elena (sceptic) | Priya (buyer) | Marcus (user) | Sam (adjacent) |
 |---|---|---|---|---|
 | 1. The deal record that keeps itself | Helps if field history shows "agent-proposed, rep-confirmed". Stops when reps accept everything in one tap | Helps: no more "scrub before the call". Asks whose agent reads the calls already in Gong | **Backs it first.** Stops the first time it silently stops logging | **Backs it first**, as "the household record that keeps itself". Never links people on its own |
-| 2. The forecast call without the chase | Stops the first week the brief and the Forecasts tab show different totals | **Backs it first**, with experience 1's confirm step. Keeps her spreadsheet beside it for a quarter | Never shows his manager a draft of his deal he hasn't seen | Doesn't apply |
+| 2. The forecast call without the chase | Stops the first week the brief and the Forecasts tab show different totals | **Backs it first**, with experience 1's confirm step. Keeps her spreadsheet beside it until the brief proves itself | Never shows his manager a draft of his deal he hasn't seen | Doesn't apply |
 | 3. Step in before a deal slips | Needs job-change data we don't hold; won't let it email new contacts | "It's the deal I lost." Never emails or books time with a buyer | Hard line: no flag reaches his manager before him | Barely applies: overdue follow-ups only |
 | 4. Pipeline hygiene without the bulk reset | **Backs it first**: it replaces her scheduled reset and nudge flow. Never edits values or her rules | Revenue operations' win, not hers to fund | Fine, until the third nag in a week | Mostly doesn't apply |
 | 5. Service signals reach the deal | Only if they run Service Cloud; never changes risk from a case count | Does nothing if support isn't on Service Cloud | Wants to know before his buyer brings it up | Doesn't apply |
 
-**Would the buyer pay about $48,000 a year for the agents?** Priya: not now. The labour saved isn't cash, because she isn't cutting people, and the agents sit on top of Salesforce and a call-recording tool. She'd pay from her sales tools budget at the February renewal if a pilot with one team showed managers stop chasing and the forecast landing within 5% for a quarter, and only by cutting the call tool at its renewal.
+**Would the buyer pay about $48,000 a year for the agents?** Priya: not now. The labour saved isn't cash, because she isn't cutting people, and the agents sit on top of Salesforce and a call-recording tool. She'd pay from her sales tools budget at the February renewal if a pilot with one team showed managers stop chasing and the forecast landing within 5%, and only by cutting the call tool at its renewal. (The price for this product update is chosen in `../roadmap/roi.md`.)
 
 **The three changes that would win over the most personas:**
 

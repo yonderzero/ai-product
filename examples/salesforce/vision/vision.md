@@ -80,7 +80,7 @@ If an agent sat on top of our data tomorrow, customers would stop paying for sea
 
 ## First step
 
-Run a one-quarter pilot of "the deal record that keeps itself" with 10 Sales Cloud customers. Measure the share of agent-proposed updates reps accept without editing, and the hours saved per rep. In the same interviews, ask 20 sales leaders the opt-in question: would they share anonymised deal data to get benchmarks back, and on what terms? `[PM, illustrative]`
+Run a pilot of "the deal record that keeps itself" with 10 Sales Cloud customers, with the rep-confirmed changes feeding the manager's forecast brief (the experience to explore first in `../research/experiences.md`, built as the flows in `../flows/flows.md`). Measure the share of agent-proposed updates reps accept without editing, and the hours saved per rep. In the same interviews, ask 20 sales leaders the opt-in question: would they share anonymised deal data to get benchmarks back, and on what terms? `[PM, illustrative]`
 
 ## Open questions
 

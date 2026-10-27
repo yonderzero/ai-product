@@ -119,7 +119,7 @@ Each persona walked through the five experiences in `experiences.md`, sceptic fi
 
 **What none of them would let an agent do:** spend money, move a truck off a route, or file a claim without a named person seeing it.
 
-**Price, agents at $8 per vehicle a month:** no yes. Glen: not now, he'd pilot the parts experience first and sign it himself at renewal, under his $50,000 limit. Rosa: not now, she'd back a pilot of the shortlist; the director and the CFO sign. Dwayne: not now, "show me it on a truck I know". Tess: not her bill; she might pay a small monthly add-on to her own software for experience 5, after a trial.
+**Price, agents at $8 per vehicle a month:** no yes. Glen: not now, he'd pilot the parts experience first and sign it himself at renewal, under his $50,000 limit. Rosa: not now, she'd back a pilot of the shortlist; the director and the CFO sign. Dwayne: not now, "show me it on a truck I know". Tess: not her bill; she might pay a small monthly add-on to her own software for experience 5, after a trial. (The price for the shortlist alone was later voted on and set at $3 per powered vehicle a month: `../roadmap/roi.md`.)
 
 **The three changes that would win over the most personas:**
 

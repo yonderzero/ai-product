@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Forecast brief · mockup</title>
+<style>
+:root{
+  --bg:#f5f6f8; --panel:#ffffff; --ink:#1d2330; --muted:#5f6b7a; --line:#e3e6eb;
+  --accent:#2f6f73; --accent-soft:#e6f1f1; --agent:#5b4bb7; --agent-soft:#efedfa;
+  --warn:#9a5b00; --warn-soft:#fff4e0; --ok:#2e7d4f; --ok-soft:#e7f5ec; --bad:#a23b3b; --bad-soft:#fbeaea;
+  --radius:10px; --shadow:0 1px 2px rgba(20,30,50,.06),0 4px 16px rgba(20,30,50,.05);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.top{display:flex;align-items:center;gap:12px;padding:10px 20px;background:var(--panel);border-bottom:1px solid var(--line)}
+.logo{width:28px;height:28px;border-radius:7px;background:var(--accent);color:#fff;font-weight:700;font-size:12px;display:grid;place-items:center}
+.top b{font-weight:600}.top .crumb{color:var(--muted)}
+.label{margin-left:auto;font-size:12px;font-weight:600;color:var(--warn);background:var(--warn-soft);border:1px solid #f0d9ae;padding:3px 10px;border-radius:99px}
+.wrap{max-width:900px;margin:0 auto;padding:20px 16px 120px}
+.moment{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:4px 0 2px}
+h1{font-size:22px;margin:0 0 14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px;margin:0 0 12px}
+.row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.muted{color:var(--muted)} .small{font-size:13px}
+.pill{display:inline-block;font-size:12px;padding:2px 8px;border-radius:99px;background:var(--line);color:var(--ink)}
+.pill.agent{background:var(--agent-soft);color:var(--agent)} .pill.ok{background:var(--ok-soft);color:var(--ok)} .pill.warn{background:var(--warn-soft);color:var(--warn)} .pill.bad{background:var(--bad-soft);color:var(--bad)}
+.notif{display:flex;gap:12px;align-items:flex-start;border-left:4px solid var(--agent)}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--agent);margin-top:7px;flex:none}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line)} th{font-weight:600;color:var(--muted);font-size:12px}
+.change{display:grid;grid-template-columns:1fr auto;gap:8px 16px}
+.field{font-weight:600}
+.oldnew{font-size:15px}.old{color:var(--muted);text-decoration:line-through}.arrow{margin:0 6px;color:var(--muted)}.new{font-weight:600}
+.evidence{grid-column:1/-1;background:#f8f9fb;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:13px}
+.evidence q{font-style:italic}
+.btns{display:flex;gap:6px;align-items:start}
+button{font:inherit;font-size:14px;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:8px;padding:6px 12px;cursor:pointer}
+button:hover{border-color:#c9ced6}
+button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+button.sel-accept{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}
+button.sel-reject{background:var(--bad-soft);border-color:var(--bad);color:var(--bad)}
+button.sel-edit{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
+input[type=date],input[type=text],textarea,select{font:inherit;border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+textarea{min-height:80px}
+.banner{border-radius:var(--radius);padding:12px 14px;margin:0 0 12px;display:flex;gap:10px;align-items:flex-start}
+.banner.warn{background:var(--warn-soft);border:1px solid #f0d9ae}
+.banner.info{background:var(--accent-soft);border:1px solid #c7e0e0}
+.nav{position:fixed;left:0;right:0;bottom:0;background:var(--panel);border-top:1px solid var(--line);padding:10px 16px}
+.nav .in{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:12px}
+.steps{display:flex;gap:6px;flex:1;flex-wrap:wrap}
+.steps span{font-size:12px;padding:3px 8px;border-radius:99px;background:var(--bg);color:var(--muted);cursor:pointer}
+.steps span.on{background:var(--accent);color:#fff}
+.foot{font-size:12px;color:var(--muted);text-align:center;margin-top:18px}
+.hist li{margin:0 0 6px}
+.hidden{display:none}
+@media (max-width:600px){.change{grid-template-columns:1fr}.top .crumb{display:none}}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="logo">LR</div>
+  <div><b>Pipeline</b> <span class="crumb">· Lumen Ridge Software · Priya · Team West</span></div>
+  <span class="label">Mockup for testing</span>
+</div>
+
+<div class="wrap" id="app"></div>
+
+<div class="nav"><div class="in">
+  <button id="back">Back</button>
+  <div class="steps" id="steps"></div>
+  <button id="next" class="primary">Next</button>
+</div></div>
+
+<script>
+var deals = [
+  {n:"Quarry Lane Bank", r:"Wei", a:150, c:"Commit", d:"14 Nov"},
+  {n:"Ferro Systems", r:"Ana", a:120, c:"Commit", d:"25 Nov"},
+  {n:"Marlow Clinics", r:"Jordan", a:95, c:"Commit", d:"30 Nov"},
+  {n:"Brightwater Labs", r:"Femi", a:72, c:"Commit", d:"21 Nov"},
+  {n:"Tessel Retail", r:"Ana", a:68, c:"Commit", d:"20 Nov"},
+  {n:"Kestrel Air", r:"Marcus", a:67, c:"Commit", d:"20 Nov"},
+  {n:"Ostara Foods", r:"Femi", a:40, c:"Commit", d:"12 Dec"},
+  {n:"Halden Freight", r:"Marcus", a:84, c:"Best case", d:"15 Jan"},
+  {n:"Pinecrest Schools", r:"Wei", a:50, c:"Best case", d:"16 Dec"},
+  {n:"Vantor Energy", r:"Jordan", a:34, c:"Best case", d:"19 Dec"}
+];
+var state = { override:false, reason:"", refreshed:false };
+function cur(){ return deals.map(function(d){ var x=Object.assign({},d); if(state.override && d.n==="Tessel Retail") x.c="Best case"; if(state.refreshed && d.n==="Ferro Systems") x.a=134; return x; }); }
+function sum(cat){ return cur().filter(function(d){ return cat==="Commit" ? d.c==="Commit" : true; }).reduce(function(s,d){ return s+d.a; },0); }
+function k(n){ return "$"+n+"K"; }
+var moments = [
+  { name:"Trigger", render:function(){ return '' +
+    '<div class="moment">1 · Trigger</div><h1>The forecast call is tomorrow</h1>' +
+    '<div class="card notif"><span class="dot"></span><div><b>Your forecast brief for Team West is ready</b><br><span class="muted small">Forecast call tomorrow, 10:00. 15 open deals checked. You haven\'t had to message a rep.</span></div></div>' +
+    '<div class="card"><div class="row"><span class="pill">Commit '+k(612)+'</span><span class="pill">Best case '+k(780)+'</span><span class="pill warn">3 deals need you</span></div></div>'; } },
+  { name:"What the agent did", render:function(){ return '' +
+    '<div class="moment">2 · What the agent did</div><h1>Checked every deal, asked only about the gaps</h1>' +
+    '<div class="card"><p><span class="pill agent">Done by the agent</span></p><ul>' +
+    '<li>Checked 15 open deals against calls, emails and meetings since last week</li>' +
+    '<li>Used the 22 changes your reps confirmed or edited this week; nothing they haven\'t seen</li>' +
+    '<li>Put 2 questions in reps\' own review lists, not in a chat; both answered</li></ul></div>' +
+    '<div class="card"><b>How well the record is being kept</b><table style="margin-top:6px"><tr><th>Rep</th><th>Proposed</th><th>Accepted</th><th>Edited</th><th>Rejected</th><th>Not reviewed</th></tr>' +
+    '<tr><td>Ana</td><td>5</td><td>4</td><td>1</td><td>0</td><td>0</td></tr><tr><td>Femi</td><td>4</td><td>3</td><td>0</td><td>1</td><td>0</td></tr>' +
+    '<tr><td>Jordan</td><td>5</td><td>2</td><td>2</td><td>0</td><td>1</td></tr><tr><td>Marcus</td><td>6</td><td>5</td><td>1</td><td>0</td><td>0</td></tr><tr><td>Wei</td><td>4</td><td>4</td><td>0</td><td>0</td><td>0</td></tr></table>' +
+    '<p class="small muted">Jordan hasn\'t reviewed 1 proposed change on Marlow Clinics. It isn\'t in this brief, and you can\'t see the draft.</p></div>'; } },
+  { name:"What changed", render:function(){ return '' +
+    '<div class="moment">3 · What changed since last week</div><h1>Commit down $84K, for one reason</h1>' +
+    '<div class="card"><table><tr><th>Deal</th><th>Move</th><th>Number</th><th>Why, and who confirmed it</th></tr>' +
+    '<tr><td>Halden Freight</td><td>Commit → Best case</td><td>Commit −$84K</td><td>Buyer\'s budget frozen until January (call, 27 Oct). Confirmed by Marcus. <i>His note: "CFO still keen; pricing goes to him this week."</i></td></tr>' +
+    '<tr><td>Vantor Energy</td><td>Pipeline → Best case</td><td>Best case +$34K</td><td>Signed order form requested (email, 24 Oct). Confirmed by Jordan</td></tr>' +
+    '<tr><td>Kestrel Air</td><td>Next step</td><td>none</td><td>Legal review booked for 29 Oct (calendar). Confirmed by Marcus</td></tr>' +
+    '</table><p class="small muted">Last week: commit $696K, best case $746K. This week: commit $612K, best case $780K. 19 smaller changes with no effect on the number are in the full list.</p></div>'; } },
+  { name:"Deals that need you", render:function(){ return '' +
+    '<div class="moment">4 · The three deals that need you</div><h1>Where your time matters this week</h1>' +
+    '<div class="card"><div class="row"><b>Tessel Retail</b><span class="pill">$68K · Commit · Ana</span></div><p class="small">Closes 20 Nov, but security review hasn\'t started. In your team\'s last four quarters, 5 of 7 deals that started security review this late slipped. <span class="muted">No contact with their IT team since 2 Oct.</span></p></div>' +
+    '<div class="card"><div class="row"><b>Marlow Clinics</b><span class="pill">$95K · Commit · Jordan</span></div><p class="small">No reply to the last two emails; the next step was due 22 Oct. Jordan hasn\'t reviewed the agent\'s latest proposal yet.</p></div>' +
+    '<div class="card"><div class="row"><b>Halden Freight</b><span class="pill">$84K · Best case · Marcus</span></div><p class="small">Out of commit until January, but the CFO asked for revised pricing. A call from you to the CFO could keep it warm.</p></div>'; } },
+  { name:"The number", render:function(){
+    var c=cur(), cm=sum("Commit"), bc=sum("all");
+    var rows=c.map(function(d){ return '<tr><td>'+d.n+'</td><td>'+d.r+'</td><td>'+d.c+'</td><td>'+d.d+'</td><td>'+k(d.a)+'</td></tr>'; }).join("");
+    return '<div class="moment">5 · The number</div><h1>Commit '+k(cm)+', likely '+(state.override?'$530K–$660K':'$560K–$690K')+'</h1>' +
+    '<div class="card"><div class="row"><span class="pill">Commit '+k(cm)+'</span><span class="pill">Best case '+k(bc)+'</span><span class="pill ok">Matches the Forecasts tab: '+k(cm)+' ✓</span></div>' +
+    '<p class="small muted">The likely range comes from each deal\'s stage and recent activity, checked against how your team\'s deals closed in the last four quarters. Last quarter it would have said $640K–$760K; you closed $702K.</p>' +
+    '<table><tr><th>Deal</th><th>Rep</th><th>Category</th><th>Close</th><th>Amount</th></tr>'+rows+'</table>' +
+    '<p class="small muted">5 more deals are in pipeline and not counted.</p></div>'; } },
+  { name:"Override", render:function(){
+    return '<div class="moment">6 · You decide</div><h1>Override a deal, and say why</h1>' +
+    '<div class="card"><div class="row"><b>Tessel Retail</b><span class="pill">$68K</span><span class="pill">'+(state.override?'Best case (your call)':'Commit')+'</span></div>' +
+    (state.override? '<p class="small"><span class="pill ok">Saved</span> Commit is now '+k(sum("Commit"))+'. Your reason is kept with the deal: <i>'+(state.reason||"(no reason given)").replace(/</g,"&lt;")+'</i></p><p class="small muted">Ana sees your change and your reason on her deal. The agent never changes it back.</p>' :
+    '<label class="small muted">Move to</label><select><option>Best case</option><option>Pipeline</option></select><label class="small muted" style="display:block;margin-top:8px">Why (kept with the deal)</label><input type="text" id="reason" placeholder="e.g. Their CISO told me review won\'t start before January"><div class="row" style="margin-top:10px"><button data-ov="1" class="primary">Save override</button></div>') +
+    '</div>'; } },
+  { name:"When it goes wrong", render:function(){
+    var cm=sum("Commit");
+    return '<div class="moment">7 · When it goes wrong</div><h1>The brief and the Forecasts tab disagree</h1>' +
+    (state.refreshed? '<div class="banner info"><span>●</span><div class="small">Refreshed. Commit is '+k(cm)+' and matches the Forecasts tab again. The change is in the list with who made it.</div></div>' :
+    '<div class="banner warn"><span>!</span><div class="small"><b>This brief is out of date.</b> At 16:42 Ana changed Ferro Systems from $120K to $134K in the Forecasts tab. The totals now differ by $14K, so the agent has stopped and won\'t guess which is right.<div class="row" style="margin-top:8px"><button data-ref="1" class="primary">Refresh the brief</button><button>Ask Ana</button></div></div></div>') +
+    '<div class="card"><p class="small muted">The agent never edits the Forecasts tab and never submits the forecast. You submit it.</p></div>'; } }
+];
+var i=0, app=document.getElementById("app"), steps=document.getElementById("steps");
+function draw(){
+  app.innerHTML = moments[i].render() + '<div class="foot">Illustrative, not affiliated with Salesforce. Companies, people and numbers are invented.</div>';
+  steps.innerHTML = moments.map(function(m,k2){ return '<span data-k="'+k2+'" class="'+(k2===i?"on":"")+'">'+(k2+1)+'. '+m.name+'</span>'; }).join("");
+  document.getElementById("back").disabled = i===0;
+  document.getElementById("next").textContent = i===moments.length-1 ? "Start again" : "Next";
+}
+app.addEventListener("click", function(e){
+  var b=e.target.closest("button"); if(!b) return;
+  if(b.dataset.ov){ var r=document.getElementById("reason"); state.reason=r?r.value:""; state.override=true; draw(); }
+  if(b.dataset.ref){ state.refreshed=true; draw(); }
+});
+steps.addEventListener("click", function(e){ var s=e.target.closest("[data-k]"); if(s){ i=+s.dataset.k; draw(); window.scrollTo(0,0); } });
+document.getElementById("back").onclick=function(){ if(i>0){ i--; draw(); window.scrollTo(0,0); } };
+document.getElementById("next").onclick=function(){ if(i<moments.length-1){ i++; } else { i=0; state={override:false,reason:"",refreshed:false}; } draw(); window.scrollTo(0,0); };
+draw();
+</script>
+</body>
+</html>
