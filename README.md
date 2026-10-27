@@ -1,6 +1,6 @@
 # ai-product
 
-A Claude Code plugin.
+A Claude Code plugin that takes your product in an AI-native direction: from knowing your product and your customers to requirements your developers can build from.
 
 ## Install
 
@@ -17,7 +17,13 @@ Then restart Claude Code, open the folder you want to work in, and run:
 /ai-product:start
 ```
 
-Claude asks about your product and creates a folder for it. Put any documents you want Claude to use in its `documents/` folder.
+## Skills
+
+| Skill | What it does |
+|---|---|
+| [`/ai-product:start`](docs/start.md) | Sets up a folder for your product, builds a first profile from its website and your documents, and interviews you about the product and each type of customer. |
+
+More skills are coming.
 
 ## Update
 
