@@ -119,7 +119,7 @@ If files from an earlier run exist, say which steps are done and which aren't (l
 
 12. **The deck.** Update `index.html`, the product's deck: follow `references/deck.md` in the ai-product-start skill's folder (next to this skill's folder).
 
-13. **Done.** Show the files you wrote and sum up in four lines: what surprised you about how customers see the problem, the option they use most today, the agentic experience to explore first, and what the panel said. Say they can talk to the personas any time by running `/ai-product-research` again.
+13. **Done.** Show the files you wrote and sum up in four lines: what surprised you about how customers see the problem, the option they use most today, the agentic experience to explore first, and what the panel said. Say they can talk to the personas any time by running `/ai-product-research` again, and that the next step is `/ai-product-flows`.
 
 ## Done when
 

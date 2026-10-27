@@ -82,7 +82,7 @@ Claude asks one question at a time, like a conversation.
 
 11. **The deck.** Claude adds your personas, the options customers have today, the agentic experiences, the new economics and the panel's verdict to `index.html`.
 
-12. **Done.** Claude adds the ideal customer and the personas to `product.md`, and sums up what surprised you, the option customers use most today, the experience to explore first, and what the panel said.
+12. **Done.** Claude adds the ideal customer and the personas to `product.md`, and sums up what surprised you, the option customers use most today, the experience to explore first, and what the panel said. Next: [`/ai-product-flows`](ai-product-flows.md).
 
 **Synthetic personas generate hypotheses, not evidence.** A real customer's yes is evidence; a persona's yes is not. Everything the panel says is marked that way.
 

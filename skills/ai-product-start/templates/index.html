@@ -196,7 +196,8 @@ footer{color:var(--ink-subtle);font-size:12px;border-top:1px solid var(--hairlin
   "vision": null,
   "discovery": null,
   "problem": null,
-  "research": null
+  "research": null,
+  "flows": null
 }
 </script>
 <script>
@@ -236,7 +237,7 @@ footer{color:var(--ink-subtle);font-size:12px;border-top:1px solid var(--hairlin
   if(v && v.statement) add(c0, el("p","statement",v.statement));
   else if(p.what) add(c0, el("p","lead",p.what));
   var prog = el("div","pills");
-  [["Start", !!p.what], ["Vision", v ? (v.complete ? true : "part") : false], ["Discovery", x ? (x.complete ? true : "part") : false], ["Problem", d.problem ? (d.problem.complete ? true : "part") : false], ["Research", d.research ? (d.research.complete ? true : "part") : false]].forEach(function(s){
+  [["Start", !!p.what], ["Vision", v ? (v.complete ? true : "part") : false], ["Discovery", x ? (x.complete ? true : "part") : false], ["Problem", d.problem ? (d.problem.complete ? true : "part") : false], ["Research", d.research ? (d.research.complete ? true : "part") : false], ["Flows", d.flows ? (d.flows.complete ? true : "part") : false]].forEach(function(s){
     var c=el("span","pill"); add(c, el("span","dot"+(s[1]===true?" done":""))); c.append(s[0] + (s[1]===true ? "" : s[1]==="part" ? " · in progress" : " · not started")); add(prog,c);
   });
   add(c0, prog);
@@ -428,6 +429,33 @@ footer{color:var(--ink-subtle);font-size:12px;border-top:1px solid var(--hairlin
     if(rs.objection){ var ob=el("div","card"); add(ob, el("div","eyebrow","Best objection"), el("p",null,rs.objection)); add(spn,ob); }
     add(spn, el("p","muted","Synthetic panel: hypotheses, not evidence. Confirm with a real customer."));
   } else add(spn, todo("/ai-product-research"));
+
+  // Flows
+  var fl = d.flows;
+  var hasFl = !!(fl && (fl.flows||[]).length);
+  var sfl = slide("flows","Flows","Right flows","The right flows",["flows/flows.md","flows/panel-tests.md"], hasFl);
+  if(hasFl){
+    add(sfl, table(["Flow","Persona","Value","Trust","Pay","Hours back",""], fl.flows.map(function(f){ var b=el("span","band "+(f.forward==="yes"?"do":f.forward==="later"?"strong":"watch"), f.forward==="yes"?"Take forward":f.forward==="later"?"Later":"No"); return [f.name, f.persona||"", f.value, f.trust, f.pay, f.hours||"", b]; })));
+    if(fl.thinnest) add(sfl, el("p","lead","Thinnest version: "+fl.thinnest));
+  } else add(sfl, todo("/ai-product-flows"));
+
+  var hasMk = !!(fl && (fl.mockups||[]).length);
+  var smk = slide("mockups","Flows","Mockups","Flow mockups",["flows/mockups/"], hasMk);
+  if(hasMk){
+    var gm=el("div","grid");
+    fl.mockups.forEach(function(m){ var c=el("div","card"); var a=el("a",null,m.name); a.href=m.file; add(c, el("div","eyebrow","Mockup"), add(el("h3"),a), m.what ? el("p","muted",m.what) : null); add(gm,c); });
+    add(smk, gm, el("p","muted","Mockups for testing flows, not the product."));
+  } else add(smk, todo("/ai-product-flows"));
+
+  var hasFb = !!(fl && (fl.panel || fl.customers));
+  var sfb = slide("feedback","Flows","Feedback","What customers and the panel said",["flows/panel-tests.md"], hasFb);
+  if(hasFb){
+    var gfb=el("div","grid");
+    if(fl.customers){ var c1=el("div","card chosen"); add(c1, el("div","eyebrow","Real customers"), el("p",null,fl.customers)); add(gfb,c1); }
+    if(fl.panel){ var c2=el("div","card"); add(c2, el("div","eyebrow","Synthetic panel"), el("p",null,fl.panel), el("p","muted","Hypotheses, not evidence.")); add(gfb,c2); }
+    add(sfb, gfb);
+    if(fl.never) add(sfb, el("p","lead","The agent never: "+fl.never));
+  } else add(sfb, todo("/ai-product-flows"));
 
   add(slides[slides.length-1], el("footer",null,"Built from the files in the product's folder"+(d.updated?" on "+d.updated:"")+". The files are the source; this deck shows them."));
 

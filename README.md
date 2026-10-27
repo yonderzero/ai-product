@@ -43,6 +43,7 @@ You run the skills in order, in one folder:
 3. **`/ai-product-discovery`**: check whether your product is ready for that vision: what protects it, how strong it is, the AI opportunity, what could go wrong, what has to be true, where value flows, and where to take the product.
 4. **`/ai-product-problem`**: make sure you're solving the right problem: say it as a customer job, test the evidence, set a BHAG, think bigger, and choose the framing that captures the most value.
 5. **`/ai-product-research`**: go deep on how each type of customer experiences the problem and what options they have, from your documents and the market, then build personas you can talk to and uncover the agentic customer experiences that could solve the problem. Run it again any time to talk to your personas.
+6. **`/ai-product-flows`**: map your agentic experiences as flows, make them clickable, and find the right flows with real customer interviews and your synthetic panel side by side.
 
 Each skill is a conversation. Claude asks one question at a time, researches the web in the background, and writes what you build together into files in your product's folder. Each skill reads what the earlier ones wrote, so run them in the same place.
 
@@ -79,6 +80,11 @@ acme-scheduler/          named after your product
     personas/
     experiences.md
     panel.md
+  flows/                 from /ai-product-flows
+    flows.md
+    mockups/
+    panel-tests.md
+    script.md
 ```
 
 Every fact in the files says where it came from: a link for anything found on the web, `[documents/<file>]` for anything from your files, and `[PM]` for anything you said. Claude leaves a gap rather than guess, and lists what's still unknown.
@@ -112,7 +118,7 @@ You get:
 - **`value.md`**: where value flows today, where it leaks, where it would flow at your vision's target level, who else could capture it, and how you'd charge. *([example](examples/salesforce/discovery/value.md))*
 - **`discovery.md`**: the one page: where to take the product, the four pillars, whether you're ready for the vision (data, tech, team, customers, pricing), your move, and where value flows. *([example](examples/salesforce/discovery/discovery.md))*
 
-Each skill's files go in a folder named after it inside your product's folder (`vision/`, `discovery/`, `problem/`, `research/`), as plain text you can open, edit and share.
+Each skill's files go in a folder named after it inside your product's folder (`vision/`, `discovery/`, `problem/`, `research/`, `flows/`), as plain text you can open, edit and share.
 
 **[`/ai-product-problem`](docs/ai-product-problem.md)**\
 Makes sure you're solving the right problem, and that it's big enough. Says it as a customer job, grades the evidence with the Mom Test, pressure-tests it, sets a BHAG, looks at what customers most want fixed and at adjacent segments, and lays out three framings so you pick the one that captures the most value.
@@ -132,6 +138,15 @@ You get:
 - **`personas/`**: the buyer, the user, the sceptic and an adjacent-segment persona, every field sourced.
 - **`experiences.md`**: how people use your product today, the double cost your customers pay (your licence plus their people's time), agentic experiences that give that time back, and the new economics: customers pay less in total while your revenue grows.
 - **`panel.md`**: what the personas said when they pressure-tested your problem and the experiences.
+
+**[`/ai-product-flows`](docs/ai-product-flows.md)**\
+Finds the right flows. Maps your agentic experiences as flows (what the agent does, what people see and decide, what happens when it goes wrong), makes them clickable, and tests them with real customers and your synthetic panel side by side. Real customers outweigh the panel.
+
+You get:
+- **`flows.md`**: each flow mapped and ranked on value, trust, what customers would pay for and hours given back; the flows to take forward and their thinnest versions.
+- **`mockups/`**: one clickable mockup per flow, revised after the panel.
+- **`panel-tests.md`**: every round with the panel and every real interview, side by side.
+- **`script.md`**: the interview kit for real customers.
 
 ## Examples
 

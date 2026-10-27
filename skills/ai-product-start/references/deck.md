@@ -1,6 +1,6 @@
 # index.html: the product's deck
 
-`index.html` sits at the top of the product folder, next to `product.md`. It's the main file to open: a slide deck that grows with each skill: the product, the customers, the six levels, the opportunities, Imagine, the vision, where to take the product, the four pillars, the move, where value flows, readiness, the BHAG, the right problem, three framings, and what to learn first. A sidebar lists every section, grouped into Start, Vision, Discovery, Problem and Research, with a dot for done or not done, so the product manager can jump anywhere. Every section links to the files it comes from. Slides a skill hasn't reached yet say "Not done yet" and name the skill to run.
+`index.html` sits at the top of the product folder, next to `product.md`. It's the main file to open: a slide deck that grows with each skill: the product, the customers, the six levels, the opportunities, Imagine, the vision, where to take the product, the four pillars, the move, where value flows, readiness, the BHAG, the right problem, three framings, and what to learn first. A sidebar lists every section, grouped into Start, Vision, Discovery, Problem, Research and Flows, with a dot for done or not done, so the product manager can jump anywhere. Every section links to the files it comes from. Slides a skill hasn't reached yet say "Not done yet" and name the skill to run.
 
 The files are the source of truth. The deck only shows them.
 
@@ -119,3 +119,20 @@ After `/ai-product-research`, set `research` (from `research/`); talking to the 
 - `economics`: the new economics for a typical customer from `experiences.md`, as numbers per year.
 - `experiences`: the agentic customer experiences, with `first` true on the one to explore first.
 - `complete`: true when the personas are checked and the panel has run once.
+
+After `/ai-product-flows`, set `flows` (from `flows/`):
+
+```json
+{
+  "complete": false,
+  "flows": [ { "name": "", "persona": "", "value": 4.2, "trust": 3.5, "pay": 3.8, "hours": "120 h/yr", "forward": "yes" } ],
+  "thinnest": "one line: the thinnest version of the flow to take forward",
+  "mockups": [ { "name": "Morning review", "file": "flows/mockups/morning-review.html", "what": "one line" } ],
+  "customers": "two or three lines from real interviews, or empty",
+  "panel": "two or three lines from the panel",
+  "never": "what the agent never does"
+}
+```
+
+- `flows`: ranked, real customers outweighing the panel; `forward` is yes, later or no.
+- `complete`: true when the flows to take forward are agreed.
