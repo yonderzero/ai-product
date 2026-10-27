@@ -102,7 +102,7 @@ Read `product.md` and anything in `documents/` you haven't read yet. If files fr
 
 11. **Update the profile.** In `product.md`, under `## AI today`, add one line: today's level and the target level, pointing to `ai-levels.md` and `vision.md`.
 
-12. **Done.** Show the files you wrote and sum up in four lines: where the product is today, the top opportunity, where it's going, and the first step. End with: "Placements are a snapshot from public sources on [date]. Check the ones you act on."
+12. **Done.** Show the files you wrote and sum up in four lines: where the product is today, the top opportunity, where it's going, and the first step. Say the next step is `/ai-product-discovery`. End with: "Placements are a snapshot from public sources on [date]. Check the ones you act on."
 
 ## Done when
 

@@ -40,6 +40,7 @@ You run the skills in order, in one folder:
 
 1. **`/ai-product-start`**: set up your product's folder, build its profile, describe your customers.
 2. **`/ai-product-vision`**: place your product and your market on six levels of AI, rank the opportunities, imagine the future, and agree a vision.
+3. **`/ai-product-discovery`**: check whether your product is ready for that vision: what protects it, how strong it is, the AI opportunity, what could go wrong, what has to be true, and your move.
 
 Each skill is a conversation. Claude asks one question at a time, researches the web in the background, and writes what you build together into files in your product's folder. Each skill reads what the earlier ones wrote, so run them in the same place.
 
@@ -53,6 +54,10 @@ acme-scheduler/       named after your product
   market-moves.md     from /ai-product-vision
   opportunities.md    from /ai-product-vision
   vision.md           from /ai-product-vision
+  protection.md       from /ai-product-discovery
+  strength.md         from /ai-product-discovery
+  exposure.md         from /ai-product-discovery
+  discovery.md        from /ai-product-discovery
 ```
 
 Every fact in the files says where it came from: a link for anything found on the web, `[documents/<file>]` for anything from your files, and `[PM]` for anything you said. Claude leaves a gap rather than guess, and lists what's still unknown.
@@ -75,6 +80,15 @@ You get:
 - **`market-moves.md`**: who's moving in your market, and what it opens up for you. *([example](examples/salesforce/market-moves.md))*
 - **`opportunities.md`**: your customers' work step by step, and the opportunities in and around your product, rated and ranked. *([example](examples/salesforce/opportunities.md))*
 - **`vision.md`**: your product's AI vision: your product imagined at each higher level, a day with your System of Understanding, the vision you agreed, and the first step. *([example](examples/salesforce/vision.md))*
+
+**[`/ai-product-discovery`](docs/ai-product-discovery.md)**\
+Checks whether your product is ready for its vision. Scores four pillars with evidence and your inside knowledge, tests what has to be true for the vision, and helps you choose your move.
+
+You get:
+- **`protection.md`**: what protects your product: switching costs, domain knowledge, speed and cost of building, and distribution, scored with sources.
+- **`strength.md`**: how strong the product and its customers are, and how big the AI opportunity is, scored with sources.
+- **`exposure.md`**: 11 risks, from AI disruption to ageing tech, scored with sources.
+- **`discovery.md`**: the one page: the four pillars, whether you're ready for the vision (data, tech, team, customers, pricing), your move, and three next steps.
 
 All files go in your product's folder, as plain text you can open, edit and share.
 

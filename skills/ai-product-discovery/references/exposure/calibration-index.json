@@ -1,0 +1,325 @@
+{
+  "_note": "Frozen snapshot of prior Risk-dimension scans, for anchor-calibration reference only -- not live data, not re-synced. Copied once from VMS-Analyzer's reports/calibration-index.json and filtered to risk-relevant fields (company identity, framework_version, recorded_at, risk_composite, and the 11 active R-dimension scores R1-R6/R8-R12). Maturity, MOAT, and Mode/quadrant fields from the source rows are dropped -- out of scope for this standalone skill.",
+  "rows": [
+    {
+      "company_name": "Company A",
+      "company_slug": "company-a",
+      "framework_version": "2.0",
+      "recorded_at": "2026-06-11T12:05:39.625031+00:00",
+      "risk_composite": 3.18,
+      "dimension_scores": {
+        "R1": 4,
+        "R2": 2,
+        "R3": 3,
+        "R4": 3,
+        "R5": 4,
+        "R6": 4,
+        "R8": 4,
+        "R9": 4,
+        "R10": 3,
+        "R11": 2,
+        "R12": 2
+      }
+    },
+    {
+      "company_name": "Company B",
+      "company_slug": "company-b",
+      "framework_version": "2.0",
+      "recorded_at": "2026-06-29T07:24:38.880504+00:00",
+      "risk_composite": 2.36,
+      "dimension_scores": {
+        "R1": 3,
+        "R2": 2,
+        "R3": 3,
+        "R4": 2,
+        "R5": 2,
+        "R6": 2,
+        "R8": 3,
+        "R9": 2,
+        "R10": 2,
+        "R11": 2,
+        "R12": 3
+      }
+    },
+    {
+      "company_name": "Company B",
+      "company_slug": "company-b",
+      "framework_version": "2.0",
+      "recorded_at": "2026-06-29T07:51:06.814899+00:00",
+      "risk_composite": 2.45,
+      "dimension_scores": {
+        "R1": 3,
+        "R2": 2,
+        "R3": 3,
+        "R4": 2,
+        "R5": 2,
+        "R6": 3,
+        "R8": 3,
+        "R9": 2,
+        "R10": 2,
+        "R11": 2,
+        "R12": 3
+      }
+    },
+    {
+      "company_name": "Company B",
+      "company_slug": "company-b",
+      "framework_version": "2.0",
+      "recorded_at": "2026-06-29T08:19:25.922356+00:00",
+      "risk_composite": 2.36,
+      "dimension_scores": {
+        "R1": 3,
+        "R2": 2,
+        "R3": 3,
+        "R4": 2,
+        "R5": 2,
+        "R6": 2,
+        "R8": 3,
+        "R9": 2,
+        "R10": 2,
+        "R11": 2,
+        "R12": 3
+      }
+    },
+    {
+      "company_name": "Company B",
+      "company_slug": "company-b",
+      "framework_version": "2.0",
+      "recorded_at": "2026-06-29T08:43:18.769351+00:00",
+      "risk_composite": 2.55,
+      "dimension_scores": {
+        "R1": 3,
+        "R2": 2,
+        "R3": 3,
+        "R4": 2,
+        "R5": 2,
+        "R6": 3,
+        "R8": 3,
+        "R9": 2,
+        "R10": 3,
+        "R11": 2,
+        "R12": 3
+      }
+    },
+    {
+      "company_name": "Company B",
+      "company_slug": "company-b",
+      "framework_version": "2.0",
+      "recorded_at": "2026-06-29T09:01:29.498982+00:00",
+      "risk_composite": 2.45,
+      "dimension_scores": {
+        "R1": 3,
+        "R2": 2,
+        "R3": 3,
+        "R4": 2,
+        "R5": 2,
+        "R6": 3,
+        "R8": 3,
+        "R9": 2,
+        "R10": 2,
+        "R11": 2,
+        "R12": 3
+      }
+    },
+    {
+      "company_name": "Company B",
+      "company_slug": "company-b",
+      "framework_version": "2.0",
+      "recorded_at": "2026-06-29T09:15:43.995970+00:00",
+      "risk_composite": 2.45,
+      "dimension_scores": {
+        "R1": 3,
+        "R2": 2,
+        "R3": 3,
+        "R4": 2,
+        "R5": 2,
+        "R6": 3,
+        "R8": 3,
+        "R9": 2,
+        "R10": 2,
+        "R11": 2,
+        "R12": 3
+      }
+    },
+    {
+      "company_name": "Company B",
+      "company_slug": "company-b",
+      "framework_version": "2.0",
+      "recorded_at": "2026-06-29T09:33:35.182073+00:00",
+      "risk_composite": 2.73,
+      "dimension_scores": {
+        "R1": 3,
+        "R2": 2,
+        "R3": 2,
+        "R4": 2,
+        "R5": 4,
+        "R6": 3,
+        "R8": 3,
+        "R9": 3,
+        "R10": 3,
+        "R11": 2,
+        "R12": 3
+      }
+    },
+    {
+      "company_name": "Company B",
+      "company_slug": "company-b",
+      "framework_version": "2.0",
+      "recorded_at": "2026-06-29T09:47:42.278149+00:00",
+      "risk_composite": 2.55,
+      "dimension_scores": {
+        "R1": 3,
+        "R2": 2,
+        "R3": 3,
+        "R4": 2,
+        "R5": 3,
+        "R6": 3,
+        "R8": 3,
+        "R9": 2,
+        "R10": 2,
+        "R11": 2,
+        "R12": 3
+      }
+    },
+    {
+      "company_name": "Company B",
+      "company_slug": "company-b",
+      "framework_version": "2.0",
+      "recorded_at": "2026-06-29T09:47:42.340255+00:00",
+      "risk_composite": 2.45,
+      "dimension_scores": {
+        "R1": 3,
+        "R2": 1,
+        "R3": 3,
+        "R4": 2,
+        "R5": 3,
+        "R6": 3,
+        "R8": 3,
+        "R9": 2,
+        "R10": 2,
+        "R11": 2,
+        "R12": 3
+      }
+    },
+    {
+      "company_name": "Company C",
+      "company_slug": "company-c",
+      "framework_version": "2.0",
+      "recorded_at": "2026-06-30T06:50:49.553593+00:00",
+      "risk_composite": 2.27,
+      "dimension_scores": {
+        "R1": 3,
+        "R2": 2,
+        "R3": 2,
+        "R4": 2,
+        "R5": 2,
+        "R6": 2,
+        "R8": 3,
+        "R9": 2,
+        "R10": 2,
+        "R11": 2,
+        "R12": 3
+      }
+    },
+    {
+      "company_name": "Company C",
+      "company_slug": "company-c",
+      "framework_version": "2.0",
+      "recorded_at": "2026-06-30T07:13:53.500300+00:00",
+      "risk_composite": 2.55,
+      "dimension_scores": {
+        "R1": 3,
+        "R2": 2,
+        "R3": 2,
+        "R4": 2,
+        "R5": 2,
+        "R6": 3,
+        "R8": 4,
+        "R9": 2,
+        "R10": 2,
+        "R11": 2,
+        "R12": 4
+      }
+    },
+    {
+      "company_name": "Company D",
+      "company_slug": "company-d",
+      "framework_version": "2.2",
+      "recorded_at": "2026-06-30T08:52:32.122423+00:00",
+      "risk_composite": 2.36,
+      "dimension_scores": {
+        "R1": 3,
+        "R2": 2,
+        "R3": 2,
+        "R4": 2,
+        "R5": 2,
+        "R6": 2,
+        "R8": 3,
+        "R9": 2,
+        "R10": 2,
+        "R11": 2,
+        "R12": 4
+      }
+    },
+    {
+      "company_name": "Company E",
+      "company_slug": "company-e",
+      "framework_version": "3.0",
+      "recorded_at": "2026-06-30T11:01:28.636354+00:00",
+      "risk_composite": 2.36,
+      "dimension_scores": {
+        "R1": 3,
+        "R2": 2,
+        "R3": 3,
+        "R4": 2,
+        "R5": 2,
+        "R6": 2,
+        "R8": 3,
+        "R9": 2,
+        "R10": 2,
+        "R11": 2,
+        "R12": 3
+      }
+    },
+    {
+      "company_name": "Company E",
+      "company_slug": "company-e",
+      "framework_version": "3.2.0",
+      "recorded_at": "2026-07-08T16:00:15.616158+00:00",
+      "risk_composite": 2.36,
+      "dimension_scores": {
+        "R1": 3,
+        "R2": 2,
+        "R3": 3,
+        "R4": 2,
+        "R5": 2,
+        "R6": 2,
+        "R8": 3,
+        "R9": 2,
+        "R10": 2,
+        "R11": 2,
+        "R12": 3
+      }
+    },
+    {
+      "company_name": "Company C",
+      "company_slug": "company-c",
+      "framework_version": "3.2.0",
+      "recorded_at": "2026-07-14T15:36:27.612241+00:00",
+      "risk_composite": 2.27,
+      "dimension_scores": {
+        "R1": 3,
+        "R2": 2,
+        "R3": 2,
+        "R4": 2,
+        "R5": 2,
+        "R6": 2,
+        "R8": 3,
+        "R9": 2,
+        "R10": 2,
+        "R11": 2,
+        "R12": 3
+      }
+    }
+  ]
+}
