@@ -1,0 +1,14 @@
+{
+  "name": "ai-product",
+  "description": "Product Track workshops for product teams: one skill per session, from your product to a developer handoff.",
+  "owner": {
+    "name": "Product Track"
+  },
+  "plugins": [
+    {
+      "name": "product-track",
+      "source": "./",
+      "description": "Product Track workshops: one skill per session, research skills, and synthetic customers built from your own data."
+    }
+  ]
+}
